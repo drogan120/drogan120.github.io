@@ -10,6 +10,7 @@ const ja: Dictionary = {
     nav: {
       about: "自己紹介",
       skills: "スキル",
+      experience: "経験",
       projects: "プロジェクト",
       contact: "お問い合わせ",
       hire: "採用する",
@@ -34,6 +35,25 @@ const ja: Dictionary = {
       label: "// スキル",
       title: "得意分野",
       groups: data.default.skills.groups,
+    },
+    experience: {
+      label: "// 経験",
+      title: "歩み",
+      items: data.default.experience.items,
+    },
+    stats: {
+      title: "数字で見る",
+      items: data.default.stats,
+    },
+    achievements: {
+      label: "// 実績",
+      title: "実績",
+      items: data.default.achievements.items,
+    },
+    hobbies: {
+      label: "// 趣味",
+      title: "コードの外側",
+      items: data.default.hobbies.items,
     },
     projects: {
       label: "// プロジェクト",
@@ -72,6 +92,26 @@ const ja: Dictionary = {
       response: "レスポンス 200",
       description: data.apiDocs.projects.description,
       data: data.apiDocs.projects.data,
+    },
+    experience: {
+      response: "レスポンス 200",
+      description: data.apiDocs.experience.description,
+      data: data.apiDocs.experience.data,
+    },
+    stats: {
+      response: "レスポンス 200",
+      description: data.apiDocs.stats.description,
+      data: data.apiDocs.stats.data,
+    },
+    achievements: {
+      response: "レスポンス 200",
+      description: data.apiDocs.achievements.description,
+      data: data.apiDocs.achievements.data,
+    },
+    hobbies: {
+      response: "レスポンス 200",
+      description: data.apiDocs.hobbies.description,
+      data: data.apiDocs.hobbies.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

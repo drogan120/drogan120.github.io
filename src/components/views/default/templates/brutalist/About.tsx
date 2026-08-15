@@ -17,13 +17,13 @@ export default function BrutalistAbout() {
           </div>
 
           <div className="border-2 border-foreground p-6 md:col-span-2 md:border-r-0">
-            {t.default.about.cards.map((card, i) => (
+            {t.default.about.cards.map((card) => (
               <div
                 key={card.title}
                 className="flex gap-6 border-b-2 border-foreground py-4 last:border-b-0"
               >
                 <span className="w-10 shrink-0 font-mono text-lg font-black text-accent">
-                  {String(i + 1).padStart(2, "0")}
+                  {card.icon}
                 </span>
                 <div>
                   <h3 className="font-mono text-sm font-bold uppercase">

@@ -17,7 +17,7 @@ export default function FashionSkills() {
           {t.default.skills.groups.map((group) => (
             <div key={group.title} className="bg-background p-8">
               <h3 className="text-xs uppercase tracking-[0.25em] text-accent">
-                {group.title}
+                {group.icon} {group.title}
               </h3>
               <ul className="mt-6 space-y-3">
                 {group.skills.map((skill) => (

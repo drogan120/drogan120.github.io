@@ -14,14 +14,12 @@ export default function GlassAbout() {
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {t.default.about.cards.map((card, i) => (
+          {t.default.about.cards.map((card) => (
             <div
               key={card.title}
               className="rounded-3xl border border-white/15 bg-white/10 p-8 backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/15"
             >
-              <span className="font-mono text-sm font-bold text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+              <span className="text-3xl">{card.icon}</span>
               <h3 className="mt-3 text-lg font-semibold">{card.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 {card.description}

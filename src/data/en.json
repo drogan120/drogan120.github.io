@@ -8,14 +8,17 @@
     "about": {
       "cards": [
         {
+          "icon": "🚀",
           "title": "Software Engineer",
           "description": "Building web and backend applications with clean, scalable, and maintainable architecture."
         },
         {
+          "icon": "📱",
           "title": "Android Developer",
           "description": "Building native Android apps that are responsive, smooth, and focused on user experience."
         },
         {
+          "icon": "🧩",
           "title": "Problem Solver",
           "description": "Enjoy turning complex problems into simple and efficient solutions."
         }
@@ -25,20 +28,106 @@
     "skills": {
       "groups": [
         {
+          "icon": "📱",
           "title": "Mobile",
           "skills": ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"]
         },
         {
+          "icon": "🌐",
           "title": "Web",
           "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
         },
         {
+          "icon": "🗄️",
           "title": "Backend & Database",
           "skills": ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"]
         },
         {
+          "icon": "🛠️",
           "title": "Tools & Others",
           "skills": ["Git", "GitHub Actions", "Docker", "Figma", "Linux"]
+        }
+      ]
+    },
+    "experience": {
+      "items": [
+        {
+          "period": "2023 — Present",
+          "title": "Software Engineer",
+          "company": "Freelance",
+          "description": "Building web and Android applications for clients, from planning to production and maintenance."
+        },
+        {
+          "period": "2021 — 2023",
+          "title": "Android Developer",
+          "company": "Independent Projects",
+          "description": "Developed and shipped multiple native Android apps, focusing on clean architecture and smooth UX."
+        },
+        {
+          "period": "2019 — 2021",
+          "title": "Started Learning to Code",
+          "company": "Self-taught",
+          "description": "Started the journey with basic web fundamentals, then moved on to mobile development."
+        }
+      ]
+    },
+    "stats": [
+      {
+        "icon": "🚀",
+        "value": "5+",
+        "label": "Years of coding"
+      },
+      {
+        "icon": "📦",
+        "value": "20+",
+        "label": "Projects built"
+      },
+      {
+        "icon": "☕",
+        "value": "∞",
+        "label": "Cups of coffee"
+      }
+    ],
+    "achievements": {
+      "items": [
+        {
+          "icon": "🏆",
+          "title": "Best Project Award",
+          "detail": "School hackathon winner — team lead."
+        },
+        {
+          "icon": "📜",
+          "title": "Android Development Certification",
+          "detail": "Completed comprehensive Android dev program."
+        },
+        {
+          "icon": "🌱",
+          "title": "Open Source Contributor",
+          "detail": "Regularly contribute to community projects."
+        }
+      ]
+    },
+    "hobbies": {
+      "items": [
+        {
+          "icon": "🎮",
+          "name": "Gaming",
+          "detail": "FPS and strategy games."
+        },
+        {
+          "icon": "📷",
+          "name": "Photography",
+          "detail": "Street and landscape photography."
+        },
+        {
+          "icon": "🎧",
+          "name": "Music",
+          "detail": "Lo-fi and electronic beats."
+        },
+        {
+          "icon": "📚",
+          "name": "Reading",
+          "detail": "Tech blogs and sci-fi novels."
         }
       ]
     },
@@ -136,6 +225,51 @@
           "tech": ["Node.js", "PostgreSQL"],
           "status": "in_progress"
         }
+      ]
+    },
+    "experience": {
+      "description": "My professional journey in chronological order.",
+      "data": [
+        {
+          "period": "2023 — present",
+          "title": "Software Engineer",
+          "company": "Freelance"
+        },
+        {
+          "period": "2021 — 2023",
+          "title": "Android Developer",
+          "company": "Independent Projects"
+        },
+        {
+          "period": "2019 — 2021",
+          "title": "Started Learning to Code",
+          "company": "Self-taught"
+        }
+      ]
+    },
+    "stats": {
+      "description": "Quick numbers about my career.",
+      "data": [
+        { "label": "Years of coding", "value": "5+" },
+        { "label": "Projects built", "value": "20+" },
+        { "label": "Cups of coffee", "value": "∞" }
+      ]
+    },
+    "achievements": {
+      "description": "Selected achievements and certifications.",
+      "data": [
+        { "title": "Best Project Award", "detail": "School hackathon winner — team lead." },
+        { "title": "Android Development Certification", "detail": "Comprehensive Android dev program." },
+        { "title": "Open Source Contributor", "detail": "Regularly contribute to community projects." }
+      ]
+    },
+    "hobbies": {
+      "description": "Things I enjoy outside of coding.",
+      "data": [
+        { "name": "Gaming", "detail": "FPS and strategy games." },
+        { "name": "Photography", "detail": "Street and landscape photography." },
+        { "name": "Music", "detail": "Lo-fi and electronic beats." },
+        { "name": "Reading", "detail": "Tech blogs and sci-fi novels." }
       ]
     },
     "contact": {

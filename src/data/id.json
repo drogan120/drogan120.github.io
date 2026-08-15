@@ -8,14 +8,17 @@
     "about": {
       "cards": [
         {
+          "icon": "🚀",
           "title": "Software Engineer",
           "description": "Membangun aplikasi web dan backend dengan arsitektur yang bersih, scalable, dan mudah dipelihara."
         },
         {
+          "icon": "📱",
           "title": "Android Developer",
           "description": "Mengembangkan aplikasi Android native yang responsif, mulus, dan berfokus pada pengalaman pengguna."
         },
         {
+          "icon": "🧩",
           "title": "Problem Solver",
           "description": "Senang memecahkan masalah kompleks menjadi solusi yang sederhana dan efisien."
         }
@@ -25,20 +28,106 @@
     "skills": {
       "groups": [
         {
+          "icon": "📱",
           "title": "Mobile",
           "skills": ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"]
         },
         {
+          "icon": "🌐",
           "title": "Web",
           "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
         },
         {
+          "icon": "🗄️",
           "title": "Backend & Database",
           "skills": ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"]
         },
         {
+          "icon": "🛠️",
           "title": "Tools & Lainnya",
           "skills": ["Git", "GitHub Actions", "Docker", "Figma", "Linux"]
+        }
+      ]
+    },
+    "experience": {
+      "items": [
+        {
+          "period": "2023 — Sekarang",
+          "title": "Software Engineer",
+          "company": "Freelance",
+          "description": "Membangun aplikasi web dan Android untuk klien, dari perencanaan hingga produksi dan pemeliharaan."
+        },
+        {
+          "period": "2021 — 2023",
+          "title": "Android Developer",
+          "company": "Proyek Mandiri",
+          "description": "Mengembangkan dan merilis berbagai aplikasi Android native, berfokus pada arsitektur yang bersih dan UX yang mulus."
+        },
+        {
+          "period": "2019 — 2021",
+          "title": "Mulai Belajar Coding",
+          "company": "Belajar Mandiri",
+          "description": "Memulai perjalanan dengan dasar-dasar web, kemudian beralih ke pengembangan mobile."
+        }
+      ]
+    },
+    "stats": [
+      {
+        "icon": "🚀",
+        "value": "5+",
+        "label": "Tahun coding"
+      },
+      {
+        "icon": "📦",
+        "value": "20+",
+        "label": "Proyek selesai"
+      },
+      {
+        "icon": "☕",
+        "value": "∞",
+        "label": "Cangkir kopi"
+      }
+    ],
+    "achievements": {
+      "items": [
+        {
+          "icon": "🏆",
+          "title": "Penghargaan Proyek Terbaik",
+          "detail": "Juara hackathon sekolah — ketua tim."
+        },
+        {
+          "icon": "📜",
+          "title": "Sertifikasi Android Development",
+          "detail": "Menyelesaikan program pengembangan Android secara menyeluruh."
+        },
+        {
+          "icon": "🌱",
+          "title": "Kontributor Open Source",
+          "detail": "Rutin berkontribusi ke proyek komunitas."
+        }
+      ]
+    },
+    "hobbies": {
+      "items": [
+        {
+          "icon": "🎮",
+          "name": "Gaming",
+          "detail": "Game FPS dan strategi."
+        },
+        {
+          "icon": "📷",
+          "name": "Fotografi",
+          "detail": "Fotografi jalanan dan pemandangan."
+        },
+        {
+          "icon": "🎧",
+          "name": "Musik",
+          "detail": "Lo-fi dan beat elektronik."
+        },
+        {
+          "icon": "📚",
+          "name": "Membaca",
+          "detail": "Blog teknologi dan novel fiksi ilmiah."
         }
       ]
     },
@@ -136,6 +225,51 @@
           "tech": ["Node.js", "PostgreSQL"],
           "status": "in_progress"
         }
+      ]
+    },
+    "experience": {
+      "description": "Perjalanan profesional saya secara kronologis.",
+      "data": [
+        {
+          "period": "2023 — sekarang",
+          "title": "Software Engineer",
+          "company": "Freelance"
+        },
+        {
+          "period": "2021 — 2023",
+          "title": "Android Developer",
+          "company": "Proyek Mandiri"
+        },
+        {
+          "period": "2019 — 2021",
+          "title": "Mulai Belajar Coding",
+          "company": "Belajar Mandiri"
+        }
+      ]
+    },
+    "stats": {
+      "description": "Angka singkat tentang karier saya.",
+      "data": [
+        { "label": "Tahun coding", "value": "5+" },
+        { "label": "Proyek selesai", "value": "20+" },
+        { "label": "Cangkir kopi", "value": "∞" }
+      ]
+    },
+    "achievements": {
+      "description": "Pencapaian dan sertifikasi terpilih.",
+      "data": [
+        { "title": "Penghargaan Proyek Terbaik", "detail": "Juara hackathon sekolah — ketua tim." },
+        { "title": "Sertifikasi Android Development", "detail": "Program pengembangan Android menyeluruh." },
+        { "title": "Kontributor Open Source", "detail": "Rutin berkontribusi ke proyek komunitas." }
+      ]
+    },
+    "hobbies": {
+      "description": "Hal yang saya nikmati di luar coding.",
+      "data": [
+        { "name": "Gaming", "detail": "Game FPS dan strategi." },
+        { "name": "Fotografi", "detail": "Fotografi jalanan dan pemandangan." },
+        { "name": "Musik", "detail": "Lo-fi dan beat elektronik." },
+        { "name": "Membaca", "detail": "Blog teknologi dan novel fiksi ilmiah." }
       ]
     },
     "contact": {

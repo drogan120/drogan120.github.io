@@ -20,7 +20,7 @@ export default function GlassSkills() {
               className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl"
             >
               <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">
-                {group.title}
+                {group.icon} {group.title}
               </h3>
               <div className="mt-4 flex flex-wrap gap-2.5">
                 {group.skills.map((skill) => (

@@ -20,7 +20,7 @@ export default function BrutalistSkills() {
               className={`p-6 ${gi % 2 === 0 ? "border-t-2 border-l-2 border-foreground" : "border-t-2 border-foreground md:border-r-2"} ${gi >= 2 ? "border-b-2" : ""}`}
             >
               <h3 className="font-mono text-sm font-black uppercase text-accent">
-                ▸ {group.title}
+                {group.icon} {group.title}
               </h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {group.skills.map((skill) => (

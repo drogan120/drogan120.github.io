@@ -10,6 +10,7 @@ const id: Dictionary = {
     nav: {
       about: "Tentang",
       skills: "Keahlian",
+      experience: "Pengalaman",
       projects: "Proyek",
       contact: "Kontak",
       hire: "Hire Me",
@@ -34,6 +35,25 @@ const id: Dictionary = {
       label: "// keahlian",
       title: "Yang Saya Kuasai",
       groups: data.default.skills.groups,
+    },
+    experience: {
+      label: "// pengalaman",
+      title: "Perjalanan Saya",
+      items: data.default.experience.items,
+    },
+    stats: {
+      title: "Angka-angka singkat",
+      items: data.default.stats,
+    },
+    achievements: {
+      label: "// pencapaian",
+      title: "Pencapaian",
+      items: data.default.achievements.items,
+    },
+    hobbies: {
+      label: "// hobi",
+      title: "Di Luar Coding",
+      items: data.default.hobbies.items,
     },
     projects: {
       label: "// proyek",
@@ -72,6 +92,26 @@ const id: Dictionary = {
       response: "Respons 200",
       description: data.apiDocs.projects.description,
       data: data.apiDocs.projects.data,
+    },
+    experience: {
+      response: "Respons 200",
+      description: data.apiDocs.experience.description,
+      data: data.apiDocs.experience.data,
+    },
+    stats: {
+      response: "Respons 200",
+      description: data.apiDocs.stats.description,
+      data: data.apiDocs.stats.data,
+    },
+    achievements: {
+      response: "Respons 200",
+      description: data.apiDocs.achievements.description,
+      data: data.apiDocs.achievements.data,
+    },
+    hobbies: {
+      response: "Respons 200",
+      description: data.apiDocs.hobbies.description,
+      data: data.apiDocs.hobbies.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

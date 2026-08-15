@@ -7,6 +7,10 @@ import SettingsBar from "@/components/shared/SettingsBar";
 const endpoints = [
   { method: "GET", path: "/about", href: "#about" },
   { method: "GET", path: "/skills", href: "#skills" },
+  { method: "GET", path: "/experience", href: "#experience" },
+  { method: "GET", path: "/stats", href: "#stats" },
+  { method: "GET", path: "/achievements", href: "#achievements" },
+  { method: "GET", path: "/hobbies", href: "#hobbies" },
   { method: "GET", path: "/projects", href: "#projects" },
   { method: "POST", path: "/contact", href: "#contact" },
 ];

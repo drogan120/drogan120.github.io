@@ -21,13 +21,13 @@ export default function FashionAbout() {
           </div>
 
           <div className="space-y-0">
-            {t.default.about.cards.map((card, i) => (
+            {t.default.about.cards.map((card) => (
               <div
                 key={card.title}
                 className="group flex items-start gap-8 border-b border-border py-8 transition-colors hover:bg-card/50 first:border-t"
               >
-                <span className="font-serif text-3xl font-light text-accent/60">
-                  {String(i + 1).padStart(2, "0")}
+                <span className="w-12 shrink-0 font-serif text-3xl font-light text-accent/60">
+                  {card.icon}
                 </span>
                 <div>
                   <h3 className="text-sm uppercase tracking-[0.25em]">

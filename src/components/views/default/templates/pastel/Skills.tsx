@@ -1,10 +1,10 @@
 import { useI18n } from "@/i18n";
 
 const pillColors = [
-  "bg-pink-100/80 text-pink-500 dark:bg-pink-400/20 dark:text-pink-200 dark:ring-1 dark:ring-pink-300/20",
-  "bg-purple-100/80 text-purple-500 dark:bg-purple-400/20 dark:text-purple-200 dark:ring-1 dark:ring-purple-300/20",
-  "bg-pink-100/80 text-pink-500 dark:bg-pink-400/15 dark:text-pink-200 dark:ring-1 dark:ring-pink-300/20",
-  "bg-purple-100/80 text-purple-500 dark:bg-purple-400/15 dark:text-purple-200 dark:ring-1 dark:ring-purple-300/20",
+  "bg-accent/15 text-accent ring-1 ring-accent/20",
+  "bg-accent-2/15 text-accent-2 ring-1 ring-accent-2/20",
+  "bg-accent/10 text-accent ring-1 ring-accent/20",
+  "bg-accent-2/10 text-accent-2 ring-1 ring-accent-2/20",
 ];
 
 export default function PastelSkills() {
@@ -13,10 +13,10 @@ export default function PastelSkills() {
   return (
     <section id="skills" className="mx-auto max-w-5xl px-6 py-24">
       <div className="text-center">
-        <p className="font-mono text-sm text-purple-400 dark:text-purple-300">
+        <p className="font-mono text-sm text-accent">
           {t.default.skills.label}
         </p>
-        <h2 className="mt-3 text-3xl font-bold text-slate-800 dark:text-purple-50">
+        <h2 className="mt-3 text-3xl font-bold text-foreground">
           {t.default.skills.title}
         </h2>
       </div>
@@ -25,10 +25,10 @@ export default function PastelSkills() {
         {t.default.skills.groups.map((group, gi) => (
           <div
             key={group.title}
-            className="rounded-3xl border border-slate-100 bg-white/60 p-7 backdrop-blur dark:border-white/10 dark:bg-gradient-to-b dark:from-purple-400/15 dark:to-pink-400/10"
+            className="rounded-3xl border border-border/60 bg-card/60 p-7 backdrop-blur"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-purple-100/50">
-              {group.title}
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">
+              {group.icon} {group.title}
             </h3>
             <div className="mt-4 flex flex-wrap gap-2.5">
               {group.skills.map((skill, si) => (

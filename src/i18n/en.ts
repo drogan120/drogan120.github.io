@@ -9,6 +9,7 @@ const en = {
     nav: {
       about: "About",
       skills: "Skills",
+      experience: "Experience",
       projects: "Projects",
       contact: "Contact",
       hire: "Hire Me",
@@ -33,6 +34,25 @@ const en = {
       label: "// skills",
       title: "What I Do",
       groups: data.default.skills.groups,
+    },
+    experience: {
+      label: "// experience",
+      title: "My Journey",
+      items: data.default.experience.items,
+    },
+    stats: {
+      title: "By the numbers",
+      items: data.default.stats,
+    },
+    achievements: {
+      label: "// achievements",
+      title: "Achievements",
+      items: data.default.achievements.items,
+    },
+    hobbies: {
+      label: "// hobbies",
+      title: "Beyond the Code",
+      items: data.default.hobbies.items,
     },
     projects: {
       label: "// projects",
@@ -71,6 +91,26 @@ const en = {
       response: "Response 200",
       description: data.apiDocs.projects.description,
       data: data.apiDocs.projects.data,
+    },
+    experience: {
+      response: "Response 200",
+      description: data.apiDocs.experience.description,
+      data: data.apiDocs.experience.data,
+    },
+    stats: {
+      response: "Response 200",
+      description: data.apiDocs.stats.description,
+      data: data.apiDocs.stats.data,
+    },
+    achievements: {
+      response: "Response 200",
+      description: data.apiDocs.achievements.description,
+      data: data.apiDocs.achievements.data,
+    },
+    hobbies: {
+      response: "Response 200",
+      description: data.apiDocs.hobbies.description,
+      data: data.apiDocs.hobbies.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

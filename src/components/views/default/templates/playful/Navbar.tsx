@@ -7,6 +7,7 @@ import SettingsBar from "@/components/shared/SettingsBar";
 const links = [
   { href: "#about", key: "about" },
   { href: "#skills", key: "skills" },
+  { href: "#experience", key: "experience" },
   { href: "#projects", key: "projects" },
   { href: "#contact", key: "contact" },
 ] as const;

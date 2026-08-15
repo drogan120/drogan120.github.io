@@ -14,13 +14,13 @@ export default function ClassicAbout() {
         </h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {t.default.about.cards.map((card, i) => (
+          {t.default.about.cards.map((card) => (
             <div
               key={card.title}
               className="rounded-2xl border border-border bg-background p-6 text-center transition-colors hover:border-accent/50"
             >
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 font-mono font-bold text-accent">
-                {i + 1}
+                {card.icon}
               </div>
               <h3 className="mt-4 text-lg font-semibold">{card.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">

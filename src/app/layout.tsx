@@ -38,8 +38,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="id"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} dark h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('drogan.scheme')||'mauve';var t=localStorage.getItem('drogan.theme')||'dark';var r=document.documentElement;r.classList.add('scheme-'+s);r.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>
       </body>

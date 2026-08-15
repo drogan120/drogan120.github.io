@@ -16,14 +16,14 @@ export default function PlayfulSkills() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {t.default.skills.groups.map((group, i) => (
+          {t.default.skills.groups.map((group) => (
             <div
               key={group.title}
               className="rounded-3xl border border-border bg-background p-6"
             >
               <h3 className="flex items-center gap-2 font-bold">
                 <span className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">
-                  {String(i + 1).padStart(2, "0")}
+                  {group.icon}
                 </span>
                 {group.title}
               </h3>

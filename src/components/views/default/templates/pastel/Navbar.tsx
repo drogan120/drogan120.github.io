@@ -7,6 +7,7 @@ import SettingsBar from "@/components/shared/SettingsBar";
 const links = [
   { href: "#about", key: "about" },
   { href: "#skills", key: "skills" },
+  { href: "#experience", key: "experience" },
   { href: "#projects", key: "projects" },
   { href: "#contact", key: "contact" },
 ] as const;
@@ -27,16 +28,16 @@ export default function PastelNavbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/70 shadow-sm backdrop-blur-md dark:bg-gradient-to-r dark:from-purple-500/10 dark:via-pink-500/10 dark:to-purple-500/10"
+          ? "bg-background/80 shadow-sm backdrop-blur-md ring-1 ring-border/60"
           : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a
           href="#top"
-          className="text-lg font-bold text-slate-700 dark:text-purple-50"
+          className="text-lg font-bold text-foreground"
         >
-          <span className="text-pink-400">✦</span> drogan
+          <span className="text-accent">✦</span> drogan
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -44,7 +45,7 @@ export default function PastelNavbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-slate-500 transition-colors hover:text-pink-400 dark:text-purple-100/60"
+                className="text-sm font-medium text-muted transition-colors hover:text-accent"
               >
                 {t.default.nav[link.key]}
               </a>
@@ -56,7 +57,7 @@ export default function PastelNavbar() {
           <SettingsBar />
           <button
             onClick={() => setOpen(!open)}
-            className="flex h-9 w-9 items-center justify-center text-xl text-slate-700 md:hidden dark:text-purple-50"
+            className="flex h-9 w-9 items-center justify-center text-xl text-foreground md:hidden"
             aria-label="Menu"
           >
             {open ? "✕" : "☰"}
@@ -65,14 +66,14 @@ export default function PastelNavbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-100 bg-white px-6 py-4 md:hidden dark:border-white/10 dark:bg-gradient-to-b dark:from-purple-500/15 dark:to-pink-500/10">
+        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-slate-500 dark:text-purple-100/60"
+                  className="text-sm font-medium text-muted"
                 >
                   {t.default.nav[link.key]}
                 </a>

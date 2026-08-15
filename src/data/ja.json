@@ -8,14 +8,17 @@
     "about": {
       "cards": [
         {
+          "icon": "🚀",
           "title": "ソフトウェアエンジニア",
           "description": "クリーンでスケーラブル、メンテナンスしやすいアーキテクチャで Web アプリとバックエンドを構築しています。"
         },
         {
+          "icon": "📱",
           "title": "Android デベロッパー",
           "description": "レスポンシブで滑らか、ユーザー体験を重視したネイティブ Android アプリを開発しています。"
         },
         {
+          "icon": "🧩",
           "title": "問題解決者",
           "description": "複雑な問題をシンプルで効率的な解決策に変えるのが得意です。"
         }
@@ -25,20 +28,106 @@
     "skills": {
       "groups": [
         {
+          "icon": "📱",
           "title": "モバイル",
           "skills": ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"]
         },
         {
+          "icon": "🌐",
           "title": "Web",
           "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
         },
         {
+          "icon": "🗄️",
           "title": "バックエンド & データベース",
           "skills": ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"]
         },
         {
+          "icon": "🛠️",
           "title": "ツール & その他",
           "skills": ["Git", "GitHub Actions", "Docker", "Figma", "Linux"]
+        }
+      ]
+    },
+    "experience": {
+      "items": [
+        {
+          "period": "2023 — 現在",
+          "title": "ソフトウェアエンジニア",
+          "company": "フリーランス",
+          "description": "計画から本番運用・保守まで、クライアント向けの Web アプリと Android アプリを開発しています。"
+        },
+        {
+          "period": "2021 — 2023",
+          "title": "Android デベロッパー",
+          "company": "個人プロジェクト",
+          "description": "クリーンなアーキテクチャと滑らかな UX に重点を置き、複数のネイティブ Android アプリを開発・公開しました。"
+        },
+        {
+          "period": "2019 — 2021",
+          "title": "コーディング学習開始",
+          "company": "独学",
+          "description": "Web の基礎から始め、その後モバイル開発に進みました。"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "icon": "🚀",
+        "value": "5+",
+        "label": "年の開発経験"
+      },
+      {
+        "icon": "📦",
+        "value": "20+",
+        "label": "完成プロジェクト"
+      },
+      {
+        "icon": "☕",
+        "value": "∞",
+        "label": "コーヒーカップ"
+      }
+    ],
+    "achievements": {
+      "items": [
+        {
+          "icon": "🏆",
+          "title": "最優秀プロジェクト賞",
+          "detail": "学校のハッカソン優勝 — チームリーダー。"
+        },
+        {
+          "icon": "📜",
+          "title": "Android 開発認定",
+          "detail": "包括的な Android 開発プログラムを修了。"
+        },
+        {
+          "icon": "🌱",
+          "title": "オープンソースコントリビューター",
+          "detail": "コミュニティプロジェクトに定期的に貢献。"
+        }
+      ]
+    },
+    "hobbies": {
+      "items": [
+        {
+          "icon": "🎮",
+          "name": "ゲーム",
+          "detail": "FPS とストラテジーゲーム。"
+        },
+        {
+          "icon": "📷",
+          "name": "写真",
+          "detail": "ストリートと風景写真。"
+        },
+        {
+          "icon": "🎧",
+          "name": "音楽",
+          "detail": "Lo-fi とエレクトロニック。"
+        },
+        {
+          "icon": "📚",
+          "name": "読書",
+          "detail": "テックブログと SF 小説。"
         }
       ]
     },
@@ -136,6 +225,51 @@
           "tech": ["Node.js", "PostgreSQL"],
           "status": "in_progress"
         }
+      ]
+    },
+    "experience": {
+      "description": "時系列順の私のプロフェッショナルな歩み。",
+      "data": [
+        {
+          "period": "2023 — 現在",
+          "title": "ソフトウェアエンジニア",
+          "company": "フリーランス"
+        },
+        {
+          "period": "2021 — 2023",
+          "title": "Android デベロッパー",
+          "company": "個人プロジェクト"
+        },
+        {
+          "period": "2019 — 2021",
+          "title": "コーディング学習開始",
+          "company": "独学"
+        }
+      ]
+    },
+    "stats": {
+      "description": "キャリアに関する簡単な数字。",
+      "data": [
+        { "label": "年の開発経験", "value": "5+" },
+        { "label": "完成プロジェクト", "value": "20+" },
+        { "label": "コーヒーカップ", "value": "∞" }
+      ]
+    },
+    "achievements": {
+      "description": "厳選した実績と認定。",
+      "data": [
+        { "title": "最優秀プロジェクト賞", "detail": "学校のハッカソン優勝 — チームリーダー。" },
+        { "title": "Android 開発認定", "detail": "包括的な Android 開発プログラムを修了。" },
+        { "title": "オープンソースコントリビューター", "detail": "コミュニティプロジェクトに定期的に貢献。" }
+      ]
+    },
+    "hobbies": {
+      "description": "コーディング以外で楽しんでいること。",
+      "data": [
+        { "name": "ゲーム", "detail": "FPS とストラテジーゲーム。" },
+        { "name": "写真", "detail": "ストリートと風景写真。" },
+        { "name": "音楽", "detail": "Lo-fi とエレクトロニック。" },
+        { "name": "読書", "detail": "テックブログと SF 小説。" }
       ]
     },
     "contact": {

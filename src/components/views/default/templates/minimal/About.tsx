@@ -16,7 +16,7 @@ export default function MinimalAbout() {
             {t.default.about.cards.map((card, i) => (
               <div key={card.title}>
                 <h3 className="font-mono text-sm font-semibold text-accent">
-                  0{i + 1}
+                  {card.icon} 0{i + 1}
                 </h3>
                 <p className="mt-1 text-sm text-foreground">{card.title}</p>
               </div>

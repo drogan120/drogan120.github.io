@@ -1,7 +1,5 @@
 import { useI18n } from "@/i18n";
 
-const emojis = ["🚀", "📱", "🧩"];
-
 export default function PlayfulAbout() {
   const { t } = useI18n();
 
@@ -15,12 +13,12 @@ export default function PlayfulAbout() {
       </div>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {t.default.about.cards.map((card, i) => (
+        {t.default.about.cards.map((card) => (
           <div
             key={card.title}
             className="group rounded-3xl border border-border bg-card p-8 transition-all hover:-translate-y-2 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10"
           >
-            <span className="text-4xl">{emojis[i]}</span>
+            <span className="text-4xl">{card.icon}</span>
             <h3 className="mt-4 text-lg font-bold text-accent">
               {card.title}
             </h3>

@@ -14,9 +14,13 @@ type Line = {
 const HISTORY: Record<string, string> = {
   "--about": "Drogan — Software Engineer & Android Developer",
   "--skills": "[kotlin, compose, nextjs, typescript, nodejs, postgresql]",
+  "--experience": "[2023-present software engineer @ freelance, 2021-2023 android developer, 2019-2021 learning to code]",
+  "--stats": "[years coding: 5+, projects built: 20+, cups of coffee: infinity]",
+  "--achievements": "[best project award, android development certification, open source contributor]",
+  "--hobbies": "[gaming, photography, music, reading]",
   "--projects": "[aplikasi-catatan, portfolio-website, rest-api-basic]",
   "--contact": "github.com/drogan120 · drogan120@gmail.com",
-  help: "commands: --about, --skills, --projects, --contact, --view <template>, clear, help",
+  help: "commands: --about, --skills, --experience, --stats, --achievements, --hobbies, --projects, --contact, --view <template>, clear, help",
 };
 
 export default function TerminalView() {
