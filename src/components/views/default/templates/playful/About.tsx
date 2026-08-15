@@ -1,0 +1,39 @@
+import { useI18n } from "@/i18n";
+
+const emojis = ["🚀", "📱", "🧩"];
+
+export default function PlayfulAbout() {
+  const { t } = useI18n();
+
+  return (
+    <section id="about" className="mx-auto max-w-5xl px-6 py-24">
+      <div className="text-center">
+        <p className="font-mono text-sm text-accent">{t.default.about.label}</p>
+        <h2 className="mt-2 text-4xl font-extrabold tracking-tight">
+          {t.default.about.title}
+        </h2>
+      </div>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {t.default.about.cards.map((card, i) => (
+          <div
+            key={card.title}
+            className="group rounded-3xl border border-border bg-card p-8 transition-all hover:-translate-y-2 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10"
+          >
+            <span className="text-4xl">{emojis[i]}</span>
+            <h3 className="mt-4 text-lg font-bold text-accent">
+              {card.title}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              {card.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <p className="mx-auto mt-12 max-w-3xl text-center leading-relaxed text-muted">
+        {t.default.about.paragraph}
+      </p>
+    </section>
+  );
+}

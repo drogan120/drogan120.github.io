@@ -1,23 +1,14 @@
-import Navbar from "./Navbar";
-import Hero from "./Hero";
-import About from "./About";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Contact from "./Contact";
-import Footer from "./Footer";
+"use client";
+
+import { useTemplate } from "@/components/providers/TemplateProvider";
+import MinimalTemplate from "./templates/minimal";
+import PlayfulTemplate from "./templates/playful";
+import ClassicTemplate from "./templates/classic";
 
 export default function DefaultView() {
-  return (
-    <>
-      <Navbar />
-      <main className="flex-1">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </>
-  );
+  const { template } = useTemplate();
+
+  if (template === "playful") return <PlayfulTemplate />;
+  if (template === "classic") return <ClassicTemplate />;
+  return <MinimalTemplate />;
 }

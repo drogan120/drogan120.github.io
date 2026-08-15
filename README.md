@@ -5,7 +5,8 @@ Dibangun dengan **Next.js (App Router) + TypeScript + Tailwind CSS**, dan di-dep
 
 ## Fitur
 
-- **2 tampilan (view)**: `default` (portofolio simple) dan `apiDocs` (gaya dokumentasi API) — bisa di-switch via SettingsBar
+- **3 tampilan (view)**: `default`, `apiDocs` (gaya dokumentasi API), `terminal` (interaktif) — di-switch via SettingsBar
+- **3 template di view default**: `minimal`, `playful`, `classic` — di-switch via TemplateSwitcher
 - **Dark / Light mode** — tersimpan di localStorage
 - **3 bahasa**: English (default), Indonesia, 日本語 — tersimpan di localStorage
 
@@ -43,11 +44,12 @@ src/
 ├── app/                    # layout & halaman utama
 │   └── themes/             # token warna per tema (dark.css, light.css)
 ├── components/
-│   ├── providers/          # ThemeProvider, ViewProvider, Providers
+│   ├── providers/          # Theme, View, Template, I18n providers
 │   ├── shared/             # SettingsBar (view/theme/bahasa switcher)
 │   └── views/
-│       ├── default/        # tampilan portofolio simple
-│       └── api-docs/       # tampilan gaya dokumentasi API
+│       ├── default/        # 3 template: minimal, playful, classic
+│       ├── api-docs/       # tampilan gaya dokumentasi API
+│       └── terminal/       # tampilan terminal interaktif
 ├── hooks/                  # useLocalStorage
 └── i18n/                   # en.ts, id.ts, ja.ts + I18nProvider
 ```
