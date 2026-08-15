@@ -1,35 +1,15 @@
-const projects = [
-  {
-    title: "Aplikasi Android Pertama",
-    description:
-      "Aplikasi Android sederhana untuk mencatat catatan harian, dibangun dengan Kotlin dan Jetpack Compose.",
-    tags: ["Kotlin", "Jetpack Compose"],
-    icon: "📱",
-  },
-  {
-    title: "Portofolio Website",
-    description:
-      "Website portofolio personal ini, dibangun dengan Next.js dan TypeScript, di-deploy ke GitHub Pages.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    icon: "⚡",
-  },
-  {
-    title: "REST API Sederhana",
-    description:
-      "API CRUD untuk manajemen data sederhana menggunakan Node.js dan database PostgreSQL.",
-    tags: ["Node.js", "PostgreSQL"],
-    icon: "🛠️",
-  },
-];
+import { useI18n } from "@/i18n";
 
 export default function Projects() {
+  const { t } = useI18n();
+
   return (
     <section id="projects" className="mx-auto max-w-5xl px-6 py-24">
-      <p className="font-mono text-sm text-accent">// proyek</p>
-      <h2 className="mt-2 text-3xl font-bold">Proyek Saya</h2>
+      <p className="font-mono text-sm text-accent">{t.default.projects.label}</p>
+      <h2 className="mt-2 text-3xl font-bold">{t.default.projects.title}</h2>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {projects.map((project) => (
+        {t.default.projects.items.map((project) => (
           <a
             key={project.title}
             href="#projects"

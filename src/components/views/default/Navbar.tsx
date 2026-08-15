@@ -1,15 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useI18n } from "@/i18n";
+import SettingsBar from "@/components/shared/SettingsBar";
 
 const links = [
-  { href: "#about", label: "Tentang" },
-  { href: "#skills", label: "Keahlian" },
-  { href: "#projects", label: "Proyek" },
-  { href: "#contact", label: "Kontak" },
-];
+  { href: "#about", key: "about" },
+  { href: "#skills", key: "skills" },
+  { href: "#projects", key: "projects" },
+  { href: "#contact", key: "contact" },
+] as const;
 
 export default function Navbar() {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -40,7 +43,7 @@ export default function Navbar() {
                 href={link.href}
                 className="text-sm text-foreground/80 transition-colors hover:text-accent"
               >
-                {link.label}
+                {t.default.nav[link.key]}
               </a>
             </li>
           ))}
@@ -49,10 +52,14 @@ export default function Navbar() {
               href="#contact"
               className="rounded-full border border-accent px-4 py-1.5 text-sm text-accent transition-colors hover:bg-accent hover:text-background"
             >
-              Hire Me
+              {t.default.nav.hire}
             </a>
           </li>
         </ul>
+
+        <div className="hidden md:block">
+          <SettingsBar />
+        </div>
 
         <button
           onClick={() => setOpen(!open)}
@@ -65,6 +72,9 @@ export default function Navbar() {
 
       {open && (
         <div className="border-t border-border bg-background px-6 py-4 md:hidden">
+          <div className="mb-4">
+            <SettingsBar />
+          </div>
           <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li key={link.href}>
@@ -73,7 +83,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className="text-foreground/80 transition-colors hover:text-accent"
                 >
-                  {link.label}
+                  {t.default.nav[link.key]}
                 </a>
               </li>
             ))}

@@ -1,0 +1,20 @@
+/* ============================================================
+   THEME: DARK (default)
+   ============================================================ */
+:root,
+.dark {
+  --background: #0a0a0f;
+  --foreground: #d4d4d8;
+  --accent: #22d3ee;
+  --accent-2: #a78bfa;
+  --muted: #71717a;
+  --card: #121218;
+  --border: #27272a;
+  --get: #4ade80;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #a78bfa;
+  --selection-bg: #22d3ee;
+  --selection-fg: #0a0a0f;
+}

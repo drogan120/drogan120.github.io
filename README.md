@@ -3,6 +3,12 @@
 Portofolio pribadi **Drogan** — Software Engineer & Android Developer.
 Dibangun dengan **Next.js (App Router) + TypeScript + Tailwind CSS**, dan di-deploy sebagai situs statis ke **GitHub Pages**.
 
+## Fitur
+
+- **2 tampilan (view)**: `default` (portofolio simple) dan `apiDocs` (gaya dokumentasi API) — bisa di-switch via SettingsBar
+- **Dark / Light mode** — tersimpan di localStorage
+- **3 bahasa**: English (default), Indonesia, 日本語 — tersimpan di localStorage
+
 ## Tech Stack
 
 - [Next.js](https://nextjs.org) (static export)
@@ -33,14 +39,22 @@ Ada 2 cara:
 ## Struktur
 
 ```
-app/           # layout & halaman utama
-components/    # Navbar, Hero, About, Skills, Projects, Contact, Footer
-public/        # aset statis
+src/
+├── app/                    # layout & halaman utama
+│   └── themes/             # token warna per tema (dark.css, light.css)
+├── components/
+│   ├── providers/          # ThemeProvider, ViewProvider, Providers
+│   ├── shared/             # SettingsBar (view/theme/bahasa switcher)
+│   └── views/
+│       ├── default/        # tampilan portofolio simple
+│       └── api-docs/       # tampilan gaya dokumentasi API
+├── hooks/                  # useLocalStorage
+└── i18n/                   # en.ts, id.ts, ja.ts + I18nProvider
 ```
 
 ## Kustomisasi
 
-- **Konten profil**: edit `components/About.tsx`, `Hero.tsx`
-- **Proyek**: tambah/edit di `components/Projects.tsx`
-- **Link kontak**: edit `components/Contact.tsx`
-- **Warna tema**: ubah variabel `--accent`, `--background`, dll di `app/globals.css`
+- **Teks per bahasa**: edit `src/i18n/en.ts`, `id.ts`, `ja.ts` (struktur harus sama)
+- **Tambah view baru**: buat folder di `src/components/views/`, lalu daftarkan di `ViewProvider` & `SettingsBar`
+- **Warna tema**: ubah token di `src/app/themes/dark.css` dan `light.css`
+- **Konten proyek/skills**: edit dictionary di `src/i18n/*.ts`
