@@ -9,6 +9,7 @@ import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
 import type { ColorScheme } from "@/components/providers/ColorSchemeProvider";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
+import { useCommandPalette } from "@/components/shared/CommandPalette";
 
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -57,6 +58,7 @@ export default function SettingsBar() {
   const { theme, setTheme } = useTheme();
   const { scheme, setScheme } = useColorScheme();
   const { lang, setLang, t } = useI18n();
+  const palette = useCommandPalette();
 
   useEffect(() => {
     if (!open) return;
@@ -113,7 +115,22 @@ export default function SettingsBar() {
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-64 max-w-[calc(100vw-2rem)] space-y-3 overflow-y-auto rounded-xl border border-border bg-background p-4 shadow-2xl shadow-black/40">
+        <div className="absolute right-0 z-50 mt-2 max-h-[75vh] w-64 max-w-[calc(100vw-2rem)] space-y-3 overflow-y-auto rounded-xl border border-border bg-background p-4 shadow-2xl shadow-black/40">
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              palette.open();
+            }}
+            className="flex w-full items-center justify-between gap-2 rounded-lg border border-border px-3 py-2 text-left text-xs transition-colors hover:border-accent hover:text-accent"
+          >
+            <span className="flex min-w-0 items-center gap-2">
+              <span aria-hidden>🔍</span>
+              <span className="truncate">{t.palette.open}</span>
+            </span>
+            <span className="shrink-0 font-mono text-[10px] text-muted">⌘K</span>
+          </button>
+
           <Group title="Template">
             <OptionGroup
               options={templateOptions}

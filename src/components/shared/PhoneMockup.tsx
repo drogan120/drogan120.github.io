@@ -20,11 +20,13 @@ const COMPACT: Record<GallerySize, boolean> = {
 export default function PhoneMockup({
   item,
   size = "lg",
+  className = "",
 }: {
   item: GalleryItem;
   size?: GallerySize;
+  className?: string;
 }) {
-  const frame = `${FRAME_BASE} ${FRAME_MAX[size]}`;
+  const frame = `${FRAME_BASE} ${FRAME_MAX[size]} ${className}`;
   const compact = COMPACT[size];
 
   if (item.src) {
@@ -42,7 +44,7 @@ export default function PhoneMockup({
   }
 
   return (
-    <div className={`${frame} transition-transform hover:-translate-y-1`}>
+    <div className={frame}>
       <div className="relative overflow-hidden rounded-[1.35rem] sm:rounded-[1.5rem]">
         <div
           aria-hidden

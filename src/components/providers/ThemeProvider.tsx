@@ -12,12 +12,12 @@ type ThemeContextValue = {
 };
 
 const ThemeContext = createContext<ThemeContextValue>({
-  theme: "dark",
+  theme: "light",
   setTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<Theme>("drogan.theme", "dark");
+  const [theme, setTheme] = useLocalStorage<Theme>("drogan.theme", "light");
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");

@@ -200,6 +200,124 @@ a:hover > .wiggle-on-hover {
 }
 
 /* ============================================================
+   CUTE MASCOT
+   Shared by the preloader and the error pages: a little app-icon
+   buddy that blinks. Sized in percentages so one set of rules
+   works at any scale.
+   ============================================================ */
+
+.buddy {
+  position: relative;
+  flex: none;
+  border-radius: 30%;
+  background: linear-gradient(160deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 30px -12px var(--accent);
+}
+
+.buddy-sm {
+  width: 56px;
+  height: 56px;
+}
+
+.buddy-lg {
+  width: 96px;
+  height: 96px;
+}
+
+.buddy-eye {
+  position: absolute;
+  top: 38%;
+  width: 13%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  animation: blink 2.6s ease-in-out infinite;
+}
+
+.buddy-eye-left {
+  left: 26%;
+}
+
+.buddy-eye-right {
+  right: 26%;
+}
+
+.buddy-mouth {
+  position: absolute;
+  bottom: 24%;
+  left: 50%;
+  width: 30%;
+  height: 15%;
+  transform: translateX(-50%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-top: 0;
+  border-radius: 0 0 999px 999px;
+}
+
+/* Same mouth, flipped, for the error pages. */
+.buddy-mouth-sad {
+  bottom: 18%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+}
+
+.buddy-shadow {
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--muted);
+  opacity: 0.28;
+}
+
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes buddy-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 0.93);
+  }
+  30% {
+    transform: translateY(-24px) scale(0.95, 1.06);
+  }
+  60% {
+    transform: translateY(0) scale(1.04, 0.95);
+  }
+}
+
+@keyframes buddy-shadow-squish {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.28;
+  }
+  30% {
+    transform: scale(0.6);
+    opacity: 0.1;
+  }
+}
+
+.buddy-bounce {
+  animation: buddy-bounce 1.1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.buddy-shadow-squish {
+  animation: buddy-shadow-squish 1.1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.buddy-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* ============================================================
    PRELOADER
    ============================================================ */
 
@@ -228,15 +346,29 @@ a:hover > .wiggle-on-hover {
   inset: 0;
   z-index: 9999;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 20px;
   background: var(--background);
 }
 
+/* Keeps the buddy and its shadow together while both animate. */
+.preloader-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.preloader-dots {
+  display: flex;
+  gap: 8px;
+}
+
 .preloader-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 9999px;
   background: var(--accent);
   animation: preloader-bounce 1.2s ease-in-out infinite;
@@ -285,6 +417,118 @@ a:hover > .wiggle-on-hover {
 }
 
 /* ============================================================
+   EXPAND / COLLAPSE + STAGGERED ENTRANCES
+   Used by the gallery (carousel <-> masonry), the command palette
+   and the terminal output.
+   ============================================================ */
+
+@keyframes expand-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes collapse-in {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes item-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The masonry grows out of where the carousel was. */
+.gallery-expand {
+  animation: expand-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ...and the carousel eases back in when collapsing. */
+.gallery-collapse {
+  animation: collapse-in 0.35s ease both;
+}
+
+/*
+ * Per-card stagger. Each card sets --i to its index; the delay is capped so a
+ * long gallery never leaves the last cards waiting seconds to appear.
+ */
+.gallery-item {
+  animation: item-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(min(var(--i, 0), 12) * 45ms);
+}
+
+.palette-overlay {
+  animation: overlay-in 0.18s ease both;
+}
+
+.palette-panel {
+  animation: panel-in 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.terminal-line {
+  animation: line-in 0.25s ease both;
+}
+
+/* Lift the phone frames on hover so the gallery feels tactile. */
+.phone-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.phone-hover:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* ============================================================
    REDUCED MOTION
    Respect the OS setting: content stays visible, motion is dropped.
    ============================================================ */
@@ -298,6 +542,21 @@ a:hover > .wiggle-on-hover {
   .card-in {
     opacity: 1 !important;
     animation: none !important;
+  }
+
+  .gallery-expand,
+  .gallery-collapse,
+  .gallery-item,
+  .palette-overlay,
+  .palette-panel,
+  .terminal-line {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .phone-hover:hover {
+    transform: none !important;
   }
 
   .preloader {

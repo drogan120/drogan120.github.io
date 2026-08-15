@@ -1,8 +1,14 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import PhoneMockup from "./PhoneMockup";
 import { sizeFor, useCarousel } from "@/hooks/useGallery";
 import type { GalleryItem } from "@/data/types";
+
+/** Index handed to CSS so each card can stagger its own entrance. */
+function stagger(i: number): CSSProperties {
+  return { "--i": i } as CSSProperties;
+}
 
 /**
  * Per-template styling slots. The behaviour (scroll snapping, arrow state,
@@ -61,17 +67,18 @@ export function GalleryCarousel({
     "flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background text-lg transition-colors hover:border-accent hover:text-accent disabled:pointer-events-none disabled:opacity-30";
 
   return (
-    <div className="relative">
+    <div className="gallery-collapse relative">
       <div
         ref={ref}
         className="no-scrollbar -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-6 pb-2 sm:gap-6"
       >
-        {items.map((item) => (
+        {items.map((item, i) => (
           <div
             key={item.id}
-            className={`flex shrink-0 snap-start basis-[46%] flex-col items-center gap-3 sm:basis-[31%] lg:basis-[23%] ${styles.card ?? ""}`}
+            style={stagger(i)}
+            className={`gallery-item flex shrink-0 snap-start basis-[46%] flex-col items-center gap-3 sm:basis-[31%] lg:basis-[23%] ${styles.card ?? ""}`}
           >
-            <PhoneMockup item={item} size="lg" />
+            <PhoneMockup item={item} size="lg" className="phone-hover" />
             <Caption item={item} styles={styles} />
           </div>
         ))}
@@ -116,13 +123,14 @@ export function GalleryMasonry({
   styles?: GalleryStyles;
 }) {
   return (
-    <div className="columns-2 gap-4 sm:columns-3 sm:gap-6 lg:columns-4">
+    <div className="gallery-expand columns-2 gap-4 sm:columns-3 sm:gap-6 lg:columns-4">
       {items.map((item, i) => (
         <div
           key={item.id}
-          className={`mb-4 flex break-inside-avoid flex-col items-center gap-3 sm:mb-6 ${styles.card ?? ""}`}
+          style={stagger(i)}
+          className={`gallery-item mb-4 flex break-inside-avoid flex-col items-center gap-3 sm:mb-6 ${styles.card ?? ""}`}
         >
-          <PhoneMockup item={item} size={sizeFor(i)} />
+          <PhoneMockup item={item} size={sizeFor(i)} className="phone-hover" />
           <Caption item={item} styles={styles} />
         </div>
       ))}

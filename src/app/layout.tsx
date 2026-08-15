@@ -124,19 +124,29 @@ const JSON_LD = {
   ],
 };
 
+/**
+ * Applies the stored theme before first paint to avoid a flash. The <html> tag
+ * already ships with the light/mauve defaults, so this only has to correct the
+ * classes when the visitor picked something else — hence the removes.
+ */
+const THEME_SCRIPT = `(function(){try{var r=document.documentElement;var s=localStorage.getItem('drogan.scheme')||'mauve';var t=localStorage.getItem('drogan.theme')||'light';r.classList.remove('dark','light');['mauve','pastel','ocean','forest','sunset'].forEach(function(n){r.classList.remove('scheme-'+n)});r.classList.add('scheme-'+s,t)}catch(e){}})();`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="id"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} light scheme-mauve h-full antialiased`}
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('drogan.scheme')||'mauve';var t=localStorage.getItem('drogan.theme')||'dark';var r=document.documentElement;r.classList.add('scheme-'+s);r.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();`,
-          }}
-        />
+        {/*
+         * Must be a raw, blocking inline script: it has to correct the theme
+         * classes before first paint. next/script + beforeInteractive is not a
+         * substitute — it defers the code into Next's bootstrap (__next_s),
+         * which paints first and flashes. React logs a dev-only warning about
+         * script tags in components; that noise is the accepted cost here.
+         */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}

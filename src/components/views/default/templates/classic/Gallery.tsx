@@ -57,7 +57,12 @@ export default function ClassicGallery() {
             className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
           >
             {expanded ? t.default.gallery.less : t.default.gallery.more}
-            <span aria-hidden>{expanded ? "↑" : "↓"}</span>
+            <span
+              aria-hidden
+              className={`inline-block transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+            >
+              ↓
+            </span>
           </button>
           <p className="mt-3 font-mono text-xs text-muted">
             {t.default.gallery.count

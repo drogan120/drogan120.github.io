@@ -53,7 +53,12 @@ export default function MinimalGallery() {
             className="inline-flex items-center gap-2 font-mono text-sm text-accent underline underline-offset-4 transition-colors hover:text-accent-2"
           >
             {expanded ? t.default.gallery.less : t.default.gallery.more}
-            <span aria-hidden>{expanded ? "↑" : "↓"}</span>
+            <span
+              aria-hidden
+              className={`inline-block transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+            >
+              ↓
+            </span>
           </button>
         )}
         <span className="font-mono text-xs text-muted">

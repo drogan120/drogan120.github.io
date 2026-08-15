@@ -6,6 +6,7 @@ import { ColorSchemeProvider } from "./ColorSchemeProvider";
 import { TemplateProvider } from "./TemplateProvider";
 import { I18nProvider } from "@/i18n";
 import { UrlStateSync } from "./UrlStateSync";
+import { CommandPaletteProvider } from "@/components/shared/CommandPalette";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
@@ -14,7 +15,7 @@ export function Providers({ children }: { children: ReactNode }) {
         <TemplateProvider>
           <I18nProvider>
             <UrlStateSync />
-            {children}
+            <CommandPaletteProvider>{children}</CommandPaletteProvider>
           </I18nProvider>
         </TemplateProvider>
       </ColorSchemeProvider>

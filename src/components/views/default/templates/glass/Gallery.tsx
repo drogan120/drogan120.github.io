@@ -69,7 +69,12 @@ export default function GlassGallery() {
               className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-2.5 text-sm font-semibold backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/15"
             >
               {expanded ? t.default.gallery.less : t.default.gallery.more}
-              <span aria-hidden>{expanded ? "↑" : "↓"}</span>
+              <span
+              aria-hidden
+              className={`inline-block transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+            >
+              ↓
+            </span>
             </button>
             <p className="mt-3 font-mono text-xs text-muted">
               {t.default.gallery.count

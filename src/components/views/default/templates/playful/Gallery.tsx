@@ -63,7 +63,12 @@ export default function PlayfulGallery() {
               className="pop-on-click inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-bold text-background shadow-lg shadow-accent/30 transition-transform hover:-translate-y-0.5"
             >
               {expanded ? t.default.gallery.less : t.default.gallery.more}
-              <span aria-hidden>{expanded ? "↑" : "↓"}</span>
+              <span
+              aria-hidden
+              className={`inline-block transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+            >
+              ↓
+            </span>
             </button>
             <p className="mt-3 font-mono text-xs text-muted">
               {t.default.gallery.count
