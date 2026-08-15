@@ -27,14 +27,14 @@ export default function PastelNavbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/70 shadow-sm backdrop-blur-md dark:bg-gradient-to-r dark:from-purple-500/10 dark:via-pink-500/10 dark:to-sky-500/10"
+          ? "bg-white/70 shadow-sm backdrop-blur-md dark:bg-gradient-to-r dark:from-purple-500/10 dark:via-pink-500/10 dark:to-purple-500/10"
           : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a
           href="#top"
-          className="text-lg font-bold text-slate-700 dark:text-slate-200"
+          className="text-lg font-bold text-slate-700 dark:text-purple-50"
         >
           <span className="text-pink-400">✦</span> drogan
         </a>
@@ -44,7 +44,7 @@ export default function PastelNavbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-slate-500 transition-colors hover:text-pink-400 dark:text-slate-400"
+                className="text-sm font-medium text-slate-500 transition-colors hover:text-pink-400 dark:text-purple-100/60"
               >
                 {t.default.nav[link.key]}
               </a>
@@ -56,7 +56,7 @@ export default function PastelNavbar() {
           <SettingsBar />
           <button
             onClick={() => setOpen(!open)}
-            className="flex h-9 w-9 items-center justify-center text-xl text-slate-700 md:hidden dark:text-slate-200"
+            className="flex h-9 w-9 items-center justify-center text-xl text-slate-700 md:hidden dark:text-purple-50"
             aria-label="Menu"
           >
             {open ? "✕" : "☰"}
@@ -65,14 +65,14 @@ export default function PastelNavbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-100 bg-white px-6 py-4 md:hidden dark:border-white/10 dark:bg-gradient-to-b dark:from-purple-500/15 dark:to-sky-500/10">
+        <div className="border-t border-slate-100 bg-white px-6 py-4 md:hidden dark:border-white/10 dark:bg-gradient-to-b dark:from-purple-500/15 dark:to-pink-500/10">
           <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-slate-500 dark:text-slate-400"
+                  className="text-sm font-medium text-slate-500 dark:text-purple-100/60"
                 >
                   {t.default.nav[link.key]}
                 </a>

@@ -1,20 +1,20 @@
 /* ============================================================
-   THEME: DARK (default)
+   THEME: DARK (deep mauve)
    ============================================================ */
 :root,
 .dark {
-  --background: #0a0a0f;
-  --foreground: #d4d4d8;
-  --accent: #22d3ee;
+  --background: #171322;
+  --foreground: #e9e4f0;
+  --accent: #f472b6;
   --accent-2: #a78bfa;
-  --muted: #71717a;
-  --card: #121218;
-  --border: #27272a;
-  --get: #4ade80;
+  --muted: #8f869c;
+  --card: #211a30;
+  --border: #332945;
+  --get: #34d399;
   --post: #fbbf24;
   --json-key: #67e8f9;
   --json-string: #fbbf24;
   --json-number: #a78bfa;
-  --selection-bg: #22d3ee;
-  --selection-fg: #0a0a0f;
+  --selection-bg: #f472b6;
+  --selection-fg: #171322;
 }

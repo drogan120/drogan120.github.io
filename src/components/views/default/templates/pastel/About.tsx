@@ -1,15 +1,15 @@
 import { useI18n } from "@/i18n";
 
 const cardColors = [
-  "from-pink-100/70 to-pink-50/70 dark:from-pink-400/25 dark:to-purple-400/15",
-  "from-purple-100/70 to-purple-50/70 dark:from-purple-400/25 dark:to-sky-400/15",
-  "from-sky-100/70 to-sky-50/70 dark:from-sky-400/25 dark:to-pink-400/15",
+  "from-pink-100/70 to-pink-50/70 dark:from-pink-400/20 dark:to-purple-400/10",
+  "from-purple-100/70 to-purple-50/70 dark:from-purple-400/20 dark:to-pink-400/10",
+  "from-pink-100/70 to-purple-50/70 dark:from-pink-400/15 dark:to-purple-400/15",
 ];
 
 const accentColors = [
   "text-pink-400 dark:text-pink-300",
   "text-purple-400 dark:text-purple-300",
-  "text-sky-400 dark:text-sky-300",
+  "text-purple-400 dark:text-pink-300",
 ];
 
 export default function PastelAbout() {
@@ -21,7 +21,7 @@ export default function PastelAbout() {
         <p className="font-mono text-sm text-purple-400 dark:text-purple-300">
           {t.default.about.label}
         </p>
-        <h2 className="mt-3 text-3xl font-bold text-slate-800 dark:text-slate-100">
+        <h2 className="mt-3 text-3xl font-bold text-slate-800 dark:text-purple-50">
           {t.default.about.title}
         </h2>
       </div>
@@ -35,19 +35,19 @@ export default function PastelAbout() {
             <span className={`text-sm font-bold ${accentColors[i]}`}>
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="mt-3 text-lg font-semibold text-slate-700 dark:text-slate-200">
+            <h3 className="mt-3 text-lg font-semibold text-slate-700 dark:text-purple-50">
               {card.title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+            <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-purple-100/60">
               {card.description}
             </p>
           </div>
         ))}
       </div>
 
-      <p className="mx-auto mt-14 max-w-3xl text-center leading-relaxed text-slate-500 dark:text-slate-400">
-        {t.default.about.paragraph}
-      </p>
+        <p className="mx-auto mt-14 max-w-3xl text-center leading-relaxed text-slate-500 dark:text-purple-100/60">
+          {t.default.about.paragraph}
+        </p>
     </section>
   );
 }

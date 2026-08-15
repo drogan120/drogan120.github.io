@@ -1,9 +1,9 @@
 import { useI18n } from "@/i18n";
 
 const blobs = [
-  { className: "bg-pink-200/50 dark:bg-pink-500/10", top: "0%", left: "10%" },
-  { className: "bg-purple-200/50 dark:bg-purple-500/10", top: "45%", left: "70%" },
-  { className: "bg-sky-200/50 dark:bg-sky-500/10", top: "10%", left: "60%" },
+  { className: "bg-pink-200/50 dark:bg-pink-500/15", top: "0%", left: "10%" },
+  { className: "bg-purple-200/50 dark:bg-purple-500/15", top: "45%", left: "70%" },
+  { className: "bg-purple-200/50 dark:bg-pink-500/10", top: "10%", left: "60%" },
 ];
 
 export default function PastelHero() {
@@ -22,18 +22,18 @@ export default function PastelHero() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 py-24 text-center sm:py-32">
-        <span className="inline-block rounded-full bg-white/70 px-5 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-pink-400/15 dark:text-pink-100 dark:ring-1 dark:ring-pink-300/20">
+        <span className="inline-block rounded-full bg-white/70 px-5 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-purple-400/15 dark:text-purple-100 dark:ring-1 dark:ring-purple-300/20">
           👋 {t.default.hero.badge}
         </span>
 
-        <h1 className="mt-8 text-5xl font-bold tracking-tight text-slate-800 sm:text-6xl dark:text-slate-100">
+        <h1 className="mt-8 text-5xl font-bold tracking-tight text-slate-800 sm:text-6xl dark:text-purple-50">
           {t.default.hero.hello}{" "}
-          <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-300 bg-clip-text text-transparent">
             Drogan
           </span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-500 dark:text-slate-400">
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-500 dark:text-purple-100/60">
           {t.default.hero.tagline}
         </p>
 
@@ -53,7 +53,7 @@ export default function PastelHero() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-4">
-          <span className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-sky-400/15 dark:text-sky-100 dark:ring-1 dark:ring-sky-300/20">
+          <span className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-pink-400/15 dark:text-pink-100 dark:ring-1 dark:ring-pink-300/20">
             <span className="h-2 w-2 animate-pulse rounded-full bg-pink-400" />
             {t.default.hero.available}
           </span>
