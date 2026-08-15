@@ -5,13 +5,13 @@ export default function FashionAbout() {
 
   return (
     <section id="about" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-8 py-16 md:py-24">
-        <div className="grid gap-16 md:grid-cols-2">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 md:py-24">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <p className="text-xs uppercase tracking-[0.4em] text-accent">
               {t.default.about.label}
             </p>
-            <h2 className="mt-6 font-serif text-5xl font-light leading-tight">
+            <h2 className="mt-6 font-serif text-4xl font-light leading-tight sm:text-5xl">
               {t.default.about.title}
             </h2>
             <div className="mt-10 h-px w-full bg-border" />

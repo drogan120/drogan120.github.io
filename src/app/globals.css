@@ -61,6 +61,16 @@ body {
   height: 6px;
 }
 
+/* Swipeable gallery carousel: keep the native scroll, drop the visible bar. */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes gradient-x {
   0%,
   100% {

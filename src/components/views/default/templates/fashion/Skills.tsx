@@ -15,11 +15,11 @@ export default function FashionSkills() {
 
   return (
     <section id="skills" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-8 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 md:py-24">
         <p className="text-center text-xs uppercase tracking-[0.4em] text-accent">
           {t.default.skills.label}
         </p>
-        <h2 className="mt-6 text-center font-serif text-5xl font-light">
+        <h2 className="mt-6 text-center font-serif text-4xl font-light sm:text-5xl">
           {t.default.skills.title}
         </h2>
 

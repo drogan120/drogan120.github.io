@@ -66,6 +66,7 @@ const id: Dictionary = {
       followers: "Pengikut",
       contributions: "Kontribusi",
       viewProfile: "Lihat Profil",
+      counts: data.default.github,
     },
     blog: {
       label: "// blog",
@@ -85,8 +86,10 @@ const id: Dictionary = {
       label: "// galeri",
       title: "Tangkapan Layar Aplikasi",
       description: "Sekilas aplikasi yang pernah saya buat.",
-      view: "Lihat",
-      items: data.default.gallery.items,
+      all: "Semua",
+      more: "Tampilkan lainnya",
+      less: "Tampilkan lebih sedikit",
+      count: "menampilkan {shown} dari {total}",
     },
     resume: {
       download: "Download Resume",
@@ -160,9 +163,8 @@ const id: Dictionary = {
       description: data.apiDocs.blog.description,
     },
     gallery: {
-      response: "Respons 200",
+      response: "Response 200",
       description: data.apiDocs.gallery.description,
-      data: data.apiDocs.gallery.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

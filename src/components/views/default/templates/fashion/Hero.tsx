@@ -7,13 +7,13 @@ export default function FashionHero() {
 
   return (
     <section id="top" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-8 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 md:py-28">
         <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-accent">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-accent sm:text-xs sm:tracking-[0.4em]">
             {t.default.hero.badge}
           </p>
 
-          <h1 className="mt-8 font-serif text-6xl font-light leading-none sm:text-8xl md:text-9xl">
+          <h1 className="mt-8 break-words font-serif text-5xl font-light leading-[1.05] sm:text-7xl md:text-8xl">
             {t.default.hero.hello}
           </h1>
 

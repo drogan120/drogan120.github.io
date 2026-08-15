@@ -65,6 +65,7 @@ const en = {
       followers: "Followers",
       contributions: "Contributions",
       viewProfile: "View Profile",
+      counts: data.default.github,
     },
     blog: {
       label: "// blog",
@@ -84,8 +85,10 @@ const en = {
       label: "// gallery",
       title: "App Screenshots",
       description: "A quick look at the apps I've built.",
-      view: "View",
-      items: data.default.gallery.items,
+      all: "All",
+      more: "Show more",
+      less: "Show less",
+      count: "showing {shown} of {total}",
     },
     resume: {
       download: "Download Resume",
@@ -161,7 +164,6 @@ const en = {
     gallery: {
       response: "Response 200",
       description: data.apiDocs.gallery.description,
-      data: data.apiDocs.gallery.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

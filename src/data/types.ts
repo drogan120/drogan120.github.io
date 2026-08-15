@@ -10,8 +10,10 @@ export type BlogPost = {
 };
 
 export type GalleryItem = {
+  id: string;
   title: string;
   tag: string;
+  platform: string;
   accent: string;
   accent2: string;
   src: string | null;

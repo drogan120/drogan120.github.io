@@ -66,6 +66,7 @@ const ja: Dictionary = {
       followers: "フォロワー",
       contributions: "コントリビューション",
       viewProfile: "プロフィールを見る",
+      counts: data.default.github,
     },
     blog: {
       label: "// ブログ",
@@ -85,8 +86,10 @@ const ja: Dictionary = {
       label: "// ギャラリー",
       title: "アプリのスクリーンショット",
       description: "作ったアプリの簡単な紹介。",
-      view: "表示",
-      items: data.default.gallery.items,
+      all: "すべて",
+      more: "もっと見る",
+      less: "閉じる",
+      count: "{total}件中{shown}件を表示",
     },
     resume: {
       download: "履歴書をダウンロード",
@@ -160,9 +163,8 @@ const ja: Dictionary = {
       description: data.apiDocs.blog.description,
     },
     gallery: {
-      response: "レスポンス 200",
+      response: "Response 200",
       description: data.apiDocs.gallery.description,
-      data: data.apiDocs.gallery.data,
     },
     contact: {
       description: data.apiDocs.contact.description,
