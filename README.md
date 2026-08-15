@@ -42,14 +42,15 @@ Ada 2 cara:
 ```
 src/
 ├── app/                    # layout & halaman utama
-│   └── themes/             # token warna per tema (dark.css, light.css)
+│   └── themes/             # palettes.css (5 color scheme × dark/light)
 ├── components/
-│   ├── providers/          # Theme, View, Template, I18n providers
-│   ├── shared/             # SettingsBar (view/theme/bahasa switcher)
+│   ├── providers/          # Theme, ColorScheme, Template, I18n providers
+│   ├── shared/             # SettingsBar (template/theme/color/bahasa switcher)
 │   └── views/
-│       ├── default/        # 3 template: minimal, playful, classic
+│       ├── default/        # 7 template: minimal, playful, classic, brutalist, fashion, pastel, glass
 │       ├── api-docs/       # tampilan gaya dokumentasi API
 │       └── terminal/       # tampilan terminal interaktif
+├── data/                   # en.json, id.json, ja.json (data pribadi per bahasa)
 ├── hooks/                  # useLocalStorage
 └── i18n/                   # en.ts, id.ts, ja.ts + I18nProvider
 ```
@@ -57,6 +58,7 @@ src/
 ## Kustomisasi
 
 - **Teks per bahasa**: edit `src/i18n/en.ts`, `id.ts`, `ja.ts` (struktur harus sama)
-- **Tambah view baru**: buat folder di `src/components/views/`, lalu daftarkan di `ViewProvider` & `SettingsBar`
-- **Warna tema**: ubah token di `src/app/themes/dark.css` dan `light.css`
-- **Konten proyek/skills**: edit dictionary di `src/i18n/*.ts`
+- **Data pribadi**: edit `src/data/en.json`, `id.json`, `ja.json` (nama, tagline, about, skills, projects, contact)
+- **Tambah template baru**: buat folder di `src/components/views/default/templates/`, lalu daftarkan di `TemplateProvider` & `SettingsBar`
+- **Warna/color scheme**: ubah token di `src/app/themes/palettes.css` (5 palet × dark/light)
+- **Konten proyek/skills**: edit `src/data/*.json`

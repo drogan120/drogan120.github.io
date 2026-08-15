@@ -1,0 +1,181 @@
+/* ============================================================
+   COLOR SCHEMES
+   Each scheme defines light & dark variants.
+   Applied via <html class="scheme-* dark|light">.
+   ============================================================ */
+
+/* ---------- Mauve (default) ---------- */
+:root,
+.scheme-mauve.dark {
+  --background: #171322;
+  --foreground: #e9e4f0;
+  --accent: #f472b6;
+  --accent-2: #a78bfa;
+  --muted: #8f869c;
+  --card: #211a30;
+  --border: #332945;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #a78bfa;
+  --selection-bg: #f472b6;
+  --selection-fg: #171322;
+}
+
+.scheme-mauve.light {
+  --background: #fdf6f9;
+  --foreground: #3d2a33;
+  --accent: #ec4899;
+  --accent-2: #a855f7;
+  --muted: #8b7d8a;
+  --card: #f7eef3;
+  --border: #eadbe3;
+  --get: #16a34a;
+  --post: #d97706;
+  --json-key: #0e7490;
+  --json-string: #b45309;
+  --json-number: #6d28d9;
+  --selection-bg: #ec4899;
+  --selection-fg: #ffffff;
+}
+
+/* ---------- Pastel ---------- */
+.scheme-pastel.dark {
+  --background: #1a1626;
+  --foreground: #eee8f6;
+  --accent: #f9a8d4;
+  --accent-2: #c4b5fd;
+  --muted: #9d92b5;
+  --card: #241e33;
+  --border: #38304f;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #c4b5fd;
+  --selection-bg: #f9a8d4;
+  --selection-fg: #1a1626;
+}
+
+.scheme-pastel.light {
+  --background: #fbf7ff;
+  --foreground: #3b3554;
+  --accent: #ec4899;
+  --accent-2: #8b5cf6;
+  --muted: #8b84a3;
+  --card: #f4eefb;
+  --border: #e6def3;
+  --get: #16a34a;
+  --post: #d97706;
+  --json-key: #0e7490;
+  --json-string: #b45309;
+  --json-number: #6d28d9;
+  --selection-bg: #ec4899;
+  --selection-fg: #ffffff;
+}
+
+/* ---------- Ocean ---------- */
+.scheme-ocean.dark {
+  --background: #0b1420;
+  --foreground: #e2ecf7;
+  --accent: #38bdf8;
+  --accent-2: #22d3ee;
+  --muted: #7c91a8;
+  --card: #101c2c;
+  --border: #223449;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #22d3ee;
+  --selection-bg: #38bdf8;
+  --selection-fg: #0b1420;
+}
+
+.scheme-ocean.light {
+  --background: #f0f7ff;
+  --foreground: #14304d;
+  --accent: #0284c7;
+  --accent-2: #0ea5e9;
+  --muted: #647b94;
+  --card: #e3f0fb;
+  --border: #c9dff2;
+  --get: #16a34a;
+  --post: #d97706;
+  --json-key: #0369a1;
+  --json-string: #b45309;
+  --json-number: #0ea5e9;
+  --selection-bg: #0284c7;
+  --selection-fg: #ffffff;
+}
+
+/* ---------- Forest ---------- */
+.scheme-forest.dark {
+  --background: #0d1512;
+  --foreground: #e4efe8;
+  --accent: #34d399;
+  --accent-2: #4ade80;
+  --muted: #7fa08d;
+  --card: #13201a;
+  --border: #243830;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #4ade80;
+  --selection-bg: #34d399;
+  --selection-fg: #0d1512;
+}
+
+.scheme-forest.light {
+  --background: #f2faf5;
+  --foreground: #12402e;
+  --accent: #059669;
+  --accent-2: #10b981;
+  --muted: #5f8871;
+  --card: #e2f5ea;
+  --border: #c5e8d5;
+  --get: #16a34a;
+  --post: #d97706;
+  --json-key: #0369a1;
+  --json-string: #b45309;
+  --json-number: #10b981;
+  --selection-bg: #059669;
+  --selection-fg: #ffffff;
+}
+
+/* ---------- Sunset ---------- */
+.scheme-sunset.dark {
+  --background: #1a1214;
+  --foreground: #f3e6e2;
+  --accent: #fb923c;
+  --accent-2: #f472b6;
+  --muted: #a08984;
+  --card: #241a1c;
+  --border: #3a2b2e;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #f472b6;
+  --selection-bg: #fb923c;
+  --selection-fg: #1a1214;
+}
+
+.scheme-sunset.light {
+  --background: #fdf6f1;
+  --foreground: #4a2320;
+  --accent: #ea580c;
+  --accent-2: #ec4899;
+  --muted: #9c6b61;
+  --card: #f8eae0;
+  --border: #ecd9cb;
+  --get: #16a34a;
+  --post: #d97706;
+  --json-key: #0369a1;
+  --json-string: #b45309;
+  --json-number: #ec4899;
+  --selection-bg: #ea580c;
+  --selection-fg: #ffffff;
+}

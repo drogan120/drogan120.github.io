@@ -5,6 +5,8 @@ import { useI18n } from "@/i18n";
 import type { Language } from "@/i18n";
 import { languages } from "@/i18n";
 import { useTheme } from "@/components/providers/ThemeProvider";
+import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
+import type { ColorScheme } from "@/components/providers/ColorSchemeProvider";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
 
@@ -53,6 +55,7 @@ export default function SettingsBar() {
 
   const { template, setTemplate } = useTemplate();
   const { theme, setTheme } = useTheme();
+  const { scheme, setScheme } = useColorScheme();
   const { lang, setLang, t } = useI18n();
 
   useEffect(() => {
@@ -83,6 +86,14 @@ export default function SettingsBar() {
     { value: "glass", label: "Glass" },
     { value: "apiDocs", label: "API Docs" },
     { value: "terminal", label: "Terminal" },
+  ];
+
+  const schemeOptions: { value: ColorScheme; label: string }[] = [
+    { value: "mauve", label: "Mauve" },
+    { value: "pastel", label: "Pastel" },
+    { value: "ocean", label: "Ocean" },
+    { value: "forest", label: "Forest" },
+    { value: "sunset", label: "Sunset" },
   ];
 
   const langOptions = (Object.keys(languages) as Language[]).map((key) => ({
@@ -127,6 +138,14 @@ export default function SettingsBar() {
                 </button>
               ))}
             </div>
+          </Group>
+
+          <Group title="Color">
+            <OptionGroup
+              options={schemeOptions}
+              value={scheme}
+              onSelect={setScheme}
+            />
           </Group>
 
           <Group title="Language">
