@@ -11,7 +11,7 @@ export default function PastelContact() {
 
   return (
     <section id="contact" className="mx-auto max-w-5xl px-6 py-24">
-      <div className="rounded-[2.5rem] bg-gradient-to-br from-pink-100/60 via-purple-100/60 to-sky-100/60 p-12 text-center sm:p-16 dark:from-pink-500/10 dark:via-purple-500/10 dark:to-sky-500/10">
+      <div className="rounded-[2.5rem] bg-gradient-to-br from-pink-100/60 via-purple-100/60 to-sky-100/60 p-12 text-center sm:p-16 dark:from-pink-400/25 dark:via-purple-400/20 dark:to-sky-400/25 dark:ring-1 dark:ring-white/10">
         <p className="font-mono text-sm text-purple-400 dark:text-purple-300">
           {t.default.contact.label}
         </p>

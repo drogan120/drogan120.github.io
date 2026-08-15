@@ -1,10 +1,10 @@
 import { useI18n } from "@/i18n";
 
 const pillColors = [
-  "bg-pink-100/80 text-pink-500 dark:bg-pink-500/15 dark:text-pink-300",
-  "bg-purple-100/80 text-purple-500 dark:bg-purple-500/15 dark:text-purple-300",
-  "bg-sky-100/80 text-sky-500 dark:bg-sky-500/15 dark:text-sky-300",
-  "bg-amber-100/80 text-amber-500 dark:bg-amber-500/15 dark:text-amber-300",
+  "bg-pink-100/80 text-pink-500 dark:bg-pink-400/20 dark:text-pink-200 dark:ring-1 dark:ring-pink-300/20",
+  "bg-purple-100/80 text-purple-500 dark:bg-purple-400/20 dark:text-purple-200 dark:ring-1 dark:ring-purple-300/20",
+  "bg-sky-100/80 text-sky-500 dark:bg-sky-400/20 dark:text-sky-200 dark:ring-1 dark:ring-sky-300/20",
+  "bg-amber-100/80 text-amber-500 dark:bg-amber-400/20 dark:text-amber-200 dark:ring-1 dark:ring-amber-300/20",
 ];
 
 export default function PastelSkills() {
@@ -25,7 +25,7 @@ export default function PastelSkills() {
         {t.default.skills.groups.map((group, gi) => (
           <div
             key={group.title}
-            className="rounded-3xl border border-slate-100 bg-white/60 p-7 backdrop-blur dark:border-white/10 dark:bg-white/5"
+            className="rounded-3xl border border-slate-100 bg-white/60 p-7 backdrop-blur dark:border-white/10 dark:bg-gradient-to-b dark:from-purple-400/10 dark:to-pink-400/5"
           >
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               {group.title}

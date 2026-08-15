@@ -22,7 +22,7 @@ export default function PastelHero() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 py-24 text-center sm:py-32">
-        <span className="inline-block rounded-full bg-white/70 px-5 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-white/10 dark:text-slate-300">
+        <span className="inline-block rounded-full bg-white/70 px-5 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-pink-400/15 dark:text-pink-100 dark:ring-1 dark:ring-pink-300/20">
           👋 {t.default.hero.badge}
         </span>
 
@@ -46,21 +46,21 @@ export default function PastelHero() {
           </a>
           <a
             href="#contact"
-            className="rounded-full bg-white px-8 py-3.5 font-medium text-slate-600 shadow-sm ring-1 ring-slate-200 transition-transform hover:scale-105 dark:bg-white/10 dark:text-slate-300 dark:ring-white/10"
+            className="rounded-full bg-white px-8 py-3.5 font-medium text-slate-600 shadow-sm ring-1 ring-slate-200 transition-transform hover:scale-105 dark:bg-purple-400/20 dark:text-purple-100 dark:ring-purple-300/20"
           >
             {t.default.hero.contactMe}
           </a>
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-4">
-          <span className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-white/10 dark:text-slate-300">
+          <span className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-sky-400/15 dark:text-sky-100 dark:ring-1 dark:ring-sky-300/20">
             <span className="h-2 w-2 animate-pulse rounded-full bg-pink-400" />
             {t.default.hero.available}
           </span>
-          <span className="rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-white/10 dark:text-slate-300">
+          <span className="rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-purple-400/15 dark:text-purple-100 dark:ring-1 dark:ring-purple-300/20">
             {t.default.hero.role1}
           </span>
-          <span className="rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-white/10 dark:text-slate-300">
+          <span className="rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:bg-pink-400/15 dark:text-pink-100 dark:ring-1 dark:ring-pink-300/20">
             {t.default.hero.role2}
           </span>
         </div>

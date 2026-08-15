@@ -1,9 +1,9 @@
 import { useI18n } from "@/i18n";
 
 const headerColors = [
-  "from-pink-200/60 to-purple-200/60 dark:from-pink-500/15 dark:to-purple-500/15",
-  "from-purple-200/60 to-sky-200/60 dark:from-purple-500/15 dark:to-sky-500/15",
-  "from-sky-200/60 to-amber-200/60 dark:from-sky-500/15 dark:to-amber-500/15",
+  "from-pink-200/60 to-purple-200/60 dark:from-pink-400/30 dark:to-purple-400/25",
+  "from-purple-200/60 to-sky-200/60 dark:from-purple-400/30 dark:to-sky-400/25",
+  "from-sky-200/60 to-amber-200/60 dark:from-sky-400/30 dark:to-amber-400/25",
 ];
 
 export default function PastelProjects() {
@@ -24,7 +24,7 @@ export default function PastelProjects() {
         {t.default.projects.items.map((project, i) => (
           <div
             key={project.title}
-            className="group flex flex-col overflow-hidden rounded-3xl bg-white/60 ring-1 ring-slate-100 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-white/5 dark:ring-white/10"
+            className="group flex flex-col overflow-hidden rounded-3xl bg-white/60 ring-1 ring-slate-100 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-gradient-to-b dark:from-sky-400/10 dark:to-purple-400/5 dark:ring-white/10"
           >
             <div
               className={`flex h-32 items-center justify-center bg-gradient-to-br ${headerColors[i]} text-5xl`}

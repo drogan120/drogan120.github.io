@@ -1,9 +1,9 @@
 import { useI18n } from "@/i18n";
 
 const cardColors = [
-  "from-pink-100/70 to-pink-50/70 dark:from-pink-500/10 dark:to-pink-500/5",
-  "from-purple-100/70 to-purple-50/70 dark:from-purple-500/10 dark:to-purple-500/5",
-  "from-sky-100/70 to-sky-50/70 dark:from-sky-500/10 dark:to-sky-500/5",
+  "from-pink-100/70 to-pink-50/70 dark:from-pink-400/25 dark:to-purple-400/15",
+  "from-purple-100/70 to-purple-50/70 dark:from-purple-400/25 dark:to-sky-400/15",
+  "from-sky-100/70 to-sky-50/70 dark:from-sky-400/25 dark:to-pink-400/15",
 ];
 
 const accentColors = [
@@ -30,7 +30,7 @@ export default function PastelAbout() {
         {t.default.about.cards.map((card, i) => (
           <div
             key={card.title}
-            className={`rounded-3xl bg-gradient-to-b ${cardColors[i]} p-8 transition-transform hover:-translate-y-1`}
+            className={`rounded-3xl bg-gradient-to-b ${cardColors[i]} p-8 transition-transform hover:-translate-y-1 dark:ring-1 dark:ring-white/10`}
           >
             <span className={`text-sm font-bold ${accentColors[i]}`}>
               {String(i + 1).padStart(2, "0")}

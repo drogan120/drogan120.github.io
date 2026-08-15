@@ -27,7 +27,7 @@ export default function PastelNavbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/70 shadow-sm backdrop-blur-md dark:bg-[#16161d]/70"
+          ? "bg-white/70 shadow-sm backdrop-blur-md dark:bg-gradient-to-r dark:from-purple-500/10 dark:via-pink-500/10 dark:to-sky-500/10"
           : "bg-transparent"
       }`}
     >
@@ -65,7 +65,7 @@ export default function PastelNavbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-100 bg-white px-6 py-4 md:hidden dark:border-white/10 dark:bg-[#16161d]">
+        <div className="border-t border-slate-100 bg-white px-6 py-4 md:hidden dark:border-white/10 dark:bg-gradient-to-b dark:from-purple-500/15 dark:to-sky-500/10">
           <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li key={link.href}>
