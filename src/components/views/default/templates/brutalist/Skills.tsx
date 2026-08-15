@@ -1,7 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import { useI18n } from "@/i18n";
 
 export default function BrutalistSkills() {
   const { t } = useI18n();
+  const groups = t.default.skills.groups;
+  const [filter, setFilter] = useState<string>("All");
+
+  const visible =
+    filter === "All"
+      ? groups
+      : groups.filter((g) => g.title === filter || g.skills.includes(filter));
 
   return (
     <section id="skills" className="border-b-4 border-foreground">
@@ -13,8 +23,25 @@ export default function BrutalistSkills() {
           [{t.default.skills.label}]
         </p>
 
-        <div className="mt-10 grid md:grid-cols-2">
-          {t.default.skills.groups.map((group, gi) => (
+        <div className="mt-8 flex flex-wrap gap-2">
+          {["All", ...groups.map((g) => g.title)].map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setFilter(cat)}
+              className={`border-2 border-foreground px-4 py-1.5 font-mono text-xs font-bold uppercase transition-all ${
+                filter === cat
+                  ? "bg-accent text-background shadow-[3px_3px_0_0_var(--foreground)]"
+                  : "bg-background text-foreground hover:bg-accent hover:text-background"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-8 grid md:grid-cols-2">
+          {visible.map((group, gi) => (
             <div
               key={group.title}
               className={`p-6 ${gi % 2 === 0 ? "border-t-2 border-l-2 border-foreground" : "border-t-2 border-foreground md:border-r-2"} ${gi >= 2 ? "border-b-2" : ""}`}

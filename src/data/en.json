@@ -206,28 +206,60 @@
     "blog": {
       "items": [
         {
-          "title": "From Zero to First Android App",
-          "date": "2024-03-12",
-          "category": "Android",
-          "excerpt": "My journey building and publishing a Jetpack Compose app from scratch.",
-          "link": "https://dev.to/drogan120",
-          "content": "Building an app from nothing is intimidating. Here's what helped me most:\n\n- **Pick a small scope first** — a single feature you can ship.\n- **Learn Jetpack Compose basics** — state, layout, navigation.\n- **Ship early** — publishing v1 teaches more than perfecting v0.\n\n> The best way to learn is to build something real.\n\nI wrote about the full journey including the mistakes I made along the way."
+          "title": "Building This Portfolio: 7 Templates, 5 Colors, 3 Languages",
+          "date": "2024-04-02",
+          "category": "Portfolio",
+          "excerpt": "One JSON, many faces — how this site renders 7 templates from a single content source.",
+          "link": "#",
+          "content": "This portfolio is not a single design — it is a small engine that renders **7 templates**, each switchable in one click. Let me break down how it works.\n\n## One JSON, Many Faces\n\nEvery template (minimal, playful, classic, brutalist, fashion, pastel, glass) reads from the same `src/data/{lang}.json`. The content never changes — only the presentation does.\n\nThe result: I can swap my entire site's look without touching a single word of content.\n\n## The Switching Logic\n\nA `TemplateProvider` holds the current template in state and persists it to the URL via `UrlStateSync`, so the chosen template survives a refresh and is shareable as a link.\n\n```\n?template=glass&scheme=ocean&lang=en\n```\n\n## What I Learned\n\n- Data-driven UI makes redesigns trivial.\n- URL state is the cheapest persistence layer there is.\n- Cute animations (float, wiggle, pop) add personality with very little code.\n\n> Build systems, not one-off pages."
         },
         {
-          "title": "Why I Love Clean Architecture",
-          "date": "2024-01-08",
-          "category": "Architecture",
-          "excerpt": "How separating concerns keeps your codebase sane as projects grow.",
-          "link": "https://dev.to/drogan120",
-          "content": "Clean Architecture separates your app into layers so each part has one job:\n\n1. **Domain** — business rules, no framework.\n2. **Data** — repositories, remote/local sources.\n3. **Presentation** — UI, ViewModels, state.\n\nWhen a project grows, this structure keeps changes predictable and testable. It costs a bit more setup upfront, but it pays off fast."
+          "title": "Designing a Color Scheme System That Feels Yours",
+          "date": "2024-03-18",
+          "category": "Design",
+          "excerpt": "Five palettes, dark & light, zero flash — the story behind the theme engine.",
+          "link": "#",
+          "content": "Color is a feature, not decoration. I wanted every visitor to be able to make the site feel like their own, so I built a color scheme system with five palettes — mauve, pastel, ocean, forest, and sunset.\n\n## How It Works\n\nEach palette defines CSS variables for background, foreground, accent, accent-2, muted, card, and border. The `@theme inline` block in Tailwind v4 maps those variables to utility classes like `bg-background` and `text-accent`.\n\n```\nscheme-ocean + .dark  =>  deep blue, cyan accents\nscheme-pastel + .dark =>  soft pink, lavender\n```\n\n## No Flash of Wrong Theme\n\nAn inline script in `<head>` reads `localStorage` before first paint, so the correct theme applies before the page renders — no flicker.\n\n## Dark & Light\n\nEach palette ships with both variants. Toggling is instant and saved.\n\n> Choose your own adventure."
         },
         {
-          "title": "Next.js + GitHub Pages in 10 Minutes",
-          "date": "2023-11-22",
-          "category": "Web",
-          "excerpt": "Deploying a static Next.js site to GitHub Pages with GitHub Actions.",
-          "link": "https://dev.to/drogan120",
-          "content": "Deploying Next.js to GitHub Pages is easier than it looks:\n\n1. Set `output: 'export'` in `next.config.ts`.\n2. Add a GitHub Actions workflow that runs `pnpm build`.\n3. Deploy the `out/` folder to `gh-pages`.\n\nAdd a `.nojekyll` file so static files are served correctly. Done — your site is live on GitHub Pages."
+          "title": "Deploying a Next.js Static Site to GitHub Pages",
+          "date": "2024-03-05",
+          "category": "Deploy",
+          "excerpt": "The exact recipe for free hosting with Next.js static export and GitHub Actions.",
+          "link": "#",
+          "content": "This site runs on Next.js with `output: 'export'` and is hosted for free on GitHub Pages. Here is the exact recipe.\n\n## 1. Configure Static Export\n\nIn `next.config.ts`:\n\n```\noutput: \"export\",\nimages: { unoptimized: true },\n```\n\nStatic exports mean no server, which is perfect for GitHub Pages.\n\n## 2. Add a Workflow\n\nA small GitHub Actions workflow builds the site on every push to `main` and publishes the `out/` folder to the `gh-pages` branch.\n\n## 3. Don't Forget .nojekyll\n\nGitHub Pages runs Jekyll by default. Adding a `.nojekyll` file ensures raw static files are served correctly.\n\n## Result\n\nPush to `main` → site is live in under a minute. Zero hosting cost, zero server maintenance.\n\n> Free hosting, full control."
+        }
+      ]
+    },
+    "gallery": {
+      "items": [
+        {
+          "title": "Aplikasi Catatan",
+          "tag": "Android · Kotlin",
+          "accent": "#7c3aed",
+          "accent2": "#06b6d4",
+          "src": null
+        },
+        {
+          "title": "Portfolio Website",
+          "tag": "Web · Next.js",
+          "accent": "#ec4899",
+          "accent2": "#8b5cf6",
+          "src": null
+        },
+        {
+          "title": "Rest API Basic",
+          "tag": "Backend · Node.js",
+          "accent": "#10b981",
+          "accent2": "#3b82f6",
+          "src": null
+        },
+        {
+          "title": "Weather App",
+          "tag": "Mobile · Flutter",
+          "accent": "#f59e0b",
+          "accent2": "#ef4444",
+          "src": null
         }
       ]
     }
@@ -441,28 +473,61 @@
       "description": "List of blog posts written by the developer.",
       "data": [
         {
-          "title": "From Zero to First Android App",
-          "date": "2024-03-12",
-          "category": "Android",
-          "excerpt": "My journey building and publishing a Jetpack Compose app from scratch.",
-          "link": "https://dev.to/drogan120",
-          "content": "Building an app from nothing is intimidating.\n\n- **Pick a small scope first**\n- **Learn the basics**\n- **Ship early**\n\n> The best way to learn is to build something real."
+          "title": "Building This Portfolio: 7 Templates, 5 Colors, 3 Languages",
+          "date": "2024-04-02",
+          "category": "Portfolio",
+          "excerpt": "One JSON, many faces — how this site renders 7 templates from a single content source.",
+          "link": "#",
+          "content": "This portfolio is not a single design — it is a small engine that renders **7 templates**, each switchable in one click. Let me break down how it works.\n\n## One JSON, Many Faces\n\nEvery template (minimal, playful, classic, brutalist, fashion, pastel, glass) reads from the same `src/data/{lang}.json`. The content never changes — only the presentation does.\n\nThe result: I can swap my entire site's look without touching a single word of content.\n\n## The Switching Logic\n\nA `TemplateProvider` holds the current template in state and persists it to the URL via `UrlStateSync`, so the chosen template survives a refresh and is shareable as a link.\n\n```\n?template=glass&scheme=ocean&lang=en\n```\n\n## What I Learned\n\n- Data-driven UI makes redesigns trivial.\n- URL state is the cheapest persistence layer there is.\n- Cute animations (float, wiggle, pop) add personality with very little code.\n\n> Build systems, not one-off pages."
         },
         {
-          "title": "Why I Love Clean Architecture",
-          "date": "2024-01-08",
-          "category": "Architecture",
-          "excerpt": "How separating concerns keeps your codebase sane as projects grow.",
-          "link": "https://dev.to/drogan120",
-          "content": "Clean Architecture separates your app into layers:\n\n1. **Domain** — business rules.\n2. **Data** — repositories.\n3. **Presentation** — UI and state."
+          "title": "Designing a Color Scheme System That Feels Yours",
+          "date": "2024-03-18",
+          "category": "Design",
+          "excerpt": "Five palettes, dark & light, zero flash — the story behind the theme engine.",
+          "link": "#",
+          "content": "Color is a feature, not decoration. I wanted every visitor to be able to make the site feel like their own, so I built a color scheme system with five palettes — mauve, pastel, ocean, forest, and sunset.\n\n## How It Works\n\nEach palette defines CSS variables for background, foreground, accent, accent-2, muted, card, and border. The `@theme inline` block in Tailwind v4 maps those variables to utility classes like `bg-background` and `text-accent`.\n\n```\nscheme-ocean + .dark  =>  deep blue, cyan accents\nscheme-pastel + .dark =>  soft pink, lavender\n```\n\n## No Flash of Wrong Theme\n\nAn inline script in `<head>` reads `localStorage` before first paint, so the correct theme applies before the page renders — no flicker.\n\n## Dark & Light\n\nEach palette ships with both variants. Toggling is instant and saved.\n\n> Choose your own adventure."
         },
         {
-          "title": "Next.js + GitHub Pages in 10 Minutes",
-          "date": "2023-11-22",
-          "category": "Web",
-          "excerpt": "Deploying a static Next.js site to GitHub Pages with GitHub Actions.",
-          "link": "https://dev.to/drogan120",
-          "content": "Set `output: 'export'`, add a workflow, deploy the `out/` folder.\n\nAdd a `.nojekyll` file and you're live."
+          "title": "Deploying a Next.js Static Site to GitHub Pages",
+          "date": "2024-03-05",
+          "category": "Deploy",
+          "excerpt": "The exact recipe for free hosting with Next.js static export and GitHub Actions.",
+          "link": "#",
+          "content": "This site runs on Next.js with `output: 'export'` and is hosted for free on GitHub Pages. Here is the exact recipe.\n\n## 1. Configure Static Export\n\nIn `next.config.ts`:\n\n```\noutput: \"export\",\nimages: { unoptimized: true },\n```\n\nStatic exports mean no server, which is perfect for GitHub Pages.\n\n## 2. Add a Workflow\n\nA small GitHub Actions workflow builds the site on every push to `main` and publishes the `out/` folder to the `gh-pages` branch.\n\n## 3. Don't Forget .nojekyll\n\nGitHub Pages runs Jekyll by default. Adding a `.nojekyll` file ensures raw static files are served correctly.\n\n## Result\n\nPush to `main` → site is live in under a minute. Zero hosting cost, zero server maintenance.\n\n> Free hosting, full control."
+        }
+      ]
+    },
+    "gallery": {
+      "description": "Gallery of app screenshots.",
+      "data": [
+        {
+          "title": "Aplikasi Catatan",
+          "tag": "Android · Kotlin",
+          "accent": "#7c3aed",
+          "accent2": "#06b6d4",
+          "src": null
+        },
+        {
+          "title": "Portfolio Website",
+          "tag": "Web · Next.js",
+          "accent": "#ec4899",
+          "accent2": "#8b5cf6",
+          "src": null
+        },
+        {
+          "title": "Rest API Basic",
+          "tag": "Backend · Node.js",
+          "accent": "#10b981",
+          "accent2": "#3b82f6",
+          "src": null
+        },
+        {
+          "title": "Weather App",
+          "tag": "Mobile · Flutter",
+          "accent": "#f59e0b",
+          "accent2": "#ef4444",
+          "src": null
         }
       ]
     }

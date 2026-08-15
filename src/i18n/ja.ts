@@ -12,6 +12,7 @@ const ja: Dictionary = {
       skills: "スキル",
       experience: "経験",
       blog: "ブログ",
+      gallery: "ギャラリー",
       projects: "プロジェクト",
       contact: "お問い合わせ",
       hire: "採用する",
@@ -68,10 +69,28 @@ const ja: Dictionary = {
     },
     blog: {
       label: "// ブログ",
-      title: "最新記事",
-      description: "テクノロジーについて書いたメモや記事。",
-      readMore: "dev.to で読む",
-      items: data.default.blog.items,
+      title: "書いたもの",
+      description:
+        "使っている道具を選んだ理由 — 言語、プラットフォーム、そしてその判断の背景。",
+      filterLanguage: "言語",
+      filterTag: "タグ",
+      readMore: "読む",
+      empty: "この条件に合う記事はありません。",
+      showing: "記事",
+      viewAll: "すべての記事を見る",
+      readFull: "記事を全部読む",
+      preview: "プレビュー",
+    },
+    gallery: {
+      label: "// ギャラリー",
+      title: "アプリのスクリーンショット",
+      description: "作ったアプリの簡単な紹介。",
+      view: "表示",
+      items: data.default.gallery.items,
+    },
+    resume: {
+      download: "履歴書をダウンロード",
+      printHeading: "Drogan — 履歴書",
     },
     projects: {
       label: "// プロジェクト",
@@ -139,7 +158,11 @@ const ja: Dictionary = {
     blog: {
       response: "レスポンス 200",
       description: data.apiDocs.blog.description,
-      data: data.apiDocs.blog.data,
+    },
+    gallery: {
+      response: "レスポンス 200",
+      description: data.apiDocs.gallery.description,
+      data: data.apiDocs.gallery.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

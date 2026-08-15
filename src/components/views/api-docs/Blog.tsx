@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { useI18n } from "@/i18n";
+import { blogPosts } from "@/data/blogIndex";
 import Json from "./Json";
 
 export default function Blog() {
@@ -21,8 +23,24 @@ export default function Blog() {
         <div className="border-b border-border px-4 py-2 font-mono text-xs text-muted">
           {t.apiDocs.blog.response}
         </div>
-        <Json data={t.apiDocs.blog.data} />
+        <Json
+          data={blogPosts.map(({ id, title, date, language, category, tags }) => ({
+            id,
+            title,
+            date,
+            language,
+            category,
+            tags,
+          }))}
+        />
       </div>
+
+      <Link
+        href="/blog"
+        className="mt-6 inline-block font-mono text-sm text-accent underline underline-offset-4"
+      >
+        {t.default.blog.viewAll} →
+      </Link>
     </section>
   );
 }

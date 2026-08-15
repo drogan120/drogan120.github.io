@@ -1,5 +1,6 @@
 import { useI18n } from "@/i18n";
 import TypeWriter from "@/components/shared/TypeWriter";
+import DownloadResume from "@/components/shared/DownloadResume";
 
 export default function FashionHero() {
   const { t } = useI18n();
@@ -47,6 +48,7 @@ export default function FashionHero() {
               {t.default.hero.contactMe}
               <span className="absolute -bottom-2 left-0 h-px w-full bg-accent opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
+            <DownloadResume />
           </div>
 
           <p className="mt-16 inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">

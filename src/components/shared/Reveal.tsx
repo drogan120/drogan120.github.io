@@ -13,13 +13,21 @@ export default function Reveal({
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(
-    () => typeof IntersectionObserver === "undefined"
-  );
+  // Must start identical on server and client to avoid a hydration mismatch,
+  // so always render the hidden state first and reveal from an effect.
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Browsers without IntersectionObserver just show the content on the next
+    // frame (the rAF keeps this out of the synchronous effect body).
+    if (typeof IntersectionObserver === "undefined") {
+      const id = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(id);
+    }
+
     const el = ref.current;
     if (!el) return;
+
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -36,7 +44,7 @@ export default function Reveal({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out will-change-transform ${
+      className={`reveal transition-all duration-700 ease-out will-change-transform ${
         visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}

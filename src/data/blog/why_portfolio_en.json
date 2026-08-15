@@ -1,0 +1,10 @@
+{
+  "id": "why-this-portfolio",
+  "title": "Why This Portfolio Has 7 Templates",
+  "date": "2024-05-02",
+  "language": "en",
+  "category": "Portfolio",
+  "tags": ["typescript", "web", "nextjs"],
+  "excerpt": "One JSON, many faces — and what that decision taught me about building systems.",
+  "content": "Most portfolios are a single design. Mine renders **7 templates** from one content source, and that was a deliberate decision.\n\n## The Problem I Wanted to Solve\n\nEvery time I redesigned my site, I rewrote the content too. Copy got lost, sections drifted out of sync, and I lost motivation halfway through.\n\nSo I separated the two:\n\n- Content lives in JSON\n- Presentation lives in template components\n\n## What That Unlocked\n\nAdding a new look is now a folder of components — no content migration, no copy-paste. Switching between them is instant, and the choice is stored in the URL:\n\n```\n?template=glass&scheme=ocean&lang=en\n```\n\n## The Real Lesson\n\nThe templates are not the point. The point is that **structure beats effort**. Once content and presentation were separated, everything else — color schemes, three languages, a blog — became cheap to add.\n\n> Build the system once, then the features are almost free.\n\n## Trade-offs\n\nSeven templates means seven places to fix a layout bug. I accept that cost because the alternative — one rigid design I get bored of — is worse."
+}

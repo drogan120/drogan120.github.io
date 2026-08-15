@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useI18n } from "@/i18n";
+import { latestPosts, languageLabel } from "@/data/blogIndex";
 import Markdown from "@/components/shared/Markdown";
+
+const posts = latestPosts(5);
 
 export default function PastelBlog() {
   const { t } = useI18n();
-  const [open, setOpen] = useState<number | null>(null);
+  const [open, setOpen] = useState<string | null>(null);
 
   return (
     <section id="blog" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
@@ -20,15 +24,16 @@ export default function PastelBlog() {
         </p>
       </div>
 
-      <div className="mt-14 space-y-5">
-        {t.default.blog.items.map((post, i) => (
+      <div className="mt-12 space-y-5">
+        {posts.map((post, i) => (
           <article
-            key={post.title}
-            className="overflow-hidden rounded-3xl bg-gradient-to-br from-accent/10 to-accent-2/10 ring-1 ring-border/60 transition-transform hover:-translate-y-1"
+            key={post.id}
+            className="card-in overflow-hidden rounded-3xl bg-gradient-to-br from-accent/10 to-accent-2/10 ring-1 ring-border/60 transition-transform hover:-translate-y-1"
+            style={{ animationDelay: `${i * 60}ms` }}
           >
             <button
               type="button"
-              onClick={() => setOpen(open === i ? null : i)}
+              onClick={() => setOpen(open === post.id ? null : post.id)}
               className="flex w-full flex-col gap-2 px-7 py-6 text-left"
             >
               <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
@@ -36,28 +41,47 @@ export default function PastelBlog() {
                   {post.category}
                 </span>
                 <span>{post.date}</span>
+                <span className="rounded-full bg-card/70 px-2.5 py-0.5 text-xs ring-1 ring-border/60">
+                  {languageLabel(post.language)}
+                </span>
               </div>
               <h3 className="text-xl font-bold text-foreground">
                 {post.title}
               </h3>
               <p className="text-sm text-muted">{post.excerpt}</p>
+              <div className="mt-1 flex flex-wrap gap-1.5">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="text-xs text-accent/70">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
             </button>
 
-            {open === i && (
+            {open === post.id && (
               <div className="border-t border-border/60 px-7 py-6">
-                <Markdown content={post.content} />
-                <a
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block font-mono text-sm font-medium text-accent underline underline-offset-4"
+                <div className="max-h-64 overflow-hidden text-muted">
+                  <Markdown content={post.content} />
+                </div>
+                <Link
+                  href={`/blog/${post.id}`}
+                  className="pop-on-click mt-4 inline-block rounded-full bg-gradient-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-semibold text-background"
                 >
-                  {t.default.blog.readMore} ↗
-                </a>
+                  {t.default.blog.readFull} →
+                </Link>
               </div>
             )}
           </article>
         ))}
+      </div>
+
+      <div className="mt-10 text-center">
+        <Link
+          href="/blog"
+          className="pop-on-click inline-block rounded-full bg-card/60 px-7 py-3 font-semibold ring-1 ring-border/60 transition-colors hover:text-accent"
+        >
+          {t.default.blog.viewAll} →
+        </Link>
       </div>
     </section>
   );

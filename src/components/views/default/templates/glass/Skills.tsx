@@ -1,7 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import { useI18n } from "@/i18n";
 
 export default function GlassSkills() {
   const { t } = useI18n();
+  const groups = t.default.skills.groups;
+  const [filter, setFilter] = useState<string>("All");
+
+  const visible =
+    filter === "All"
+      ? groups
+      : groups.filter((g) => g.title === filter || g.skills.includes(filter));
 
   return (
     <section id="skills" className="relative">
@@ -13,8 +23,25 @@ export default function GlassSkills() {
           <h2 className="mt-3 text-3xl font-bold">{t.default.skills.title}</h2>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2">
-          {t.default.skills.groups.map((group) => (
+        <div className="mt-10 flex flex-wrap justify-center gap-2">
+          {["All", ...groups.map((g) => g.title)].map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setFilter(cat)}
+              className={`rounded-full border px-4 py-1.5 text-sm backdrop-blur-md transition-all ${
+                filter === cat
+                  ? "border-accent/60 bg-white/15 text-foreground"
+                  : "border-white/20 bg-white/5 text-muted hover:border-accent/40 hover:text-accent"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {visible.map((group) => (
             <div
               key={group.title}
               className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl"

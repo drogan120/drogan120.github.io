@@ -1,5 +1,6 @@
 import { useI18n } from "@/i18n";
 import TypeWriter from "@/components/shared/TypeWriter";
+import DownloadResume from "@/components/shared/DownloadResume";
 
 export default function BrutalistHero() {
   const { t } = useI18n();
@@ -57,6 +58,7 @@ export default function BrutalistHero() {
           >
             {t.default.hero.contactMe}
           </a>
+          <DownloadResume />
         </div>
       </div>
     </section>

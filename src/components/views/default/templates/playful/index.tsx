@@ -8,6 +8,7 @@ import Achievements from "./Achievements";
 import Hobbies from "./Hobbies";
 import Github from "./Github";
 import Blog from "./Blog";
+import Gallery from "./Gallery";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -44,6 +45,9 @@ export default function PlayfulTemplate() {
         </Reveal>
         <Reveal>
           <Blog />
+        </Reveal>
+        <Reveal>
+          <Gallery />
         </Reveal>
         <Reveal>
           <Projects />

@@ -1,7 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import { useI18n } from "@/i18n";
 
 export default function FashionSkills() {
   const { t } = useI18n();
+  const groups = t.default.skills.groups;
+  const [filter, setFilter] = useState<string>("All");
+
+  const visible =
+    filter === "All"
+      ? groups
+      : groups.filter((g) => g.title === filter || g.skills.includes(filter));
 
   return (
     <section id="skills" className="border-b border-border">
@@ -13,8 +23,25 @@ export default function FashionSkills() {
           {t.default.skills.title}
         </h2>
 
-        <div className="mt-16 grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
-          {t.default.skills.groups.map((group) => (
+        <div className="mt-10 flex flex-wrap justify-center gap-2">
+          {["All", ...groups.map((g) => g.title)].map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setFilter(cat)}
+              className={`text-xs uppercase tracking-[0.25em] transition-colors ${
+                filter === cat
+                  ? "border-b border-accent text-accent"
+                  : "border-b border-transparent text-muted hover:text-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-12 grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+          {visible.map((group) => (
             <div key={group.title} className="bg-background p-8">
               <h3 className="text-xs uppercase tracking-[0.25em] text-accent">
                 {group.icon} {group.title}

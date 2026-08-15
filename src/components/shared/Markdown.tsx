@@ -2,9 +2,17 @@ import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 
 const components: Components = {
-  h1: ({ children }) => <h1 className="text-lg font-semibold">{children}</h1>,
-  h2: ({ children }) => <h2 className="text-base font-semibold">{children}</h2>,
-  h3: ({ children }) => <h3 className="text-sm font-semibold">{children}</h3>,
+  h1: ({ children }) => (
+    <h1 className="mt-6 text-xl font-bold first:mt-0">{children}</h1>
+  ),
+  h2: ({ children }) => (
+    <h2 className="mt-8 border-b border-border pb-2 text-lg font-bold first:mt-0">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="mt-5 text-base font-semibold first:mt-0">{children}</h3>
+  ),
   p: ({ children }) => <p className="mt-2 leading-relaxed">{children}</p>,
   ul: ({ children }) => (
     <ul className="mt-2 list-disc space-y-1 pl-5">{children}</ul>

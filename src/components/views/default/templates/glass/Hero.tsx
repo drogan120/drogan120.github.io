@@ -1,5 +1,6 @@
 import { useI18n } from "@/i18n";
 import TypeWriter from "@/components/shared/TypeWriter";
+import DownloadResume from "@/components/shared/DownloadResume";
 
 export default function GlassHero() {
   const { t } = useI18n();
@@ -46,6 +47,7 @@ export default function GlassHero() {
           >
             {t.default.hero.contactMe}
           </a>
+          <DownloadResume />
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-4">

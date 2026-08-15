@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import LastUpdated from "@/components/shared/LastUpdated";
 
 export default function ClassicFooter() {
   const { t } = useI18n();
@@ -10,6 +11,9 @@ export default function ClassicFooter() {
         <p>
           © {new Date().getFullYear()}. {t.default.footer.rights}
         </p>
+      </div>
+          <div className="mx-auto max-w-6xl px-6 pb-6 text-center font-mono text-xs text-muted/70">
+        <LastUpdated />
       </div>
     </footer>
   );

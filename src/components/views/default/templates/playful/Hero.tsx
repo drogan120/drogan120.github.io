@@ -1,5 +1,6 @@
 import { useI18n } from "@/i18n";
 import TypeWriter from "@/components/shared/TypeWriter";
+import DownloadResume from "@/components/shared/DownloadResume";
 
 export default function PlayfulHero() {
   const { t } = useI18n();
@@ -45,6 +46,7 @@ export default function PlayfulHero() {
           >
             {t.default.hero.contactMe}
           </a>
+          <DownloadResume />
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-center gap-6">

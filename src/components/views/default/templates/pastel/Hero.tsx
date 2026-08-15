@@ -1,5 +1,6 @@
 import { useI18n } from "@/i18n";
 import TypeWriter from "@/components/shared/TypeWriter";
+import DownloadResume from "@/components/shared/DownloadResume";
 
 const blobs = [
   { className: "bg-accent/20", top: "0%", left: "10%", delay: "0s" },
@@ -56,6 +57,7 @@ export default function PastelHero() {
           >
             {t.default.hero.contactMe}
           </a>
+          <DownloadResume />
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-4">

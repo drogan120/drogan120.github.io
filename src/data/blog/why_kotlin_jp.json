@@ -1,0 +1,10 @@
+{
+  "id": "why-kotlin",
+  "title": "なぜ Kotlin を選んだのか",
+  "date": "2024-04-28",
+  "language": "ja",
+  "category": "Language",
+  "tags": ["kotlin", "java", "android"],
+  "excerpt": "Java でも Android は書ける。それでも Kotlin を選んだ理由。",
+  "content": "Java でも Android アプリは書けます。それでも僕は Kotlin を選びました。\n\n## null 安全が精神的にラク\n\nJava 時代、`NullPointerException` は日常でした。Kotlin では型システムが null を区別してくれます。\n\n```\nval name: String = \"drogan\"   // null を入れられない\nval nick: String? = null       // null を許す\n```\n\n「ここは null かもしれない」をコンパイラが覚えてくれるので、僕が覚えておく必要がありません。\n\n## コードが短く、読みやすい\n\n`data class` ひとつで equals / hashCode / toString / copy が付いてきます。ボイラープレートが減ると、ロジックそのものが見えるようになります。\n\n## コルーチンが素直\n\n非同期処理を同期処理のように書けます。コールバック地獄から抜け出せたことが、一番大きな変化でした。\n\n## Java と共存できる\n\n既存の Java コードを一気に書き換える必要はありません。少しずつ移せる。実務ではこれが決定的でした。\n\n> 言語仕様のレベルでミスを防いでくれるなら、その道具に乗る。"
+}

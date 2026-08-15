@@ -5,6 +5,7 @@ import type { FormEvent } from "react";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
 import SettingsBar from "@/components/shared/SettingsBar";
+import { blogPosts } from "@/data/blogIndex";
 
 type Line = {
   command?: string;
@@ -19,7 +20,7 @@ const HISTORY: Record<string, string> = {
   "--achievements": "[best project award, android development certification, open source contributor]",
   "--hobbies": "[gaming, photography, music, reading]",
   "--github": "github.com/drogan120 — 38 repos · 124 stars · 57 followers",
-  "--blog": "[3 posts — dev.to/drogan120]",
+  "--blog": `${blogPosts.length} posts — /blog (latest: ${blogPosts[0].title})`,
   "--projects": "[aplikasi-catatan, portfolio-website, rest-api-basic]",
   "--contact": "github.com/drogan120 · drogan120@gmail.com",
   help: "commands: --about, --skills, --experience, --stats, --achievements, --hobbies, --github, --blog, --projects, --contact, --view <template>, clear, help",

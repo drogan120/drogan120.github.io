@@ -12,6 +12,7 @@ const id: Dictionary = {
       skills: "Keahlian",
       experience: "Pengalaman",
       blog: "Blog",
+      gallery: "Gallery",
       projects: "Proyek",
       contact: "Kontak",
       hire: "Hire Me",
@@ -68,10 +69,28 @@ const id: Dictionary = {
     },
     blog: {
       label: "// blog",
-      title: "Tulisan Terbaru",
-      description: "Catatan dan artikel tentang teknologi yang saya tulis.",
-      readMore: "Baca di dev.to",
-      items: data.default.blog.items,
+      title: "Tulisan",
+      description:
+        "Alasan di balik tools yang saya pakai — bahasa, platform, dan pertimbangannya.",
+      filterLanguage: "Bahasa",
+      filterTag: "Tag",
+      readMore: "Baca",
+      empty: "Tidak ada tulisan yang cocok dengan filter ini.",
+      showing: "tulisan",
+      viewAll: "Lihat semua tulisan",
+      readFull: "Baca artikel lengkap",
+      preview: "Pratinjau",
+    },
+    gallery: {
+      label: "// galeri",
+      title: "Tangkapan Layar Aplikasi",
+      description: "Sekilas aplikasi yang pernah saya buat.",
+      view: "Lihat",
+      items: data.default.gallery.items,
+    },
+    resume: {
+      download: "Download Resume",
+      printHeading: "Drogan — Resume",
     },
     projects: {
       label: "// proyek",
@@ -139,7 +158,11 @@ const id: Dictionary = {
     blog: {
       response: "Respons 200",
       description: data.apiDocs.blog.description,
-      data: data.apiDocs.blog.data,
+    },
+    gallery: {
+      response: "Respons 200",
+      description: data.apiDocs.gallery.description,
+      data: data.apiDocs.gallery.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

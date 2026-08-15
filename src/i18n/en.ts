@@ -11,6 +11,7 @@ const en = {
       skills: "Skills",
       experience: "Experience",
       blog: "Blog",
+      gallery: "Gallery",
       projects: "Projects",
       contact: "Contact",
       hire: "Hire Me",
@@ -67,10 +68,28 @@ const en = {
     },
     blog: {
       label: "// blog",
-      title: "Latest Posts",
-      description: "Notes and articles about tech I've written.",
-      readMore: "Read on dev.to",
-      items: data.default.blog.items,
+      title: "Writing",
+      description:
+        "Why I picked the tools I use — languages, platforms, and the reasoning behind them.",
+      filterLanguage: "Language",
+      filterTag: "Tag",
+      readMore: "Read",
+      empty: "No posts match this filter.",
+      showing: "posts",
+      viewAll: "View all posts",
+      readFull: "Read full article",
+      preview: "Preview",
+    },
+    gallery: {
+      label: "// gallery",
+      title: "App Screenshots",
+      description: "A quick look at the apps I've built.",
+      view: "View",
+      items: data.default.gallery.items,
+    },
+    resume: {
+      download: "Download Resume",
+      printHeading: "Drogan — Resume",
     },
     projects: {
       label: "// projects",
@@ -138,7 +157,11 @@ const en = {
     blog: {
       response: "Response 200",
       description: data.apiDocs.blog.description,
-      data: data.apiDocs.blog.data,
+    },
+    gallery: {
+      response: "Response 200",
+      description: data.apiDocs.gallery.description,
+      data: data.apiDocs.gallery.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

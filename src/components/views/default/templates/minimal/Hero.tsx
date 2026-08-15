@@ -1,5 +1,6 @@
 import { useI18n } from "@/i18n";
 import TypeWriter from "@/components/shared/TypeWriter";
+import DownloadResume from "@/components/shared/DownloadResume";
 
 export default function MinimalHero() {
   const { t } = useI18n();
@@ -36,6 +37,8 @@ export default function MinimalHero() {
             →
           </span>
         </a>
+
+        <DownloadResume />
 
         <span className="flex items-center gap-2 font-mono text-xs text-muted">
           <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />

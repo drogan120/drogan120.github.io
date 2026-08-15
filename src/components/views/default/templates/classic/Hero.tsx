@@ -1,5 +1,6 @@
 import { useI18n } from "@/i18n";
 import TypeWriter from "@/components/shared/TypeWriter";
+import DownloadResume from "@/components/shared/DownloadResume";
 
 export default function ClassicHero() {
   const { t } = useI18n();
@@ -42,6 +43,7 @@ export default function ClassicHero() {
             >
               {t.default.hero.contactMe}
             </a>
+            <DownloadResume />
           </div>
         </div>
       </div>
