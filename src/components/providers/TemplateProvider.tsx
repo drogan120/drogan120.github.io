@@ -11,7 +11,9 @@ export type Template =
   | "brutalist"
   | "fashion"
   | "pastel"
-  | "glass";
+  | "glass"
+  | "apiDocs"
+  | "terminal";
 
 type TemplateContextValue = {
   template: Template;

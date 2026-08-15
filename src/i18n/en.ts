@@ -1,8 +1,6 @@
+import data from "@/data/en.json";
+
 const en = {
-  view: {
-    default: "Default",
-    apiDocs: "API Docs",
-  },
   theme: {
     dark: "Dark",
     light: "Light",
@@ -18,91 +16,33 @@ const en = {
     hero: {
       badge: "Welcome to my portfolio",
       hello: "Hi, I'm",
-      tagline:
-        "Software Engineer & Android Developer. I build fast, modern, and delightful apps.",
+      tagline: data.default.hero.tagline,
       viewProjects: "View Projects",
       contactMe: "Contact Me",
       available: "Available for work",
-      role1: "software engineer",
-      role2: "android developer",
+      role1: data.default.hero.role1,
+      role2: data.default.hero.role2,
     },
     about: {
       label: "// about me",
       title: "About Me",
-      cards: [
-        {
-          title: "Software Engineer",
-          description:
-            "Building web and backend applications with clean, scalable, and maintainable architecture.",
-        },
-        {
-          title: "Android Developer",
-          description:
-            "Building native Android apps that are responsive, smooth, and focused on user experience.",
-        },
-        {
-          title: "Problem Solver",
-          description:
-            "Enjoy turning complex problems into simple and efficient solutions.",
-        },
-      ],
-      paragraph:
-        "I'm Drogan, a Software Engineer focused on Android and web development. My journey started from a great curiosity about technology, to now building digital products used by many people. I always strive to keep learning, because technology never stops evolving.",
+      cards: data.default.about.cards,
+      paragraph: data.default.about.paragraph,
     },
     skills: {
       label: "// skills",
       title: "What I Do",
-      groups: [
-        {
-          title: "Mobile",
-          skills: ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"],
-        },
-        {
-          title: "Web",
-          skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-        },
-        {
-          title: "Backend & Database",
-          skills: ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"],
-        },
-        {
-          title: "Tools & Others",
-          skills: ["Git", "GitHub Actions", "Docker", "Figma", "Linux"],
-        },
-      ],
+      groups: data.default.skills.groups,
     },
     projects: {
       label: "// projects",
       title: "My Projects",
-      items: [
-        {
-          title: "First Android App",
-          description:
-            "A simple Android app to keep daily notes, built with Kotlin and Jetpack Compose.",
-          tags: ["Kotlin", "Jetpack Compose"],
-          icon: "📱",
-        },
-        {
-          title: "Portfolio Website",
-          description:
-            "This personal portfolio website, built with Next.js and TypeScript, deployed to GitHub Pages.",
-          tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-          icon: "⚡",
-        },
-        {
-          title: "Simple REST API",
-          description:
-            "A CRUD API for simple data management using Node.js and PostgreSQL database.",
-          tags: ["Node.js", "PostgreSQL"],
-          icon: "🛠️",
-        },
-      ],
+      items: data.default.projects.items,
     },
     contact: {
       label: "// contact",
       title: "Let's Collaborate",
-      description:
-        "Have a project, an idea, or just want to talk about technology? Don't hesitate to reach out.",
+      description: data.default.contact.description,
     },
     footer: {
       rights: "All rights reserved.",
@@ -116,90 +56,28 @@ const en = {
     ping: "$ ping drogan.dev",
     pong: "pong · 200 OK",
     hero: {
-      curl: "curl -X GET https://drogan.dev/api/v1/intro",
-      data: {
-        status: 200,
-        message: "hello, world!",
-        name: "Drogan",
-        role: "Software Engineer & Android Developer",
-        focus: [
-          "Android apps (Kotlin, Jetpack Compose)",
-          "Web apps (Next.js, TypeScript)",
-          "Clean & scalable architecture",
-        ],
-        available_for_work: true,
-      },
+      curl: data.apiDocs.hero.curl,
+      data: data.apiDocs.hero.data,
     },
     about: {
       response: "Response 200",
-      data: {
-        name: "Drogan",
-        title: "Software Engineer & Android Developer",
-        experience:
-          "Building fast, modern, and delightful applications",
-        traits: ["Problem solver", "Continuous learner", "Clean code advocate"],
-      },
+      data: data.apiDocs.about.data,
     },
     skills: {
       response: "Response 200",
-      data: [
-        {
-          category: "Mobile",
-          skills: ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"],
-        },
-        {
-          category: "Web",
-          skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-        },
-        {
-          category: "Backend & Database",
-          skills: ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"],
-        },
-        {
-          category: "Tools & Others",
-          skills: ["Git", "GitHub Actions", "Docker", "Figma", "Linux"],
-        },
-      ],
+      data: data.apiDocs.skills.data,
     },
     projects: {
       response: "Response 200",
-      description:
-        "List of projects I'm working on or have completed. Returns all data as an array.",
-      data: [
-        {
-          id: 1,
-          name: "aplikasi-catatan",
-          description: "Android app to keep daily notes.",
-          tech: ["Kotlin", "Jetpack Compose"],
-          status: "done",
-        },
-        {
-          id: 2,
-          name: "portfolio-website",
-          description: "This website itself — static & deployed to GitHub Pages.",
-          tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-          status: "live",
-        },
-        {
-          id: 3,
-          name: "rest-api-basic",
-          description: "Simple CRUD API for data management.",
-          tech: ["Node.js", "PostgreSQL"],
-          status: "in_progress",
-        },
-      ],
+      description: data.apiDocs.projects.description,
+      data: data.apiDocs.projects.data,
     },
     contact: {
-      description:
-        "Have a project, an idea, or just want to talk about technology? Send a request to the endpoint below — I usually respond within 24 hours.",
+      description: data.apiDocs.contact.description,
       requestBody: "Request Body",
       response: "Response",
       waiting: "Waiting for request...",
-      sent: {
-        status: 200,
-        message: "Message sent!",
-        note: "Usually replied within 24 hours.",
-      },
+      sent: data.apiDocs.contact.sent,
       fields: {
         name: "name",
         email: "email",

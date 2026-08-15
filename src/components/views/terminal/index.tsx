@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
-import { useView } from "@/components/providers/ViewProvider";
-import type { View } from "@/components/providers/ViewProvider";
+import { useTemplate } from "@/components/providers/TemplateProvider";
+import type { Template } from "@/components/providers/TemplateProvider";
 import SettingsBar from "@/components/shared/SettingsBar";
 
 type Line = {
@@ -16,11 +16,11 @@ const HISTORY: Record<string, string> = {
   "--skills": "[kotlin, compose, nextjs, typescript, nodejs, postgresql]",
   "--projects": "[aplikasi-catatan, portfolio-website, rest-api-basic]",
   "--contact": "github.com/drogan120 · drogan120@gmail.com",
-  help: "commands: --about, --skills, --projects, --contact, --view <default|apiDocs|terminal>, clear, help",
+  help: "commands: --about, --skills, --projects, --contact, --view <template>, clear, help",
 };
 
 export default function TerminalView() {
-  const { setView } = useView();
+  const { setTemplate } = useTemplate();
   const [lines, setLines] = useState<Line[]>([]);
   const [input, setInput] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -33,15 +33,26 @@ export default function TerminalView() {
   const run = (cmd: string) => {
     const raw = cmd.trim().replace(/^\.\/drogan\s*/, "");
     if (raw.startsWith("--view ")) {
-      const target = raw.split(" ")[1] as View;
-      if (["default", "apiDocs", "terminal"].includes(target)) {
+      const target = raw.split(" ")[1] as Template;
+      const valid: Template[] = [
+        "minimal",
+        "playful",
+        "classic",
+        "brutalist",
+        "fashion",
+        "pastel",
+        "glass",
+        "apiDocs",
+        "terminal",
+      ];
+      if (valid.includes(target)) {
         setLines((prev) => [...prev, { command: cmd }]);
-        setView(target);
+        setTemplate(target);
         return;
       }
       setLines((prev) => [
         ...prev,
-        { command: cmd, output: `unknown view: ${target}` },
+        { command: cmd, output: `unknown template: ${target}` },
       ]);
       return;
     }
@@ -121,8 +132,8 @@ export default function TerminalView() {
       </div>
 
       <p className="mx-auto mt-4 max-w-2xl text-center font-mono text-xs text-muted">
-        ketik <span className="text-accent">--view apiDocs</span> atau{" "}
-        <span className="text-accent">--view default</span> untuk pindah tampilan
+        ketik <span className="text-accent">--view glass</span> atau{" "}
+        <span className="text-accent">--view apiDocs</span> untuk pindah tampilan
       </p>
     </main>
   );

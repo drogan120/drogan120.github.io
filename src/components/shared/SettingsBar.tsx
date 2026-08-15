@@ -5,8 +5,6 @@ import { useI18n } from "@/i18n";
 import type { Language } from "@/i18n";
 import { languages } from "@/i18n";
 import { useTheme } from "@/components/providers/ThemeProvider";
-import { useView } from "@/components/providers/ViewProvider";
-import type { View } from "@/components/providers/ViewProvider";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
 
@@ -53,7 +51,6 @@ export default function SettingsBar() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const { view, setView } = useView();
   const { template, setTemplate } = useTemplate();
   const { theme, setTheme } = useTheme();
   const { lang, setLang, t } = useI18n();
@@ -76,12 +73,6 @@ export default function SettingsBar() {
     };
   }, [open]);
 
-  const viewOptions: { value: View; label: string }[] = [
-    { value: "default", label: t.view.default },
-    { value: "apiDocs", label: t.view.apiDocs },
-    { value: "terminal", label: "Terminal" },
-  ];
-
   const templateOptions: { value: Template; label: string }[] = [
     { value: "minimal", label: "Minimal" },
     { value: "playful", label: "Playful" },
@@ -90,6 +81,8 @@ export default function SettingsBar() {
     { value: "fashion", label: "Fashion" },
     { value: "pastel", label: "Pastel" },
     { value: "glass", label: "Glass" },
+    { value: "apiDocs", label: "API Docs" },
+    { value: "terminal", label: "Terminal" },
   ];
 
   const langOptions = (Object.keys(languages) as Language[]).map((key) => ({
@@ -110,19 +103,13 @@ export default function SettingsBar() {
 
       {open && (
         <div className="absolute right-0 z-50 mt-2 w-64 space-y-3 rounded-xl border border-border bg-background p-4 shadow-2xl shadow-black/40">
-          <Group title={t.view.default}>
-            <OptionGroup options={viewOptions} value={view} onSelect={setView} />
+          <Group title="Template">
+            <OptionGroup
+              options={templateOptions}
+              value={template}
+              onSelect={setTemplate}
+            />
           </Group>
-
-          {view === "default" && (
-            <Group title="Template">
-              <OptionGroup
-                options={templateOptions}
-                value={template}
-                onSelect={setTemplate}
-              />
-            </Group>
-          )}
 
           <Group title="Theme">
             <div className="flex gap-1.5">
