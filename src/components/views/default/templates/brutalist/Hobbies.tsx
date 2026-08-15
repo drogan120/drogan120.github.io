@@ -5,7 +5,7 @@ export default function BrutalistHobbies() {
 
   return (
     <section id="hobbies" className="border-b-4 border-foreground">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:py-20">
         <h2 className="text-3xl font-black uppercase tracking-tight">
           {t.default.hobbies.title}
         </h2>
@@ -19,7 +19,7 @@ export default function BrutalistHobbies() {
               key={hobby.name}
               className="border-2 border-foreground p-6 transition-colors hover:bg-accent hover:text-background"
             >
-              <span className="text-3xl">{hobby.icon}</span>
+              <span className="section-icon text-3xl">{hobby.icon}</span>
               <h3 className="mt-4 font-mono text-sm font-black uppercase">
                 {hobby.name}
               </h3>

@@ -7,10 +7,10 @@ export default function ClassicHero() {
     <section id="top" className="mx-auto max-w-5xl px-6 pt-24 pb-20">
       <div className="flex flex-col items-center gap-10 text-center md:flex-row md:text-left">
         <div className="relative shrink-0">
-          <div className="flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-6xl">
+          <div className="section-icon flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-6xl">
             👨‍💻
           </div>
-          <span className="absolute -bottom-1 -right-1 h-8 w-8 rounded-full bg-accent ring-4 ring-background" />
+          <span className="absolute -bottom-1 -right-1 h-8 w-8 animate-bounce-soft rounded-full bg-accent ring-4 ring-background" />
         </div>
 
         <div>
@@ -28,13 +28,13 @@ export default function ClassicHero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="rounded-xl bg-foreground px-6 py-3 font-semibold text-background transition-transform hover:scale-105"
+              className="pop-on-click rounded-xl bg-foreground px-6 py-3 font-semibold text-background transition-transform hover:scale-105"
             >
               {t.default.hero.viewProjects}
             </a>
             <a
               href="#contact"
-              className="rounded-xl border border-border px-6 py-3 font-semibold transition-colors hover:border-accent hover:text-accent"
+              className="pop-on-click rounded-xl border border-border px-6 py-3 font-semibold transition-colors hover:border-accent hover:text-accent"
             >
               {t.default.hero.contactMe}
             </a>

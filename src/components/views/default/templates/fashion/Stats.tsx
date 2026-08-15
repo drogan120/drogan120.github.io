@@ -8,7 +8,7 @@ export default function FashionStats() {
       <div className="mx-auto grid max-w-6xl gap-px border border-border bg-border md:grid-cols-3">
         {t.default.stats.items.map((stat) => (
           <div key={stat.label} className="bg-background p-12 text-center">
-            <span className="text-3xl">{stat.icon}</span>
+            <span className="section-icon text-3xl">{stat.icon}</span>
             <p className="mt-4 font-serif text-6xl font-light text-accent">
               {stat.value}
             </p>

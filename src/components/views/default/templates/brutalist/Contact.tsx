@@ -11,7 +11,7 @@ export default function BrutalistContact() {
 
   return (
     <section id="contact" className="border-b-4 border-foreground">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:py-20">
         <div className="border-2 border-foreground bg-accent p-10 text-center md:p-16">
           <p className="font-mono text-xs font-black uppercase text-background">
             [{t.default.contact.label}]

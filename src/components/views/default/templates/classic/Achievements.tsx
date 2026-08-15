@@ -4,7 +4,7 @@ export default function ClassicAchievements() {
   const { t } = useI18n();
 
   return (
-    <section id="achievements" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="achievements" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <p className="text-center font-mono text-sm text-accent">
         {t.default.achievements.label}
       </p>

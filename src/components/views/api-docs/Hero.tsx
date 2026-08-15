@@ -17,7 +17,7 @@ export default function Hero() {
         </div>
 
         <div className="p-5">
-          <p className="font-mono text-sm">
+          <p className="overflow-x-auto code-scroll whitespace-nowrap font-mono text-sm">
             <span className="text-get">$</span> {t.apiDocs.hero.curl}
           </p>
           <div className="mt-4 border-l-2 border-accent/40 pl-4">

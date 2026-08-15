@@ -11,7 +11,7 @@ export default function PastelSkills() {
   const { t } = useI18n();
 
   return (
-    <section id="skills" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="skills" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="text-center">
         <p className="font-mono text-sm text-accent">
           {t.default.skills.label}

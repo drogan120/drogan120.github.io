@@ -74,3 +74,117 @@ body {
 .animate-gradient {
   animation: gradient-x 4s ease infinite;
 }
+
+/* ============================================================
+   CUTE ANIMATIONS
+   ============================================================ */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12px, -20px) scale(1.05);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-12deg) scale(1.15);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.15);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(20deg);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 2.5s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.wiggle-on-hover {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.group:hover .wiggle-on-hover,
+a:hover > .wiggle-on-hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.pop-on-click {
+  transition: transform 0.15s ease;
+}
+
+.pop-on-click:active {
+  animation: pop 0.3s ease;
+}
+
+.section-icon {
+  display: inline-block;
+}
+
+.group:hover .section-icon,
+.section-icon:hover {
+  animation: wiggle 0.5s ease-in-out;
+}

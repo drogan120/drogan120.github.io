@@ -5,7 +5,7 @@ export default function FashionAchievements() {
 
   return (
     <section id="achievements" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-8 py-24">
+      <div className="mx-auto max-w-6xl px-8 py-16 md:py-24">
         <p className="text-center text-xs uppercase tracking-[0.4em] text-accent">
           {t.default.achievements.label}
         </p>
@@ -16,7 +16,7 @@ export default function FashionAchievements() {
         <div className="mt-16 grid gap-px border border-border bg-border md:grid-cols-3">
           {t.default.achievements.items.map((item) => (
             <div key={item.title} className="bg-background p-10 text-center">
-              <span className="text-4xl">{item.icon}</span>
+              <span className="section-icon text-4xl">{item.icon}</span>
               <h3 className="mt-6 text-sm uppercase tracking-[0.25em]">
                 {item.title}
               </h3>

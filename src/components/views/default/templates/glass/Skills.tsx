@@ -7,7 +7,7 @@ export default function GlassSkills() {
     <section id="skills" className="relative">
       <div className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-64 w-64 rounded-full bg-accent/20 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-5xl px-6 py-24">
+      <div className="relative mx-auto max-w-5xl px-6 py-16 md:py-24">
         <div className="text-center">
           <p className="font-mono text-sm text-accent">{t.default.skills.label}</p>
           <h2 className="mt-3 text-3xl font-bold">{t.default.skills.title}</h2>

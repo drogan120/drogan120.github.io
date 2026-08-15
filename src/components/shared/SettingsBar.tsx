@@ -113,7 +113,7 @@ export default function SettingsBar() {
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-64 space-y-3 rounded-xl border border-border bg-background p-4 shadow-2xl shadow-black/40">
+        <div className="absolute right-0 z-50 mt-2 w-64 max-w-[calc(100vw-2rem)] space-y-3 overflow-y-auto rounded-xl border border-border bg-background p-4 shadow-2xl shadow-black/40">
           <Group title="Template">
             <OptionGroup
               options={templateOptions}

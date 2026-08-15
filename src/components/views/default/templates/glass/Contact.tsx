@@ -10,7 +10,7 @@ export default function GlassContact() {
   const { t } = useI18n();
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="contact" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="rounded-[2.5rem] border border-white/15 bg-white/10 p-12 text-center backdrop-blur-xl sm:p-16">
         <p className="font-mono text-sm text-accent">{t.default.contact.label}</p>
         <h2 className="mt-3 text-4xl font-bold">{t.default.contact.title}</h2>

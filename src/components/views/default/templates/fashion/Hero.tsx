@@ -18,7 +18,6 @@ export default function FashionHero() {
           <p className="mt-4 font-serif text-2xl font-light italic tracking-wide text-accent sm:text-4xl">
             Drogan
           </p>
-
           <p className="mt-10 text-sm uppercase tracking-[0.3em] text-muted">
             {t.default.hero.role1} · {t.default.hero.role2}
           </p>
@@ -32,14 +31,14 @@ export default function FashionHero() {
           <div className="mt-12 flex flex-wrap items-center justify-center gap-10">
             <a
               href="#projects"
-              className="group relative text-xs uppercase tracking-[0.3em] transition-colors hover:text-accent"
+              className="group pop-on-click relative text-xs uppercase tracking-[0.3em] transition-colors hover:text-accent"
             >
               {t.default.hero.viewProjects}
               <span className="absolute -bottom-2 left-0 h-px w-full bg-accent opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
             <a
               href="#contact"
-              className="group relative text-xs uppercase tracking-[0.3em] transition-colors hover:text-accent"
+              className="group pop-on-click relative text-xs uppercase tracking-[0.3em] transition-colors hover:text-accent"
             >
               {t.default.hero.contactMe}
               <span className="absolute -bottom-2 left-0 h-px w-full bg-accent opacity-0 transition-opacity group-hover:opacity-100" />

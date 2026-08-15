@@ -5,7 +5,7 @@ export default function BrutalistAbout() {
 
   return (
     <section id="about" className="border-b-4 border-foreground">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:py-20">
         <div className="grid md:grid-cols-3">
           <div className="border-2 border-foreground p-6 md:border-r-0">
             <h2 className="text-3xl font-black uppercase tracking-tight">

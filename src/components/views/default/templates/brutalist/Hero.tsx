@@ -8,7 +8,7 @@ export default function BrutalistHero() {
       <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <div className="grid md:grid-cols-[1.2fr_1fr]">
           <div className="border-2 border-foreground p-8 shadow-[8px_8px_0_0_var(--foreground)] md:p-12">
-            <p className="inline-block border-2 border-accent bg-accent px-3 py-1 font-mono text-xs font-bold uppercase text-background">
+            <p className="inline-block animate-bounce-soft border-2 border-accent bg-accent px-3 py-1 font-mono text-xs font-bold uppercase text-background">
               {t.default.hero.badge}
             </p>
 
@@ -43,13 +43,13 @@ export default function BrutalistHero() {
         <div className="mt-10 flex flex-wrap gap-4">
           <a
             href="#projects"
-            className="border-2 border-foreground bg-accent px-6 py-3 font-mono text-sm font-bold uppercase text-background shadow-[4px_4px_0_0_var(--foreground)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+            className="pop-on-click border-2 border-foreground bg-accent px-6 py-3 font-mono text-sm font-bold uppercase text-background shadow-[4px_4px_0_0_var(--foreground)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
           >
             {t.default.hero.viewProjects}
           </a>
           <a
             href="#contact"
-            className="border-2 border-foreground px-6 py-3 font-mono text-sm font-bold uppercase transition-colors hover:bg-foreground hover:text-background"
+            className="pop-on-click border-2 border-foreground px-6 py-3 font-mono text-sm font-bold uppercase transition-colors hover:bg-foreground hover:text-background"
           >
             {t.default.hero.contactMe}
           </a>

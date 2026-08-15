@@ -16,7 +16,7 @@ export default function ClassicContact() {
   const { t } = useI18n();
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl px-6 py-24 text-center">
+    <section id="contact" className="mx-auto max-w-5xl px-6 py-16 md:py-24 text-center">
       <p className="font-mono text-sm text-accent">
         {t.default.contact.label}
       </p>
@@ -25,7 +25,7 @@ export default function ClassicContact() {
         {t.default.contact.description}
       </p>
 
-      <div className="mt-12 grid grid-cols-3 gap-4">
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
         {stats.map((stat) => (
           <div
             key={stat.label}

@@ -5,7 +5,7 @@ export default function MinimalHero() {
 
   return (
     <section id="top" className="mx-auto max-w-5xl px-6 pt-24 pb-20">
-      <p className="font-mono text-sm text-accent">
+      <p className="animate-float font-mono text-sm text-accent">
         {t.default.hero.badge}
       </p>
 

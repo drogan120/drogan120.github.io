@@ -4,7 +4,7 @@ export default function MinimalAchievements() {
   const { t } = useI18n();
 
   return (
-    <section id="achievements" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="achievements" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <p className="font-mono text-sm text-accent">{t.default.achievements.label}</p>
       <h2 className="mt-3 text-3xl font-bold">{t.default.achievements.title}</h2>
 

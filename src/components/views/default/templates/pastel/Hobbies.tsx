@@ -4,7 +4,7 @@ export default function PastelHobbies() {
   const { t } = useI18n();
 
   return (
-    <section id="hobbies" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="hobbies" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="text-center">
         <p className="font-mono text-sm text-accent">
           {t.default.hobbies.label}
@@ -20,7 +20,7 @@ export default function PastelHobbies() {
             key={hobby.name}
             className={`rounded-3xl bg-gradient-to-b ${cardColors[i % cardColors.length]} p-7 text-center ring-1 ring-border/60 transition-transform hover:-translate-y-1`}
           >
-            <span className="text-4xl">{hobby.icon}</span>
+            <span className="section-icon text-4xl">{hobby.icon}</span>
             <h3 className="mt-3 font-semibold text-foreground">
               {hobby.name}
             </h3>

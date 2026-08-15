@@ -5,7 +5,7 @@ export default function BrutalistProjects() {
 
   return (
     <section id="projects" className="border-b-4 border-foreground">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:py-20">
         <h2 className="text-3xl font-black uppercase tracking-tight">
           {t.default.projects.title}
         </h2>

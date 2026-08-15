@@ -14,7 +14,7 @@ export default function GlassStats() {
               key={stat.label}
               className="rounded-3xl border border-white/15 bg-white/10 p-8 text-center backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/15"
             >
-              <span className="text-3xl">{stat.icon}</span>
+              <span className="section-icon text-3xl">{stat.icon}</span>
               <p className="mt-3 text-4xl font-bold">{stat.value}</p>
               <p className="mt-1 text-sm text-muted">{stat.label}</p>
             </div>

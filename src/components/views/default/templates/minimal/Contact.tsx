@@ -10,7 +10,7 @@ export default function MinimalContact() {
   ];
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl px-6 py-24 text-center">
+    <section id="contact" className="mx-auto max-w-5xl px-6 py-16 md:py-24 text-center">
       <p className="font-mono text-sm text-accent">
         {t.default.contact.label}
       </p>

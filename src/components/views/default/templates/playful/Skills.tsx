@@ -5,7 +5,7 @@ export default function PlayfulSkills() {
 
   return (
     <section id="skills">
-      <div className="mx-auto max-w-5xl px-6 py-24">
+      <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
         <div className="text-center">
           <p className="font-mono text-sm text-accent">
             {t.default.skills.label}

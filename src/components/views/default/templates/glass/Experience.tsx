@@ -7,7 +7,7 @@ export default function GlassExperience() {
     <section id="experience" className="relative">
       <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-64 w-64 rounded-full bg-accent/15 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-5xl px-6 py-24">
+      <div className="relative mx-auto max-w-5xl px-6 py-16 md:py-24">
         <div className="text-center">
           <p className="font-mono text-sm text-accent">
             {t.default.experience.label}

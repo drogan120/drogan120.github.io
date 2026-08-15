@@ -4,7 +4,7 @@ export default function ClassicHobbies() {
   const { t } = useI18n();
 
   return (
-    <section id="hobbies" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="hobbies" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <p className="text-center font-mono text-sm text-accent">
         {t.default.hobbies.label}
       </p>
@@ -18,7 +18,7 @@ export default function ClassicHobbies() {
             key={hobby.name}
             className="rounded-2xl border border-border bg-card p-6 text-center transition-colors hover:border-accent/50"
           >
-            <span className="text-3xl">{hobby.icon}</span>
+            <span className="section-icon text-3xl">{hobby.icon}</span>
             <h3 className="mt-3 font-semibold">{hobby.name}</h3>
             <p className="mt-1 text-sm text-muted">{hobby.detail}</p>
           </div>

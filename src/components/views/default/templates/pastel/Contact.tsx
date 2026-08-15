@@ -10,7 +10,7 @@ export default function PastelContact() {
   const { t } = useI18n();
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="contact" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="rounded-[2.5rem] bg-gradient-to-br from-accent/15 via-accent-2/15 to-accent/15 p-12 text-center ring-1 ring-border/60 sm:p-16">
         <p className="font-mono text-sm text-accent">
           {t.default.contact.label}

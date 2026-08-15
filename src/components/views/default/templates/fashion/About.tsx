@@ -5,7 +5,7 @@ export default function FashionAbout() {
 
   return (
     <section id="about" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-8 py-24">
+      <div className="mx-auto max-w-6xl px-8 py-16 md:py-24">
         <div className="grid gap-16 md:grid-cols-2">
           <div>
             <p className="text-xs uppercase tracking-[0.4em] text-accent">

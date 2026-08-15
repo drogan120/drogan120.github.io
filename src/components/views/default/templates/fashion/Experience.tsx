@@ -5,7 +5,7 @@ export default function FashionExperience() {
 
   return (
     <section id="experience" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-8 py-24">
+      <div className="mx-auto max-w-6xl px-8 py-16 md:py-24">
         <p className="text-center text-xs uppercase tracking-[0.4em] text-accent">
           {t.default.experience.label}
         </p>
@@ -17,12 +17,12 @@ export default function FashionExperience() {
           {t.default.experience.items.map((item, i) => (
             <div
               key={item.title}
-              className={`flex items-start gap-10 border-b border-border py-10 ${i === 0 ? "border-t" : ""}`}
+              className={`flex flex-col gap-3 border-b border-border py-10 sm:flex-row sm:items-start sm:gap-10 ${i === 0 ? "border-t" : ""}`}
             >
-              <span className="w-40 shrink-0 pt-1 font-serif text-xl font-light text-accent/70">
+              <span className="shrink-0 font-serif text-xl font-light text-accent/70 sm:w-40 sm:pt-1">
                 {item.period}
               </span>
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-sm uppercase tracking-[0.25em]">
                   {item.title}
                 </h3>

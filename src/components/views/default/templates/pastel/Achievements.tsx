@@ -4,7 +4,7 @@ export default function PastelAchievements() {
   const { t } = useI18n();
 
   return (
-    <section id="achievements" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="achievements" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="text-center">
         <p className="font-mono text-sm text-accent">
           {t.default.achievements.label}
@@ -20,7 +20,7 @@ export default function PastelAchievements() {
             key={item.title}
             className={`rounded-3xl bg-gradient-to-b ${cardColors[i % cardColors.length]} p-8 text-center ring-1 ring-border/60 transition-transform hover:-translate-y-1`}
           >
-            <span className="text-4xl">{item.icon}</span>
+            <span className="section-icon text-4xl">{item.icon}</span>
             <h3 className="mt-4 text-lg font-semibold text-foreground">
               {item.title}
             </h3>

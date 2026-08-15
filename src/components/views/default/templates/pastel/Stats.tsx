@@ -11,7 +11,7 @@ export default function PastelStats() {
             key={stat.label}
             className={`rounded-3xl bg-gradient-to-b ${cardColors[i % cardColors.length]} p-8 text-center ring-1 ring-border/60 transition-transform hover:-translate-y-1`}
           >
-            <span className="text-3xl">{stat.icon}</span>
+            <span className="section-icon text-3xl">{stat.icon}</span>
             <p className="mt-3 text-4xl font-extrabold text-foreground">
               {stat.value}
             </p>

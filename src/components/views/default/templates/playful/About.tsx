@@ -4,7 +4,7 @@ export default function PlayfulAbout() {
   const { t } = useI18n();
 
   return (
-    <section id="about" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="about" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="text-center">
         <p className="font-mono text-sm text-accent">{t.default.about.label}</p>
         <h2 className="mt-2 text-4xl font-extrabold tracking-tight">
@@ -18,7 +18,7 @@ export default function PlayfulAbout() {
             key={card.title}
             className="group rounded-3xl border border-border bg-card p-8 transition-all hover:-translate-y-2 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10"
           >
-            <span className="text-4xl">{card.icon}</span>
+            <span className="section-icon text-4xl">{card.icon}</span>
             <h3 className="mt-4 text-lg font-bold text-accent">
               {card.title}
             </h3>

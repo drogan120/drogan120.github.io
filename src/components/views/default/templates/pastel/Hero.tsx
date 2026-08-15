@@ -1,9 +1,9 @@
 import { useI18n } from "@/i18n";
 
 const blobs = [
-  { className: "bg-accent/20", top: "0%", left: "10%" },
-  { className: "bg-accent-2/20", top: "45%", left: "70%" },
-  { className: "bg-accent/15", top: "10%", left: "60%" },
+  { className: "bg-accent/20", top: "0%", left: "10%", delay: "0s" },
+  { className: "bg-accent-2/20", top: "45%", left: "70%", delay: "3s" },
+  { className: "bg-accent/15", top: "10%", left: "60%", delay: "6s" },
 ];
 
 export default function PastelHero() {
@@ -15,14 +15,14 @@ export default function PastelHero() {
         {blobs.map((b, i) => (
           <div
             key={i}
-            className={`absolute h-72 w-72 rounded-full blur-3xl ${b.className}`}
-            style={{ top: b.top, left: b.left }}
+            className={`absolute h-72 w-72 animate-float-slow rounded-full blur-3xl ${b.className}`}
+            style={{ top: b.top, left: b.left, animationDelay: b.delay }}
           />
         ))}
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 py-24 text-center sm:py-32">
-        <span className="inline-block rounded-full bg-card/80 px-5 py-2 text-sm font-medium text-muted shadow-sm backdrop-blur ring-1 ring-border/60">
+        <span className="inline-block animate-float rounded-full bg-card/80 px-5 py-2 text-sm font-medium text-muted shadow-sm backdrop-blur ring-1 ring-border/60">
           👋 {t.default.hero.badge}
         </span>
 
@@ -40,13 +40,13 @@ export default function PastelHero() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#projects"
-            className="rounded-full bg-gradient-to-r from-accent to-accent-2 px-8 py-3.5 font-medium text-background shadow-lg transition-transform hover:scale-105"
+            className="pop-on-click rounded-full bg-gradient-to-r from-accent to-accent-2 px-8 py-3.5 font-medium text-background shadow-lg transition-transform hover:scale-105"
           >
             {t.default.hero.viewProjects}
           </a>
           <a
             href="#contact"
-            className="rounded-full bg-card px-8 py-3.5 font-medium text-foreground shadow-sm ring-1 ring-border transition-transform hover:scale-105"
+            className="pop-on-click rounded-full bg-card px-8 py-3.5 font-medium text-foreground shadow-sm ring-1 ring-border transition-transform hover:scale-105"
           >
             {t.default.hero.contactMe}
           </a>

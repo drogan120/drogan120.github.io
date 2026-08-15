@@ -116,10 +116,10 @@ export default function Contact() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-border px-4 py-2 font-mono text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
+                className="min-w-0 rounded-lg border border-border px-4 py-2 font-mono text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
               >
                 <span className="mr-2 text-muted">{link.key}:</span>
-                {link.value}
+                <span className="break-all">{link.value}</span>
               </a>
             ))}
           </div>

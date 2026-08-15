@@ -4,7 +4,7 @@ export default function PlayfulExperience() {
   const { t } = useI18n();
 
   return (
-    <section id="experience" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="experience" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="text-center">
         <p className="font-mono text-sm text-accent">{t.default.experience.label}</p>
         <h2 className="mt-2 text-4xl font-extrabold tracking-tight">
