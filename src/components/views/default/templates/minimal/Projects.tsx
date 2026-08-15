@@ -4,7 +4,7 @@ export default function MinimalProjects() {
   const { t } = useI18n();
 
   return (
-    <section id="projects" className="border-t border-border">
+    <section id="projects">
       <div className="mx-auto max-w-5xl px-6 py-24">
         <p className="font-mono text-sm text-accent">
           {t.default.projects.label}

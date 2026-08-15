@@ -4,7 +4,7 @@ export default function PlayfulSkills() {
   const { t } = useI18n();
 
   return (
-    <section id="skills" className="border-y border-border bg-card/40">
+    <section id="skills">
       <div className="mx-auto max-w-5xl px-6 py-24">
         <div className="text-center">
           <p className="font-mono text-sm text-accent">

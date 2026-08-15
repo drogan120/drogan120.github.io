@@ -4,7 +4,7 @@ export default function ClassicProjects() {
   const { t } = useI18n();
 
   return (
-    <section id="projects" className="border-y border-border bg-card/40">
+    <section id="projects">
       <div className="mx-auto max-w-5xl px-6 py-24">
         <p className="text-center font-mono text-sm text-accent">
           {t.default.projects.label}

@@ -4,7 +4,7 @@ export default function MinimalAbout() {
   const { t } = useI18n();
 
   return (
-    <section id="about" className="border-y border-border">
+    <section id="about">
       <div className="mx-auto max-w-5xl px-6 py-24">
         <p className="font-mono text-sm text-accent">
           {t.default.about.label}
