@@ -10,7 +10,8 @@ export type Template =
   | "classic"
   | "brutalist"
   | "fashion"
-  | "pastel";
+  | "pastel"
+  | "glass";
 
 type TemplateContextValue = {
   template: Template;

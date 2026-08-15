@@ -7,6 +7,7 @@ import ClassicTemplate from "./templates/classic";
 import BrutalistTemplate from "./templates/brutalist";
 import FashionTemplate from "./templates/fashion";
 import PastelTemplate from "./templates/pastel";
+import GlassTemplate from "./templates/glass";
 
 export default function DefaultView() {
   const { template } = useTemplate();
@@ -22,6 +23,8 @@ export default function DefaultView() {
       return <FashionTemplate />;
     case "pastel":
       return <PastelTemplate />;
+    case "glass":
+      return <GlassTemplate />;
     default:
       return <MinimalTemplate />;
   }

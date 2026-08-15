@@ -1,33 +1,33 @@
 import { useI18n } from "@/i18n";
 
 const pillColors = [
-  "bg-pink-100 text-pink-500",
-  "bg-purple-100 text-purple-500",
-  "bg-sky-100 text-sky-500",
-  "bg-amber-100 text-amber-500",
+  "bg-pink-100/80 text-pink-500 dark:bg-pink-500/15 dark:text-pink-300",
+  "bg-purple-100/80 text-purple-500 dark:bg-purple-500/15 dark:text-purple-300",
+  "bg-sky-100/80 text-sky-500 dark:bg-sky-500/15 dark:text-sky-300",
+  "bg-amber-100/80 text-amber-500 dark:bg-amber-500/15 dark:text-amber-300",
 ];
 
 export default function PastelSkills() {
   const { t } = useI18n();
 
   return (
-    <section id="skills" className="mx-auto max-w-5xl px-6 py-20">
+    <section id="skills" className="mx-auto max-w-5xl px-6 py-24">
       <div className="text-center">
-        <p className="font-mono text-sm text-purple-400">
+        <p className="font-mono text-sm text-purple-400 dark:text-purple-300">
           {t.default.skills.label}
         </p>
-        <h2 className="mt-2 text-3xl font-bold text-slate-800">
+        <h2 className="mt-3 text-3xl font-bold text-slate-800 dark:text-slate-100">
           {t.default.skills.title}
         </h2>
       </div>
 
-      <div className="mt-12 grid gap-8 md:grid-cols-2">
+      <div className="mt-14 grid gap-5 md:grid-cols-2">
         {t.default.skills.groups.map((group, gi) => (
           <div
             key={group.title}
-            className="rounded-3xl border border-slate-100 bg-white/70 p-6 shadow-sm backdrop-blur"
+            className="rounded-3xl border border-slate-100 bg-white/60 p-7 backdrop-blur dark:border-white/10 dark:bg-white/5"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               {group.title}
             </h3>
             <div className="mt-4 flex flex-wrap gap-2.5">

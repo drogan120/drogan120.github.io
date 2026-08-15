@@ -89,6 +89,7 @@ export default function SettingsBar() {
     { value: "brutalist", label: "Brutalist" },
     { value: "fashion", label: "Fashion" },
     { value: "pastel", label: "Pastel" },
+    { value: "glass", label: "Glass" },
   ];
 
   const langOptions = (Object.keys(languages) as Language[]).map((key) => ({
