@@ -6,6 +6,7 @@ import PlayfulTemplate from "./templates/playful";
 import ClassicTemplate from "./templates/classic";
 import BrutalistTemplate from "./templates/brutalist";
 import FashionTemplate from "./templates/fashion";
+import PastelTemplate from "./templates/pastel";
 
 export default function DefaultView() {
   const { template } = useTemplate();
@@ -19,6 +20,8 @@ export default function DefaultView() {
       return <BrutalistTemplate />;
     case "fashion":
       return <FashionTemplate />;
+    case "pastel":
+      return <PastelTemplate />;
     default:
       return <MinimalTemplate />;
   }

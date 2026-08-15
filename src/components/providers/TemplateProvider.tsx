@@ -4,7 +4,13 @@ import { createContext, useContext } from "react";
 import type { ReactNode } from "react";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 
-export type Template = "minimal" | "playful" | "classic" | "brutalist" | "fashion";
+export type Template =
+  | "minimal"
+  | "playful"
+  | "classic"
+  | "brutalist"
+  | "fashion"
+  | "pastel";
 
 type TemplateContextValue = {
   template: Template;
