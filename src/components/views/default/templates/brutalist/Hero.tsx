@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import TypeWriter from "@/components/shared/TypeWriter";
 
 export default function BrutalistHero() {
   const { t } = useI18n();
@@ -19,7 +20,10 @@ export default function BrutalistHero() {
             </h1>
 
             <p className="mt-4 font-mono text-lg font-bold uppercase">
-              {t.default.hero.role1} / {t.default.hero.role2}
+              <TypeWriter
+                words={[t.default.hero.role1, t.default.hero.role2]}
+                className="text-accent"
+              />
             </p>
 
             <p className="mt-6 max-w-md font-mono text-sm leading-relaxed text-muted">

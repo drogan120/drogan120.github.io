@@ -11,6 +11,7 @@ const id: Dictionary = {
       about: "Tentang",
       skills: "Keahlian",
       experience: "Pengalaman",
+      blog: "Blog",
       projects: "Proyek",
       contact: "Kontak",
       hire: "Hire Me",
@@ -54,6 +55,23 @@ const id: Dictionary = {
       label: "// hobi",
       title: "Di Luar Coding",
       items: data.default.hobbies.items,
+    },
+    github: {
+      label: "// github",
+      title: "GitHub",
+      description: "Statistik singkat dari profil GitHub saya.",
+      repos: "Repositori",
+      stars: "Bintang",
+      followers: "Pengikut",
+      contributions: "Kontribusi",
+      viewProfile: "Lihat Profil",
+    },
+    blog: {
+      label: "// blog",
+      title: "Tulisan Terbaru",
+      description: "Catatan dan artikel tentang teknologi yang saya tulis.",
+      readMore: "Baca di dev.to",
+      items: data.default.blog.items,
     },
     projects: {
       label: "// proyek",
@@ -112,6 +130,16 @@ const id: Dictionary = {
       response: "Respons 200",
       description: data.apiDocs.hobbies.description,
       data: data.apiDocs.hobbies.data,
+    },
+    github: {
+      response: "Respons 200",
+      description: data.apiDocs.github.description,
+      data: data.apiDocs.github.data,
+    },
+    blog: {
+      response: "Respons 200",
+      description: data.apiDocs.blog.description,
+      data: data.apiDocs.blog.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

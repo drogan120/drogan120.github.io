@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { Providers } from "@/components/providers/Providers";
+import {
+  ScrollProgressBar,
+  BackToTop,
+} from "@/components/shared/PageChrome";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -48,6 +52,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col">
+        <ScrollProgressBar />
+        <BackToTop />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -39,6 +39,28 @@ export default function FashionProjects() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-5 flex flex-wrap gap-8">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link relative text-xs uppercase tracking-[0.3em] transition-colors hover:text-accent"
+                  >
+                    repo
+                    <span className="absolute -bottom-2 left-0 h-px w-full bg-accent opacity-0 transition-opacity group-hover/link:opacity-100" />
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/link relative text-xs uppercase tracking-[0.3em] transition-colors hover:text-accent"
+                    >
+                      demo
+                      <span className="absolute -bottom-2 left-0 h-px w-full bg-accent opacity-0 transition-opacity group-hover/link:opacity-100" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

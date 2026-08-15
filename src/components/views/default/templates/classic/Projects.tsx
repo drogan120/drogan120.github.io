@@ -37,6 +37,26 @@ export default function ClassicProjects() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-4 flex gap-4 border-t border-border pt-3">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs font-bold text-accent transition-colors hover:text-accent-2"
+                  >
+                    repo ↗
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs font-bold text-muted transition-colors hover:text-accent"
+                    >
+                      demo ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

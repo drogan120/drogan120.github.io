@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import TypeWriter from "@/components/shared/TypeWriter";
 
 export default function FashionHero() {
   const { t } = useI18n();
@@ -19,7 +20,10 @@ export default function FashionHero() {
             Drogan
           </p>
           <p className="mt-10 text-sm uppercase tracking-[0.3em] text-muted">
-            {t.default.hero.role1} · {t.default.hero.role2}
+            <TypeWriter
+              words={[t.default.hero.role1, t.default.hero.role2]}
+              className="text-accent"
+            />
           </p>
 
           <div className="mx-auto mt-10 h-px w-24 bg-foreground" />

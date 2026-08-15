@@ -30,22 +30,46 @@
         {
           "icon": "📱",
           "title": "Mobile",
-          "skills": ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"]
+          "skills": [
+            "Kotlin",
+            "Java",
+            "Jetpack Compose",
+            "Android SDK",
+            "Flutter"
+          ]
         },
         {
           "icon": "🌐",
           "title": "Web",
-          "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
+          "skills": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Node.js"
+          ]
         },
         {
           "icon": "🗄️",
           "title": "Backend & Database",
-          "skills": ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"]
+          "skills": [
+            "Node.js",
+            "PostgreSQL",
+            "MySQL",
+            "Firebase",
+            "REST API"
+          ]
         },
         {
           "icon": "🛠️",
           "title": "Tools & Lainnya",
-          "skills": ["Git", "GitHub Actions", "Docker", "Figma", "Linux"]
+          "skills": [
+            "Git",
+            "GitHub Actions",
+            "Docker",
+            "Figma",
+            "Linux"
+          ]
         }
       ]
     },
@@ -136,25 +160,76 @@
         {
           "title": "Aplikasi Android Pertama",
           "description": "Aplikasi Android sederhana untuk mencatat catatan harian, dibangun dengan Kotlin dan Jetpack Compose.",
-          "tags": ["Kotlin", "Jetpack Compose"],
-          "icon": "📱"
+          "tags": [
+            "Kotlin",
+            "Jetpack Compose"
+          ],
+          "icon": "📱",
+          "repo": "https://github.com/drogan120",
+          "demo": null
         },
         {
           "title": "Website Portofolio",
           "description": "Website portofolio pribadi ini, dibangun dengan Next.js dan TypeScript, di-deploy ke GitHub Pages.",
-          "tags": ["Next.js", "TypeScript", "Tailwind CSS"],
-          "icon": "⚡"
+          "tags": [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ],
+          "icon": "⚡",
+          "repo": "https://github.com/drogan120",
+          "demo": null
         },
         {
           "title": "REST API Sederhana",
           "description": "API CRUD untuk manajemen data sederhana menggunakan Node.js dan database PostgreSQL.",
-          "tags": ["Node.js", "PostgreSQL"],
-          "icon": "🛠️"
+          "tags": [
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "icon": "🛠️",
+          "repo": "https://github.com/drogan120",
+          "demo": null
         }
       ]
     },
     "contact": {
       "description": "Punya proyek, ide, atau sekadar ingin mengobrol tentang teknologi? Jangan ragu untuk menghubungi saya."
+    },
+    "github": {
+      "username": "drogan120",
+      "repos": 38,
+      "stars": 124,
+      "followers": 57,
+      "contributions": 842
+    },
+    "blog": {
+      "items": [
+        {
+          "title": "Dari Nol ke Aplikasi Android Pertama",
+          "date": "2024-03-12",
+          "category": "Android",
+          "excerpt": "Perjalanan saya membangun dan menerbitkan aplikasi Jetpack Compose dari awal.",
+          "link": "https://dev.to/drogan120",
+          "content": "Membangun aplikasi dari nol itu menakutkan. Ini yang paling membantu saya:\n\n- **Mulai dari scope kecil** — satu fitur yang bisa langsung dirilis.\n- **Pelajari dasar Jetpack Compose** — state, layout, navigasi.\n- **Rilis lebih awal** — menerbitkan v1 mengajarkan lebih banyak daripada menyempurnakan v0.\n\n> Cara terbaik untuk belajar adalah membangun sesuatu yang nyata.\n\nSaya menulis tentang perjalanan lengkapnya termasuk kesalahan yang saya buat."
+        },
+        {
+          "title": "Kenapa Saya Suka Clean Architecture",
+          "date": "2024-01-08",
+          "category": "Arsitektur",
+          "excerpt": "Bagaimana pemisahan tanggung jawab menjaga codebase tetap sehat saat proyek berkembang.",
+          "link": "https://dev.to/drogan120",
+          "content": "Clean Architecture memisahkan aplikasi ke dalam lapisan sehingga setiap bagian punya satu tugas:\n\n1. **Domain** — aturan bisnis, tanpa framework.\n2. **Data** — repository, sumber remote/lokal.\n3. **Presentation** — UI, ViewModel, state.\n\nSaat proyek berkembang, struktur ini membuat perubahan tetap terprediksi dan mudah diuji. Butuh sedikit biaya setup di awal, tapi terbayar dengan cepat."
+        },
+        {
+          "title": "Next.js + GitHub Pages dalam 10 Menit",
+          "date": "2023-11-22",
+          "category": "Web",
+          "excerpt": "Men-deploy situs Next.js statis ke GitHub Pages dengan GitHub Actions.",
+          "link": "https://dev.to/drogan120",
+          "content": "Men-deploy Next.js ke GitHub Pages lebih mudah dari yang dibayangkan:\n\n1. Set `output: 'export'` di `next.config.ts`.\n2. Tambah workflow GitHub Actions yang menjalankan `pnpm build`.\n3. Deploy folder `out/` ke `gh-pages`.\n\nTambahkan file `.nojekyll` agar file statis disajikan dengan benar. Selesai — situs kamu live di GitHub Pages."
+        }
+      ]
     }
   },
   "apiDocs": {
@@ -178,26 +253,54 @@
         "name": "Drogan",
         "title": "Software Engineer & Android Developer",
         "experience": "Membangun aplikasi yang cepat, modern, dan menyenangkan untuk dipakai",
-        "traits": ["Problem solver", "Terus belajar", "Advokat clean code"]
+        "traits": [
+          "Problem solver",
+          "Terus belajar",
+          "Advokat clean code"
+        ]
       }
     },
     "skills": {
       "data": [
         {
           "category": "Mobile",
-          "skills": ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"]
+          "skills": [
+            "Kotlin",
+            "Java",
+            "Jetpack Compose",
+            "Android SDK",
+            "Flutter"
+          ]
         },
         {
           "category": "Web",
-          "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
+          "skills": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Node.js"
+          ]
         },
         {
           "category": "Backend & Database",
-          "skills": ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"]
+          "skills": [
+            "Node.js",
+            "PostgreSQL",
+            "MySQL",
+            "Firebase",
+            "REST API"
+          ]
         },
         {
           "category": "Tools & Lainnya",
-          "skills": ["Git", "GitHub Actions", "Docker", "Figma", "Linux"]
+          "skills": [
+            "Git",
+            "GitHub Actions",
+            "Docker",
+            "Figma",
+            "Linux"
+          ]
         }
       ]
     },
@@ -208,22 +311,35 @@
           "id": 1,
           "name": "aplikasi-catatan",
           "description": "Aplikasi Android untuk mencatat catatan harian.",
-          "tech": ["Kotlin", "Jetpack Compose"],
-          "status": "done"
+          "tech": [
+            "Kotlin",
+            "Jetpack Compose"
+          ],
+          "status": "done",
+          "repo": "https://github.com/drogan120"
         },
         {
           "id": 2,
           "name": "portfolio-website",
           "description": "Website ini sendiri — statis & di-deploy ke GitHub Pages.",
-          "tech": ["Next.js", "TypeScript", "Tailwind CSS"],
-          "status": "live"
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ],
+          "status": "live",
+          "repo": "https://github.com/drogan120"
         },
         {
           "id": 3,
           "name": "rest-api-basic",
           "description": "API CRUD sederhana untuk manajemen data.",
-          "tech": ["Node.js", "PostgreSQL"],
-          "status": "in_progress"
+          "tech": [
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "status": "in_progress",
+          "repo": "https://github.com/drogan120"
         }
       ]
     },
@@ -250,26 +366,56 @@
     "stats": {
       "description": "Angka singkat tentang karier saya.",
       "data": [
-        { "label": "Tahun coding", "value": "5+" },
-        { "label": "Proyek selesai", "value": "20+" },
-        { "label": "Cangkir kopi", "value": "∞" }
+        {
+          "label": "Tahun coding",
+          "value": "5+"
+        },
+        {
+          "label": "Proyek selesai",
+          "value": "20+"
+        },
+        {
+          "label": "Cangkir kopi",
+          "value": "∞"
+        }
       ]
     },
     "achievements": {
       "description": "Pencapaian dan sertifikasi terpilih.",
       "data": [
-        { "title": "Penghargaan Proyek Terbaik", "detail": "Juara hackathon sekolah — ketua tim." },
-        { "title": "Sertifikasi Android Development", "detail": "Program pengembangan Android menyeluruh." },
-        { "title": "Kontributor Open Source", "detail": "Rutin berkontribusi ke proyek komunitas." }
+        {
+          "title": "Penghargaan Proyek Terbaik",
+          "detail": "Juara hackathon sekolah — ketua tim."
+        },
+        {
+          "title": "Sertifikasi Android Development",
+          "detail": "Program pengembangan Android menyeluruh."
+        },
+        {
+          "title": "Kontributor Open Source",
+          "detail": "Rutin berkontribusi ke proyek komunitas."
+        }
       ]
     },
     "hobbies": {
       "description": "Hal yang saya nikmati di luar coding.",
       "data": [
-        { "name": "Gaming", "detail": "Game FPS dan strategi." },
-        { "name": "Fotografi", "detail": "Fotografi jalanan dan pemandangan." },
-        { "name": "Musik", "detail": "Lo-fi dan beat elektronik." },
-        { "name": "Membaca", "detail": "Blog teknologi dan novel fiksi ilmiah." }
+        {
+          "name": "Gaming",
+          "detail": "Game FPS dan strategi."
+        },
+        {
+          "name": "Fotografi",
+          "detail": "Fotografi jalanan dan pemandangan."
+        },
+        {
+          "name": "Musik",
+          "detail": "Lo-fi dan beat elektronik."
+        },
+        {
+          "name": "Membaca",
+          "detail": "Blog teknologi dan novel fiksi ilmiah."
+        }
       ]
     },
     "contact": {
@@ -279,6 +425,46 @@
         "message": "Pesan terkirim!",
         "note": "Biasanya dibalas dalam 1x24 jam."
       }
+    },
+    "github": {
+      "description": "Quick GitHub profile stats.",
+      "data": {
+        "username": "drogan120",
+        "repos": 38,
+        "stars": 124,
+        "followers": 57,
+        "contributions": 842,
+        "profile": "https://github.com/drogan120"
+      }
+    },
+    "blog": {
+      "description": "List of blog posts written by the developer.",
+      "data": [
+        {
+          "title": "Dari Nol ke Aplikasi Android Pertama",
+          "date": "2024-03-12",
+          "category": "Android",
+          "excerpt": "Perjalanan saya membangun dan menerbitkan aplikasi Jetpack Compose dari awal.",
+          "link": "https://dev.to/drogan120",
+          "content": "Membangun aplikasi dari nol itu menakutkan.\n\n- **Mulai dari scope kecil**\n- **Pelajari dasar-dasarnya**\n- **Rilis lebih awal**\n\n> Cara terbaik untuk belajar adalah membangun sesuatu yang nyata."
+        },
+        {
+          "title": "Kenapa Saya Suka Clean Architecture",
+          "date": "2024-01-08",
+          "category": "Arsitektur",
+          "excerpt": "Bagaimana pemisahan tanggung jawab menjaga codebase tetap sehat saat proyek berkembang.",
+          "link": "https://dev.to/drogan120",
+          "content": "Clean Architecture memisahkan aplikasi ke dalam lapisan:\n\n1. **Domain** — aturan bisnis.\n2. **Data** — repository.\n3. **Presentation** — UI dan state."
+        },
+        {
+          "title": "Next.js + GitHub Pages dalam 10 Menit",
+          "date": "2023-11-22",
+          "category": "Web",
+          "excerpt": "Men-deploy situs Next.js statis ke GitHub Pages dengan GitHub Actions.",
+          "link": "https://dev.to/drogan120",
+          "content": "Set `output: 'export'`, tambah workflow, deploy folder `out/`.\n\nTambahkan file `.nojekyll` dan situs kamu live."
+        }
+      ]
     }
   }
 }

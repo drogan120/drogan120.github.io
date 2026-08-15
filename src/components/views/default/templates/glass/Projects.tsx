@@ -38,6 +38,26 @@ export default function GlassProjects() {
                   </span>
                 ))}
               </div>
+              <div className="mt-4 flex gap-4">
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold backdrop-blur-md transition-colors hover:border-accent/50 hover:text-accent"
+                >
+                  repo ↗
+                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-white/15 px-4 py-1.5 text-xs font-bold text-muted backdrop-blur-md transition-colors hover:border-accent/40 hover:text-accent"
+                  >
+                    demo ↗
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

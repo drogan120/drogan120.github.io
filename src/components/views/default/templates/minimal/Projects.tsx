@@ -13,9 +13,8 @@ export default function MinimalProjects() {
 
         <div className="mt-12 divide-y divide-border border-y border-border">
           {t.default.projects.items.map((project, i) => (
-            <a
+            <div
               key={project.title}
-              href="#projects"
               className="group grid gap-4 py-8 transition-colors md:grid-cols-[1fr_2fr_1fr] md:items-baseline"
             >
               <span className="font-mono text-xs text-muted">
@@ -28,18 +27,35 @@ export default function MinimalProjects() {
                 <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">
                   {project.description}
                 </p>
+                <div className="mt-3 flex flex-wrap gap-4">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent"
+                  >
+                    repo ↗
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs font-semibold text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent"
+                    >
+                      demo ↗
+                    </a>
+                  )}
+                </div>
               </div>
               <div className="flex flex-wrap gap-2 md:justify-end">
                 {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-mono text-xs text-muted"
-                  >
+                  <span key={tag} className="font-mono text-xs text-muted">
                     {tag}
                   </span>
                 ))}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

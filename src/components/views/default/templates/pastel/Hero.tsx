@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import TypeWriter from "@/components/shared/TypeWriter";
 
 const blobs = [
   { className: "bg-accent/20", top: "0%", left: "10%", delay: "0s" },
@@ -32,6 +33,11 @@ export default function PastelHero() {
             Drogan
           </span>
         </h1>
+
+        <TypeWriter
+          words={[t.default.hero.role1, t.default.hero.role2]}
+          className="mt-4 inline-block bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-xl font-semibold text-transparent sm:text-2xl"
+        />
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
           {t.default.hero.tagline}

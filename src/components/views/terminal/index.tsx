@@ -18,9 +18,11 @@ const HISTORY: Record<string, string> = {
   "--stats": "[years coding: 5+, projects built: 20+, cups of coffee: infinity]",
   "--achievements": "[best project award, android development certification, open source contributor]",
   "--hobbies": "[gaming, photography, music, reading]",
+  "--github": "github.com/drogan120 — 38 repos · 124 stars · 57 followers",
+  "--blog": "[3 posts — dev.to/drogan120]",
   "--projects": "[aplikasi-catatan, portfolio-website, rest-api-basic]",
   "--contact": "github.com/drogan120 · drogan120@gmail.com",
-  help: "commands: --about, --skills, --experience, --stats, --achievements, --hobbies, --projects, --contact, --view <template>, clear, help",
+  help: "commands: --about, --skills, --experience, --stats, --achievements, --hobbies, --github, --blog, --projects, --contact, --view <template>, clear, help",
 };
 
 export default function TerminalView() {

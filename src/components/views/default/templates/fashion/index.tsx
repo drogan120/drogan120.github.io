@@ -6,6 +6,8 @@ import Experience from "./Experience";
 import Stats from "./Stats";
 import Achievements from "./Achievements";
 import Hobbies from "./Hobbies";
+import Github from "./Github";
+import Blog from "./Blog";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -36,6 +38,12 @@ export default function FashionTemplate() {
         </Reveal>
         <Reveal>
           <Hobbies />
+        </Reveal>
+        <Reveal>
+          <Github />
+        </Reveal>
+        <Reveal>
+          <Blog />
         </Reveal>
         <Reveal>
           <Projects />

@@ -30,22 +30,46 @@
         {
           "icon": "📱",
           "title": "モバイル",
-          "skills": ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"]
+          "skills": [
+            "Kotlin",
+            "Java",
+            "Jetpack Compose",
+            "Android SDK",
+            "Flutter"
+          ]
         },
         {
           "icon": "🌐",
           "title": "Web",
-          "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
+          "skills": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Node.js"
+          ]
         },
         {
           "icon": "🗄️",
           "title": "バックエンド & データベース",
-          "skills": ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"]
+          "skills": [
+            "Node.js",
+            "PostgreSQL",
+            "MySQL",
+            "Firebase",
+            "REST API"
+          ]
         },
         {
           "icon": "🛠️",
           "title": "ツール & その他",
-          "skills": ["Git", "GitHub Actions", "Docker", "Figma", "Linux"]
+          "skills": [
+            "Git",
+            "GitHub Actions",
+            "Docker",
+            "Figma",
+            "Linux"
+          ]
         }
       ]
     },
@@ -136,25 +160,76 @@
         {
           "title": "最初の Android アプリ",
           "description": "Kotlin と Jetpack Compose で作られた、日々のメモを残すためのシンプルな Android アプリ。",
-          "tags": ["Kotlin", "Jetpack Compose"],
-          "icon": "📱"
+          "tags": [
+            "Kotlin",
+            "Jetpack Compose"
+          ],
+          "icon": "📱",
+          "repo": "https://github.com/drogan120",
+          "demo": null
         },
         {
           "title": "ポートフォリオサイト",
           "description": "このポートフォリオサイト。Next.js と TypeScript で構築し、GitHub Pages にデプロイ。",
-          "tags": ["Next.js", "TypeScript", "Tailwind CSS"],
-          "icon": "⚡"
+          "tags": [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ],
+          "icon": "⚡",
+          "repo": "https://github.com/drogan120",
+          "demo": null
         },
         {
           "title": "シンプルな REST API",
           "description": "Node.js と PostgreSQL を使用したシンプルなデータ管理用 CRUD API。",
-          "tags": ["Node.js", "PostgreSQL"],
-          "icon": "🛠️"
+          "tags": [
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "icon": "🛠️",
+          "repo": "https://github.com/drogan120",
+          "demo": null
         }
       ]
     },
     "contact": {
       "description": "プロジェクトのアイデアや技術に関するお話など、お気軽にご連絡ください。"
+    },
+    "github": {
+      "username": "drogan120",
+      "repos": 38,
+      "stars": 124,
+      "followers": 57,
+      "contributions": 842
+    },
+    "blog": {
+      "items": [
+        {
+          "title": "ゼロから最初の Android アプリへ",
+          "date": "2024-03-12",
+          "category": "Android",
+          "excerpt": "Jetpack Compose アプリをゼロから開発し公開した道のり。",
+          "link": "https://dev.to/drogan120",
+          "content": "ゼロからアプリを作るのは大変です。私に一番役立ったのはこれです：\n\n- **まず小さな範囲から** — 出せる機能を一つだけ。\n- **Jetpack Compose の基本** — state、レイアウト、ナビゲーション。\n- **早くリリースする** — v1 を出す方が、v0 を完璧にするより学びが多い。\n\n> 最善の学び方は、本物を作ること。\n\n道のり全体と、その過程で犯した失敗について書きました。"
+        },
+        {
+          "title": "クリーンアーキテクチャが好きな理由",
+          "date": "2024-01-08",
+          "category": "アーキテクチャ",
+          "excerpt": "関心事の分離が、プロジェクト成長時のコードベースを健全に保つ方法。",
+          "link": "https://dev.to/drogan120",
+          "content": "クリーンアーキテクチャはアプリをレイヤーに分け、各部分に一つの役割を持たせます：\n\n1. **Domain** — ビジネスルール、フレームワークなし。\n2. **Data** — リポジトリ、リモート/ローカルソース。\n3. **Presentation** — UI、ViewModel、状態。\n\nプロジェクトが成長すると、この構造で変更が予測可能でテストしやすくなります。初期設定は少し手間ですが、すぐに報われます。"
+        },
+        {
+          "title": "Next.js + GitHub Pages を10分で",
+          "date": "2023-11-22",
+          "category": "Web",
+          "excerpt": "GitHub Actions で Next.js の静的サイトを GitHub Pages にデプロイ。",
+          "link": "https://dev.to/drogan120",
+          "content": "Next.js を GitHub Pages にデプロイするのは思ったより簡単です：\n\n1. `next.config.ts` で `output: 'export'` を設定。\n2. `pnpm build` を実行する GitHub Actions ワークフローを追加。\n3. `out/` フォルダを `gh-pages` にデプロイ。\n\n`.nojekyll` ファイルを追加して、静的ファイルが正しく配信されるようにします。これで GitHub Pages にサイトが公開されます。"
+        }
+      ]
     }
   },
   "apiDocs": {
@@ -178,26 +253,54 @@
         "name": "Drogan",
         "title": "ソフトウェアエンジニア & Android デベロッパー",
         "experience": "高速でモダンで楽しいアプリを開発",
-        "traits": ["問題解決", "学び続ける", "クリーンコードの提唱"]
+        "traits": [
+          "問題解決",
+          "学び続ける",
+          "クリーンコードの提唱"
+        ]
       }
     },
     "skills": {
       "data": [
         {
           "category": "モバイル",
-          "skills": ["Kotlin", "Java", "Jetpack Compose", "Android SDK", "Flutter"]
+          "skills": [
+            "Kotlin",
+            "Java",
+            "Jetpack Compose",
+            "Android SDK",
+            "Flutter"
+          ]
         },
         {
           "category": "Web",
-          "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
+          "skills": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Node.js"
+          ]
         },
         {
           "category": "バックエンド & データベース",
-          "skills": ["Node.js", "PostgreSQL", "MySQL", "Firebase", "REST API"]
+          "skills": [
+            "Node.js",
+            "PostgreSQL",
+            "MySQL",
+            "Firebase",
+            "REST API"
+          ]
         },
         {
           "category": "ツール & その他",
-          "skills": ["Git", "GitHub Actions", "Docker", "Figma", "Linux"]
+          "skills": [
+            "Git",
+            "GitHub Actions",
+            "Docker",
+            "Figma",
+            "Linux"
+          ]
         }
       ]
     },
@@ -208,22 +311,35 @@
           "id": 1,
           "name": "aplikasi-catatan",
           "description": "日々のメモを残すための Android アプリ。",
-          "tech": ["Kotlin", "Jetpack Compose"],
-          "status": "done"
+          "tech": [
+            "Kotlin",
+            "Jetpack Compose"
+          ],
+          "status": "done",
+          "repo": "https://github.com/drogan120"
         },
         {
           "id": 2,
           "name": "portfolio-website",
           "description": "このサイト自体 — 静的 & GitHub Pages にデプロイ。",
-          "tech": ["Next.js", "TypeScript", "Tailwind CSS"],
-          "status": "live"
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ],
+          "status": "live",
+          "repo": "https://github.com/drogan120"
         },
         {
           "id": 3,
           "name": "rest-api-basic",
           "description": "データ管理用のシンプルな CRUD API。",
-          "tech": ["Node.js", "PostgreSQL"],
-          "status": "in_progress"
+          "tech": [
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "status": "in_progress",
+          "repo": "https://github.com/drogan120"
         }
       ]
     },
@@ -250,26 +366,56 @@
     "stats": {
       "description": "キャリアに関する簡単な数字。",
       "data": [
-        { "label": "年の開発経験", "value": "5+" },
-        { "label": "完成プロジェクト", "value": "20+" },
-        { "label": "コーヒーカップ", "value": "∞" }
+        {
+          "label": "年の開発経験",
+          "value": "5+"
+        },
+        {
+          "label": "完成プロジェクト",
+          "value": "20+"
+        },
+        {
+          "label": "コーヒーカップ",
+          "value": "∞"
+        }
       ]
     },
     "achievements": {
       "description": "厳選した実績と認定。",
       "data": [
-        { "title": "最優秀プロジェクト賞", "detail": "学校のハッカソン優勝 — チームリーダー。" },
-        { "title": "Android 開発認定", "detail": "包括的な Android 開発プログラムを修了。" },
-        { "title": "オープンソースコントリビューター", "detail": "コミュニティプロジェクトに定期的に貢献。" }
+        {
+          "title": "最優秀プロジェクト賞",
+          "detail": "学校のハッカソン優勝 — チームリーダー。"
+        },
+        {
+          "title": "Android 開発認定",
+          "detail": "包括的な Android 開発プログラムを修了。"
+        },
+        {
+          "title": "オープンソースコントリビューター",
+          "detail": "コミュニティプロジェクトに定期的に貢献。"
+        }
       ]
     },
     "hobbies": {
       "description": "コーディング以外で楽しんでいること。",
       "data": [
-        { "name": "ゲーム", "detail": "FPS とストラテジーゲーム。" },
-        { "name": "写真", "detail": "ストリートと風景写真。" },
-        { "name": "音楽", "detail": "Lo-fi とエレクトロニック。" },
-        { "name": "読書", "detail": "テックブログと SF 小説。" }
+        {
+          "name": "ゲーム",
+          "detail": "FPS とストラテジーゲーム。"
+        },
+        {
+          "name": "写真",
+          "detail": "ストリートと風景写真。"
+        },
+        {
+          "name": "音楽",
+          "detail": "Lo-fi とエレクトロニック。"
+        },
+        {
+          "name": "読書",
+          "detail": "テックブログと SF 小説。"
+        }
       ]
     },
     "contact": {
@@ -279,6 +425,46 @@
         "message": "メッセージを送信しました！",
         "note": "通常 24 時間以内に返信します。"
       }
+    },
+    "github": {
+      "description": "Quick GitHub profile stats.",
+      "data": {
+        "username": "drogan120",
+        "repos": 38,
+        "stars": 124,
+        "followers": 57,
+        "contributions": 842,
+        "profile": "https://github.com/drogan120"
+      }
+    },
+    "blog": {
+      "description": "List of blog posts written by the developer.",
+      "data": [
+        {
+          "title": "ゼロから最初の Android アプリへ",
+          "date": "2024-03-12",
+          "category": "Android",
+          "excerpt": "Jetpack Compose アプリをゼロから開発し公開した道のり。",
+          "link": "https://dev.to/drogan120",
+          "content": "ゼロからアプリを作るのは大変です。\n\n- **小さな範囲から始める**\n- **基本を学ぶ**\n- **早くリリースする**\n\n> 最善の学び方は、本物を作ること。"
+        },
+        {
+          "title": "クリーンアーキテクチャが好きな理由",
+          "date": "2024-01-08",
+          "category": "アーキテクチャ",
+          "excerpt": "関心事の分離が、プロジェクト成長時のコードベースを健全に保つ方法。",
+          "link": "https://dev.to/drogan120",
+          "content": "クリーンアーキテクチャはアプリをレイヤーに分けます：\n\n1. **Domain** — ビジネスルール。\n2. **Data** — リポジトリ。\n3. **Presentation** — UI と状態。"
+        },
+        {
+          "title": "Next.js + GitHub Pages を10分で",
+          "date": "2023-11-22",
+          "category": "Web",
+          "excerpt": "GitHub Actions で Next.js の静的サイトを GitHub Pages にデプロイ。",
+          "link": "https://dev.to/drogan120",
+          "content": "`output: 'export'` を設定し、ワークフローを追加して `out/` フォルダをデプロイ。\n\n`.nojekyll` ファイルを追加すれば公開完了。"
+        }
+      ]
     }
   }
 }

@@ -11,6 +11,7 @@ const ja: Dictionary = {
       about: "自己紹介",
       skills: "スキル",
       experience: "経験",
+      blog: "ブログ",
       projects: "プロジェクト",
       contact: "お問い合わせ",
       hire: "採用する",
@@ -54,6 +55,23 @@ const ja: Dictionary = {
       label: "// 趣味",
       title: "コードの外側",
       items: data.default.hobbies.items,
+    },
+    github: {
+      label: "// github",
+      title: "GitHub",
+      description: "GitHub プロフィールの簡単な統計。",
+      repos: "リポジトリ",
+      stars: "スター",
+      followers: "フォロワー",
+      contributions: "コントリビューション",
+      viewProfile: "プロフィールを見る",
+    },
+    blog: {
+      label: "// ブログ",
+      title: "最新記事",
+      description: "テクノロジーについて書いたメモや記事。",
+      readMore: "dev.to で読む",
+      items: data.default.blog.items,
     },
     projects: {
       label: "// プロジェクト",
@@ -112,6 +130,16 @@ const ja: Dictionary = {
       response: "レスポンス 200",
       description: data.apiDocs.hobbies.description,
       data: data.apiDocs.hobbies.data,
+    },
+    github: {
+      response: "レスポンス 200",
+      description: data.apiDocs.github.description,
+      data: data.apiDocs.github.data,
+    },
+    blog: {
+      response: "レスポンス 200",
+      description: data.apiDocs.blog.description,
+      data: data.apiDocs.blog.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

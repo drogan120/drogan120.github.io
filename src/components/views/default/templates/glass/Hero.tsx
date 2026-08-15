@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import TypeWriter from "@/components/shared/TypeWriter";
 
 export default function GlassHero() {
   const { t } = useI18n();
@@ -22,6 +23,11 @@ export default function GlassHero() {
             Drogan
           </span>
         </h1>
+
+        <TypeWriter
+          words={[t.default.hero.role1, t.default.hero.role2]}
+          className="mt-4 inline-block text-xl font-semibold text-accent sm:text-2xl"
+        />
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
           {t.default.hero.tagline}

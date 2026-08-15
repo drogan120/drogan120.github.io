@@ -22,9 +22,8 @@ export default function PlayfulProjects() {
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {t.default.projects.items.map((project, i) => (
-          <a
+          <div
             key={project.title}
-            href="#projects"
             className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10"
           >
             <div
@@ -47,7 +46,27 @@ export default function PlayfulProjects() {
                 </span>
               ))}
             </div>
-          </a>
+            <div className="relative mt-4 flex gap-4">
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent transition-colors hover:bg-accent hover:text-background"
+              >
+                repo ↗
+              </a>
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-border px-4 py-1.5 text-xs font-bold text-muted transition-colors hover:border-accent hover:text-accent"
+                >
+                  demo ↗
+                </a>
+              )}
+            </div>
+          </div>
         ))}
       </div>
     </section>

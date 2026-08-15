@@ -11,6 +11,8 @@ const endpoints = [
   { method: "GET", path: "/stats", href: "#stats" },
   { method: "GET", path: "/achievements", href: "#achievements" },
   { method: "GET", path: "/hobbies", href: "#hobbies" },
+  { method: "GET", path: "/github", href: "#github" },
+  { method: "GET", path: "/blog", href: "#blog" },
   { method: "GET", path: "/projects", href: "#projects" },
   { method: "POST", path: "/contact", href: "#contact" },
 ];

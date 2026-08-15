@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import TypeWriter from "@/components/shared/TypeWriter";
 
 export default function ClassicHero() {
   const { t } = useI18n();
@@ -21,7 +22,10 @@ export default function ClassicHero() {
             {t.default.hero.hello} Drogan
           </h1>
           <p className="mt-3 text-xl font-semibold text-foreground/90">
-            {t.default.hero.role1} & {t.default.hero.role2}
+            <TypeWriter
+              words={[t.default.hero.role1, t.default.hero.role2]}
+              className="text-accent"
+            />
           </p>
           <p className="mt-4 max-w-xl text-muted">{t.default.hero.tagline}</p>
 

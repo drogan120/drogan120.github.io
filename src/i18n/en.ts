@@ -10,6 +10,7 @@ const en = {
       about: "About",
       skills: "Skills",
       experience: "Experience",
+      blog: "Blog",
       projects: "Projects",
       contact: "Contact",
       hire: "Hire Me",
@@ -53,6 +54,23 @@ const en = {
       label: "// hobbies",
       title: "Beyond the Code",
       items: data.default.hobbies.items,
+    },
+    github: {
+      label: "// github",
+      title: "GitHub",
+      description: "Pinned stats from my GitHub profile.",
+      repos: "Repositories",
+      stars: "Stars",
+      followers: "Followers",
+      contributions: "Contributions",
+      viewProfile: "View Profile",
+    },
+    blog: {
+      label: "// blog",
+      title: "Latest Posts",
+      description: "Notes and articles about tech I've written.",
+      readMore: "Read on dev.to",
+      items: data.default.blog.items,
     },
     projects: {
       label: "// projects",
@@ -111,6 +129,16 @@ const en = {
       response: "Response 200",
       description: data.apiDocs.hobbies.description,
       data: data.apiDocs.hobbies.data,
+    },
+    github: {
+      response: "Response 200",
+      description: data.apiDocs.github.description,
+      data: data.apiDocs.github.data,
+    },
+    blog: {
+      response: "Response 200",
+      description: data.apiDocs.blog.description,
+      data: data.apiDocs.blog.data,
     },
     contact: {
       description: data.apiDocs.contact.description,

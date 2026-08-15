@@ -15,9 +15,8 @@ export default function BrutalistProjects() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {t.default.projects.items.map((project, i) => (
-            <a
+            <div
               key={project.title}
-              href="#projects"
               className="group flex flex-col border-2 border-foreground transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--accent)]"
             >
               <div className="flex h-24 items-center justify-between border-b-2 border-foreground bg-accent px-4">
@@ -45,8 +44,28 @@ export default function BrutalistProjects() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-4 flex gap-2 border-t-2 border-foreground pt-3">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-2 border-foreground bg-accent px-3 py-1 font-mono text-xs font-black uppercase text-background transition-colors hover:bg-foreground"
+                  >
+                    repo ↗
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-2 border-foreground px-3 py-1 font-mono text-xs font-black uppercase transition-colors hover:bg-foreground hover:text-background"
+                    >
+                      demo ↗
+                    </a>
+                  )}
+                </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

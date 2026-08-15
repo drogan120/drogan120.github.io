@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import TypeWriter from "@/components/shared/TypeWriter";
 
 export default function MinimalHero() {
   const { t } = useI18n();
@@ -13,11 +14,10 @@ export default function MinimalHero() {
         {t.default.hero.hello}{" "}
         <span className="text-muted">Drogan</span>
         <br />
-        <span className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">
-          {t.default.hero.role1}
-          {" & "}
-          {t.default.hero.role2}
-        </span>
+        <TypeWriter
+          words={[t.default.hero.role1, t.default.hero.role2]}
+          className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent"
+        />
       </h1>
 
       <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted">

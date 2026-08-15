@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import TypeWriter from "@/components/shared/TypeWriter";
 
 export default function PlayfulHero() {
   const { t } = useI18n();
@@ -21,6 +22,11 @@ export default function PlayfulHero() {
             {t.default.hero.hello} Drogan!
           </span>
         </h1>
+
+        <TypeWriter
+          words={[t.default.hero.role1, t.default.hero.role2]}
+          className="mt-4 bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-xl font-bold text-transparent sm:text-2xl"
+        />
 
         <p className="mt-6 max-w-2xl text-lg text-muted">
           {t.default.hero.tagline}
