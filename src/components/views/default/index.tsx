@@ -4,11 +4,22 @@ import { useTemplate } from "@/components/providers/TemplateProvider";
 import MinimalTemplate from "./templates/minimal";
 import PlayfulTemplate from "./templates/playful";
 import ClassicTemplate from "./templates/classic";
+import BrutalistTemplate from "./templates/brutalist";
+import FashionTemplate from "./templates/fashion";
 
 export default function DefaultView() {
   const { template } = useTemplate();
 
-  if (template === "playful") return <PlayfulTemplate />;
-  if (template === "classic") return <ClassicTemplate />;
-  return <MinimalTemplate />;
+  switch (template) {
+    case "playful":
+      return <PlayfulTemplate />;
+    case "classic":
+      return <ClassicTemplate />;
+    case "brutalist":
+      return <BrutalistTemplate />;
+    case "fashion":
+      return <FashionTemplate />;
+    default:
+      return <MinimalTemplate />;
+  }
 }

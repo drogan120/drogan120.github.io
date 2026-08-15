@@ -11,40 +11,34 @@ const links = [
   { href: "#contact", key: "contact" },
 ] as const;
 
-export default function ClassicNavbar() {
+export default function FashionNavbar() {
   const { t } = useI18n();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border bg-background/85 backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-2 text-lg font-semibold">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-background">
-            D
-          </span>
-          drogan
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
+      <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-8">
+        <a
+          href="#top"
+          className="font-serif text-2xl font-light uppercase tracking-[0.3em]"
+        >
+          Drogan
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-10 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-muted transition-colors hover:text-foreground"
+                className="text-xs uppercase tracking-[0.25em] text-muted transition-colors hover:text-foreground"
               >
                 {t.default.nav[link.key]}
               </a>
@@ -56,7 +50,7 @@ export default function ClassicNavbar() {
           <SettingsBar />
           <button
             onClick={() => setOpen(!open)}
-            className="flex h-9 w-9 items-center justify-center text-2xl md:hidden"
+            className="flex h-10 w-10 items-center justify-center text-xl md:hidden"
             aria-label="Menu"
           >
             {open ? "✕" : "☰"}
@@ -65,14 +59,14 @@ export default function ClassicNavbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
-          <ul className="flex flex-col gap-4">
+        <div className="border-t border-border bg-background px-8 py-6 md:hidden">
+          <ul className="flex flex-col gap-5">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-muted transition-colors hover:text-foreground"
+                  className="text-sm uppercase tracking-[0.25em] text-muted"
                 >
                   {t.default.nav[link.key]}
                 </a>

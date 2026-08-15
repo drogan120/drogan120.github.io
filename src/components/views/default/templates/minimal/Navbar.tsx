@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n";
 import SettingsBar from "@/components/shared/SettingsBar";
-import TemplateSwitcher from "../../TemplateSwitcher";
 
 const links = [
   { href: "#about", key: "about" },
@@ -47,29 +46,22 @@ export default function MinimalNavbar() {
               </a>
             </li>
           ))}
-          <li>
-            <TemplateSwitcher />
-          </li>
-          <li>
-            <SettingsBar />
-          </li>
         </ul>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center text-2xl md:hidden"
-          aria-label="Menu"
-        >
-          {open ? "✕" : "☰"}
-        </button>
+        <div className="flex items-center gap-3">
+          <SettingsBar />
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex h-9 w-9 items-center justify-center text-2xl md:hidden"
+            aria-label="Menu"
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </nav>
 
       {open && (
         <div className="border-t border-border bg-background px-6 py-4 md:hidden">
-          <div className="mb-4 space-y-3">
-            <TemplateSwitcher />
-            <SettingsBar />
-          </div>
           <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li key={link.href}>
