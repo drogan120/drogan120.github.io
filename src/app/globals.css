@@ -510,7 +510,7 @@ a:hover > .wiggle-on-hover {
   padding: 1.4rem 2.2rem;
 }
 
-.preloader-nihon-kanji {
+.preloader-nihon .nihon-furigana-txt {
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: 900;
   color: var(--foreground);
@@ -518,8 +518,8 @@ a:hover > .wiggle-on-hover {
   text-indent: 0.2em;
 }
 
-.preloader-nihon-reading {
-  font-size: 0.9rem;
+.preloader-nihon .nihon-furigana-rt {
+  font-size: 1rem;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.15em;
@@ -1840,6 +1840,18 @@ a:hover > .wiggle-on-hover {
 
 .nihon-furigana-txt {
   font-size: 1em;
+}
+
+/* In section headings the kanji-and-reading line is small, so bump the
+   furigana up so it stays legible above the kanji. */
+.nihon-heading-reading .nihon-furigana-txt {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.nihon-heading-reading .nihon-furigana-rt {
+  font-size: 0.55em;
 }
 
 /* Hanko: a red square seal with white kanji, slightly rotated like a stamp. */

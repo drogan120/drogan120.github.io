@@ -112,9 +112,9 @@ function NihonPreloader() {
       <span className="nihon-kanji-bg">和</span>
 
       <div className="preloader-nihon-panel">
-        <span className="preloader-nihon-kanji">{phrase.text}</span>
-        <span className="preloader-nihon-reading">
-          【{phrase.reading}】
+        <span className="nihon-furigana">
+          <span className="nihon-furigana-rt">{phrase.reading}</span>
+          <span className="nihon-furigana-txt">{phrase.text}</span>
         </span>
       </div>
 

@@ -143,9 +143,8 @@ export function SectionHeading({
           {eyebrow}
         </p>
 
-        <p className="mt-3 flex items-center gap-2 font-mono text-sm text-muted">
-          <span className="text-accent">{kanji}</span>
-          <span className="text-xs">【{reading}】</span>
+        <p className="nihon-heading-reading mt-3 inline-flex font-mono text-sm text-muted">
+          <Furigana text={kanji} reading={reading} />
         </p>
 
         <h2 className="mt-2 text-3xl font-black tracking-tight break-words sm:text-4xl md:text-5xl">
