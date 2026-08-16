@@ -513,3 +513,45 @@
   --selection-bg: #b02f16;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Retro ----------
+   Synthwave key visual: a deep violet night base with hot pink and cyan
+   accents in dark mode (the classic 80s sunset), and a warm cream base with
+   deep magenta and indigo accents in light mode.
+
+   The accent has to stay dark in light mode because a bright colour cannot
+   clear 4.5:1 as body text against a near-white card — the same trade-off every
+   other light scheme makes. */
+.scheme-retro.dark {
+  --background: #160f35;
+  --foreground: #f4eefb;
+  --accent: #ff2ec4;
+  --accent-2: #25d7fd;
+  --muted: #a79ac7;
+  --card: #211840;
+  --border: #3b2d63;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #ff2ec4;
+  --selection-bg: #ff2ec4;
+  --selection-fg: #160f35;
+}
+
+.scheme-retro.light {
+  --background: #fdf3f7;
+  --foreground: #3a2145;
+  --accent: #b3186b;
+  --accent-2: #234a9e;
+  --muted: #6f5f83;
+  --card: #f5e6f0;
+  --border: #dfc9db;
+  --get: #0e6b30;
+  --post: #994e03;
+  --json-key: #0c6a84;
+  --json-string: #a64b06;
+  --json-number: #6d28d9;
+  --selection-bg: #b3186b;
+  --selection-fg: #ffffff;
+}
