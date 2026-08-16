@@ -32,7 +32,7 @@ export default function ToonContact() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <a
               href="mailto:drogan120@gmail.com"
-              className="toon-frame bg-accent px-6 py-3 text-sm font-black text-background transition-transform hover:translate-x-0.5 hover:translate-y-0.5"
+              className="toon-btn bg-accent px-6 py-3 text-sm font-black text-background"
             >
               {t.default.nav.hire} →
             </a>

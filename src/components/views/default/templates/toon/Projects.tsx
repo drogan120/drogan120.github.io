@@ -53,7 +53,7 @@ export default function ToonProjects() {
                   href={project.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="toon-frame bg-accent px-4 py-2 font-mono text-xs font-black text-background transition-transform hover:translate-x-0.5 hover:translate-y-0.5"
+                  className="toon-btn bg-accent px-4 py-2 font-mono text-xs font-black text-background"
                 >
                   repo ↗
                 </a>
@@ -62,7 +62,7 @@ export default function ToonProjects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="toon-frame bg-card px-4 py-2 font-mono text-xs font-bold text-muted transition-colors hover:text-accent"
+                    className="toon-btn bg-card px-4 py-2 font-mono text-xs font-bold text-muted hover:text-accent"
                   >
                     demo ↗
                   </a>

@@ -35,7 +35,7 @@ export default function ToonGithub() {
         href={profileUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="toon-frame mt-8 inline-flex items-center gap-2 bg-card px-5 py-2.5 font-mono text-sm font-bold text-accent transition-colors hover:text-accent-2"
+        className="toon-btn mt-8 inline-flex items-center gap-2 bg-card px-5 py-2.5 font-mono text-sm font-bold text-accent hover:text-accent-2"
       >
         @{username} {t.default.github.viewProfile} ↗
       </a>

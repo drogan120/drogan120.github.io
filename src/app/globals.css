@@ -1384,11 +1384,23 @@ a:hover > .wiggle-on-hover {
     );
 }
 
-/* Thick comic outline: a hard ink border plus a flat offset shadow. */
+/* Thick comic ink outline with a hard offset shadow — the classic cel-shaded
+   "card". The ::after band is a flat shading tone across the bottom half, like
+   a single-step shadow pass in anime cel shading. */
 .toon-frame {
   position: relative;
-  border: 2px solid color-mix(in srgb, var(--foreground) 55%, transparent);
-  box-shadow: 6px 6px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
+  border: 3px solid color-mix(in srgb, var(--foreground) 72%, transparent);
+  box-shadow: 8px 8px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
+  isolation: isolate;
+}
+
+.toon-frame::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 0 0;
+  z-index: -1;
+  background: color-mix(in srgb, var(--foreground) 9%, transparent);
+  pointer-events: none;
 }
 
 /* Hard ink shadow for text. */
@@ -1400,6 +1412,23 @@ a:hover > .wiggle-on-hover {
 .toon-ink {
   text-shadow: 2px 0 0 var(--card), -2px 0 0 var(--card), 0 2px 0 var(--card),
     0 -2px 0 var(--card);
+}
+
+/* Cel-shaded button: a hard ink outline, a flat light body and a solid
+   "under-shade" that reads as a 2D pressed button. */
+.toon-btn {
+  position: relative;
+  border: 3px solid color-mix(in srgb, var(--foreground) 72%, transparent);
+  box-shadow: 5px 5px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.toon-btn:hover,
+.toon-btn:focus-visible {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 /* ---------------------------------------------------------------------------
