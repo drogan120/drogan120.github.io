@@ -5,6 +5,7 @@ import { useTheme } from "@/components/providers/ThemeProvider";
 import type { Theme } from "@/components/providers/ThemeProvider";
 import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
 import type { ColorScheme } from "@/components/providers/ColorSchemeProvider";
+import { SCHEME_NAMES } from "@/data/schemes";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
 import { useI18n } from "@/i18n";
@@ -22,7 +23,7 @@ const VALID = {
     "apiDocs",
     "terminal",
   ] as const,
-  scheme: ["mauve", "pastel", "ocean", "forest", "sunset"] as const,
+  scheme: SCHEME_NAMES,
   lang: ["en", "id", "ja"] as const,
   theme: ["dark", "light"] as const,
 };

@@ -6,7 +6,7 @@ import type { Language } from "@/i18n";
 import { languages } from "@/i18n";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
-import type { ColorScheme } from "@/components/providers/ColorSchemeProvider";
+import { COLOR_SCHEMES } from "@/data/schemes";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
 import { useCommandPalette } from "@/components/shared/CommandPalette";
@@ -27,7 +27,7 @@ function OptionGroup<T extends string>({
   value,
   onSelect,
 }: {
-  options: { value: T; label: string }[];
+  options: readonly { readonly value: T; readonly label: string }[];
   value: T;
   onSelect: (v: T) => void;
 }) {
@@ -90,13 +90,7 @@ export default function SettingsBar() {
     { value: "terminal", label: "Terminal" },
   ];
 
-  const schemeOptions: { value: ColorScheme; label: string }[] = [
-    { value: "mauve", label: "Mauve" },
-    { value: "pastel", label: "Pastel" },
-    { value: "ocean", label: "Ocean" },
-    { value: "forest", label: "Forest" },
-    { value: "sunset", label: "Sunset" },
-  ];
+  const schemeOptions = COLOR_SCHEMES;
 
   const langOptions = (Object.keys(languages) as Language[]).map((key) => ({
     value: key,
