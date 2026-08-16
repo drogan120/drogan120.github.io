@@ -633,3 +633,42 @@
   --selection-bg: #d72638;
   --selection-fg: #ffffff;
 }
+
+/* ---------------------------------------------------------------------------
+   FF7 — Final Fantasy VII. Mako-green industrial Shinra aesthetic: dark mode
+   is the Reactor night with glowing Mako teal; light mode is the Midgar sky
+   with deep forest green and gold materia accents.
+--------------------------------------------------------------------------- */
+.scheme-ff7.dark {
+  --background: #07120e;
+  --foreground: #e6f4ec;
+  --accent: #4ade80;
+  --accent-2: #fbbf24;
+  --muted: #93a89c;
+  --card: #0d1c15;
+  --border: #1d3a2b;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #7dd3fc;
+  --json-string: #fcd34d;
+  --json-number: #c084fc;
+  --selection-bg: #4ade80;
+  --selection-fg: #07120e;
+}
+
+.scheme-ff7.light {
+  --background: #f2f7f4;
+  --foreground: #1c2b23;
+  --accent: #15803d;
+  --accent-2: #a16207;
+  --muted: #57685e;
+  --card: #ffffff;
+  --border: #c9d8cd;
+  --get: #0e6b30;
+  --post: #994e03;
+  --json-key: #0c6a84;
+  --json-string: #a64b06;
+  --json-number: #6d28d9;
+  --selection-bg: #15803d;
+  --selection-fg: #ffffff;
+}

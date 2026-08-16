@@ -31,6 +31,7 @@ export const TEMPLATES = [
   { value: "retro", label: "Retro", kind: "skin" },
   { value: "pixel", label: "Pixel", kind: "skin" },
   { value: "toon", label: "Toon", kind: "skin" },
+  { value: "ff7", label: "FF7", kind: "skin" },
   { value: "apiDocs", label: "API Docs", kind: "view" },
   { value: "terminal", label: "Terminal", kind: "view" },
 ] as const;

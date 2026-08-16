@@ -15,6 +15,7 @@ import PaperTemplate from "./templates/paper";
 import RetroTemplate from "./templates/retro";
 import PixelTemplate from "./templates/pixel";
 import ToonTemplate from "./templates/toon";
+import Ff7Template from "./templates/ff7";
 
 export default function DefaultView() {
   const { template } = useTemplate();
@@ -46,6 +47,8 @@ export default function DefaultView() {
       return <PixelTemplate />;
     case "toon":
       return <ToonTemplate />;
+    case "ff7":
+      return <Ff7Template />;
     // Aurora is the default template, so it also catches apiDocs/terminal —
     // those are standalone views handled higher up and never reach this switch.
     default:
