@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { Providers } from "@/components/providers/Providers";
+import { DEFAULT_SCHEME, SCHEME_NAMES } from "@/data/schemes";
 import {
   ScrollProgressBar,
   BackToTop,
@@ -128,15 +129,20 @@ const JSON_LD = {
  * Applies the stored theme before first paint to avoid a flash. The <html> tag
  * already ships with the light/mauve defaults, so this only has to correct the
  * classes when the visitor picked something else — hence the removes.
+ *
+ * The scheme list is interpolated from the registry at build time; hardcoding
+ * it here once meant a new scheme could leave a stale class on <html>.
  */
-const THEME_SCRIPT = `(function(){try{var r=document.documentElement;var s=localStorage.getItem('drogan.scheme')||'mauve';var t=localStorage.getItem('drogan.theme')||'light';r.classList.remove('dark','light');['mauve','pastel','ocean','forest','sunset'].forEach(function(n){r.classList.remove('scheme-'+n)});r.classList.add('scheme-'+s,t)}catch(e){}})();`;
+const THEME_SCRIPT = `(function(){try{var r=document.documentElement;var s=localStorage.getItem('drogan.scheme')||'${DEFAULT_SCHEME}';var t=localStorage.getItem('drogan.theme')||'light';r.classList.remove('dark','light');${JSON.stringify(
+  SCHEME_NAMES
+)}.forEach(function(n){r.classList.remove('scheme-'+n)});r.classList.add('scheme-'+s,t)}catch(e){}})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="id"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} light scheme-mauve h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} light scheme-${DEFAULT_SCHEME} h-full antialiased`}
     >
       <head>
         {/*

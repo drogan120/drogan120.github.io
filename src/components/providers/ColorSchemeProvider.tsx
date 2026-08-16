@@ -3,13 +3,11 @@
 import { createContext, useContext, useEffect } from "react";
 import type { ReactNode } from "react";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { DEFAULT_SCHEME, SCHEME_NAMES } from "@/data/schemes";
+import type { ColorScheme } from "@/data/schemes";
 
-export type ColorScheme =
-  | "mauve"
-  | "pastel"
-  | "ocean"
-  | "forest"
-  | "sunset";
+// Re-exported so existing consumers can keep importing the type from here.
+export type { ColorScheme };
 
 type ColorSchemeContextValue = {
   scheme: ColorScheme;
@@ -17,21 +15,19 @@ type ColorSchemeContextValue = {
 };
 
 const ColorSchemeContext = createContext<ColorSchemeContextValue>({
-  scheme: "mauve",
+  scheme: DEFAULT_SCHEME,
   setScheme: () => {},
 });
-
-const SCHEMES: ColorScheme[] = ["mauve", "pastel", "ocean", "forest", "sunset"];
 
 export function ColorSchemeProvider({ children }: { children: ReactNode }) {
   const [scheme, setScheme] = useLocalStorage<ColorScheme>(
     "drogan.scheme",
-    "mauve"
+    DEFAULT_SCHEME
   );
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove(...SCHEMES.map((s) => `scheme-${s}`));
+    root.classList.remove(...SCHEME_NAMES.map((s) => `scheme-${s}`));
     root.classList.add(`scheme-${scheme}`);
   }, [scheme]);
 

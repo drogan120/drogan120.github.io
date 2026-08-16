@@ -15,7 +15,7 @@ import { useI18n, languages } from "@/i18n";
 import type { Language } from "@/i18n";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
-import type { ColorScheme } from "@/components/providers/ColorSchemeProvider";
+import { COLOR_SCHEMES } from "@/data/schemes";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
 import { blogPosts, languageLabel } from "@/data/blogIndex";
@@ -66,13 +66,7 @@ const VIEWS: { value: Template; label: string; icon: string }[] = [
   { value: "terminal", label: "Terminal", icon: "⌨️" },
 ];
 
-const SCHEMES: { value: ColorScheme; label: string }[] = [
-  { value: "mauve", label: "Mauve" },
-  { value: "pastel", label: "Pastel" },
-  { value: "ocean", label: "Ocean" },
-  { value: "forest", label: "Forest" },
-  { value: "sunset", label: "Sunset" },
-];
+const SCHEMES = COLOR_SCHEMES;
 
 const SECTIONS = [
   { hash: "#about", key: "about", icon: "👋" },
