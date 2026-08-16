@@ -1095,3 +1095,67 @@ a:hover > .wiggle-on-hover {
     animation: none !important;
   }
 }
+
+/* ============================================================
+   PAPER TEMPLATE
+   Editorial / zine aesthetic: a subtle paper grain, risograph-style
+   halftone dots, rubber-stamp chips and double-ink borders.
+   ============================================================ */
+
+.paper-stage {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Fine paper grain, stronger in light mode where the paper shows through. */
+.paper-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Risograph halftone wash near the top of the page. */
+.paper-halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--accent) 18%, transparent) 1.2px,
+    transparent 1.2px
+  );
+  background-size: 10px 10px;
+  opacity: 0.5;
+}
+
+/* Rubber-stamp chip: an outlined, slightly rotated badge that looks pressed
+   onto the page. */
+.paper-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid currentColor;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+.paper-stamp-tilt {
+  transform: rotate(-2deg);
+}
+
+/* Double-ink border: an outer hairline plus an inner offset line, like a
+   print registration frame. */
+.paper-frame {
+  position: relative;
+  border: 1px solid var(--border);
+  outline: 1px solid var(--border);
+  outline-offset: 3px;
+}

@@ -471,3 +471,45 @@
   --selection-bg: #0e7490;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Paper ----------
+   Editorial / zine key visual: warm paper-white surfaces with near-black ink,
+   a red rubber-stamp accent and a small gold secondary accent. The dark mode
+   inverts it to a newsprint-on-charcoal feel.
+
+   The accent has to stay dark in light mode because a bright colour cannot
+   clear 4.5:1 as body text against a near-white card — the same trade-off every
+   other light scheme makes. */
+.scheme-paper.dark {
+  --background: #191410;
+  --foreground: #f2e9d9;
+  --accent: #ff8a5c;
+  --accent-2: #e8b04b;
+  --muted: #c0ab8e;
+  --card: #241d16;
+  --border: #403526;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #e8b04b;
+  --selection-bg: #ff8a5c;
+  --selection-fg: #191410;
+}
+
+.scheme-paper.light {
+  --background: #faf5ea;
+  --foreground: #26211a;
+  --accent: #b02f16;
+  --accent-2: #77600f;
+  --muted: #6b5f4d;
+  --card: #f1e9d8;
+  --border: #d8c9ac;
+  --get: #0e6b30;
+  --post: #994e03;
+  --json-key: #0c6a84;
+  --json-string: #a64b06;
+  --json-number: #6d28d9;
+  --selection-bg: #b02f16;
+  --selection-fg: #ffffff;
+}
