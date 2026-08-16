@@ -369,6 +369,9 @@ function Palette({ onClose }: { onClose: () => void }) {
               <span className="invisible">{query}</span>
               <span className="text-muted/60">{completion}</span>
             </div>
+            {/* Ring suppressed on purpose: this input is autofocused the whole
+                time the palette is open, so a permanent ring would just be
+                noise. The caret, placeholder and ghost text mark focus. */}
             <input
               ref={inputRef}
               value={query}

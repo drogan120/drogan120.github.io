@@ -209,6 +209,9 @@ export default function TerminalView() {
                 <span className="invisible">{input}</span>
                 <span className="text-muted/50">{ghost}</span>
               </div>
+              {/* Ring suppressed on purpose: terminal use is keyboard-only, so
+                  the ring would always be on. The `$ ./drogan` prompt and the
+                  native caret are the focus indicator here. */}
               <input
                 ref={inputRef}
                 value={input}

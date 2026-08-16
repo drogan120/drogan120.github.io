@@ -23,22 +23,25 @@
 }
 
 /* `:root` mirrors the light mauve palette because light is the default theme:
-   a class-less first paint must already look correct. */
+   a class-less first paint must already look correct.
+   Text/badge tokens are tuned to clear WCAG AA (4.5:1) against --card, which is
+   the darker of the two light surfaces and therefore the binding constraint.
+   Hue and saturation are preserved; only lightness was lowered. */
 :root,
 .scheme-mauve.light {
   --background: #fdf6f9;
   --foreground: #3d2a33;
-  --accent: #ec4899;
-  --accent-2: #a855f7;
-  --muted: #8b7d8a;
+  --accent: #cf1671;
+  --accent-2: #952ff5;
+  --muted: #756874;
   --card: #f7eef3;
   --border: #eadbe3;
-  --get: #16a34a;
-  --post: #d97706;
+  --get: #117d39;
+  --post: #a35905;
   --json-key: #0e7490;
-  --json-string: #b45309;
+  --json-string: #af5109;
   --json-number: #6d28d9;
-  --selection-bg: #ec4899;
+  --selection-bg: #cf1671;
   --selection-fg: #ffffff;
 }
 
@@ -63,17 +66,17 @@
 .scheme-pastel.light {
   --background: #fbf7ff;
   --foreground: #3b3554;
-  --accent: #ec4899;
-  --accent-2: #8b5cf6;
-  --muted: #8b84a3;
+  --accent: #cf1671;
+  --accent-2: #7b45f5;
+  --muted: #6f678a;
   --card: #f4eefb;
   --border: #e6def3;
-  --get: #16a34a;
-  --post: #d97706;
+  --get: #117c39;
+  --post: #a35905;
   --json-key: #0e7490;
-  --json-string: #b45309;
+  --json-string: #af5109;
   --json-number: #6d28d9;
-  --selection-bg: #ec4899;
+  --selection-bg: #cf1671;
   --selection-fg: #ffffff;
 }
 
@@ -98,17 +101,17 @@
 .scheme-ocean.light {
   --background: #f0f7ff;
   --foreground: #14304d;
-  --accent: #0284c7;
-  --accent-2: #0ea5e9;
-  --muted: #647b94;
+  --accent: #0270aa;
+  --accent-2: #0a72a1;
+  --muted: #586d83;
   --card: #e3f0fb;
   --border: #c9dff2;
-  --get: #16a34a;
-  --post: #d97706;
+  --get: #117b38;
+  --post: #a15804;
   --json-key: #0369a1;
-  --json-string: #b45309;
-  --json-number: #0ea5e9;
-  --selection-bg: #0284c7;
+  --json-string: #ad5009;
+  --json-number: #0a72a1;
+  --selection-bg: #0270aa;
   --selection-fg: #ffffff;
 }
 
@@ -133,17 +136,17 @@
 .scheme-forest.light {
   --background: #f2faf5;
   --foreground: #12402e;
-  --accent: #059669;
-  --accent-2: #10b981;
-  --muted: #5f8871;
+  --accent: #047b56;
+  --accent-2: #0b7b56;
+  --muted: #517460;
   --card: #e2f5ea;
   --border: #c5e8d5;
-  --get: #16a34a;
-  --post: #d97706;
+  --get: #117d39;
+  --post: #a35905;
   --json-key: #0369a1;
-  --json-string: #b45309;
-  --json-number: #10b981;
-  --selection-bg: #059669;
+  --json-string: #af5109;
+  --json-number: #0b7b56;
+  --selection-bg: #047b56;
   --selection-fg: #ffffff;
 }
 
@@ -168,16 +171,16 @@
 .scheme-sunset.light {
   --background: #fdf6f1;
   --foreground: #4a2320;
-  --accent: #ea580c;
-  --accent-2: #ec4899;
-  --muted: #9c6b61;
+  --accent: #b74509;
+  --accent-2: #cb156f;
+  --muted: #8b5f57;
   --card: #f8eae0;
   --border: #ecd9cb;
-  --get: #16a34a;
-  --post: #d97706;
+  --get: #117a38;
+  --post: #a05704;
   --json-key: #0369a1;
-  --json-string: #b45309;
-  --json-number: #ec4899;
-  --selection-bg: #ea580c;
+  --json-string: #ac4f09;
+  --json-number: #cb156f;
+  --selection-bg: #b74509;
   --selection-fg: #ffffff;
 }
