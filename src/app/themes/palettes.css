@@ -254,3 +254,42 @@
   --selection-bg: #be185d;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Slate ----------
+   The one deliberately sober scheme. Saturation is kept low, but the accents
+   retain a cool blue cast on purpose: in a fully neutral palette an accent
+   collapses into the body text colour and links stop being identifiable
+   without relying on underlines alone. */
+.scheme-slate.dark {
+  --background: #0f1216;
+  --foreground: #e7eaf0;
+  --accent: #9fb8d4;
+  --accent-2: #b6c2d1;
+  --muted: #8b94a3;
+  --card: #161a20;
+  --border: #262c35;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #b6c2d1;
+  --selection-bg: #9fb8d4;
+  --selection-fg: #0f1216;
+}
+
+.scheme-slate.light {
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --accent: #45607e;
+  --accent-2: #4f5b6b;
+  --muted: #5b6675;
+  --card: #eef2f7;
+  --border: #dde4ec;
+  --get: #117d39;
+  --post: #a35905;
+  --json-key: #0369a1;
+  --json-string: #af5109;
+  --json-number: #4f5b6b;
+  --selection-bg: #45607e;
+  --selection-fg: #ffffff;
+}
