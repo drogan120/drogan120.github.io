@@ -932,6 +932,15 @@ a:hover > .wiggle-on-hover {
   letter-spacing: 0.35em;
 }
 
+/* On desktop the vertical column gets a wider, airier spacing between the
+   characters; on small screens we keep it tight so the watermark never
+   overflows the section. */
+@media (min-width: 640px) {
+  .anime-kanji {
+    letter-spacing: 1.35em;
+  }
+}
+
 /* Rising-sun badge used in the nav and footer. */
 .anime-sun {
   color: #e2584b;
@@ -1270,4 +1279,72 @@ a:hover > .wiggle-on-hover {
   text-shadow:
     0 0 8px color-mix(in srgb, currentColor 70%, transparent),
     0 0 26px color-mix(in srgb, currentColor 45%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+   Pixel — 8-bit retro console skins.
+--------------------------------------------------------------------------- */
+
+/* Backdrop: a subtle checker/scanline field so the page reads like a game
+   screen. Purely decorative. */
+.pixel-stage {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--accent) 6%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      color-mix(in srgb, var(--accent) 6%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 12px 12px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 100%);
+}
+
+.dark .pixel-stage {
+  opacity: 1;
+}
+
+.light .pixel-stage {
+  opacity: 0.7;
+}
+
+/* Chunky pixel border: hard offset shadow, no rounding. */
+.pixel-frame {
+  position: relative;
+  box-shadow:
+    0 0 0 2px var(--border),
+    4px 4px 0 0 color-mix(in srgb, var(--foreground) 25%, transparent);
+}
+
+.pixel-frame::before,
+.pixel-frame::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  z-index: 1;
+}
+
+.pixel-frame::before {
+  top: -6px;
+  left: -6px;
+}
+
+.pixel-frame::after {
+  bottom: -6px;
+  right: -6px;
+}
+
+/* Hard pixel shadow for text and glows. */
+.pixel-glow {
+  text-shadow:
+    2px 2px 0 color-mix(in srgb, var(--accent) 55%, transparent),
+    0 0 18px color-mix(in srgb, var(--accent) 45%, transparent);
 }
