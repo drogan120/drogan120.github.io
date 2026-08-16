@@ -17,7 +17,8 @@ import { useTheme } from "@/components/providers/ThemeProvider";
 import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
 import { COLOR_SCHEMES } from "@/data/schemes";
 import { useTemplate } from "@/components/providers/TemplateProvider";
-import type { Template } from "@/components/providers/TemplateProvider";
+import type { Template } from "@/data/templates";
+import { TEMPLATES, DEFAULT_TEMPLATE } from "@/data/templates";
 import { blogPosts, languageLabel } from "@/data/blogIndex";
 
 type Command = {
@@ -50,18 +51,16 @@ export function useCommandPalette() {
   return useContext(PaletteContext);
 }
 
-const TEMPLATES: { value: Template; label: string }[] = [
-  { value: "minimal", label: "Minimal" },
-  { value: "playful", label: "Playful" },
-  { value: "classic", label: "Classic" },
-  { value: "brutalist", label: "Brutalist" },
-  { value: "fashion", label: "Fashion" },
-  { value: "pastel", label: "Pastel" },
-  { value: "glass", label: "Glass" },
-];
+/**
+ * Only the default-view skins. apiDocs and terminal live in VIEWS instead,
+ * since picking them swaps the whole page rather than restyling it.
+ */
+const SKINS = TEMPLATES.filter((tpl) => tpl.kind === "skin");
 
 const VIEWS: { value: Template; label: string; icon: string }[] = [
-  { value: "minimal", label: "Default", icon: "🖼️" },
+  // "Default" points at whatever the default skin currently is, so this entry
+  // never goes stale when DEFAULT_TEMPLATE changes.
+  { value: DEFAULT_TEMPLATE, label: "Default", icon: "🖼️" },
   { value: "apiDocs", label: "API Docs", icon: "📘" },
   { value: "terminal", label: "Terminal", icon: "⌨️" },
 ];
@@ -142,12 +141,12 @@ function Palette({ onClose }: { onClose: () => void }) {
         icon: v.icon,
         keywords: `view mode ${v.value}`,
         active:
-          v.value === "minimal" ? isDefaultView : template === v.value,
+          v.value === DEFAULT_TEMPLATE ? isDefaultView : template === v.value,
         run: run(() => setTemplate(v.value)),
       })),
 
       // Templates
-      ...TEMPLATES.map((tpl) => ({
+      ...SKINS.map((tpl) => ({
         id: `tpl-${tpl.value}`,
         group: g.templates,
         label: tpl.label,

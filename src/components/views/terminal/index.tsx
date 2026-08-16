@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { FormEvent, KeyboardEvent as ReactKeyboardEvent } from "react";
 import { useTemplate } from "@/components/providers/TemplateProvider";
-import type { Template } from "@/components/providers/TemplateProvider";
+import type { Template } from "@/data/templates";
+import { TEMPLATE_NAMES } from "@/data/templates";
 import SettingsBar from "@/components/shared/SettingsBar";
 import { useCommandPalette } from "@/components/shared/CommandPalette";
 import { blogPosts } from "@/data/blogIndex";
@@ -13,17 +14,6 @@ type Line = {
   output?: string;
 };
 
-const TEMPLATES: Template[] = [
-  "minimal",
-  "playful",
-  "classic",
-  "brutalist",
-  "fashion",
-  "pastel",
-  "glass",
-  "apiDocs",
-  "terminal",
-];
 
 const HISTORY: Record<string, string> = {
   "--about": "Drogan — Software Engineer & Android Developer",
@@ -43,7 +33,7 @@ const HISTORY: Record<string, string> = {
 const COMPLETIONS: string[] = [
   ...Object.keys(HISTORY),
   "clear",
-  ...TEMPLATES.map((tpl) => `--view ${tpl}`),
+  ...TEMPLATE_NAMES.map((tpl) => `--view ${tpl}`),
 ];
 
 export default function TerminalView() {
@@ -82,7 +72,7 @@ export default function TerminalView() {
 
     if (raw.startsWith("--view ")) {
       const target = raw.split(" ")[1] as Template;
-      if (TEMPLATES.includes(target)) {
+      if (TEMPLATE_NAMES.includes(target)) {
         setLines((prev) => [...prev, { command: cmd }]);
         setTemplate(target);
         return;

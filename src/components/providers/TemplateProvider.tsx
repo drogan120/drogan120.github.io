@@ -3,17 +3,12 @@
 import { createContext, useContext } from "react";
 import type { ReactNode } from "react";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { DEFAULT_TEMPLATE } from "@/data/templates";
+import type { Template } from "@/data/templates";
 
-export type Template =
-  | "minimal"
-  | "playful"
-  | "classic"
-  | "brutalist"
-  | "fashion"
-  | "pastel"
-  | "glass"
-  | "apiDocs"
-  | "terminal";
+// Re-exported so existing `import type { Template } from ".../TemplateProvider"`
+// call sites keep working now that the list lives in src/data/templates.ts.
+export type { Template };
 
 type TemplateContextValue = {
   template: Template;
@@ -21,14 +16,14 @@ type TemplateContextValue = {
 };
 
 const TemplateContext = createContext<TemplateContextValue>({
-  template: "minimal",
+  template: DEFAULT_TEMPLATE,
   setTemplate: () => {},
 });
 
 export function TemplateProvider({ children }: { children: ReactNode }) {
   const [template, setTemplate] = useLocalStorage<Template>(
     "drogan.template",
-    "minimal"
+    DEFAULT_TEMPLATE
   );
 
   return (
