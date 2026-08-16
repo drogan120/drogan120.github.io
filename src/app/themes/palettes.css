@@ -429,3 +429,45 @@
   --selection-bg: #c2185b;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Neon ----------
+   Cyberpunk key visual: an abyss blue-black base with neon cyan and magenta
+   accents in dark mode, and a cool light-silver base with deep cyan and
+   magenta accents in light mode.
+
+   The accent has to stay dark in light mode because a bright colour cannot
+   clear 4.5:1 as body text against a near-white card — the same trade-off every
+   other light scheme makes. */
+.scheme-neon.dark {
+  --background: #060816;
+  --foreground: #e6ecff;
+  --accent: #22d3ee;
+  --accent-2: #e879f9;
+  --muted: #9aa5d1;
+  --card: #0e1126;
+  --border: #232a4d;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #e879f9;
+  --selection-bg: #22d3ee;
+  --selection-fg: #060816;
+}
+
+.scheme-neon.light {
+  --background: #f3f6fc;
+  --foreground: #1b2b4d;
+  --accent: #0e7490;
+  --accent-2: #a21caf;
+  --muted: #5c6b90;
+  --card: #e9eef9;
+  --border: #c6d2ea;
+  --get: #117c39;
+  --post: #a35905;
+  --json-key: #0e7490;
+  --json-string: #af5109;
+  --json-number: #a21caf;
+  --selection-bg: #0e7490;
+  --selection-fg: #ffffff;
+}

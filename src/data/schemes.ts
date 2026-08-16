@@ -27,6 +27,7 @@ export const COLOR_SCHEMES = [
   { value: "slate", label: "Slate" },
   { value: "flat", label: "Flat" },
   { value: "anime", label: "Anime" },
+  { value: "neon", label: "Neon" },
 ] as const;
 
 export type ColorScheme = (typeof COLOR_SCHEMES)[number]["value"];
