@@ -523,36 +523,36 @@
    clear 4.5:1 as body text against a near-white card — the same trade-off every
    other light scheme makes. */
 .scheme-retro.dark {
-  --background: #160f35;
-  --foreground: #f4eefb;
-  --accent: #ff2ec4;
-  --accent-2: #25d7fd;
-  --muted: #a79ac7;
-  --card: #211840;
-  --border: #3b2d63;
+  --background: #0d0b20;
+  --foreground: #f6f3ff;
+  --accent: #ff7ac8;
+  --accent-2: #4dd9ff;
+  --muted: #a79ecf;
+  --card: #181532;
+  --border: #2e2858;
   --get: #34d399;
   --post: #fbbf24;
   --json-key: #67e8f9;
   --json-string: #fbbf24;
-  --json-number: #ff2ec4;
-  --selection-bg: #ff2ec4;
-  --selection-fg: #160f35;
+  --json-number: #ff7ac8;
+  --selection-bg: #ff7ac8;
+  --selection-fg: #0d0b20;
 }
 
 .scheme-retro.light {
-  --background: #fdf3f7;
-  --foreground: #3a2145;
-  --accent: #b3186b;
-  --accent-2: #234a9e;
-  --muted: #6f5f83;
-  --card: #f5e6f0;
-  --border: #dfc9db;
+  --background: #faf5f0;
+  --foreground: #2d1f3a;
+  --accent: #a8226b;
+  --accent-2: #1f4f9e;
+  --muted: #6a5f7d;
+  --card: #f7ecf2;
+  --border: #e3d2e0;
   --get: #0e6b30;
   --post: #994e03;
   --json-key: #0c6a84;
   --json-string: #a64b06;
   --json-number: #6d28d9;
-  --selection-bg: #b3186b;
+  --selection-bg: #a8226b;
   --selection-fg: #ffffff;
 }
 
