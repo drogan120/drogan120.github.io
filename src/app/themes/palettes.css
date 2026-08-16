@@ -293,3 +293,78 @@
   --selection-bg: #45607e;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Flat ----------
+   A flat, non-gradient, colourful scheme. Most of the work happens by setting
+   --accent-2 equal to --accent: every template builds its accent gradients as
+   a ramp from --accent to --accent-2, so that alone collapses them into one
+   solid colour without touching any template code.
+
+   A few gradients don't run between those two tokens (the aurora mesh blobs,
+   the contact-headline ramp, the experience timeline fade), so they are
+   neutralised below with rules scoped to `.scheme-flat`. This scheme is flat
+   by construction, not by accident.
+
+   The accent has to stay dark in light mode because a bright colour cannot
+   clear 4.5:1 as body text against a near-white card — the same trade-off every
+   other light scheme makes. */
+.scheme-flat.dark {
+  --background: #150f2e;
+  --foreground: #efeaff;
+  --accent: #c86bff;
+  --accent-2: #c86bff;
+  --muted: #a49cc0;
+  --card: #1d1539;
+  --border: #332a50;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #f9a8d4;
+  --selection-bg: #c86bff;
+  --selection-fg: #150f2e;
+}
+
+.scheme-flat.light {
+  --background: #fdf6ff;
+  --foreground: #2f1b3d;
+  --accent: #a21caf;
+  --accent-2: #a21caf;
+  --muted: #6b5680;
+  --card: #f4e8fb;
+  --border: #e2d3ef;
+  --get: #0e7236;
+  --post: #9a5204;
+  --json-key: #0e7490;
+  --json-string: #a74d08;
+  --json-number: #7c3aed;
+  --selection-bg: #a21caf;
+  --selection-fg: #ffffff;
+}
+
+/*
+ * Flat really means flat. The accent ramps already collapse because
+ * accent-2 == accent; these catch the remaining standalone gradients so no
+ * gradient survives under this scheme.
+ */
+.scheme-flat [class*="bg-gradient-to-"] {
+  background-image: none !important;
+}
+
+/* Removing the gradient from a bg-clip-text element leaves transparent text
+   unless it gets a real colour. */
+.scheme-flat [class*="bg-clip-text"] {
+  color: var(--foreground) !important;
+}
+
+/* The aurora mesh blobs are radial gradients; turn them into flat solid glows
+   (the blur still softens the edges). */
+.scheme-flat .aurora-blob {
+  background: var(--accent) !important;
+}
+
+/* The pointer-tracked spotlight is a radial gradient overlay; it doesn't
+   belong in a flat scheme. */
+.scheme-flat .aurora-spotlight {
+  display: none !important;
+}
