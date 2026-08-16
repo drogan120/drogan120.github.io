@@ -841,3 +841,135 @@ a:hover > .wiggle-on-hover {
     display: none !important;
   }
 }
+
+/* ============================================================
+   ANIME TEMPLATE
+   Manga-style backdrop: halftone dots, drifting speed-line bursts
+   and vertical kanji watermarks.
+   ============================================================ */
+
+.anime-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Halftone dot field, sized so the dots stay round at any DPR. */
+.anime-halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--muted) 30%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 14px 14px;
+}
+
+.light .anime-halftone {
+  opacity: 0.55;
+}
+
+.dark .anime-halftone {
+  opacity: 0.4;
+}
+
+/* Small halftone block clipped into a card corner. */
+.anime-halftone-corner {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5rem;
+  height: 5rem;
+  background-size: 8px 8px;
+  opacity: 0.5;
+}
+
+/* Manga "action" burst: a bundle of faint lines fanning out. */
+.anime-speedline {
+  position: absolute;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--border) 1deg,
+    transparent 4deg,
+    transparent 356deg
+  );
+  opacity: 0.5;
+  animation: anime-spin 60s linear infinite;
+  will-change: transform;
+}
+
+.anime-speedline-a {
+  top: -12rem;
+  right: -8rem;
+  width: 28rem;
+  height: 28rem;
+}
+
+.anime-speedline-b {
+  bottom: -14rem;
+  left: -10rem;
+  width: 32rem;
+  height: 32rem;
+  animation-direction: reverse;
+  animation-duration: 80s;
+}
+
+@keyframes anime-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Vertical Japanese watermark, read top-to-bottom like manga furigana. */
+.anime-kanji {
+  writing-mode: vertical-rl;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  letter-spacing: 0.35em;
+}
+
+/* Rising-sun badge used in the nav and footer. */
+.anime-sun {
+  color: #e2584b;
+  filter: drop-shadow(0 0 6px rgba(226, 88, 75, 0.5));
+}
+
+/* Manga speech-bubble badge with the tail pointing to the top-left. */
+.anime-bubble {
+  position: relative;
+}
+
+.anime-bubble::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 0 0 14px;
+  border-color: var(--border) transparent transparent transparent;
+}
+
+/* Underline strike in the hero name, like a marker highlight. */
+.anime-strike::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 0.14em;
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  transform: rotate(-1deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anime-speedline {
+    animation: none !important;
+  }
+}

@@ -387,3 +387,45 @@
 .scheme-flat [class*="bg-background/"] {
   background-color: var(--background) !important;
 }
+
+/* ---------- Anime ----------
+   Inspired by anime key visuals: a midnight indigo base with neon pink and
+   sky-cyan accents in dark mode, and a soft sakura-cream base with deep pink
+   and violet accents in light mode.
+
+   The accent has to stay dark in light mode because a bright colour cannot
+   clear 4.5:1 as body text against a near-white card — the same trade-off every
+   other light scheme makes. */
+.scheme-anime.dark {
+  --background: #0f1225;
+  --foreground: #eef1ff;
+  --accent: #ff8ad4;
+  --accent-2: #8ecbff;
+  --muted: #aab0d1;
+  --card: #1c2040;
+  --border: #2f3560;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #c4b5fd;
+  --selection-bg: #ff8ad4;
+  --selection-fg: #0f1225;
+}
+
+.scheme-anime.light {
+  --background: #fff6fb;
+  --foreground: #3a3050;
+  --accent: #c2185b;
+  --accent-2: #5b21b6;
+  --muted: #6f6588;
+  --card: #f6eef8;
+  --border: #e6dcf0;
+  --get: #117c39;
+  --post: #a35905;
+  --json-key: #0e7490;
+  --json-string: #af5109;
+  --json-number: #6d28d9;
+  --selection-bg: #c2185b;
+  --selection-fg: #ffffff;
+}

@@ -9,6 +9,7 @@ import BrutalistTemplate from "./templates/brutalist";
 import FashionTemplate from "./templates/fashion";
 import PastelTemplate from "./templates/pastel";
 import GlassTemplate from "./templates/glass";
+import AnimeTemplate from "./templates/anime";
 
 export default function DefaultView() {
   const { template } = useTemplate();
@@ -28,6 +29,8 @@ export default function DefaultView() {
       return <PastelTemplate />;
     case "glass":
       return <GlassTemplate />;
+    case "anime":
+      return <AnimeTemplate />;
     // Aurora is the default template, so it also catches apiDocs/terminal —
     // those are standalone views handled higher up and never reach this switch.
     default:

@@ -25,6 +25,7 @@ export const TEMPLATES = [
   { value: "fashion", label: "Fashion", kind: "skin" },
   { value: "pastel", label: "Pastel", kind: "skin" },
   { value: "glass", label: "Glass", kind: "skin" },
+  { value: "anime", label: "Anime", kind: "skin" },
   { value: "apiDocs", label: "API Docs", kind: "view" },
   { value: "terminal", label: "Terminal", kind: "view" },
 ] as const;
