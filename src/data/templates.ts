@@ -15,23 +15,31 @@
  *
  * `kind` separates the default-view skins from the standalone views, which
  * bypass the template switcher entirely and are rendered further up the tree.
+ *
+ * `scheme` is the colour scheme that should be applied automatically when the
+ * template is selected. It is only a default: the visitor can still pick any
+ * other scheme afterwards, and picking a template again re-applies its own.
+ * Standalone views carry no scheme so switching to them leaves the colours
+ * untouched.
  */
+import type { ColorScheme } from "./schemes";
+
 export const TEMPLATES = [
-  { value: "aurora", label: "Aurora", kind: "skin" },
-  { value: "minimal", label: "Minimal", kind: "skin" },
-  { value: "playful", label: "Playful", kind: "skin" },
-  { value: "classic", label: "Classic", kind: "skin" },
-  { value: "brutalist", label: "Brutalist", kind: "skin" },
-  { value: "fashion", label: "Fashion", kind: "skin" },
-  { value: "pastel", label: "Pastel", kind: "skin" },
-  { value: "glass", label: "Glass", kind: "skin" },
-  { value: "anime", label: "Anime", kind: "skin" },
-  { value: "neon", label: "Neon", kind: "skin" },
-  { value: "paper", label: "Paper", kind: "skin" },
-  { value: "retro", label: "Retro", kind: "skin" },
-  { value: "pixel", label: "Pixel", kind: "skin" },
-  { value: "toon", label: "Toon", kind: "skin" },
-  { value: "ff7", label: "FF7", kind: "skin" },
+  { value: "aurora", label: "Aurora", kind: "skin", scheme: "mauve" },
+  { value: "minimal", label: "Minimal", kind: "skin", scheme: "slate" },
+  { value: "playful", label: "Playful", kind: "skin", scheme: "pastel" },
+  { value: "classic", label: "Classic", kind: "skin", scheme: "amber" },
+  { value: "brutalist", label: "Brutalist", kind: "skin", scheme: "slate" },
+  { value: "fashion", label: "Fashion", kind: "skin", scheme: "sakura" },
+  { value: "pastel", label: "Pastel", kind: "skin", scheme: "pastel" },
+  { value: "glass", label: "Glass", kind: "skin", scheme: "ocean" },
+  { value: "anime", label: "Anime", kind: "skin", scheme: "anime" },
+  { value: "neon", label: "Neon", kind: "skin", scheme: "neon" },
+  { value: "paper", label: "Paper", kind: "skin", scheme: "paper" },
+  { value: "retro", label: "Retro", kind: "skin", scheme: "retro" },
+  { value: "pixel", label: "Pixel", kind: "skin", scheme: "pixel" },
+  { value: "toon", label: "Toon", kind: "skin", scheme: "toon" },
+  { value: "ff7", label: "FF7", kind: "skin", scheme: "ff7" },
   { value: "apiDocs", label: "API Docs", kind: "view" },
   { value: "terminal", label: "Terminal", kind: "view" },
 ] as const;
@@ -44,7 +52,16 @@ export const TEMPLATE_NAMES = TEMPLATES.map(
 ) as readonly Template[];
 
 /**
+ * The scheme that should accompany a template, or null for standalone views.
+ * Used by the template provider to auto-apply colours on template switch.
+ */
+export function templateScheme(template: Template): ColorScheme | null {
+  const entry = TEMPLATES.find((t) => t.value === template);
+  return entry && "scheme" in entry ? (entry.scheme as ColorScheme) : null;
+}
+
+/**
  * Aurora is the default: it is the most complete skin, and the one the rest of
  * the site's motion and colour work was tuned against.
  */
-export const DEFAULT_TEMPLATE: Template = "aurora";
+export const DEFAULT_TEMPLATE: Template = "anime";
