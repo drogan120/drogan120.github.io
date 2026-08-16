@@ -34,7 +34,7 @@ export default function AuroraHero() {
   return (
     <section
       id="top"
-      className="relative mx-auto w-full max-w-6xl px-5 pt-28 pb-20 sm:px-8 md:pt-36 md:pb-28"
+      className="relative mx-auto w-full max-w-6xl px-6 pt-28 pb-20 sm:px-8 md:pt-36 md:pb-28"
     >
       <div className="grid gap-14 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-10">
         <div className="min-w-0">

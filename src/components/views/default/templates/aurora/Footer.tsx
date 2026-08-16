@@ -9,7 +9,7 @@ export default function AuroraFooter() {
   return (
     <footer className="relative mt-8">
       <hr className="aurora-rule border-0" />
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-5 py-10 font-mono text-xs text-muted sm:flex-row sm:justify-between sm:px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-6 py-10 font-mono text-xs text-muted sm:flex-row sm:justify-between sm:px-8">
         <p>
           <span className="text-accent">◆</span> © {new Date().getFullYear()}{" "}
           Drogan
