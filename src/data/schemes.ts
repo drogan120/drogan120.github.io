@@ -30,6 +30,7 @@ export const COLOR_SCHEMES = [
   { value: "neon", label: "Neon" },
   { value: "paper", label: "Paper" },
   { value: "retro", label: "Retro" },
+  { value: "pixel", label: "Pixel" },
 ] as const;
 
 export type ColorScheme = (typeof COLOR_SCHEMES)[number]["value"];

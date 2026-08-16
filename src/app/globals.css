@@ -1348,3 +1348,16 @@ a:hover > .wiggle-on-hover {
     2px 2px 0 color-mix(in srgb, var(--accent) 55%, transparent),
     0 0 18px color-mix(in srgb, var(--accent) 45%, transparent);
 }
+
+/* Faint horizontal scanlines across the whole backdrop, like a CRT. */
+.pixel-scanline {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    color-mix(in srgb, var(--foreground) 4%, transparent) 3px,
+    color-mix(in srgb, var(--foreground) 4%, transparent) 4px
+  );
+}
