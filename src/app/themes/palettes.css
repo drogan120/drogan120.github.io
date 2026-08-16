@@ -293,3 +293,97 @@
   --selection-bg: #45607e;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Flat ----------
+   A flat, non-gradient scheme built from the Pastel palette. It is flat by
+   construction, not by accident:
+
+   - --accent-2 equals --accent, so every accent ramp in the templates
+     (from-accent to-accent-2) collapses into one solid colour.
+   - Every remaining gradient is neutralised below (aurora mesh blobs, the
+     contact-headline ramp, the experience timeline fade).
+   - The glass effect (backdrop-blur, translucent card/background fills and
+     the soft glow orbs) is also neutralised below, because a flat scheme
+     must not look glassy.
+
+   The accent has to stay dark in light mode because a bright colour cannot
+   clear 4.5:1 as body text against a near-white card — the same trade-off every
+   other light scheme makes. */
+.scheme-flat.dark {
+  --background: #1a1626;
+  --foreground: #eee8f6;
+  --accent: #f9a8d4;
+  --accent-2: #f9a8d4;
+  --muted: #9d92b5;
+  --card: #241e33;
+  --border: #38304f;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #c4b5fd;
+  --selection-bg: #f9a8d4;
+  --selection-fg: #1a1626;
+}
+
+.scheme-flat.light {
+  --background: #fbf7ff;
+  --foreground: #3b3554;
+  --accent: #cf1671;
+  --accent-2: #cf1671;
+  --muted: #6f678a;
+  --card: #f4eefb;
+  --border: #e6def3;
+  --get: #117c39;
+  --post: #a35905;
+  --json-key: #0e7490;
+  --json-string: #af5109;
+  --json-number: #6d28d9;
+  --selection-bg: #cf1671;
+  --selection-fg: #ffffff;
+}
+
+/*
+ * Flat means flat. The accent ramps already collapse because accent-2 ==
+ * accent; these rules neutralise everything else that could read as a gradient
+ * or as glass, scoped so no other scheme is affected.
+ */
+
+/* 1. Any leftover gradient utility becomes a plain background. */
+.scheme-flat [class*="bg-gradient-to-"] {
+  background-image: none !important;
+}
+
+/* Removing the gradient from a bg-clip-text element leaves transparent text
+   unless it gets a real colour. */
+.scheme-flat [class*="bg-clip-text"] {
+  color: var(--foreground) !important;
+}
+
+/* 2. The aurora mesh blobs are radial gradients; turn them into flat solid
+   accents. The spotlight is a pointer-tracked radial overlay — it doesn't
+   belong in a flat scheme. */
+.scheme-flat .aurora-blob {
+  background: var(--accent) !important;
+}
+.scheme-flat .aurora-spotlight {
+  display: none !important;
+}
+
+/* 3. No glass: drop every backdrop blur and every blur filter (which is what
+   makes the translucent fills and glow orbs look soft and glassy). */
+.scheme-flat *,
+.scheme-flat *::before,
+.scheme-flat *::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+
+/* 4. Translucent card/background fills become solid so nothing shows through. */
+.scheme-flat [class*="bg-card/"] {
+  background-color: var(--card) !important;
+}
+.scheme-flat [class*="bg-background/"] {
+  background-color: var(--background) !important;
+}
