@@ -594,3 +594,42 @@
   --selection-bg: #9c3a1e;
   --selection-fg: #ffffff;
 }
+
+/* ---------------------------------------------------------------------------
+   Toon — cel-shaded like Auto Modellista. Flat colors, thick comic-style ink
+   outlines and saturated red/blue. Dark mode is a night race; light mode is
+   a bright sky with ink-black outlines.
+--------------------------------------------------------------------------- */
+.scheme-toon.dark {
+  --background: #10141f;
+  --foreground: #f1f4f9;
+  --accent: #ff4757;
+  --accent-2: #4d8dfa;
+  --muted: #9aa5b5;
+  --card: #1b2130;
+  --border: #2c3345;
+  --get: #4ade80;
+  --post: #fbbf24;
+  --json-key: #7dd3fc;
+  --json-string: #fcd34d;
+  --json-number: #ff6ec7;
+  --selection-bg: #ff4757;
+  --selection-fg: #10141f;
+}
+
+.scheme-toon.light {
+  --background: #f2f6fb;
+  --foreground: #20242e;
+  --accent: #d72638;
+  --accent-2: #1d4ed8;
+  --muted: #5b6472;
+  --card: #ffffff;
+  --border: #c7cdd6;
+  --get: #0e6b30;
+  --post: #994e03;
+  --json-key: #0c6a84;
+  --json-string: #a64b06;
+  --json-number: #6d28d9;
+  --selection-bg: #d72638;
+  --selection-fg: #ffffff;
+}

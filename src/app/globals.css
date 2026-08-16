@@ -1361,3 +1361,45 @@ a:hover > .wiggle-on-hover {
     color-mix(in srgb, var(--foreground) 4%, transparent) 4px
   );
 }
+
+/* ---------------------------------------------------------------------------
+   Toon — cel-shaded skins (Auto Modellista). Flat colors with thick ink-style
+   outlines and hard offset shadows.
+--------------------------------------------------------------------------- */
+
+/* Backdrop: soft radial tint like a cel-shaded sky. Purely decorative. */
+.toon-stage {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      60% 50% at 50% 0%,
+      color-mix(in srgb, var(--accent-2) 14%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      70% 60% at 50% 100%,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent 70%
+    );
+}
+
+/* Thick comic outline: a hard ink border plus a flat offset shadow. */
+.toon-frame {
+  position: relative;
+  border: 2px solid color-mix(in srgb, var(--foreground) 55%, transparent);
+  box-shadow: 6px 6px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Hard ink shadow for text. */
+.toon-shadow {
+  text-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+/* Inked underline for links/headings, like a comic word balloon. */
+.toon-ink {
+  text-shadow: 2px 0 0 var(--card), -2px 0 0 var(--card), 0 2px 0 var(--card),
+    0 -2px 0 var(--card);
+}
