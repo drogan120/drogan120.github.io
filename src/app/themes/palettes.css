@@ -184,3 +184,73 @@
   --selection-bg: #b74509;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Amber ---------- */
+.scheme-amber.dark {
+  --background: #17130a;
+  --foreground: #f5ecd9;
+  --accent: #fbbf24;
+  --accent-2: #f59e0b;
+  --muted: #a3937a;
+  --card: #201a0f;
+  --border: #35291a;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #f59e0b;
+  --selection-bg: #fbbf24;
+  --selection-fg: #17130a;
+}
+
+.scheme-amber.light {
+  --background: #fffbf0;
+  --foreground: #40300f;
+  --accent: #9e6007;
+  --accent-2: #92400e;
+  --muted: #7b6c52;
+  --card: #fdf3dd;
+  --border: #f2e4c4;
+  --get: #117d39;
+  --post: #a35905;
+  --json-key: #0369a1;
+  --json-string: #af5109;
+  --json-number: #92400e;
+  --selection-bg: #9e6007;
+  --selection-fg: #ffffff;
+}
+
+/* ---------- Sakura ---------- */
+.scheme-sakura.dark {
+  --background: #1a1219;
+  --foreground: #f9e9ef;
+  --accent: #ffb7c5;
+  --accent-2: #d8b4fe;
+  --muted: #a8909e;
+  --card: #241a23;
+  --border: #3a2b36;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #d8b4fe;
+  --selection-bg: #ffb7c5;
+  --selection-fg: #1a1219;
+}
+
+.scheme-sakura.light {
+  --background: #fff7fa;
+  --foreground: #4a2733;
+  --accent: #be185d;
+  --accent-2: #7e22ce;
+  --muted: #7f6673;
+  --card: #fdeef4;
+  --border: #f7dbe6;
+  --get: #117d39;
+  --post: #a35905;
+  --json-key: #0e7490;
+  --json-string: #af5109;
+  --json-number: #7e22ce;
+  --selection-bg: #be185d;
+  --selection-fg: #ffffff;
+}

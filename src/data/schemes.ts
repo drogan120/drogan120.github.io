@@ -22,6 +22,8 @@ export const COLOR_SCHEMES = [
   { value: "ocean", label: "Ocean" },
   { value: "forest", label: "Forest" },
   { value: "sunset", label: "Sunset" },
+  { value: "amber", label: "Amber" },
+  { value: "sakura", label: "Sakura" },
 ] as const;
 
 export type ColorScheme = (typeof COLOR_SCHEMES)[number]["value"];
