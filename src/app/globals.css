@@ -477,6 +477,54 @@ a:hover > .wiggle-on-hover {
   }
 }
 
+/* ------------------------------------------------------------
+   Nihon variant of the preloader: a calm washi panel with the
+   kanji and its reading, over the rising sun backdrop.
+   ------------------------------------------------------------ */
+
+.preloader-nihon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  overflow: hidden;
+}
+
+.preloader-nihon .nihon-sun {
+  right: -4rem;
+  top: -4rem;
+}
+
+.preloader-nihon-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 1.4rem 2.2rem;
+}
+
+.preloader-nihon-kanji {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 900;
+  color: var(--foreground);
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+}
+
+.preloader-nihon-reading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+}
+
 /* ============================================================
    BLOG CARDS
    ============================================================ */
@@ -1569,4 +1617,327 @@ a:hover > .wiggle-on-hover {
     color-mix(in srgb, var(--accent) 60%, transparent),
     transparent
   );
+}
+
+/* ============================================================
+   NIHON TEMPLATE
+   Japanese traditional: a washi-paper backdrop with a rising
+   vermilion sun, a faint torii silhouette and drifting sakura
+   petals, plus ruby-text furigana and hanko seals.
+   ============================================================ */
+
+/* Backdrop: washi grain + a soft rising sun behind a torii gate. Purely
+   decorative. */
+.nihon-stage {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Washi texture: fine, low-contrast fibre noise. */
+.nihon-washi {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      color-mix(in srgb, var(--muted) 8%, transparent) 0.6px,
+      transparent 0.6px
+    ),
+    radial-gradient(
+      color-mix(in srgb, var(--muted) 5%, transparent) 0.4px,
+      transparent 0.4px
+    );
+  background-size:
+    6px 6px,
+    9px 9px;
+  background-position:
+    0 0,
+    3px 3px;
+}
+
+/* Rising vermilion sun, like the naval ensign. */
+.nihon-sun {
+  position: absolute;
+  right: -6rem;
+  top: -6rem;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 22%, transparent),
+    transparent 65%
+  );
+}
+
+/* Large faint kanji centred behind the content, for depth. */
+.nihon-kanji-bg {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  translate: -50% -50%;
+  font-size: clamp(16rem, 40vw, 34rem);
+  font-weight: 900;
+  line-height: 1;
+  color: color-mix(in srgb, var(--accent) 5%, transparent);
+  user-select: none;
+}
+
+/* Seigaiha (wave scale) band along the bottom edge. */
+.nihon-seigaiha {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -4rem;
+  height: 12rem;
+  opacity: 0.5;
+  background-image: radial-gradient(
+    circle at 50% 100%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 45%,
+    transparent 46%
+  );
+  background-size: 6rem 3rem;
+  background-repeat: repeat-x;
+}
+
+/* Torii silhouette in the lower-left. Two pillars, two lintels. */
+.nihon-torii {
+  position: absolute;
+  bottom: -2rem;
+  left: -4rem;
+  width: 26rem;
+  height: 20rem;
+  opacity: 0.5;
+}
+
+.nihon-torii-kasagi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.nihon-torii-shimaki {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 1.9rem;
+  height: 1.1rem;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.nihon-torii-nuki {
+  position: absolute;
+  top: 7.5rem;
+  left: 6%;
+  width: 88%;
+  height: 0.9rem;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.nihon-torii-hashira {
+  position: absolute;
+  top: 2.4rem;
+  left: 2.2rem;
+  width: 1.4rem;
+  height: 17rem;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.nihon-torii-hashira2 {
+  position: absolute;
+  top: 2.4rem;
+  right: 2.2rem;
+  width: 1.4rem;
+  height: 17rem;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+/* Drifting sakura petals. */
+.nihon-sakura {
+  position: absolute;
+  color: color-mix(in srgb, var(--accent) 45%, transparent);
+  font-size: 1.4rem;
+  line-height: 1;
+  animation: nihon-fall linear infinite;
+}
+
+.nihon-sakura-1 {
+  top: -2rem;
+  left: 12%;
+  animation-duration: 22s;
+}
+
+.nihon-sakura-2 {
+  top: -3rem;
+  left: 38%;
+  font-size: 1rem;
+  animation-duration: 30s;
+  animation-delay: 4s;
+}
+
+.nihon-sakura-3 {
+  top: -2.5rem;
+  left: 62%;
+  font-size: 1.8rem;
+  animation-duration: 26s;
+  animation-delay: 8s;
+}
+
+.nihon-sakura-4 {
+  top: -2rem;
+  left: 84%;
+  font-size: 1.1rem;
+  animation-duration: 34s;
+  animation-delay: 12s;
+}
+
+.nihon-sakura-5 {
+  top: -2.5rem;
+  left: 25%;
+  font-size: 0.9rem;
+  animation-duration: 28s;
+  animation-delay: 2s;
+}
+
+.nihon-sakura-6 {
+  top: -3rem;
+  left: 72%;
+  font-size: 1.3rem;
+  animation-duration: 24s;
+  animation-delay: 6s;
+}
+
+@keyframes nihon-fall {
+  0% {
+    transform: translateY(-2rem) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(320deg);
+  }
+}
+
+/* Ruby text: kanji with hiragana furigana above, exactly like a textbook.
+   Uses a stacked flex column for cross-browser consistent alignment. */
+.nihon-furigana {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+}
+
+.nihon-furigana-rt {
+  font-size: 0.45em;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.nihon-furigana-txt {
+  font-size: 1em;
+}
+
+/* Hanko: a red square seal with white kanji, slightly rotated like a stamp. */
+.nihon-hanko {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.4rem;
+  background: var(--accent);
+  color: var(--card);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+  transform: rotate(-4deg);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.25);
+  user-select: none;
+}
+
+.nihon-hanko-sm {
+  width: 1.7rem;
+  height: 1.7rem;
+  font-size: 0.65rem;
+  border-radius: 0.3rem;
+}
+
+/* Vertical kanji watermark, like anime but with the washi wash. */
+.nihon-kanji {
+  writing-mode: vertical-rl;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: 0.9em;
+  color: color-mix(in srgb, var(--accent) 14%, transparent);
+  max-height: 18rem;
+  overflow: hidden;
+}
+
+/* Washi panel: a card with a thin ink frame and a vermilion accent tick at
+   the top, like the edge of a formal document. */
+.nihon-panel {
+  position: relative;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.nihon-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--accent) 3.5rem,
+    transparent 3.5rem
+  );
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Brush underline on the hero name. */
+.nihon-brush::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.05em;
+  height: 0.16em;
+  background: color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 999px;
+  transform: rotate(-1.5deg);
+}
+
+/* Nav links get a brush underline on hover. */
+.nihon-navlink {
+  position: relative;
+}
+
+.nihon-navlink::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.25rem;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nihon-navlink:hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nihon-sakura {
+    animation: none;
+  }
 }

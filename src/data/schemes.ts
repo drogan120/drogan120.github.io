@@ -27,6 +27,7 @@ export const COLOR_SCHEMES = [
   { value: "slate", label: "Slate" },
   { value: "flat", label: "Flat" },
   { value: "anime", label: "Anime" },
+  { value: "nihon", label: "Nihon" },
   { value: "neon", label: "Neon" },
   { value: "paper", label: "Paper" },
   { value: "retro", label: "Retro" },

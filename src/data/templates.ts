@@ -34,6 +34,7 @@ export const TEMPLATES = [
   { value: "pastel", label: "Pastel", kind: "skin", scheme: "pastel" },
   { value: "glass", label: "Glass", kind: "skin", scheme: "ocean" },
   { value: "anime", label: "Anime", kind: "skin", scheme: "anime" },
+  { value: "nihon", label: "Nihon", kind: "skin", scheme: "nihon" },
   { value: "neon", label: "Neon", kind: "skin", scheme: "neon" },
   { value: "paper", label: "Paper", kind: "skin", scheme: "paper" },
   { value: "retro", label: "Retro", kind: "skin", scheme: "retro" },

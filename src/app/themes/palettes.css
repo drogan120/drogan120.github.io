@@ -430,6 +430,45 @@
   --selection-fg: #ffffff;
 }
 
+/* ---------- Nihon ----------
+   Japanese traditional: dark mode is an indigo ink night with vermilion and
+   soft indigo accents (shinise signage); light mode is a washi paper page with
+   deep vermilion ink and indigo.
+--------------------------------------------------------------------------- */
+.scheme-nihon.dark {
+  --background: #0d0b0a;
+  --foreground: #ece6dc;
+  --accent: #ff5a3d;
+  --accent-2: #8ab4f8;
+  --muted: #a3968b;
+  --card: #171310;
+  --border: #2b2620;
+  --get: #34d399;
+  --post: #fbbf24;
+  --json-key: #67e8f9;
+  --json-string: #fbbf24;
+  --json-number: #c4b5fd;
+  --selection-bg: #ff5a3d;
+  --selection-fg: #0d0b0a;
+}
+
+.scheme-nihon.light {
+  --background: #f5f1e8;
+  --foreground: #2a2420;
+  --accent: #c6392b;
+  --accent-2: #2b4b9e;
+  --muted: #5c534a;
+  --card: #ffffff;
+  --border: #dcd3c4;
+  --get: #117c39;
+  --post: #a35905;
+  --json-key: #0e7490;
+  --json-string: #af5109;
+  --json-number: #6d28d9;
+  --selection-bg: #c6392b;
+  --selection-fg: #ffffff;
+}
+
 /* ---------- Neon ----------
    Cyberpunk key visual: an abyss blue-black base with neon cyan and magenta
    accents in dark mode, and a cool light-silver base with deep cyan and

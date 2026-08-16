@@ -10,6 +10,7 @@ import FashionTemplate from "./templates/fashion";
 import PastelTemplate from "./templates/pastel";
 import GlassTemplate from "./templates/glass";
 import AnimeTemplate from "./templates/anime";
+import NihonTemplate from "./templates/nihon";
 import NeonTemplate from "./templates/neon";
 import PaperTemplate from "./templates/paper";
 import RetroTemplate from "./templates/retro";
@@ -37,6 +38,8 @@ export default function DefaultView() {
       return <GlassTemplate />;
     case "anime":
       return <AnimeTemplate />;
+    case "nihon":
+      return <NihonTemplate />;
     case "neon":
       return <NeonTemplate />;
     case "paper":
@@ -49,9 +52,11 @@ export default function DefaultView() {
       return <ToonTemplate />;
     case "ff7":
       return <Ff7Template />;
+    case "aurora":
+      return <AuroraTemplate />;
     // Aurora is the default template, so it also catches apiDocs/terminal —
     // those are standalone views handled higher up and never reach this switch.
     default:
-      return <AuroraTemplate />;
+      return <AnimeTemplate />;
   }
 }
