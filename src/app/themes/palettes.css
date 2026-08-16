@@ -636,39 +636,40 @@
 
 /* ---------------------------------------------------------------------------
    FF7 — Final Fantasy VII. Mako-green industrial Shinra aesthetic: dark mode
-   is the Reactor night with glowing Mako teal; light mode is the Midgar sky
-   with deep forest green and gold materia accents.
+   is the Midgar night — steel grey with the luminous teal-green glow of Mako
+   and gold materia accents. Light mode is a strategy-guide page with deep
+   emerald and amber ink.
 --------------------------------------------------------------------------- */
 .scheme-ff7.dark {
-  --background: #07120e;
-  --foreground: #e6f4ec;
-  --accent: #4ade80;
-  --accent-2: #fbbf24;
-  --muted: #93a89c;
-  --card: #0d1c15;
-  --border: #1d3a2b;
+  --background: #0a0f0c;
+  --foreground: #e8f0ec;
+  --accent: #3df0a9;
+  --accent-2: #f6c544;
+  --muted: #94a39c;
+  --card: #121a16;
+  --border: #24322b;
   --get: #34d399;
   --post: #fbbf24;
   --json-key: #7dd3fc;
   --json-string: #fcd34d;
-  --json-number: #c084fc;
-  --selection-bg: #4ade80;
-  --selection-fg: #07120e;
+  --json-number: #f6c544;
+  --selection-bg: #3df0a9;
+  --selection-fg: #0a0f0c;
 }
 
 .scheme-ff7.light {
-  --background: #f2f7f4;
-  --foreground: #1c2b23;
-  --accent: #15803d;
+  --background: #f4f7f5;
+  --foreground: #1d2b24;
+  --accent: #0e7a52;
   --accent-2: #a16207;
-  --muted: #57685e;
+  --muted: #55685e;
   --card: #ffffff;
-  --border: #c9d8cd;
+  --border: #c9d6ce;
   --get: #0e6b30;
   --post: #994e03;
   --json-key: #0c6a84;
   --json-string: #a64b06;
   --json-number: #6d28d9;
-  --selection-bg: #15803d;
+  --selection-bg: #0e7a52;
   --selection-fg: #ffffff;
 }
