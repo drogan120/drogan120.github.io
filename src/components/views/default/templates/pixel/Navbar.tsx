@@ -27,7 +27,7 @@ export default function PixelNavbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
         <a href="#top" className="flex shrink-0 items-center gap-2">
           <span aria-hidden className="inline-block h-3.5 w-3.5 bg-accent" />
-          <span className="pixel-glow font-mono text-xl font-black tracking-widest text-foreground">
+          <span className="font-pixel text-sm tracking-tight text-foreground">
             DROGAN
           </span>
         </a>

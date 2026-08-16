@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Playfair_Display,
+  Press_Start_2P,
+} from "next/font/google";
 import { Providers } from "@/components/providers/Providers";
 import { DEFAULT_SCHEME, SCHEME_NAMES } from "@/data/schemes";
 import {
@@ -21,6 +26,12 @@ const geistMono = Geist_Mono({
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
+  subsets: ["latin"],
+});
+
+const pressStart = Press_Start_2P({
+  variable: "--font-pixel",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -142,7 +153,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="id"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} light scheme-${DEFAULT_SCHEME} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${pressStart.variable} light scheme-${DEFAULT_SCHEME} h-full antialiased`}
     >
       <head>
         {/*

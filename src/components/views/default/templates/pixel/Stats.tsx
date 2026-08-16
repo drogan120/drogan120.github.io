@@ -21,7 +21,7 @@ function Stat({
   return (
     <div className="pixel-frame relative bg-card px-6 py-8 text-center">
       <span className="text-xl">{icon}</span>
-      <p className="pixel-glow mt-3 font-mono text-4xl font-black tabular-nums text-accent sm:text-5xl">
+      <p className="pixel-glow mt-3 font-pixel text-2xl tabular-nums text-accent sm:text-3xl">
         {parsed ? (
           <>
             {counted.toLocaleString()}

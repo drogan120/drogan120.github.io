@@ -21,7 +21,7 @@ export default function PixelContact() {
             {t.default.contact.label.replace("// ", "")}
           </p>
 
-          <h2 className="mt-5 font-mono text-3xl leading-tight font-black tracking-tight text-foreground sm:text-5xl">
+          <h2 className="mt-5 font-pixel text-2xl leading-[1.4] tracking-tight text-foreground sm:text-4xl">
             {t.default.contact.title}
           </h2>
 

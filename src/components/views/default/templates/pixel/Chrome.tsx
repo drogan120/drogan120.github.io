@@ -58,7 +58,7 @@ export function SectionHeading({
         </span>
         {eyebrow}
       </p>
-      <h2 className="pixel-glow mt-3 font-mono text-3xl font-black tracking-tight break-words text-foreground sm:text-4xl md:text-5xl">
+      <h2 className="pixel-glow mt-3 font-pixel text-2xl leading-[1.4] tracking-tight break-words text-foreground sm:text-3xl md:text-4xl">
         {title}
       </h2>
       <span

@@ -17,16 +17,16 @@ export default function PixelHero() {
       className="relative mx-auto w-full max-w-6xl px-5 pt-28 pb-20 sm:px-8 sm:pt-40 md:pb-28"
     >
       <div className="max-w-3xl">
-        <p className="pixel-glow inline-flex items-center gap-2 border-2 border-accent bg-card px-4 py-1.5 font-mono text-xs font-bold text-accent">
+        <p className="pixel-glow inline-flex items-center gap-2 border-2 border-accent bg-card px-4 py-1.5 font-pixel text-[10px] tracking-wider text-accent">
           <span className="inline-block h-2 w-2 animate-pulse bg-accent" />
           {t.default.hero.badge}
         </p>
 
-        <h1 className="mt-8 font-mono text-[2.8rem] leading-[1.02] font-black tracking-tight text-foreground sm:text-7xl md:text-8xl">
+        <h1 className="mt-8 font-pixel text-3xl leading-[1.3] tracking-tight text-foreground sm:text-5xl md:text-6xl">
           <span className="block font-mono text-lg font-bold tracking-[0.35em] text-accent-2 uppercase sm:text-xl">
             {t.default.hero.hello}
           </span>
-          <span className="pixel-glow mt-3 block text-accent">DROGAN</span>
+          <span className="pixel-glow mt-4 block text-accent">DROGAN</span>
         </h1>
 
         <p className="mt-6 flex min-h-[2rem] items-center font-mono text-lg font-bold text-accent-2 sm:text-2xl">

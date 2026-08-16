@@ -562,36 +562,36 @@
    deep maroon and navy accents that clear 4.5:1 against the card.
 --------------------------------------------------------------------------- */
 .scheme-pixel.dark {
-  --background: #0b0d14;
-  --foreground: #eef2ff;
-  --accent: #ffd23f;
-  --accent-2: #3ec6ff;
-  --muted: #97a0b4;
-  --card: #151825;
-  --border: #2b3042;
+  --background: #0b0b18;
+  --foreground: #f3f3ff;
+  --accent: #ff4d6d;
+  --accent-2: #38bdf8;
+  --muted: #8f95b8;
+  --card: #151527;
+  --border: #2b2b4a;
   --get: #4ade80;
   --post: #fbbf24;
   --json-key: #7dd3fc;
   --json-string: #fcd34d;
-  --json-number: #ff6ec7;
-  --selection-bg: #ffd23f;
-  --selection-fg: #0b0d14;
+  --json-number: #c084fc;
+  --selection-bg: #ff4d6d;
+  --selection-fg: #0b0b18;
 }
 
 .scheme-pixel.light {
   --background: #f6f2e7;
-  --foreground: #1f2233;
-  --accent: #9c3a1e;
-  --accent-2: #1f4e9e;
-  --muted: #645d4e;
-  --card: #ede7d6;
-  --border: #d5ccb4;
+  --foreground: #26263a;
+  --accent: #b01a2e;
+  --accent-2: #1e40af;
+  --muted: #57534e;
+  --card: #ffffff;
+  --border: #d6d0c0;
   --get: #0e6b30;
   --post: #994e03;
   --json-key: #0c6a84;
   --json-string: #a64b06;
   --json-number: #6d28d9;
-  --selection-bg: #9c3a1e;
+  --selection-bg: #b01a2e;
   --selection-fg: #ffffff;
 }
 
