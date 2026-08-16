@@ -8,7 +8,7 @@ import { useTheme } from "@/components/providers/ThemeProvider";
 import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
 import { COLOR_SCHEMES } from "@/data/schemes";
 import { useTemplate } from "@/components/providers/TemplateProvider";
-import type { Template } from "@/components/providers/TemplateProvider";
+import { TEMPLATES } from "@/data/templates";
 import { useCommandPalette } from "@/components/shared/CommandPalette";
 
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
@@ -78,17 +78,7 @@ export default function SettingsBar() {
     };
   }, [open]);
 
-  const templateOptions: { value: Template; label: string }[] = [
-    { value: "minimal", label: "Minimal" },
-    { value: "playful", label: "Playful" },
-    { value: "classic", label: "Classic" },
-    { value: "brutalist", label: "Brutalist" },
-    { value: "fashion", label: "Fashion" },
-    { value: "pastel", label: "Pastel" },
-    { value: "glass", label: "Glass" },
-    { value: "apiDocs", label: "API Docs" },
-    { value: "terminal", label: "Terminal" },
-  ];
+  const templateOptions = TEMPLATES;
 
   const schemeOptions = COLOR_SCHEMES;
 

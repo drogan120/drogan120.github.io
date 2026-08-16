@@ -6,23 +6,14 @@ import type { Theme } from "@/components/providers/ThemeProvider";
 import { useColorScheme } from "@/components/providers/ColorSchemeProvider";
 import type { ColorScheme } from "@/components/providers/ColorSchemeProvider";
 import { SCHEME_NAMES } from "@/data/schemes";
+import { TEMPLATE_NAMES } from "@/data/templates";
 import { useTemplate } from "@/components/providers/TemplateProvider";
 import type { Template } from "@/components/providers/TemplateProvider";
 import { useI18n } from "@/i18n";
 import type { Language } from "@/i18n";
 
 const VALID = {
-  template: [
-    "minimal",
-    "playful",
-    "classic",
-    "brutalist",
-    "fashion",
-    "pastel",
-    "glass",
-    "apiDocs",
-    "terminal",
-  ] as const,
+  template: TEMPLATE_NAMES,
   scheme: SCHEME_NAMES,
   lang: ["en", "id", "ja"] as const,
   theme: ["dark", "light"] as const,

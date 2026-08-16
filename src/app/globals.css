@@ -647,3 +647,197 @@ a:hover > .wiggle-on-hover {
     font-size: 13px;
   }
 }
+
+/* ============================================================
+   AURORA TEMPLATE
+   A drifting mesh-gradient backdrop, film grain, marquee rails and
+   kinetic type. Every animation here moves only transform/opacity/filter
+   so it stays off the layout and paint paths.
+   ============================================================ */
+
+.aurora-stage {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora-blob {
+  position: absolute;
+  /* Capped against the viewport so a phone doesn't get a single blob wider
+     than the screen, which flattens the mesh into one solid tint. */
+  width: min(46rem, 75vw);
+  height: min(46rem, 75vw);
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+/*
+ * Kept deliberately faint. These sit behind semi-transparent card surfaces, so
+ * every extra percent of opacity shifts the effective background under body
+ * text and eats into the WCAG AA headroom the palettes were tuned for. Light
+ * mode gets the lower value because its --card is only a hair off --background.
+ */
+.light .aurora-blob {
+  opacity: 0.13;
+}
+
+.dark .aurora-blob {
+  opacity: 0.22;
+}
+
+@keyframes aurora-a {
+  0%,
+  100% {
+    transform: translate3d(-18%, -22%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6%, -6%, 0) scale(1.18);
+  }
+}
+
+@keyframes aurora-b {
+  0%,
+  100% {
+    transform: translate3d(24%, 8%, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(-8%, 26%, 0) scale(0.92);
+  }
+}
+
+@keyframes aurora-c {
+  0%,
+  100% {
+    transform: translate3d(-6%, 34%, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(18%, 4%, 0) scale(1.22);
+  }
+}
+
+.aurora-a {
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at center, var(--accent), transparent 68%);
+  animation: aurora-a 26s ease-in-out infinite;
+}
+
+.aurora-b {
+  top: 12%;
+  right: 0;
+  background: radial-gradient(circle at center, var(--accent-2), transparent 68%);
+  animation: aurora-b 32s ease-in-out infinite;
+}
+
+.aurora-c {
+  bottom: 0;
+  left: 22%;
+  background: radial-gradient(circle at center, var(--accent), transparent 70%);
+  animation: aurora-c 38s ease-in-out infinite;
+}
+
+/* Film grain. Static SVG noise, so it costs one small data URI and no JS. */
+.aurora-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Pointer-tracked glow. Coordinates come from JS as --mx/--my. */
+.aurora-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    22rem circle at var(--mx, 50%) var(--my, 0%),
+    color-mix(in srgb, var(--accent) 14%, transparent),
+    transparent 70%
+  );
+  transition: opacity 0.3s ease;
+}
+
+/* Infinite tech rail. The track holds two copies of the list, so shifting by
+   exactly -50% lands on a seam-free loop. */
+@keyframes marquee-x {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 32s linear infinite;
+}
+
+.marquee-track-reverse {
+  animation-direction: reverse;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Per-word hero reveal. Each word sets --w to its index. */
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.7em) rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.word-rise {
+  display: inline-block;
+  animation: word-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--w, 0) * 80ms);
+}
+
+/* Thin gradient hairline used to separate aurora sections. */
+.aurora-rule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border),
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob,
+  .marquee-track,
+  .word-rise {
+    animation: none !important;
+  }
+
+  .word-rise {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .aurora-spotlight {
+    display: none !important;
+  }
+}
