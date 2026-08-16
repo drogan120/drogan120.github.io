@@ -11,7 +11,6 @@ import {
   ScrollProgressBar,
   BackToTop,
 } from "@/components/shared/PageChrome";
-import Preloader from "@/components/shared/Preloader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -173,7 +172,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </noscript>
       </head>
       <body className="min-h-full flex flex-col">
-        <Preloader />
         <ScrollProgressBar />
         <BackToTop />
         <Providers>{children}</Providers>

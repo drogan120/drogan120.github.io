@@ -7,6 +7,7 @@ import { TemplateProvider } from "./TemplateProvider";
 import { I18nProvider } from "@/i18n";
 import { UrlStateSync } from "./UrlStateSync";
 import { CommandPaletteProvider } from "@/components/shared/CommandPalette";
+import Preloader from "@/components/shared/Preloader";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
@@ -15,7 +16,10 @@ export function Providers({ children }: { children: ReactNode }) {
         <TemplateProvider>
           <I18nProvider>
             <UrlStateSync />
-            <CommandPaletteProvider>{children}</CommandPaletteProvider>
+            <CommandPaletteProvider>
+              <Preloader />
+              {children}
+            </CommandPaletteProvider>
           </I18nProvider>
         </TemplateProvider>
       </ColorSchemeProvider>

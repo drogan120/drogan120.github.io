@@ -407,6 +407,76 @@ a:hover > .wiggle-on-hover {
   animation: preloader-fade 0.5s ease forwards;
 }
 
+/* ------------------------------------------------------------
+   Anime (manga) variant of the preloader: a full-bleed panel
+   with a vertical kanji watermark, a speech bubble cycling
+   through Japanese phrases, and bobbing dots.
+   ------------------------------------------------------------ */
+
+.preloader-anime {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  overflow: hidden;
+}
+
+.preloader-anime-kanji {
+  position: absolute;
+  right: clamp(1.5rem, 6vw, 4rem);
+  top: 50%;
+  translate: 0 -50%;
+  font-size: clamp(3rem, 9vw, 6rem);
+  color: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.preloader-anime-bubble {
+  position: relative;
+  border: 3px solid var(--border);
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 0.9rem 1.6rem;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-indent: 0.15em;
+  color: var(--foreground);
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--accent) 30%, transparent);
+  animation: preloader-pulse 1.2s ease-in-out infinite;
+}
+
+/* Speech-bubble tail pointing down. */
+.preloader-anime-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 18%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 14px 0 0;
+  border-color: var(--border) transparent transparent transparent;
+}
+
+@keyframes preloader-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-anime-bubble {
+    animation: none;
+  }
+}
+
 /* ============================================================
    BLOG CARDS
    ============================================================ */
@@ -925,21 +995,14 @@ a:hover > .wiggle-on-hover {
   }
 }
 
-/* Vertical Japanese watermark, read top-to-bottom like manga furigana. */
+/* Vertical Japanese watermark, read top-to-bottom like manga furigana. The
+   wide 1.35em letter-spacing gives each glyph its own cell; on small screens
+   the font shrinks so the column never overflows the section. */
 .anime-kanji {
   writing-mode: vertical-rl;
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(1.75rem, 5vw, 6rem);
   line-height: 1;
-  letter-spacing: 0.35em;
-}
-
-/* On desktop the vertical column gets a wider, airier spacing between the
-   characters; on small screens we keep it tight so the watermark never
-   overflows the section. */
-@media (min-width: 640px) {
-  .anime-kanji {
-    letter-spacing: 1.35em;
-  }
+  letter-spacing: 1.35em;
 }
 
 /* Rising-sun badge used in the nav and footer. */
