@@ -16,8 +16,13 @@ export default function BrokenSkills() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {t.default.skills.groups.map((group, i) => (
-          <Card key={group.title} tilt={i % 2 === 0 ? 1 : 2}>
-            <h3 className="text-sm font-bold tracking-wide break-words">
+          <Card
+            key={group.title}
+            tilt={i % 2 === 0 ? 1 : 2}
+            offset={i + 1}
+            sticker={i % 2 === 0 ? "note" : "#todo"}
+          >
+            <h3 className="broken-scribble inline-block text-sm font-bold tracking-wide break-words">
               {group.icon} {group.title}
             </h3>
 

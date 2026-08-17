@@ -19,10 +19,12 @@ export default function BrokenGithub() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s, i) => (
-          <Card key={s.key} tilt={i % 2 === 0 ? 1 : 2}>
+          <Card key={s.key} tilt={i % 2 === 0 ? 1 : 2} offset={i}>
             <span className="text-xl">{s.icon}</span>
-            <p className="broken-glitch mt-3 text-3xl font-black tabular-nums text-accent">
-              {s.value}
+            <p className="mt-3 text-3xl font-black tabular-nums text-accent">
+              <span className="broken-stack" data-text={s.value}>
+                {s.value}
+              </span>
             </p>
             <p className="mt-1 font-mono text-xs break-words text-muted">
               {s.label}

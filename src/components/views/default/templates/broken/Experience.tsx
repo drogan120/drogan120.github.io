@@ -30,6 +30,13 @@ export default function BrokenExperience() {
               <span className="font-mono text-xs text-muted">
                 {item.company}
               </span>
+              <span
+                aria-hidden
+                className="broken-stack ml-1 font-mono text-[10px] text-muted"
+                data-text={`~${item.period}`}
+              >
+                ~{item.period}
+              </span>
             </div>
             <h3 className="mt-3 text-lg font-bold break-words sm:text-xl">
               {item.title}

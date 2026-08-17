@@ -5,9 +5,9 @@ import DownloadResume from "@/components/shared/DownloadResume";
 import TypeWriter from "@/components/shared/TypeWriter";
 
 /**
- * Broken hero: the name is huge with a split-RGB shadow, the badge leans and
- * the status pills drift off-grid — a profile page that looks hand-assembled
- * but is perfectly readable.
+ * Broken hero: the name is huge with stacked RGB-split copies, the badge leans
+ * and the status pills drift off-grid — a profile page that looks
+ * hand-assembled but is perfectly readable.
  */
 export default function BrokenHero() {
   const { t } = useI18n();
@@ -22,11 +22,20 @@ export default function BrokenHero() {
           ⚠ {t.default.hero.badge}
         </p>
 
-        <h1 className="broken-glitch mt-8 text-[3rem] leading-[1.02] font-black tracking-tight sm:text-7xl md:text-8xl">
+        <h1 className="mt-8 text-[3.2rem] leading-[1.02] font-black tracking-tight sm:text-7xl md:text-8xl">
           <span className="block font-mono text-lg font-bold tracking-[0.3em] text-muted uppercase sm:text-xl">
             {t.default.hero.hello}
           </span>
-          <span className="mt-3 block">DROGAN</span>
+          <span className="broken-glitch-layer mt-3 block" data-text="DROGAN">
+            DROGAN
+          </span>
+          <span
+            aria-hidden
+            className="broken-stack mt-1 block font-mono text-xs font-bold tracking-[0.4em] text-muted"
+            data-text="DROGAN"
+          >
+            DROGAN
+          </span>
         </h1>
 
         <p className="mt-6 flex min-h-[2rem] items-center font-mono text-lg text-accent sm:text-2xl">

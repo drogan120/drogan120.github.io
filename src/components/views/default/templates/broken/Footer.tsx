@@ -17,7 +17,11 @@ export default function BrokenFooter() {
           />{" "}
           © {new Date().getFullYear()} Drogan
         </p>
-        <p className="rotate-1">{t.default.footer.rights}</p>
+        <p className="rotate-1">
+          <span className="broken-stack" data-text={t.default.footer.rights}>
+            {t.default.footer.rights}
+          </span>
+        </p>
         <LastUpdated />
       </div>
     </footer>

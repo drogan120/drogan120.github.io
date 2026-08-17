@@ -1650,17 +1650,20 @@ a:hover > .wiggle-on-hover {
 }
 
 /* ---------------------------------------------------------------------------
-   BROKEN — deliberately "broken" skins. A desaturated grey page whose panels
-   lean, drift and tear as if hand-assembled by someone who can't code, with
-   a split-RGB glitch on the big type. Still readable and intentional.
+   BROKEN — deliberately "broken" skins. A near-black page in TikTok red/cyan
+   whose panels lean, drift, overlap and tear like a hand-assembled page from
+   someone who can't code, with stacked RGB-split text and jittery glitch
+   bands. Still readable and intentional.
 --------------------------------------------------------------------------- */
 
-/* Backdrop: a flat grey void with one drifting "signal" scanline. */
+/* Backdrop: a black void with two drifting RGB "signal" bands and a row of
+   tiny corrupted blocks, as if the display driver keeps failing. */
 .broken-stage {
   position: fixed;
   z-index: -1;
   inset: 0;
   pointer-events: none;
+  overflow: hidden;
   background:
     linear-gradient(
       90deg,
@@ -1671,7 +1674,7 @@ a:hover > .wiggle-on-hover {
   background-size: 6px 100%;
 }
 
-/* A faint horizontal band that drifts slowly, like a failing scanline. */
+/* A cyan scanline band that drifts slowly. */
 .broken-scan {
   position: absolute;
   left: -10%;
@@ -1681,22 +1684,45 @@ a:hover > .wiggle-on-hover {
   background: linear-gradient(
     180deg,
     transparent,
-    color-mix(in srgb, var(--accent-2) 4%, transparent) 50%,
+    color-mix(in srgb, var(--accent-2) 5%, transparent) 50%,
     transparent
   );
-  opacity: 0.8;
+  opacity: 0.9;
   animation: broken-scan 9s ease-in-out infinite;
 }
 
-/* A tiny flickering block near the top, like a corrupted frame. */
+/* A flickering red block, like a corrupted frame. */
 .broken-flicker {
   position: absolute;
   top: 8%;
   left: 12%;
   width: 26%;
   height: 14px;
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
   animation: broken-blink 4s steps(1, end) infinite;
+}
+
+/* A row of tiny jittering blocks, like bad blocks on a hard drive. */
+.broken-blocks {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 62%;
+  display: flex;
+  gap: 6px;
+  opacity: 0.7;
+}
+
+.broken-blocks i {
+  display: block;
+  height: 8px;
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+  animation: broken-jitter 3.5s steps(2, end) infinite;
+}
+
+.broken-blocks i:nth-child(odd) {
+  background: color-mix(in srgb, var(--accent-2) 30%, transparent);
+  animation-duration: 4.2s;
 }
 
 @keyframes broken-scan {
@@ -1729,38 +1755,212 @@ a:hover > .wiggle-on-hover {
   }
 }
 
+@keyframes broken-jitter {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .broken-scan,
-  .broken-flicker {
+  .broken-flicker,
+  .broken-blocks i,
+  .broken-glitch-layer,
+  .broken-stack {
     animation: none;
   }
 }
 
-/* Split-RGB glitch shadow: a magenta shift left and a cyan shift right, like
-   a damaged colour signal. Applied to the big display type. */
+/* Split-RGB glitch shadow on the big display type. */
 .broken-glitch {
   text-shadow:
     -2px 0 color-mix(in srgb, var(--accent) 55%, transparent),
     2px 0 color-mix(in srgb, var(--accent-2) 45%, transparent);
 }
 
-/* A strip of translucent "tape" across the top-left of a panel. */
+/* The full glitch treatment for headings: the element carries data-text, and
+   two coloured copies of the text are stacked on top with clipped slivers,
+   jittering independently — the classic "double-exposed type" broken look. */
+.broken-glitch-layer {
+  position: relative;
+  display: inline-block;
+}
+
+.broken-glitch-layer::before,
+.broken-glitch-layer::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.broken-glitch-layer::before {
+  color: color-mix(in srgb, var(--accent) 90%, transparent);
+  transform: translate(-3px, 2px);
+  clip-path: inset(10% 0 45% 0);
+  animation: broken-glitch-a 3.2s steps(2, jump-none) infinite;
+  z-index: -1;
+}
+
+.broken-glitch-layer::after {
+  color: color-mix(in srgb, var(--accent-2) 90%, transparent);
+  transform: translate(3px, -2px);
+  clip-path: inset(55% 0 8% 0);
+  animation: broken-glitch-b 2.7s steps(2, jump-none) infinite;
+  z-index: -1;
+}
+
+@keyframes broken-glitch-a {
+  0%,
+  100% {
+    clip-path: inset(10% 0 45% 0);
+    transform: translate(-3px, 2px);
+  }
+  20% {
+    clip-path: inset(60% 0 5% 0);
+    transform: translate(-6px, 0);
+  }
+  40% {
+    clip-path: inset(30% 0 30% 0);
+    transform: translate(-1px, 3px);
+  }
+  60% {
+    clip-path: inset(80% 0 2% 0);
+    transform: translate(-5px, -2px);
+  }
+  80% {
+    clip-path: inset(5% 0 65% 0);
+    transform: translate(-3px, 1px);
+  }
+}
+
+@keyframes broken-glitch-b {
+  0%,
+  100% {
+    clip-path: inset(55% 0 8% 0);
+    transform: translate(3px, -2px);
+  }
+  25% {
+    clip-path: inset(20% 0 50% 0);
+    transform: translate(6px, 1px);
+  }
+  50% {
+    clip-path: inset(70% 0 3% 0);
+    transform: translate(2px, -3px);
+  }
+  75% {
+    clip-path: inset(40% 0 25% 0);
+    transform: translate(5px, 2px);
+  }
+}
+
+/* A cheap "copied twice" stack for small labels: two offset copies in the
+   accent colours behind the real text. */
+.broken-stack {
+  position: relative;
+  display: inline-block;
+}
+
+.broken-stack::before,
+.broken-stack::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.broken-stack::before {
+  color: color-mix(in srgb, var(--accent) 60%, transparent);
+  transform: translate(-2px, 1px);
+  z-index: -1;
+}
+
+.broken-stack::after {
+  color: color-mix(in srgb, var(--accent-2) 60%, transparent);
+  transform: translate(2px, -1px);
+  z-index: -2;
+}
+
+/* A strip of translucent "tape" across the top-left of a panel, with a second
+   shorter strip that drifts, as if re-taped badly. */
 .broken-tape {
   position: relative;
 }
 
-.broken-tape::before {
+.broken-tape::before,
+.broken-tape::after {
   content: "";
   position: absolute;
+  background: color-mix(in srgb, var(--accent-2) 16%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+  z-index: 1;
+}
+
+.broken-tape::before {
   top: -10px;
   left: 12%;
   width: 64px;
   height: 20px;
-  background: color-mix(in srgb, var(--accent-2) 16%, var(--card));
-  border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
   transform: rotate(-2deg);
-  z-index: 1;
+}
+
+.broken-tape::after {
+  top: -6px;
+  right: 8%;
+  width: 34px;
+  height: 16px;
+  opacity: 0.7;
+  transform: rotate(3deg);
+}
+
+/* A marker-pen underline scribble under emphasised text. */
+.broken-scribble {
+  position: relative;
+  white-space: nowrap;
+}
+
+.broken-scribble::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 0.1em;
+  height: 0.45em;
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  z-index: -1;
+  transform: rotate(-1.5deg);
+}
+
+/* A small torn paper sticker with a rotated note. */
+.broken-sticker {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--accent) 14%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 2px 2px 0 rgb(0 0 0 / 0.15);
+  z-index: 2;
+}
+
+.broken-sticker--cyan {
+  background: color-mix(in srgb, var(--accent-2) 14%, var(--card));
+  border-color: color-mix(in srgb, var(--accent-2) 40%, transparent);
 }
 
 /* A jagged horizontal tear used between big sections. */

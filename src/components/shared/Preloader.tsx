@@ -162,11 +162,15 @@ function BrokenPreloader() {
   return (
     <div className="preloader-broken">
       <div className="broken-tape -rotate-2 bg-card px-8 py-7">
-        <p className="broken-glitch text-center text-4xl font-black text-accent sm:text-5xl">
-          LOADING
+        <p className="text-center text-4xl font-black text-accent sm:text-5xl">
+          <span className="broken-glitch-layer" data-text="LOADING">
+            LOADING
+          </span>
         </p>
         <p className="mt-2 rotate-1 text-center font-mono text-sm text-muted">
-          {BROKEN_PHRASES[index]}
+          <span className="broken-stack" data-text={BROKEN_PHRASES[index]}>
+            {BROKEN_PHRASES[index]}
+          </span>
         </p>
         <div className="mt-4 flex justify-center gap-2">
           <span className="preloader-dot" />

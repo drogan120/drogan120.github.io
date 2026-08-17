@@ -22,12 +22,14 @@ export default function BrokenContact() {
         />
 
         <div className="relative">
-          <p className="broken-glitch font-mono text-xs tracking-[0.3em] text-accent-2 uppercase">
+          <p className="broken-stack inline-block font-mono text-xs tracking-[0.3em] text-accent-2 uppercase" data-text={t.default.contact.label.replace("// ", "")}>
             {t.default.contact.label.replace("// ", "")}
           </p>
 
-          <h2 className="broken-glitch mt-5 text-3xl leading-tight font-black tracking-tight sm:text-5xl">
-            {t.default.contact.title}
+          <h2 className="mt-5 text-3xl leading-tight font-black tracking-tight sm:text-5xl">
+            <span className="broken-glitch-layer" data-text={t.default.contact.title}>
+              {t.default.contact.title}
+            </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted sm:text-base">

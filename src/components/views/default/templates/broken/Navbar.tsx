@@ -31,7 +31,7 @@ export default function BrokenNavbar() {
             aria-hidden
             className="broken-glitch inline-block h-3.5 w-3.5 border border-accent-2 bg-accent/60"
           />
-          <span className="broken-glitch text-xl font-black tracking-widest">
+          <span className="broken-glitch-layer text-xl font-black tracking-widest" data-text="DROGAN">
             DROGAN
           </span>
         </a>
@@ -42,7 +42,7 @@ export default function BrokenNavbar() {
               <a
                 href={link.href}
                 className={`px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:text-accent ${
-                  i % 2 === 1 ? "translate-y-0.5" : ""
+                  i % 2 === 1 ? "translate-y-0.5" : i % 3 === 2 ? "-translate-y-0.5" : ""
                 }`}
               >
                 {t.default.nav[link.key]}

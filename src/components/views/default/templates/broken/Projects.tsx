@@ -20,8 +20,14 @@ export default function BrokenProjects() {
             key={project.title}
             className={`broken-tape group relative bg-card p-6 transition-transform duration-300 hover:rotate-0 sm:p-8 ${
               i % 2 === 0 ? "-rotate-1" : "rotate-1"
-            }`}
+            } ${i === 1 ? "sm:-translate-x-2 sm:translate-y-1" : ""}`}
           >
+            <span
+              aria-hidden
+              className="broken-sticker right-6 top-5"
+            >
+              {i === 0 ? "v1.0" : i === 1 ? "#wip" : "old"}
+            </span>
             <span
               aria-hidden
               className="pointer-events-none absolute -top-2 right-4 font-mono text-7xl font-black text-accent/[0.08] select-none sm:text-8xl"

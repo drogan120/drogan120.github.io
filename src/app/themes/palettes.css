@@ -713,38 +713,39 @@
   --selection-fg: #ffffff;
 }
 
-/* Broken — deliberately "corrupted": a desaturated grey base with the glitch
-   neon magenta + cyan bleeding through, as if the colour signal is damaged. */
+/* Broken — deliberately "corrupted": a near-black page in TikTok colours,
+   red + cyan bleeding out of a broken signal, over an off-white paper light
+   mode that stays readable. */
 .scheme-broken.dark {
-  --background: #151412;
-  --foreground: #e8e6e0;
-  --accent: #ff5d8f;
-  --accent-2: #4de0c4;
-  --muted: #9a958c;
-  --card: #1e1c19;
-  --border: #35322c;
-  --get: #4de0c4;
-  --post: #ff5d8f;
-  --json-key: #8ab4f8;
-  --json-string: #ffd166;
-  --json-number: #4de0c4;
-  --selection-bg: #ff5d8f;
-  --selection-fg: #151412;
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  --accent: #fe2c55;
+  --accent-2: #25f4ee;
+  --muted: #a3a3a3;
+  --card: #1a1a1a;
+  --border: #2e2e2e;
+  --get: #25f4ee;
+  --post: #fe2c55;
+  --json-key: #25f4ee;
+  --json-string: #ffe45c;
+  --json-number: #fe2c55;
+  --selection-bg: #fe2c55;
+  --selection-fg: #ffffff;
 }
 
 .scheme-broken.light {
-  --background: #f2f0ea;
-  --foreground: #26231f;
-  --accent: #c2254f;
-  --accent-2: #0d756d;
-  --muted: #5f5a52;
+  --background: #f6f4f1;
+  --foreground: #1c1b1a;
+  --accent: #d62442;
+  --accent-2: #087a74;
+  --muted: #5c5a57;
   --card: #ffffff;
-  --border: #d8d2c8;
-  --get: #0d756d;
-  --post: #a32c4d;
-  --json-key: #24579b;
+  --border: #dcd8d3;
+  --get: #087a74;
+  --post: #b71c3a;
+  --json-key: #1d6fb8;
   --json-string: #8a4a0f;
   --json-number: #6d28d9;
-  --selection-bg: #c2254f;
+  --selection-bg: #d62442;
   --selection-fg: #ffffff;
 }

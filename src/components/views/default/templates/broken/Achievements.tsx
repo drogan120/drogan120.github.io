@@ -16,7 +16,12 @@ export default function BrokenAchievements() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-3">
         {t.default.achievements.items.map((item, i) => (
-          <Card key={item.title} tilt={i % 2 === 0 ? 1 : 2}>
+          <Card
+            key={item.title}
+            tilt={i % 2 === 0 ? 1 : 2}
+            offset={i}
+            sticker={i === 2 ? "proof?" : undefined}
+          >
             <span
               aria-hidden
               className="absolute right-4 top-3 font-mono text-4xl font-black text-accent/15"

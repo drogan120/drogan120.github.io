@@ -31,7 +31,7 @@ export default function BrokenBlog() {
               key={post.id}
               className={`broken-tape bg-card transition-transform duration-300 hover:rotate-0 ${
                 i % 2 === 0 ? "-rotate-1" : "rotate-1"
-              }`}
+              } ${i % 3 === 0 ? "sm:-translate-y-1" : ""}`}
             >
               <button
                 type="button"
