@@ -171,7 +171,7 @@ export function Panel({
 }) {
   return (
     <div
-      className={`nihon-panel rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-1 sm:p-7 ${className}`}
+      className={`nihon-panel group rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-1 sm:p-7 ${className}`}
     >
       <div className="relative">{children}</div>
     </div>
