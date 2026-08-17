@@ -2353,19 +2353,80 @@ a:hover > .wiggle-on-hover {
   height: 14rem;
   border-radius: 9999px;
   background-image: radial-gradient(
-      circle closest-side,
-      var(--background) 0 99%,
-      transparent 100%
+      circle 7.2rem at var(--nusantara-moon-shadow-x) 50%,
+      var(--background) 0 100%
     ),
     radial-gradient(
-      circle at 50% 50%,
-      color-mix(in srgb, var(--accent) 34%, transparent),
-      color-mix(in srgb, var(--accent) 18%, transparent) 55%,
-      color-mix(in srgb, var(--accent) 8%, transparent) 66%,
-      transparent 69%
+      circle 0.9rem at 32% 34%,
+      color-mix(in srgb, var(--accent) 58%, #000 42%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.6rem at 58% 30%,
+      color-mix(in srgb, var(--accent) 62%, #000 38%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.8rem at 68% 46%,
+      color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.55rem at 44% 58%,
+      color-mix(in srgb, var(--accent) 62%, #000 38%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.7rem at 26% 60%,
+      color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.45rem at 60% 66%,
+      color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.5rem at 38% 18%,
+      color-mix(in srgb, var(--accent) 62%, #000 38%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.5rem at 74% 58%,
+      color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.4rem at 50% 42%,
+      color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.45rem at 20% 46%,
+      color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.6rem at 52% 70%,
+      color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 0.4rem at 70% 26%,
+      color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle at 50% 42%,
+      color-mix(in srgb, var(--accent) 100%, #fff 18%) 0%,
+      color-mix(in srgb, var(--accent) 100%, #000 10%) 60%,
+      color-mix(in srgb, var(--accent) 100%, #000 26%) 100%
     );
-  background-size: 100% 100%, 100% 100%;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%,
+    100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%,
+    100% 100%, 100% 100%;
   background-repeat: no-repeat;
+  box-shadow: 0 0 3.5rem 0.75rem color-mix(in srgb, var(--accent) 35%, transparent);
   animation: nusantara-moon-phase 24s ease-in-out infinite,
     nusantara-moon-glow 24s ease-in-out infinite;
 }
@@ -2374,38 +2435,44 @@ a:hover > .wiggle-on-hover {
    color) sweeps across the moon's surface, so it waxes to a crescent and
    wanes into a blood-moon eclipse — clipped to the moon circle by the
    border-radius, no separate object sliding in from outside. */
+@property --nusantara-moon-shadow-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: -14rem;
+}
+
 @keyframes nusantara-moon-phase {
   0%,
   16% {
-    background-position: -14rem 0, 0 0;
+    --nusantara-moon-shadow-x: -14rem;
   }
   32% {
-    background-position: -10rem 0, 0 0;
+    --nusantara-moon-shadow-x: -10rem;
   }
   46% {
-    background-position: -7rem 0, 0 0;
+    --nusantara-moon-shadow-x: -7rem;
   }
   56% {
-    background-position: -5rem 0, 0 0;
+    --nusantara-moon-shadow-x: -5rem;
   }
   62% {
-    background-position: -3.5rem 0, 0 0;
+    --nusantara-moon-shadow-x: -3.5rem;
   }
   66% {
-    background-position: -1.5rem 0, 0 0;
+    --nusantara-moon-shadow-x: -1.5rem;
   }
   68%,
   78% {
-    background-position: 0 0, 0 0;
+    --nusantara-moon-shadow-x: 0;
   }
   84% {
-    background-position: 2rem 0, 0 0;
+    --nusantara-moon-shadow-x: 2rem;
   }
   92% {
-    background-position: 7rem 0, 0 0;
+    --nusantara-moon-shadow-x: 7rem;
   }
   100% {
-    background-position: 14rem 0, 0 0;
+    --nusantara-moon-shadow-x: 14rem;
   }
 }
 
@@ -2413,34 +2480,40 @@ a:hover > .wiggle-on-hover {
   0%,
   16% {
     filter: brightness(1.1);
+    box-shadow: 0 0 3.5rem 0.75rem color-mix(in srgb, var(--accent) 35%, transparent);
   }
   32% {
     filter: brightness(1.05);
+    box-shadow: 0 0 3rem 0.6rem color-mix(in srgb, var(--accent) 30%, transparent);
   }
   46% {
     filter: brightness(0.95);
+    box-shadow: 0 0 2rem 0.4rem color-mix(in srgb, var(--accent) 20%, transparent);
   }
   56% {
     filter: brightness(0.85);
+    box-shadow: 0 0 1rem 0.25rem color-mix(in srgb, var(--accent) 12%, transparent);
   }
   62% {
     filter: brightness(0.75);
+    box-shadow: 0 0 0.4rem 0.1rem color-mix(in srgb, var(--accent) 6%, transparent);
   }
-  66% {
-    filter: brightness(0.68);
-  }
-  68%,
+  66%,
   78% {
     filter: brightness(0.6);
+    box-shadow: none;
   }
   84% {
     filter: brightness(0.72);
+    box-shadow: 0 0 0.4rem 0.1rem color-mix(in srgb, var(--accent) 6%, transparent);
   }
   92% {
     filter: brightness(0.9);
+    box-shadow: 0 0 2rem 0.4rem color-mix(in srgb, var(--accent) 20%, transparent);
   }
   100% {
     filter: brightness(1.1);
+    box-shadow: 0 0 3.5rem 0.75rem color-mix(in srgb, var(--accent) 35%, transparent);
   }
 }
 
@@ -2474,10 +2547,6 @@ a:hover > .wiggle-on-hover {
   display: none;
 }
 
-.light .nusantara-moon-crater {
-  display: none;
-}
-
 @keyframes nusantara-sun-rays {
   to {
     transform: rotate(360deg);
@@ -2494,19 +2563,9 @@ a:hover > .wiggle-on-hover {
   }
 }
 
-.nusantara-moon-crater {
-  position: absolute;
-  top: 38%;
-  left: 26%;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 9999px;
-  background: color-mix(in srgb, var(--background) 18%, transparent);
-}
-
 .nusantara-mendung {
   position: absolute;
-  color: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .nusantara-mendung-1 {

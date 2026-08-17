@@ -82,9 +82,7 @@ export function MegaMendung({ className = "" }: { className?: string }) {
 function MoonScene() {
   return (
     <div aria-hidden className="nusantara-moon-scene">
-      <span className="nusantara-moon">
-        <span className="nusantara-moon-crater" />
-      </span>
+      <span className="nusantara-moon" />
       <span className="nusantara-mendung nusantara-mendung-1">
         <MegaMendung className="h-full w-full" />
       </span>
