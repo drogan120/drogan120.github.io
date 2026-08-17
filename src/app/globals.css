@@ -2444,35 +2444,35 @@ a:hover > .wiggle-on-hover {
 @keyframes nusantara-moon-phase {
   0%,
   16% {
-    --nusantara-moon-shadow-x: -14rem;
+    --nusantara-moon-shadow-x: -8rem;
   }
   32% {
-    --nusantara-moon-shadow-x: -10rem;
+    --nusantara-moon-shadow-x: 0rem;
   }
   46% {
-    --nusantara-moon-shadow-x: -7rem;
+    --nusantara-moon-shadow-x: 4rem;
   }
   56% {
-    --nusantara-moon-shadow-x: -5rem;
+    --nusantara-moon-shadow-x: 6rem;
   }
   62% {
-    --nusantara-moon-shadow-x: -3.5rem;
+    --nusantara-moon-shadow-x: 6.5rem;
   }
   66% {
-    --nusantara-moon-shadow-x: -1.5rem;
+    --nusantara-moon-shadow-x: 7rem;
   }
   68%,
   78% {
-    --nusantara-moon-shadow-x: 0;
-  }
-  84% {
-    --nusantara-moon-shadow-x: 2rem;
-  }
-  92% {
     --nusantara-moon-shadow-x: 7rem;
   }
+  84% {
+    --nusantara-moon-shadow-x: 8rem;
+  }
+  92% {
+    --nusantara-moon-shadow-x: 12rem;
+  }
   100% {
-    --nusantara-moon-shadow-x: 14rem;
+    --nusantara-moon-shadow-x: 22rem;
   }
 }
 
