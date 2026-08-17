@@ -2353,7 +2353,7 @@ a:hover > .wiggle-on-hover {
   height: 14rem;
   border-radius: 9999px;
   background-image: radial-gradient(
-      circle,
+      circle closest-side,
       var(--background) 0 96%,
       transparent 100%
     ),
@@ -2564,16 +2564,48 @@ a:hover > .wiggle-on-hover {
 }
 
 /* A few silhouette birds gliding across the sky, like a calm Javanese dusk.
-   Each bird is a curved "wing" path that flies left-to-right, shrinking and
-   fading as it goes so it looks like it is heading off into the distance. */
+   Each bird is three wing frames (up / level / down) that cycle in sequence
+   so the wings look like they are flapping, while the whole bird flies
+   left-to-right, shrinking and fading as it goes to look like it is heading
+   off into the distance. */
 .nusantara-bird {
   position: absolute;
   color: color-mix(in srgb, var(--foreground) 32%, transparent);
   animation: nusantara-bird-fly ease-in-out infinite;
 }
 
-.nusantara-bird svg {
-  display: block;
+.nusantara-bird-frame {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: nusantara-bird-flap 1.2s linear infinite;
+}
+
+.nusantara-bird-frame-1 {
+  animation-delay: 0s;
+}
+
+.nusantara-bird-frame-2 {
+  animation-delay: -0.4s;
+}
+
+.nusantara-bird-frame-3 {
+  animation-delay: -0.8s;
+}
+
+@keyframes nusantara-bird-flap {
+  0%,
+  5% {
+    opacity: 0;
+  }
+  15%,
+  31% {
+    opacity: 1;
+  }
+  40%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .nusantara-bird-1 {
@@ -2704,5 +2736,15 @@ a:hover > .wiggle-on-hover {
   .nusantara-moon,
   .nusantara-bird {
     animation: none;
+  }
+
+  .nusantara-bird-frame {
+    animation: none;
+    opacity: 1;
+  }
+
+  .nusantara-bird-frame-1,
+  .nusantara-bird-frame-3 {
+    display: none;
   }
 }

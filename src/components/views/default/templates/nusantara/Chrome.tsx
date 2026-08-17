@@ -99,14 +99,43 @@ function MoonScene() {
 }
 
 /**
- * A flying bird silhouette: a curved gull wing. Purely decorative.
+ * A flying bird silhouette with three wing frames (up / level / down) that
+ * cycle so the wings look like they are flapping. Purely decorative.
  */
 function FlyingBird({ className = "" }: { className?: string }) {
   return (
     <span className={className} aria-hidden>
-      <svg viewBox="0 0 60 20" fill="none" className="h-full w-full">
+      <svg
+        viewBox="0 0 60 22"
+        fill="none"
+        className="nusantara-bird-frame nusantara-bird-frame-1 h-full w-full"
+      >
         <path
-          d="M3 13 Q15 2 27 13 Q39 2 51 13 Q54 15 57 11"
+          d="M3 18 Q14 2 30 13 Q46 2 57 18"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+      </svg>
+      <svg
+        viewBox="0 0 60 22"
+        fill="none"
+        className="nusantara-bird-frame nusantara-bird-frame-2 h-full w-full"
+      >
+        <path
+          d="M3 16 Q15 7 30 13 Q45 7 57 16"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+      </svg>
+      <svg
+        viewBox="0 0 60 22"
+        fill="none"
+        className="nusantara-bird-frame nusantara-bird-frame-3 h-full w-full"
+      >
+        <path
+          d="M3 13 Q15 14 30 13 Q45 14 57 13"
           stroke="currentColor"
           strokeWidth="2.5"
           strokeLinecap="round"
