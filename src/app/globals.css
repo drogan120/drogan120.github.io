@@ -2364,9 +2364,10 @@ a:hover > .wiggle-on-hover {
   width: 14rem;
   height: 14rem;
   border-radius: 9999px;
-  background-image: radial-gradient(
+  background-image:     radial-gradient(
       circle closest-side,
-      var(--background) 0 100%
+      var(--background) 0 99%,
+      transparent 100%
     ),
     radial-gradient(
       circle 1rem at 25% 28%,
@@ -2607,11 +2608,12 @@ a:hover > .wiggle-on-hover {
   opacity: 0.7;
 }
 
-/* Clouds drifting slowly across the stage, left to right and back, like
-   actual clouds. Kept below the moon scene (top right) so they never pile
-   up on it. */
+/* Clouds drifting slowly across the sky, left to right and back, like
+   actual clouds. Rendered in the sky layer so they slide in front of the
+   moon instead of disappearing behind it. */
 .nusantara-drift-cloud {
   position: absolute;
+  z-index: 1;
   color: color-mix(in srgb, var(--accent) 13%, transparent);
   animation: nusantara-cloud ease-in-out infinite alternate;
 }

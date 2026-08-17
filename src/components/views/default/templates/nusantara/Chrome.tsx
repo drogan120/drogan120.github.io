@@ -156,8 +156,6 @@ export function NusantaraBackdrop() {
         <FlyingBird className="nusantara-bird nusantara-bird-1" />
         <FlyingBird className="nusantara-bird nusantara-bird-2" />
         <FlyingBird className="nusantara-bird nusantara-bird-3" />
-      </div>
-      <div aria-hidden className="nusantara-stage">
         <span className="nusantara-drift-cloud nusantara-drift-cloud-1">
           <MegaMendung className="h-full w-full" />
         </span>
@@ -167,6 +165,8 @@ export function NusantaraBackdrop() {
         <span className="nusantara-drift-cloud nusantara-drift-cloud-3">
           <MegaMendung className="h-full w-full" />
         </span>
+      </div>
+      <div aria-hidden className="nusantara-stage">
         <span className="nusantara-tirta" />
       </div>
     </>
