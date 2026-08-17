@@ -2353,66 +2353,66 @@ a:hover > .wiggle-on-hover {
   height: 14rem;
   border-radius: 9999px;
   background-image: radial-gradient(
-      circle 7.2rem,
+      circle closest-side,
       var(--background) 0 100%
     ),
     radial-gradient(
-      circle 0.9rem at 32% 34%,
+      circle 1rem at 25% 28%,
       color-mix(in srgb, var(--accent) 58%, #000 42%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.6rem at 58% 30%,
+      circle 0.8rem at 50% 20%,
       color-mix(in srgb, var(--accent) 62%, #000 38%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.8rem at 68% 46%,
+      circle 1.1rem at 72% 30%,
       color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.55rem at 44% 58%,
+      circle 0.9rem at 18% 45%,
       color-mix(in srgb, var(--accent) 62%, #000 38%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.7rem at 26% 60%,
+      circle 0.7rem at 35% 40%,
       color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.45rem at 60% 66%,
+      circle 1rem at 62% 38%,
       color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.5rem at 38% 18%,
+      circle 0.8rem at 80% 50%,
+      color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle 1.2rem at 28% 60%,
       color-mix(in srgb, var(--accent) 62%, #000 38%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.5rem at 74% 58%,
-      color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
-      transparent 74%
-    ),
-    radial-gradient(
-      circle 0.4rem at 50% 42%,
+      circle 0.8rem at 48% 58%,
       color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.45rem at 20% 46%,
+      circle 1rem at 68% 62%,
       color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.6rem at 52% 70%,
-      color-mix(in srgb, var(--accent) 66%, #000 34%) 0 62%,
+      circle 0.9rem at 38% 78%,
+      color-mix(in srgb, var(--accent) 62%, #000 38%) 0 62%,
       transparent 74%
     ),
     radial-gradient(
-      circle 0.4rem at 70% 26%,
+      circle 1.1rem at 58% 80%,
       color-mix(in srgb, var(--accent) 64%, #000 36%) 0 62%,
       transparent 74%
     ),
