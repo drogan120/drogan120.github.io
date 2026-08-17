@@ -141,31 +141,35 @@ function FlyingBird({ className = "" }: { className?: string }) {
  */
 export function NusantaraBackdrop() {
   return (
-    <div aria-hidden className="nusantara-stage">
-      <MoonScene />
-      <span className="nusantara-mendung nusantara-mendung-1">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <span className="nusantara-mendung nusantara-mendung-2">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <span className="nusantara-mendung nusantara-mendung-3">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <FlyingBird className="nusantara-bird nusantara-bird-1" />
-      <FlyingBird className="nusantara-bird nusantara-bird-2" />
-      <FlyingBird className="nusantara-bird nusantara-bird-3" />
-      <span className="nusantara-drift-cloud nusantara-drift-cloud-1">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <span className="nusantara-drift-cloud nusantara-drift-cloud-2">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <span className="nusantara-drift-cloud nusantara-drift-cloud-3">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <span className="nusantara-tirta" />
-    </div>
+    <>
+      <div aria-hidden className="nusantara-sky">
+        <MoonScene />
+        <span className="nusantara-mendung nusantara-mendung-1">
+          <MegaMendung className="h-full w-full" />
+        </span>
+        <span className="nusantara-mendung nusantara-mendung-2">
+          <MegaMendung className="h-full w-full" />
+        </span>
+        <span className="nusantara-mendung nusantara-mendung-3">
+          <MegaMendung className="h-full w-full" />
+        </span>
+        <FlyingBird className="nusantara-bird nusantara-bird-1" />
+        <FlyingBird className="nusantara-bird nusantara-bird-2" />
+        <FlyingBird className="nusantara-bird nusantara-bird-3" />
+      </div>
+      <div aria-hidden className="nusantara-stage">
+        <span className="nusantara-drift-cloud nusantara-drift-cloud-1">
+          <MegaMendung className="h-full w-full" />
+        </span>
+        <span className="nusantara-drift-cloud nusantara-drift-cloud-2">
+          <MegaMendung className="h-full w-full" />
+        </span>
+        <span className="nusantara-drift-cloud nusantara-drift-cloud-3">
+          <MegaMendung className="h-full w-full" />
+        </span>
+        <span className="nusantara-tirta" />
+      </div>
+    </>
   );
 }
 

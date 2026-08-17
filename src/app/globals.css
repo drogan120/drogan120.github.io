@@ -2335,6 +2335,17 @@ a:hover > .wiggle-on-hover {
   );
 }
 
+/* Decorative sky elements (moon, clouds, birds) float above the page
+   content so the clouds visibly slide over the moon, but stay below the
+   sticky navbar. */
+.nusantara-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 /* Full moon framed by mega mendung clouds, top right, cleared below the
    sticky navbar (h-16 = 4rem). */
 .nusantara-moon-scene {
