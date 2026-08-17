@@ -83,15 +83,6 @@ function MoonScene() {
   return (
     <div aria-hidden className="nusantara-moon-scene">
       <span className="nusantara-moon" />
-      <span className="nusantara-mendung nusantara-mendung-1">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <span className="nusantara-mendung nusantara-mendung-2">
-        <MegaMendung className="h-full w-full" />
-      </span>
-      <span className="nusantara-mendung nusantara-mendung-3">
-        <MegaMendung className="h-full w-full" />
-      </span>
     </div>
   );
 }
@@ -152,6 +143,15 @@ export function NusantaraBackdrop() {
   return (
     <div aria-hidden className="nusantara-stage">
       <MoonScene />
+      <span className="nusantara-mendung nusantara-mendung-1">
+        <MegaMendung className="h-full w-full" />
+      </span>
+      <span className="nusantara-mendung nusantara-mendung-2">
+        <MegaMendung className="h-full w-full" />
+      </span>
+      <span className="nusantara-mendung nusantara-mendung-3">
+        <MegaMendung className="h-full w-full" />
+      </span>
       <FlyingBird className="nusantara-bird nusantara-bird-1" />
       <FlyingBird className="nusantara-bird nusantara-bird-2" />
       <FlyingBird className="nusantara-bird nusantara-bird-3" />

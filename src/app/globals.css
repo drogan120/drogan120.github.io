@@ -2343,6 +2343,7 @@ a:hover > .wiggle-on-hover {
   right: -2rem;
   width: 26rem;
   height: 26rem;
+  z-index: 1;
 }
 
 .nusantara-moon {
@@ -2571,25 +2572,26 @@ a:hover > .wiggle-on-hover {
 
 .nusantara-mendung {
   position: absolute;
+  z-index: 2;
   color: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .nusantara-mendung-1 {
-  top: 0;
-  right: 0;
+  top: 3rem;
+  right: -2rem;
   width: 18rem;
 }
 
 .nusantara-mendung-2 {
-  top: 3.5rem;
-  right: -3rem;
+  top: 6.5rem;
+  right: -5rem;
   width: 14rem;
   opacity: 0.8;
 }
 
 .nusantara-mendung-3 {
-  top: 10rem;
-  right: 2rem;
+  top: 13rem;
+  right: 0;
   width: 20rem;
   opacity: 0.7;
 }
