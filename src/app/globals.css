@@ -1694,7 +1694,7 @@ a:hover > .wiggle-on-hover {
   left: -10%;
   right: -10%;
   bottom: 0;
-  height: 7rem;
+  height: 4rem;
   opacity: 0.5;
   background-image: radial-gradient(
     circle at 50% 100%,
@@ -1704,6 +1704,7 @@ a:hover > .wiggle-on-hover {
   );
   background-size: 6rem 3rem;
   background-repeat: repeat-x;
+  background-position: 0 100%;
 }
 
 /* Torii silhouette in the lower-left. Two pillars, two lintels. */
