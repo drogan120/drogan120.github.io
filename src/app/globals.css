@@ -2312,3 +2312,178 @@ a:hover > .wiggle-on-hover {
     animation: none;
   }
 }
+
+/* ============================================================
+   Nusantara — batik & wayang kulit
+   A warm batik stage lit by an oil lamp (blencong), with a wayang
+   gunungan silhouette, drifting kawung motifs and a cecek border
+   band, plus sawut (diagonal dash) underlines and kawung-corner
+   panels.
+   ============================================================ */
+
+/* Backdrop: a deep batik-brown stage warmed by the lamp glow. Purely
+   decorative. */
+.nusantara-stage {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 90% 70% at 70% -10%,
+    color-mix(in srgb, var(--accent) 10%, transparent),
+    transparent 60%
+  );
+}
+
+/* Oil lamp (blencong) glow, top right. */
+.nusantara-lamp {
+  position: absolute;
+  top: -8rem;
+  right: -6rem;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 18%, transparent),
+    transparent 65%
+  );
+}
+
+/* Wayang gunungan (mountain-of-life puppet) silhouette, bottom left. */
+.nusantara-gunungan {
+  position: absolute;
+  bottom: -2rem;
+  left: -3rem;
+  width: 20rem;
+  height: 24rem;
+  opacity: 0.5;
+  color: color-mix(in srgb, var(--accent-2) 22%, transparent);
+}
+
+/* Drifting kawung motifs, rotating slowly like a batik stamp. */
+.nusantara-kawung {
+  position: absolute;
+  color: color-mix(in srgb, var(--accent) 30%, transparent);
+  animation: nusantara-drift linear infinite;
+}
+
+.nusantara-kawung-1 {
+  top: 18%;
+  right: 6%;
+  width: 7rem;
+  height: 7rem;
+  animation-duration: 40s;
+}
+
+.nusantara-kawung-2 {
+  top: 62%;
+  right: 40%;
+  width: 4rem;
+  height: 4rem;
+  animation-duration: 55s;
+  animation-delay: 6s;
+}
+
+@keyframes nusantara-drift {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cecek border band: a repeating diamond motif along the bottom edge of the
+   backdrop and above the footer. */
+.nusantara-tirta {
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 30%, transparent) 0 0.35rem,
+    transparent 0.35rem 0.9rem
+  );
+}
+
+.nusantara-stage .nusantara-tirta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.75rem;
+}
+
+/* Sawut underline: a short diagonal-dash accent under titles. */
+.nusantara-sawut {
+  height: 0.35rem;
+  max-width: 20rem;
+  border-radius: 999px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--accent) 0 0.4rem,
+    transparent 0.4rem 0.9rem
+  );
+  opacity: 0.8;
+}
+
+/* Batik paper panel: a warm card with a gold kawung-corner frame. */
+.nusantara-panel {
+  position: relative;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.nusantara-panel::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-top: 3px solid var(--accent);
+  border-left: 3px solid var(--accent);
+  border-top-left-radius: 1.2rem;
+  opacity: 0.7;
+}
+
+/* Nav links get a gold sawut underline on hover. */
+.nusantara-navlink {
+  position: relative;
+}
+
+.nusantara-navlink::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.3rem;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nusantara-navlink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Nusantara preloader: the batik paper panel is centered by the preloader
+   stage, so just make sure the panel itself is rounded. */
+.preloader-nusantara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preloader-nusantara .nusantara-panel {
+  border-radius: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nusantara-kawung {
+    animation: none;
+  }
+}

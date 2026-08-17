@@ -18,7 +18,7 @@ export default function FashionHero() {
           </h1>
 
           <p className="mt-4 font-serif text-2xl font-light italic tracking-wide text-accent sm:text-4xl">
-            Drogan
+            {t.default.hero.name}
           </p>
           <p className="mt-10 text-sm uppercase tracking-[0.3em] text-muted">
             <TypeWriter

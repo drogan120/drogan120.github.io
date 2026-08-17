@@ -12,7 +12,7 @@ export default function Hero() {
           <span className="h-3 w-3 rounded-full bg-yellow-500/70" />
           <span className="h-3 w-3 rounded-full bg-green-500/70" />
           <span className="ml-4 font-mono text-xs text-muted">
-            drogan@portfolio: ~/api
+            ali@portfolio: ~/api
           </span>
         </div>
 

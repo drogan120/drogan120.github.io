@@ -21,7 +21,7 @@ export default function GlassHero() {
         <h1 className="mt-8 text-5xl font-bold tracking-tight sm:text-7xl">
           {t.default.hero.hello}{" "}
           <span className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">
-            Drogan
+            {t.default.hero.name}
           </span>
         </h1>
 

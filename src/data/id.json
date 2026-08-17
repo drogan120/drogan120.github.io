@@ -1,16 +1,16 @@
 {
   "default": {
     "hero": {
-      "tagline": "Software Engineer & Android Developer. Saya membangun aplikasi yang cepat, modern, dan menyenangkan untuk dipakai.",
-      "role1": "software engineer",
+      "tagline": "Backend & Android Developer. Saya membangun aplikasi yang cepat, modern, dan menyenangkan untuk dipakai.",
+      "role1": "backend developer",
       "role2": "android developer"
     },
     "about": {
       "cards": [
         {
           "icon": "🚀",
-          "title": "Software Engineer",
-          "description": "Membangun aplikasi web dan backend dengan arsitektur yang bersih, scalable, dan mudah dipelihara."
+          "title": "Backend Developer",
+          "description": "Membangun API dan layanan backend yang bersih, scalable, dan mudah dipelihara."
         },
         {
           "icon": "📱",
@@ -23,7 +23,7 @@
           "description": "Senang memecahkan masalah kompleks menjadi solusi yang sederhana dan efisien."
         }
       ],
-      "paragraph": "Saya Drogan, seorang Software Engineer yang berfokus pada pengembangan aplikasi Android dan web. Perjalanan saya dimulai dari rasa ingin tahu yang besar terhadap teknologi, hingga kini membangun produk digital yang dipakai banyak orang. Saya selalu berusaha untuk terus belajar, karena teknologi tidak pernah berhenti berkembang."
+      "paragraph": "Saya Ali Mahmudin, seorang Backend & Android Developer. Saya fokus pada Python, Django, dan membangun REST API yang kokoh, sekaligus mengembangkan aplikasi Android native dengan Kotlin. Saya selalu berusaha untuk terus belajar, karena teknologi tidak pernah berhenti berkembang."
     },
     "skills": {
       "groups": [
@@ -33,42 +33,69 @@
           "skills": [
             "Kotlin",
             "Java",
-            "Jetpack Compose",
+            "XML",
+            "Room",
+            "Retrofit",
+            "Realm",
+            "Firebase",
+            "Firebase Storage",
+            "Crashlytics",
             "Android SDK",
-            "Flutter"
+            "Play Store"
           ]
         },
         {
-          "icon": "🌐",
-          "title": "Web",
+          "icon": "🐍",
+          "title": "Backend",
           "skills": [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Node.js"
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "Django Ninja",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "icon": "🎨",
+          "title": "Frontend",
+          "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript"
           ]
         },
         {
           "icon": "🗄️",
-          "title": "Backend & Database",
+          "title": "Database",
           "skills": [
-            "Node.js",
-            "PostgreSQL",
             "MySQL",
-            "Firebase",
-            "REST API"
+            "PostgreSQL",
+            "ClickHouse",
+            "Firebase"
           ]
         },
         {
-          "icon": "🛠️",
-          "title": "Tools & Lainnya",
+          "icon": "🏗️",
+          "title": "Architecture",
           "skills": [
-            "Git",
-            "GitHub Actions",
-            "Docker",
-            "Figma",
-            "Linux"
+            "MVVM",
+            "MVC",
+            "MVT",
+            "Object-Oriented Programming"
+          ]
+        },
+        {
+          "icon": "🤖",
+          "title": "AI & Tools",
+          "skills": [
+            "Claude",
+            "ChatGPT",
+            "Gemini",
+            "opencode",
+            "Linux",
+            "Windows"
           ]
         }
       ]
@@ -76,22 +103,16 @@
     "experience": {
       "items": [
         {
-          "period": "2023 — Sekarang",
-          "title": "Software Engineer",
-          "company": "Freelance",
-          "description": "Membangun aplikasi web dan Android untuk klien, dari perencanaan hingga produksi dan pemeliharaan."
-        },
-        {
-          "period": "2021 — 2023",
+          "period": "2022 — Sekarang",
           "title": "Android Developer",
-          "company": "Proyek Mandiri",
-          "description": "Mengembangkan dan merilis berbagai aplikasi Android native, berfokus pada arsitektur yang bersih dan UX yang mulus."
+          "company": "Stamps Indonesia",
+          "description": "Mengembangkan aplikasi Android native dengan Kotlin, berfokus pada arsitektur yang bersih dan UX yang mulus."
         },
         {
-          "period": "2019 — 2021",
-          "title": "Mulai Belajar Coding",
-          "company": "Belajar Mandiri",
-          "description": "Memulai perjalanan dengan dasar-dasar web, kemudian beralih ke pengembangan mobile."
+          "period": "2021 — Sekarang",
+          "title": "Backend Developer",
+          "company": "Stamps Indonesia",
+          "description": "Membangun dan memelihara layanan backend dan REST API yang kokoh dengan Python dan Django."
         }
       ]
     },
@@ -270,20 +291,20 @@
       "data": {
         "status": 200,
         "message": "halo, dunia!",
-        "name": "Drogan",
-        "role": "Software Engineer & Android Developer",
+        "name": "Ali Mahmudin",
+        "role": "Backend & Android Developer",
         "focus": [
-          "Aplikasi Android (Kotlin, Jetpack Compose)",
-          "Aplikasi web (Next.js, TypeScript)",
-          "Arsitektur yang bersih & scalable"
+          "Backend API (Python, Django, Django REST Framework)",
+          "Aplikasi Android (Kotlin, Java, Room, Retrofit)",
+          "Database (MySQL, PostgreSQL, ClickHouse)"
         ],
         "available_for_work": true
       }
     },
     "about": {
       "data": {
-        "name": "Drogan",
-        "title": "Software Engineer & Android Developer",
+        "name": "Ali Mahmudin",
+        "title": "Backend & Android Developer",
         "experience": "Membangun aplikasi yang cepat, modern, dan menyenangkan untuk dipakai",
         "traits": [
           "Problem solver",
@@ -299,39 +320,64 @@
           "skills": [
             "Kotlin",
             "Java",
-            "Jetpack Compose",
-            "Android SDK",
-            "Flutter"
-          ]
-        },
-        {
-          "category": "Web",
-          "skills": [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Node.js"
-          ]
-        },
-        {
-          "category": "Backend & Database",
-          "skills": [
-            "Node.js",
-            "PostgreSQL",
-            "MySQL",
+            "XML",
+            "Room",
+            "Retrofit",
+            "Realm",
             "Firebase",
-            "REST API"
+            "Firebase Storage",
+            "Crashlytics",
+            "Android SDK",
+            "Play Store"
           ]
         },
         {
-          "category": "Tools & Lainnya",
+          "category": "Backend",
           "skills": [
-            "Git",
-            "GitHub Actions",
-            "Docker",
-            "Figma",
-            "Linux"
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "Django Ninja",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "category": "Frontend",
+          "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript"
+          ]
+        },
+        {
+          "category": "Database",
+          "skills": [
+            "MySQL",
+            "PostgreSQL",
+            "ClickHouse",
+            "Firebase"
+          ]
+        },
+        {
+          "category": "Architecture",
+          "skills": [
+            "MVVM",
+            "MVC",
+            "MVT",
+            "Object-Oriented Programming"
+          ]
+        },
+        {
+          "category": "AI & Tools",
+          "skills": [
+            "Claude",
+            "ChatGPT",
+            "Gemini",
+            "opencode",
+            "Linux",
+            "Windows"
           ]
         }
       ]
@@ -379,19 +425,14 @@
       "description": "Perjalanan profesional saya secara kronologis.",
       "data": [
         {
-          "period": "2023 — sekarang",
-          "title": "Software Engineer",
-          "company": "Freelance"
-        },
-        {
-          "period": "2021 — 2023",
+          "period": "2022 — sekarang",
           "title": "Android Developer",
-          "company": "Proyek Mandiri"
+          "company": "Stamps Indonesia"
         },
         {
-          "period": "2019 — 2021",
-          "title": "Mulai Belajar Coding",
-          "company": "Belajar Mandiri"
+          "period": "2021 — sekarang",
+          "title": "Backend Developer",
+          "company": "Stamps Indonesia"
         }
       ]
     },

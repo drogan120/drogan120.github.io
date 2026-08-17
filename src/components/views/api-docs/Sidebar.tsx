@@ -74,7 +74,7 @@ export default function Sidebar() {
               ~
             </span>
             <div>
-              <p className="font-mono text-sm font-semibold">drogan</p>
+              <p className="font-mono text-sm font-semibold">ali</p>
               <p className="text-xs text-muted">{t.apiDocs.version}</p>
             </div>
           </a>

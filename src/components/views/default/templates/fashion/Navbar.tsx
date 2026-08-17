@@ -33,7 +33,7 @@ export default function FashionNavbar() {
           href="#top"
           className="font-serif text-2xl font-light uppercase tracking-[0.3em]"
         >
-          Drogan
+          {t.default.hero.name}
         </a>
 
         <ul className="hidden items-center gap-10 md:flex">

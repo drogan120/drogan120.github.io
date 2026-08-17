@@ -13,7 +13,7 @@ export default function MinimalHero() {
 
       <h1 className="mt-6 text-5xl font-bold leading-[1.1] tracking-tight sm:text-7xl">
         {t.default.hero.hello}{" "}
-        <span className="text-muted">Drogan</span>
+        <span className="text-muted">{t.default.hero.name}</span>
         <br />
         <TypeWriter
           words={[t.default.hero.role1, t.default.hero.role2]}

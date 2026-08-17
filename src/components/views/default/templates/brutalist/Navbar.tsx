@@ -30,7 +30,7 @@ export default function BrutalistNavbar() {
     <header className="sticky top-0 z-50 border-b-4 border-foreground bg-background">
       <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <a href="#top" className="font-mono text-lg font-black uppercase tracking-tight">
-          Drogan<span className="text-accent">_</span>
+          {t.default.hero.name}<span className="text-accent">_</span>
         </a>
 
         <ul className="hidden items-center md:flex">

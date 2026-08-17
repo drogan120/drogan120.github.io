@@ -15,7 +15,7 @@ export default function RetroFooter() {
             aria-hidden
             className="retro-glow inline-block h-2 w-2 rounded-sm bg-accent"
           />{" "}
-          © {new Date().getFullYear()} Drogan
+          © {new Date().getFullYear()} {t.default.hero.name}
         </p>
         <p className="text-center">{t.default.footer.rights}</p>
         <LastUpdated />

@@ -16,9 +16,9 @@ type Line = {
 
 
 const HISTORY: Record<string, string> = {
-  "--about": "Drogan — Software Engineer & Android Developer",
-  "--skills": "[kotlin, compose, nextjs, typescript, nodejs, postgresql]",
-  "--experience": "[2023-present software engineer @ freelance, 2021-2023 android developer, 2019-2021 learning to code]",
+  "--about": "Ali Mahmudin — Backend & Android Developer",
+  "--skills": "[kotlin, java, django, python, rest_framework, mysql, postgresql, clickhouse, retrofit, room]",
+  "--experience": "[2022-present android developer @ stamps indonesia, 2021-present backend developer @ stamps indonesia]",
   "--stats": "[years coding: 5+, projects built: 20+, cups of coffee: infinity]",
   "--achievements": "[best project award, android development certification, open source contributor]",
   "--hobbies": "[gaming, photography, music, reading]",
@@ -160,7 +160,7 @@ export default function TerminalView() {
           <span className="h-3 w-3 shrink-0 rounded-full bg-yellow-500/70" />
           <span className="h-3 w-3 shrink-0 rounded-full bg-green-500/70" />
           <span className="ml-2 truncate font-mono text-xs text-muted sm:ml-4">
-            drogan@portfolio: ~
+            ali@portfolio: ~
           </span>
         </div>
 

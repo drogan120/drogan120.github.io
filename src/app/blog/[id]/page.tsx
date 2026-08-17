@@ -60,7 +60,7 @@ export default async function BlogPostPage({
     articleSection: post.category,
     author: {
       "@type": "Person",
-      name: "Drogan",
+      name: "Ali Mahmudin",
       url: "https://drogan120.github.io",
     },
     mainEntityOfPage: {

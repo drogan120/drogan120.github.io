@@ -1,16 +1,16 @@
 {
   "default": {
     "hero": {
-      "tagline": "Software Engineer & Android Developer. I build fast, modern, and delightful apps.",
-      "role1": "software engineer",
+      "tagline": "Backend & Android Developer. I build fast, modern, and delightful apps.",
+      "role1": "backend developer",
       "role2": "android developer"
     },
     "about": {
       "cards": [
         {
           "icon": "🚀",
-          "title": "Software Engineer",
-          "description": "Building web and backend applications with clean, scalable, and maintainable architecture."
+          "title": "Backend Developer",
+          "description": "Building clean, scalable, and maintainable APIs and backend services."
         },
         {
           "icon": "📱",
@@ -23,7 +23,7 @@
           "description": "Enjoy turning complex problems into simple and efficient solutions."
         }
       ],
-      "paragraph": "I'm Drogan, a Software Engineer focused on Android and web development. My journey started from a great curiosity about technology, to now building digital products used by many people. I always strive to keep learning, because technology never stops evolving."
+      "paragraph": "I'm Ali Mahmudin, a Backend & Android Developer. I specialize in Python, Django, and building robust REST APIs, while also developing native Android apps with Kotlin. I always strive to keep learning, because technology never stops evolving."
     },
     "skills": {
       "groups": [
@@ -33,42 +33,69 @@
           "skills": [
             "Kotlin",
             "Java",
-            "Jetpack Compose",
+            "XML",
+            "Room",
+            "Retrofit",
+            "Realm",
+            "Firebase",
+            "Firebase Storage",
+            "Crashlytics",
             "Android SDK",
-            "Flutter"
+            "Play Store"
           ]
         },
         {
-          "icon": "🌐",
-          "title": "Web",
+          "icon": "🐍",
+          "title": "Backend",
           "skills": [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Node.js"
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "Django Ninja",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "icon": "🎨",
+          "title": "Frontend",
+          "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript"
           ]
         },
         {
           "icon": "🗄️",
-          "title": "Backend & Database",
+          "title": "Database",
           "skills": [
-            "Node.js",
-            "PostgreSQL",
             "MySQL",
-            "Firebase",
-            "REST API"
+            "PostgreSQL",
+            "ClickHouse",
+            "Firebase"
           ]
         },
         {
-          "icon": "🛠️",
-          "title": "Tools & Others",
+          "icon": "🏗️",
+          "title": "Architecture",
           "skills": [
-            "Git",
-            "GitHub Actions",
-            "Docker",
-            "Figma",
-            "Linux"
+            "MVVM",
+            "MVC",
+            "MVT",
+            "Object-Oriented Programming"
+          ]
+        },
+        {
+          "icon": "🤖",
+          "title": "AI & Tools",
+          "skills": [
+            "Claude",
+            "ChatGPT",
+            "Gemini",
+            "opencode",
+            "Linux",
+            "Windows"
           ]
         }
       ]
@@ -76,22 +103,16 @@
     "experience": {
       "items": [
         {
-          "period": "2023 — Present",
-          "title": "Software Engineer",
-          "company": "Freelance",
-          "description": "Building web and Android applications for clients, from planning to production and maintenance."
-        },
-        {
-          "period": "2021 — 2023",
+          "period": "2022 — Present",
           "title": "Android Developer",
-          "company": "Independent Projects",
-          "description": "Developed and shipped multiple native Android apps, focusing on clean architecture and smooth UX."
+          "company": "Stamps Indonesia",
+          "description": "Developing native Android apps with Kotlin, focusing on clean architecture and smooth UX."
         },
         {
-          "period": "2019 — 2021",
-          "title": "Started Learning to Code",
-          "company": "Self-taught",
-          "description": "Started the journey with basic web fundamentals, then moved on to mobile development."
+          "period": "2021 — Present",
+          "title": "Backend Developer",
+          "company": "Stamps Indonesia",
+          "description": "Building and maintaining robust backend services and REST APIs with Python and Django."
         }
       ]
     },
@@ -270,20 +291,20 @@
       "data": {
         "status": 200,
         "message": "hello, world!",
-        "name": "Drogan",
-        "role": "Software Engineer & Android Developer",
+        "name": "Ali Mahmudin",
+        "role": "Backend & Android Developer",
         "focus": [
-          "Android apps (Kotlin, Jetpack Compose)",
-          "Web apps (Next.js, TypeScript)",
-          "Clean & scalable architecture"
+          "Backend APIs (Python, Django, Django REST Framework)",
+          "Android apps (Kotlin, Java, Room, Retrofit)",
+          "Databases (MySQL, PostgreSQL, ClickHouse)"
         ],
         "available_for_work": true
       }
     },
     "about": {
       "data": {
-        "name": "Drogan",
-        "title": "Software Engineer & Android Developer",
+        "name": "Ali Mahmudin",
+        "title": "Backend & Android Developer",
         "experience": "Building fast, modern, and delightful applications",
         "traits": [
           "Problem solver",
@@ -299,39 +320,64 @@
           "skills": [
             "Kotlin",
             "Java",
-            "Jetpack Compose",
-            "Android SDK",
-            "Flutter"
-          ]
-        },
-        {
-          "category": "Web",
-          "skills": [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Node.js"
-          ]
-        },
-        {
-          "category": "Backend & Database",
-          "skills": [
-            "Node.js",
-            "PostgreSQL",
-            "MySQL",
+            "XML",
+            "Room",
+            "Retrofit",
+            "Realm",
             "Firebase",
-            "REST API"
+            "Firebase Storage",
+            "Crashlytics",
+            "Android SDK",
+            "Play Store"
           ]
         },
         {
-          "category": "Tools & Others",
+          "category": "Backend",
           "skills": [
-            "Git",
-            "GitHub Actions",
-            "Docker",
-            "Figma",
-            "Linux"
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "Django Ninja",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "category": "Frontend",
+          "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript"
+          ]
+        },
+        {
+          "category": "Database",
+          "skills": [
+            "MySQL",
+            "PostgreSQL",
+            "ClickHouse",
+            "Firebase"
+          ]
+        },
+        {
+          "category": "Architecture",
+          "skills": [
+            "MVVM",
+            "MVC",
+            "MVT",
+            "Object-Oriented Programming"
+          ]
+        },
+        {
+          "category": "AI & Tools",
+          "skills": [
+            "Claude",
+            "ChatGPT",
+            "Gemini",
+            "opencode",
+            "Linux",
+            "Windows"
           ]
         }
       ]
@@ -379,19 +425,14 @@
       "description": "My professional journey in chronological order.",
       "data": [
         {
-          "period": "2023 — present",
-          "title": "Software Engineer",
-          "company": "Freelance"
-        },
-        {
-          "period": "2021 — 2023",
+          "period": "2022 — present",
           "title": "Android Developer",
-          "company": "Independent Projects"
+          "company": "Stamps Indonesia"
         },
         {
-          "period": "2019 — 2021",
-          "title": "Started Learning to Code",
-          "company": "Self-taught"
+          "period": "2021 — present",
+          "title": "Backend Developer",
+          "company": "Stamps Indonesia"
         }
       ]
     },

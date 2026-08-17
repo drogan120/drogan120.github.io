@@ -8,7 +8,7 @@ export default function PastelFooter() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-muted sm:flex-row">
         <p className="font-semibold text-foreground">
-          <span className="text-accent">✦</span> Drogan
+          <span className="text-accent">✦</span> {t.default.hero.name}
         </p>
         <p>
           © {new Date().getFullYear()}. {t.default.footer.rights}

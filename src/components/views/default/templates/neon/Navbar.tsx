@@ -40,7 +40,7 @@ export default function NeonNavbar() {
         <a href="#top" className="flex shrink-0 items-center gap-2 font-mono text-base font-bold">
           <span aria-hidden className="neon-text inline-block h-2.5 w-2.5 rounded-sm bg-accent" />
           <span className="text-foreground">
-            <span className="text-accent">_</span>drogan
+            <span className="text-accent">_</span>{t.default.hero.name}
           </span>
         </a>
 

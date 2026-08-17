@@ -7,7 +7,7 @@ export default function GlassFooter() {
   return (
     <footer className="border-t border-white/10">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-muted sm:flex-row">
-        <p className="font-semibold">Drogan</p>
+        <p className="font-semibold">{t.default.hero.name}</p>
         <p>
           © {new Date().getFullYear()}. {t.default.footer.rights}
         </p>

@@ -24,7 +24,7 @@ export default function NeonHero() {
 
         <h1 className="mt-8 text-[2.6rem] leading-[1.02] font-black tracking-tight sm:text-6xl md:text-7xl lg:text-[5.2rem]">
           <span className="block text-foreground">{t.default.hero.hello}</span>
-          <span className="neon-text mt-2 block text-accent">Drogan</span>
+          <span className="neon-text mt-2 block text-accent">{t.default.hero.name}</span>
           <span className="mt-2 block font-mono text-sm font-medium tracking-[0.3em] text-muted uppercase sm:text-base">
             {t.default.hero.role1} <span className="text-accent">/</span>{" "}
             {t.default.hero.role2}

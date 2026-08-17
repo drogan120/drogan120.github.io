@@ -35,29 +35,28 @@ const pressStart = Press_Start_2P({
 });
 
 const SITE_URL = "https://drogan120.github.io";
-const TITLE = "Drogan — Software Engineer & Android Developer";
+const TITLE = "Ali Mahmudin — Backend & Android Developer";
 const DESCRIPTION =
-  "Portofolio Drogan. Software Engineer dan Android Developer yang membangun aplikasi mobile dan web yang cepat, modern, dan menyenangkan untuk dipakai.";
+  "Portofolio Ali Mahmudin. Backend dan Android Developer yang membangun API yang kokoh dan aplikasi mobile yang cepat, modern, dan menyenangkan untuk dipakai.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s — Drogan",
+    template: "%s — Ali Mahmudin",
   },
   description: DESCRIPTION,
-  applicationName: "Drogan Portfolio",
-  authors: [{ name: "Drogan", url: SITE_URL }],
-  creator: "Drogan",
+  applicationName: "Ali Mahmudin Portfolio",
+  authors: [{ name: "Ali Mahmudin", url: SITE_URL }],
+  creator: "Ali Mahmudin",
   keywords: [
-    "Drogan",
-    "software engineer",
+    "Ali Mahmudin",
+    "backend developer",
     "android developer",
     "kotlin",
-    "jetpack compose",
-    "typescript",
-    "next.js",
+    "django",
     "python",
+    "rest api",
     "portfolio",
   ],
   alternates: {
@@ -78,7 +77,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: SITE_URL,
-    siteName: "Drogan Portfolio",
+    siteName: "Ali Mahmudin Portfolio",
     locale: "id_ID",
     alternateLocale: ["en_US", "ja_JP"],
     type: "website",
@@ -106,20 +105,20 @@ const JSON_LD = {
     {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
-      name: "Drogan",
+      name: "Ali Mahmudin",
       alternateName: "drogan120",
       url: SITE_URL,
       image: `${SITE_URL}/og.png`,
-      jobTitle: "Software Engineer & Android Developer",
+      jobTitle: "Backend & Android Developer",
       description: DESCRIPTION,
       knowsLanguage: ["id", "en", "ja"],
       knowsAbout: [
         "Android development",
         "Kotlin",
-        "Jetpack Compose",
-        "TypeScript",
-        "Next.js",
+        "Django",
         "Python",
+        "REST API",
+        "Django REST Framework",
       ],
       sameAs: ["https://github.com/drogan120"],
     },

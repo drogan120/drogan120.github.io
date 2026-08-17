@@ -4,12 +4,12 @@ import BlogIndex from "@/components/shared/BlogIndex";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Tulisan Drogan soal keputusan teknis: kenapa Android native, Kotlin, TypeScript, dan Python.",
+    "Tulisan Ali Mahmudin soal keputusan teknis: kenapa Android native, Kotlin, dan Python.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog — Drogan",
+    title: "Blog — Ali Mahmudin",
     description:
-      "Tulisan Drogan soal keputusan teknis: kenapa Android native, Kotlin, TypeScript, dan Python.",
+      "Tulisan Ali Mahmudin soal keputusan teknis: kenapa Android native, Kotlin, dan Python.",
     url: "/blog",
     type: "website",
     images: ["/og.png"],

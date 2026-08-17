@@ -39,6 +39,8 @@ const en = {
     hero: {
       badge: "Welcome to my portfolio",
       hello: "Hi, I'm",
+      name: "Ali Mahmudin",
+      nameKana: "アリ・マフムディン",
       tagline: data.default.hero.tagline,
       viewProjects: "View Projects",
       contactMe: "Contact Me",
@@ -123,7 +125,7 @@ const en = {
     },
     resume: {
       download: "Download Resume",
-      printHeading: "Drogan — Resume",
+      printHeading: "Ali Mahmudin — Resume",
     },
     projects: {
       label: "// projects",

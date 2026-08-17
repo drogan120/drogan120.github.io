@@ -17,7 +17,7 @@ export default function BrutalistHero() {
             <h1 className="mt-6 text-5xl font-black uppercase leading-[0.95] tracking-tight sm:text-7xl">
               {t.default.hero.hello}
               <br />
-              <span className="text-accent">Drogan</span>
+              <span className="text-accent">{t.default.hero.name}</span>
             </h1>
 
             <p className="mt-4 font-mono text-lg font-bold uppercase">

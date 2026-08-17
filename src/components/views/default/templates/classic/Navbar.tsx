@@ -37,9 +37,9 @@ export default function ClassicNavbar() {
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a href="#top" className="flex items-center gap-2 text-lg font-semibold">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-background">
-            D
+            A
           </span>
-          drogan
+          {t.default.hero.name}
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

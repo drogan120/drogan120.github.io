@@ -35,6 +35,7 @@ export const COLOR_SCHEMES = [
   { value: "toon", label: "Toon" },
   { value: "ff7", label: "FF7" },
   { value: "broken", label: "Broken" },
+  { value: "nusantara", label: "Nusantara" },
 ] as const;
 
 export type ColorScheme = (typeof COLOR_SCHEMES)[number]["value"];

@@ -40,6 +40,8 @@ const ja: Dictionary = {
     hero: {
       badge: "私のポートフォリオへようこそ",
       hello: "こんにちは、",
+      name: "アリ",
+      nameKana: "アリ・マフムディン",
       tagline: data.default.hero.tagline,
       viewProjects: "プロジェクトを見る",
       contactMe: "お問い合わせ",
@@ -124,7 +126,7 @@ const ja: Dictionary = {
     },
     resume: {
       download: "履歴書をダウンロード",
-      printHeading: "Drogan — 履歴書",
+      printHeading: "Ali Mahmudin — 履歴書",
     },
     projects: {
       label: "// プロジェクト",

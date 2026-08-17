@@ -749,3 +749,43 @@
   --selection-bg: #d62442;
   --selection-fg: #ffffff;
 }
+
+/* ---------- Nusantara ----------
+   Batik & wayang: an oil-lamp glow over a deep batik-brown stage in dark mode
+   with gilded gold and wayang-red accents; a pale batik-cream page in light
+   mode with dark-gold and deep-red accents. Every text token clears WCAG AA
+   (4.5:1) against its own --card.
+*/
+.scheme-nusantara.dark {
+  --background: #16120c;
+  --foreground: #f0e8d7;
+  --accent: #e6b04a;
+  --accent-2: #e0624d;
+  --muted: #b3a489;
+  --card: #201a11;
+  --border: #40361f;
+  --get: #9fd8b0;
+  --post: #e8a35c;
+  --json-key: #e6b04a;
+  --json-string: #e8c97a;
+  --json-number: #c9a6e0;
+  --selection-bg: #e6b04a;
+  --selection-fg: #16120c;
+}
+
+.scheme-nusantara.light {
+  --background: #f4ecdc;
+  --foreground: #2b2418;
+  --accent: #9a6b1f;
+  --accent-2: #a03022;
+  --muted: #5f5545;
+  --card: #ffffff;
+  --border: #e0d4bb;
+  --get: #117c39;
+  --post: #a35c0f;
+  --json-key: #7a5c1e;
+  --json-string: #0e7490;
+  --json-number: #6d28d9;
+  --selection-bg: #9a6b1f;
+  --selection-fg: #ffffff;
+}

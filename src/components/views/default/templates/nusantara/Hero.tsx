@@ -3,13 +3,13 @@
 import { useI18n } from "@/i18n";
 import DownloadResume from "@/components/shared/DownloadResume";
 import TypeWriter from "@/components/shared/TypeWriter";
-import { Kanji } from "./Chrome";
+import { KawungMotif } from "./Chrome";
 
 /**
- * Anime hero: a vertical kanji watermark, a manga "title page" headline with
- * the name in katakana, a speech-bubble badge and chunky ink buttons.
+ * Nusantara hero: a kawung ornament, a gold "Ali Mahmudin" name on a batik stage
+ * with a sawut underline, and formal batik-paper buttons.
  */
-export default function AnimeHero() {
+export default function NusantaraHero() {
   const { t } = useI18n();
 
   return (
@@ -17,31 +17,30 @@ export default function AnimeHero() {
       id="top"
       className="relative mx-auto w-full max-w-6xl px-5 pt-16 pb-20 sm:px-8 sm:pt-24 md:pb-28"
     >
-      <Kanji>開発者</Kanji>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -top-6 right-4 w-24 text-accent/20 select-none sm:right-10 sm:w-36"
+      >
+        <KawungMotif className="h-full w-full" />
+      </span>
 
-      <div className="relative min-h-0">
-        <p className="anime-bubble inline-flex max-w-full items-center gap-2 rounded-2xl rounded-tl-sm border-2 border-border bg-card px-4 py-2 font-mono text-xs font-semibold text-foreground shadow-sm">
-          <span className="text-accent">⚡</span>
+      <div className="relative min-h-0 pr-8 sm:pr-16">
+        <p className="nusantara-panel inline-flex max-w-full items-center gap-2 rounded-xl border-border px-4 py-2 font-mono text-xs font-semibold text-foreground">
+          <span className="text-accent">●</span>
           <span className="truncate">{t.default.hero.badge}</span>
         </p>
 
-        <h1 className="mt-8 text-[2.6rem] leading-[1.05] font-black tracking-tight sm:text-6xl md:text-7xl lg:text-[5.2rem]">
+        <h1 className="mt-8 text-[2.6rem] leading-[1.1] font-black tracking-tight sm:text-6xl md:text-7xl lg:text-[5.2rem]">
           <span className="block">{t.default.hero.hello}</span>
-          <span className="mt-2 block">
-            <span className="anime-strike relative inline-block text-accent">
-              {t.default.hero.name}
-            </span>
+          <span className="nusantara-name relative mt-2 block text-accent">
+            {t.default.hero.name}
           </span>
-          <span className="mt-2 block font-mono text-lg font-bold tracking-[0.35em] text-muted sm:text-2xl">
-            {t.default.hero.nameKana}
-          </span>
+          <span className="nusantara-sawut mt-4 block w-64" />
         </h1>
 
         <p className="mt-6 inline-flex items-center gap-2 font-mono text-base text-foreground sm:text-xl">
-          <span className="text-accent">»</span>
-          <TypeWriter
-            words={[t.default.hero.role1, t.default.hero.role2]}
-          />
+          <span className="text-accent">◆</span>
+          <TypeWriter words={[t.default.hero.role1, t.default.hero.role2]} />
         </p>
 
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
@@ -58,7 +57,7 @@ export default function AnimeHero() {
           </a>
           <a
             href="#contact"
-            className="pop-on-click inline-flex items-center gap-2 rounded-lg border-2 border-border bg-card px-7 py-3 text-sm font-bold text-foreground shadow-sm transition-colors hover:border-accent hover:text-accent"
+            className="pop-on-click inline-flex items-center gap-2 rounded-lg border border-border bg-card px-7 py-3 text-sm font-bold text-foreground shadow-sm transition-colors hover:border-accent hover:text-accent"
           >
             {t.default.hero.contactMe}
           </a>

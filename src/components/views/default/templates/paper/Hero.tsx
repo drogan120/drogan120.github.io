@@ -26,7 +26,7 @@ export default function PaperHero() {
           {t.default.hero.hello}
           <br />
           <em className="text-accent not-italic underline decoration-accent/40 decoration-2 underline-offset-4">
-            Drogan
+            {t.default.hero.name}
           </em>
           <span aria-hidden className="text-accent">
             .

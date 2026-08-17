@@ -20,7 +20,7 @@ export default function PlayfulHero() {
 
         <h1 className="text-5xl font-extrabold leading-tight tracking-tight sm:text-7xl">
           <span className="bg-gradient-to-r from-accent via-accent-2 to-accent bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
-            {t.default.hero.hello} Drogan!
+            {t.default.hero.hello} {t.default.hero.name}!
           </span>
         </h1>
 

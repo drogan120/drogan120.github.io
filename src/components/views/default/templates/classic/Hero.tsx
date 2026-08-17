@@ -20,7 +20,7 @@ export default function ClassicHero() {
             {t.default.hero.badge}
           </p>
           <h1 className="mt-2 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-            {t.default.hero.hello} Drogan
+            {t.default.hero.hello} {t.default.hero.name}
           </h1>
           <p className="mt-3 text-lg font-semibold text-foreground/90 sm:text-xl">
             <TypeWriter

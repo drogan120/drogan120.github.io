@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n";
 import SettingsBar from "@/components/shared/SettingsBar";
+import { KawungMotif } from "./Chrome";
 
 const links = [
   { href: "#about", key: "about" },
@@ -15,24 +16,33 @@ const links = [
 ] as const;
 
 /**
- * Zine masthead nav: a double-rule header with serif branding, like a
- * newspaper masthead.
+ * Nusantara nav: a batik paper bar with a gold kawung brand mark and a
+ * sawut-underline on link hover.
  */
-export default function PaperNavbar() {
+export default function NusantaraNavbar() {
   const { t } = useI18n();
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur">
-      <div className="border-b border-border">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-          <a
-            href="#top"
-            className="font-serif text-2xl font-bold tracking-tight text-foreground"
-          >
-            <span className="text-accent">The</span> {t.default.hero.name}
-            <span aria-hidden className="ml-1 text-accent">
-              Vol.
+    <header
+      className={`sticky top-0 z-50 transition-shadow duration-300 ${
+        scrolled ? "shadow-lg shadow-black/10" : ""
+      }`}
+    >
+      <div className="border-b border-border bg-background/95 backdrop-blur">
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+          <a href="#top" className="flex shrink-0 items-center gap-2.5">
+            <KawungMotif className="h-9 w-9 text-accent" />
+            <span className="font-mono text-base font-black tracking-widest text-accent">
+              {t.default.hero.name}
             </span>
           </a>
 
@@ -41,7 +51,7 @@ export default function PaperNavbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="rounded px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:text-accent"
+                  className="nusantara-navlink rounded-lg px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:text-accent"
                 >
                   {t.default.nav[link.key]}
                 </a>
@@ -54,14 +64,14 @@ export default function PaperNavbar() {
             <button
               type="button"
               onClick={() => setOpen(!open)}
-              className="flex h-9 w-9 items-center justify-center rounded border border-border text-lg lg:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-lg lg:hidden"
               aria-label="Menu"
               aria-expanded={open}
             >
               {open ? "✕" : "☰"}
             </button>
           </div>
-        </div>
+        </nav>
       </div>
 
       {open && (
@@ -72,7 +82,7 @@ export default function PaperNavbar() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded border border-border px-3 py-2.5 font-mono text-sm text-muted transition-colors hover:border-accent hover:text-accent"
+                  className="block rounded-lg border border-border px-3 py-2.5 font-mono text-sm text-muted transition-colors hover:border-accent hover:text-accent"
                 >
                   {t.default.nav[link.key]}
                 </a>
