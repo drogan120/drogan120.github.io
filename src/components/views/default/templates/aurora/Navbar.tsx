@@ -42,7 +42,7 @@ export default function AuroraNavbar() {
         }`}
       >
         <a href="#top" className="shrink-0 font-mono text-base font-bold">
-          <span className="text-accent">◆</span> drogan
+          <span className="text-accent">◆</span> {t.default.hero.name}
         </a>
 
         <ul className="hidden items-center gap-1 lg:flex">

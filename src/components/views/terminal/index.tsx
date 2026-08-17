@@ -65,7 +65,7 @@ export default function TerminalView() {
   const ghost = matches[0] ? matches[0].slice(input.trimStart().length) : "";
 
   const run = (cmd: string) => {
-    const raw = cmd.trim().replace(/^\.\/drogan\s*/, "");
+    const raw = cmd.trim().replace(/^\.\/ali\s*/, "");
 
     if (raw) setHistory((prev) => [...prev, raw]);
     setHistoryIndex(null);
@@ -179,7 +179,7 @@ export default function TerminalView() {
           {lines.map((line, i) => (
             <div key={i} className="terminal-line mt-4">
               <p className="break-words">
-                <span className="text-accent">$</span> ./drogan {line.command}
+                <span className="text-accent">$</span> ./ali {line.command}
               </p>
               {line.output && (
                 <p className="mt-1 break-words text-muted">{line.output}</p>
@@ -189,7 +189,7 @@ export default function TerminalView() {
 
           <form onSubmit={onSubmit} className="mt-4 flex items-center gap-2">
             <span className="shrink-0 text-accent">$</span>
-            <span className="shrink-0 text-muted">./drogan</span>
+            <span className="shrink-0 text-muted">./ali</span>
 
             <div className="relative min-w-0 flex-1">
               <div
@@ -200,7 +200,7 @@ export default function TerminalView() {
                 <span className="text-muted/50">{ghost}</span>
               </div>
               {/* Ring suppressed on purpose: terminal use is keyboard-only, so
-                  the ring would always be on. The `$ ./drogan` prompt and the
+                  the ring would always be on. The `$ ./ali` prompt and the
                   native caret are the focus indicator here. */}
               <input
                 ref={inputRef}

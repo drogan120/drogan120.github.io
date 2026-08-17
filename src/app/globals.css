@@ -2316,9 +2316,9 @@ a:hover > .wiggle-on-hover {
 /* ============================================================
    Nusantara — batik & wayang kulit
    A deep batik-brown stage under a full moon framed by mega mendung
-   (Cirebon cloud) motifs, with a wayang punokawan silhouette, a wayang
-   gunungan, drifting kawung motifs and a cecek border band, plus sawut
-   (diagonal dash) underlines and kawung-corner panels.
+   (Cirebon cloud) motifs, with clouds drifting slowly across the stage,
+   a cecek border band, sawut (diagonal dash) underlines and
+   kawung-corner panels.
    ============================================================ */
 
 /* Backdrop: a deep batik-brown stage. Purely decorative. */
@@ -2394,58 +2394,47 @@ a:hover > .wiggle-on-hover {
   opacity: 0.7;
 }
 
-/* Wayang punokawan (Semar) silhouette in front of the moon. */
-.nusantara-punokawan {
+/* Clouds drifting slowly across the stage, left to right and back, like
+   actual clouds. */
+.nusantara-drift-cloud {
   position: absolute;
-  right: 6rem;
-  bottom: 0;
-  width: 9rem;
-  height: 11rem;
-  opacity: 0.55;
-  color: var(--foreground);
+  color: color-mix(in srgb, var(--accent) 13%, transparent);
+  animation: nusantara-cloud ease-in-out infinite alternate;
 }
 
-/* Wayang gunungan (mountain-of-life puppet) silhouette, bottom left. */
-.nusantara-gunungan {
-  position: absolute;
-  bottom: -2rem;
-  left: -3rem;
-  width: 20rem;
-  height: 24rem;
-  opacity: 0.5;
-  color: color-mix(in srgb, var(--accent-2) 22%, transparent);
+.nusantara-drift-cloud-1 {
+  top: 6%;
+  left: -12rem;
+  width: 16rem;
+  height: 9.6rem;
+  animation-duration: 26s;
+  animation-delay: -8s;
 }
 
-/* Drifting kawung motifs, rotating slowly like a batik stamp. */
-.nusantara-kawung {
-  position: absolute;
-  color: color-mix(in srgb, var(--accent) 30%, transparent);
-  animation: nusantara-drift linear infinite;
+.nusantara-drift-cloud-2 {
+  top: 30%;
+  left: -10rem;
+  width: 22rem;
+  height: 13.2rem;
+  animation-duration: 34s;
+  animation-delay: -18s;
 }
 
-.nusantara-kawung-1 {
-  top: 18%;
-  right: 6%;
-  width: 7rem;
-  height: 7rem;
-  animation-duration: 40s;
+.nusantara-drift-cloud-3 {
+  top: 52%;
+  left: -14rem;
+  width: 14rem;
+  height: 8.4rem;
+  animation-duration: 22s;
+  animation-delay: -4s;
 }
 
-.nusantara-kawung-2 {
-  top: 62%;
-  right: 40%;
-  width: 4rem;
-  height: 4rem;
-  animation-duration: 55s;
-  animation-delay: 6s;
-}
-
-@keyframes nusantara-drift {
+@keyframes nusantara-cloud {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(0);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateX(130vw);
   }
 }
 
@@ -2537,7 +2526,7 @@ a:hover > .wiggle-on-hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nusantara-kawung {
+  .nusantara-drift-cloud {
     animation: none;
   }
 }

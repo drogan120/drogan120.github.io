@@ -39,7 +39,7 @@ export default function GlassNavbar() {
           href="#top"
           className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 font-mono text-sm font-semibold text-foreground backdrop-blur-md"
         >
-          drogan<span className="text-accent">.dev</span>
+          {t.default.hero.name}<span className="text-accent">.dev</span>
         </a>
 
         <ul className="hidden items-center gap-6 md:flex">
