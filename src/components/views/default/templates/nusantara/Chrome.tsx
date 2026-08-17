@@ -99,14 +99,35 @@ function MoonScene() {
 }
 
 /**
- * Nusantara backdrop: a full moon framed by mega mendung clouds and a few
- * clouds drifting slowly across the stage, over a deep batik-brown ground.
- * Purely decorative (aria-hidden).
+ * A flying bird silhouette: a curved gull wing. Purely decorative.
+ */
+function FlyingBird({ className = "" }: { className?: string }) {
+  return (
+    <span className={className} aria-hidden>
+      <svg viewBox="0 0 60 20" fill="none" className="h-full w-full">
+        <path
+          d="M3 13 Q15 2 27 13 Q39 2 51 13 Q54 15 57 11"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
+/**
+ * Nusantara backdrop: a full moon framed by mega mendung clouds, a few
+ * clouds drifting slowly across the stage and birds gliding through the
+ * dusk sky, over a deep batik-brown ground. Purely decorative (aria-hidden).
  */
 export function NusantaraBackdrop() {
   return (
     <div aria-hidden className="nusantara-stage">
       <MoonScene />
+      <FlyingBird className="nusantara-bird nusantara-bird-1" />
+      <FlyingBird className="nusantara-bird nusantara-bird-2" />
+      <FlyingBird className="nusantara-bird nusantara-bird-3" />
       <span className="nusantara-drift-cloud nusantara-drift-cloud-1">
         <MegaMendung className="h-full w-full" />
       </span>
