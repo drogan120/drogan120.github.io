@@ -23,7 +23,7 @@
           "description": "複雑な問題をシンプルで効率的な解決策に変えるのが得意です。"
         }
       ],
-      "paragraph": "私は Ali Mahmudin、バックエンド & Android デベロッパーです。Python と Django に特化し、堅牢な REST API を構築しながら、Kotlin でネイティブ Android アプリも開発しています。テクノロジーは常に進化し続けるため、学び続けることを大切にしています。"
+      "paragraph": "私は Ali、バックエンド & Android デベロッパーです。Python と Django に特化し、堅牢な REST API を構築しながら、Kotlin でネイティブ Android アプリも開発しています。テクノロジーは常に進化し続けるため、学び続けることを大切にしています。"
     },
     "skills": {
       "groups": [
@@ -291,7 +291,7 @@
       "data": {
         "status": 200,
         "message": "こんにちは、世界！",
-        "name": "Ali Mahmudin",
+        "name": "Ali",
         "role": "バックエンド & Android デベロッパー",
         "focus": [
           "バックエンド API (Python, Django, Django REST Framework)",
@@ -303,7 +303,7 @@
     },
     "about": {
       "data": {
-        "name": "Ali Mahmudin",
+        "name": "Ali",
         "title": "バックエンド & Android デベロッパー",
         "experience": "高速でモダンで楽しいアプリを開発",
         "traits": [

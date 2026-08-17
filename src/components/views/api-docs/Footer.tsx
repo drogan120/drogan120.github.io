@@ -10,7 +10,7 @@ export default function Footer() {
         <p>
           <span className="text-accent">$</span> ali --version
         </p>
-        <p>{t.apiDocs.version} · MIT © {new Date().getFullYear()} Ali Mahmudin</p>
+        <p>{t.apiDocs.version} · MIT © {new Date().getFullYear()} Ali</p>
       </div>
           <div className="mx-auto max-w-4xl px-6 pb-6 text-center font-mono text-xs text-muted/70">
         <LastUpdated />

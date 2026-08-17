@@ -42,7 +42,7 @@ export default function NihonNavbar() {
           <a href="#top" className="flex shrink-0 items-center gap-2.5">
             <Hanko small>龍</Hanko>
             <span className="font-mono text-base font-black tracking-widest">
-              <Furigana text="ドロガン" reading="どろがん" className="text-accent" />
+              <Furigana text={t.default.hero.nameKana} reading="あり" className="text-accent" />
             </span>
           </a>
 

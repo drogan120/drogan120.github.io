@@ -56,7 +56,7 @@ export default function AuroraHero() {
               className="word-rise bg-gradient-to-r from-accent via-accent-2 to-accent bg-[length:200%_auto] bg-clip-text pb-1 text-transparent"
               style={{ "--w": words + 1 } as CSSProperties}
             >
-              Drogan
+              {t.default.hero.name}
             </span>
           </h1>
 

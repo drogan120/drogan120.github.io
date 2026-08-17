@@ -6,7 +6,7 @@ import TypeWriter from "@/components/shared/TypeWriter";
 import { KawungMotif } from "./Chrome";
 
 /**
- * Nusantara hero: a kawung ornament, a gold "Ali Mahmudin" name on a batik stage
+ * Nusantara hero: a kawung ornament, a gold "Ali" name on a batik stage
  * with a sawut underline, and formal batik-paper buttons.
  */
 export default function NusantaraHero() {

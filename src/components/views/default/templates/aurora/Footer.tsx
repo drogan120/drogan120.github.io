@@ -12,7 +12,7 @@ export default function AuroraFooter() {
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-5 py-10 font-mono text-xs text-muted sm:flex-row sm:justify-between sm:px-8">
         <p>
           <span className="text-accent">◆</span> © {new Date().getFullYear()}{" "}
-          Drogan
+          {t.default.hero.name}
         </p>
         <p className="text-center">{t.default.footer.rights}</p>
         <LastUpdated />

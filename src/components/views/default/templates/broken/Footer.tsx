@@ -15,7 +15,7 @@ export default function BrokenFooter() {
             aria-hidden
             className="broken-glitch mr-1 inline-block h-2 w-2 border border-accent-2 bg-accent"
           />{" "}
-          © {new Date().getFullYear()} Drogan
+          © {new Date().getFullYear()} {t.default.hero.name}
         </p>
         <p className="rotate-1">
           <span className="broken-stack" data-text={t.default.footer.rights}>

@@ -41,7 +41,7 @@ const ja: Dictionary = {
       badge: "私のポートフォリオへようこそ",
       hello: "こんにちは、",
       name: "アリ",
-      nameKana: "アリ・マフムディン",
+      nameKana: "アリ",
       tagline: data.default.hero.tagline,
       viewProjects: "プロジェクトを見る",
       contactMe: "お問い合わせ",
@@ -126,7 +126,7 @@ const ja: Dictionary = {
     },
     resume: {
       download: "履歴書をダウンロード",
-      printHeading: "Ali Mahmudin — 履歴書",
+      printHeading: "アリ — 履歴書",
     },
     projects: {
       label: "// プロジェクト",

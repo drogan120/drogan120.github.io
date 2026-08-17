@@ -2315,14 +2315,13 @@ a:hover > .wiggle-on-hover {
 
 /* ============================================================
    Nusantara — batik & wayang kulit
-   A warm batik stage lit by an oil lamp (blencong), with a wayang
-   gunungan silhouette, drifting kawung motifs and a cecek border
-   band, plus sawut (diagonal dash) underlines and kawung-corner
-   panels.
+   A deep batik-brown stage under a full moon framed by mega mendung
+   (Cirebon cloud) motifs, with a wayang punokawan silhouette, a wayang
+   gunungan, drifting kawung motifs and a cecek border band, plus sawut
+   (diagonal dash) underlines and kawung-corner panels.
    ============================================================ */
 
-/* Backdrop: a deep batik-brown stage warmed by the lamp glow. Purely
-   decorative. */
+/* Backdrop: a deep batik-brown stage. Purely decorative. */
 .nusantara-stage {
   position: fixed;
   inset: 0;
@@ -2336,19 +2335,74 @@ a:hover > .wiggle-on-hover {
   );
 }
 
-/* Oil lamp (blencong) glow, top right. */
-.nusantara-lamp {
+/* Full moon framed by mega mendung clouds, top right. */
+.nusantara-moon-scene {
   position: absolute;
-  top: -8rem;
-  right: -6rem;
-  width: 30rem;
-  height: 30rem;
+  top: -4rem;
+  right: -2rem;
+  width: 26rem;
+  height: 26rem;
+}
+
+.nusantara-moon {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 9999px;
   background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--accent) 18%, transparent),
-    transparent 65%
+    circle at 40% 35%,
+    color-mix(in srgb, var(--accent) 32%, transparent),
+    color-mix(in srgb, var(--accent) 14%, transparent) 55%,
+    transparent 72%
   );
+}
+
+.nusantara-moon-crater {
+  position: absolute;
+  top: 38%;
+  left: 26%;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--background) 18%, transparent);
+}
+
+.nusantara-mendung {
+  position: absolute;
+  color: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.nusantara-mendung-1 {
+  top: 0;
+  right: 0;
+  width: 18rem;
+}
+
+.nusantara-mendung-2 {
+  top: 3.5rem;
+  right: -3rem;
+  width: 14rem;
+  opacity: 0.8;
+}
+
+.nusantara-mendung-3 {
+  top: 10rem;
+  right: 2rem;
+  width: 20rem;
+  opacity: 0.7;
+}
+
+/* Wayang punokawan (Semar) silhouette in front of the moon. */
+.nusantara-punokawan {
+  position: absolute;
+  right: 6rem;
+  bottom: 0;
+  width: 9rem;
+  height: 11rem;
+  opacity: 0.55;
+  color: var(--foreground);
 }
 
 /* Wayang gunungan (mountain-of-life puppet) silhouette, bottom left. */

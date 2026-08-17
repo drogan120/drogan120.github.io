@@ -15,7 +15,7 @@ export default function Ff7Footer() {
             aria-hidden
             className="ff7-glow inline-block h-2 w-2 rounded-full bg-accent"
           />{" "}
-          © {new Date().getFullYear()} Drogan
+          © {new Date().getFullYear()} {t.default.hero.name}
         </p>
         <p className="text-center">{t.default.footer.rights}</p>
         <LastUpdated />

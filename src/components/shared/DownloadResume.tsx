@@ -54,7 +54,7 @@ export default function DownloadResume() {
         </ul>
 
         <p className="mt-8 text-xs text-muted">
-          © {new Date().getFullYear()} Ali Mahmudin
+          © {new Date().getFullYear()} Ali
         </p>
       </div>
     </>

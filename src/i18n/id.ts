@@ -40,8 +40,8 @@ const id: Dictionary = {
     hero: {
       badge: "Selamat datang di portofolio saya",
       hello: "Halo, saya",
-      name: "Ali Mahmudin",
-      nameKana: "アリ・マフムディン",
+      name: "Ali",
+      nameKana: "アリ",
       tagline: data.default.hero.tagline,
       viewProjects: "Lihat Proyek",
       contactMe: "Hubungi Saya",
@@ -126,7 +126,7 @@ const id: Dictionary = {
     },
     resume: {
       download: "Download Resume",
-      printHeading: "Ali Mahmudin — Resume",
+      printHeading: "Ali — Resume",
     },
     projects: {
       label: "// proyek",

@@ -43,9 +43,9 @@ export default function AnimeNavbar() {
               ☀
             </span>
             <span className="text-base font-black tracking-widest">
-              <span className="text-accent">ドロガン</span>
+              <span className="text-accent">{t.default.hero.nameKana}</span>
               <span className="mx-1 text-border">|</span>
-              drogan
+              {t.default.hero.name}
             </span>
           </a>
 

@@ -23,7 +23,7 @@
           "description": "Enjoy turning complex problems into simple and efficient solutions."
         }
       ],
-      "paragraph": "I'm Ali Mahmudin, a Backend & Android Developer. I specialize in Python, Django, and building robust REST APIs, while also developing native Android apps with Kotlin. I always strive to keep learning, because technology never stops evolving."
+      "paragraph": "I'm Ali, a Backend & Android Developer. I specialize in Python, Django, and building robust REST APIs, while also developing native Android apps with Kotlin. I always strive to keep learning, because technology never stops evolving."
     },
     "skills": {
       "groups": [
@@ -291,7 +291,7 @@
       "data": {
         "status": 200,
         "message": "hello, world!",
-        "name": "Ali Mahmudin",
+        "name": "Ali",
         "role": "Backend & Android Developer",
         "focus": [
           "Backend APIs (Python, Django, Django REST Framework)",
@@ -303,7 +303,7 @@
     },
     "about": {
       "data": {
-        "name": "Ali Mahmudin",
+        "name": "Ali",
         "title": "Backend & Android Developer",
         "experience": "Building fast, modern, and delightful applications",
         "traits": [

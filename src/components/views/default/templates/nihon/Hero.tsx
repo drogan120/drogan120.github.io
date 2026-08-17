@@ -28,10 +28,10 @@ export default function NihonHero() {
         <h1 className="mt-8 text-[2.6rem] leading-[1.1] font-black tracking-tight sm:text-6xl md:text-7xl lg:text-[5.2rem]">
           <span className="block">{t.default.hero.hello}</span>
           <span className="nihon-brush relative mt-2 block">
-            <span className="relative text-accent">Drogan</span>
+            <span className="relative text-accent">{t.default.hero.name}</span>
           </span>
           <span className="mt-2 block font-mono text-lg font-bold tracking-[0.35em] text-muted sm:text-2xl">
-            <Furigana text="ドロガン" reading="どろがん" />
+            <Furigana text={t.default.hero.nameKana} reading="あり" />
           </span>
         </h1>
 

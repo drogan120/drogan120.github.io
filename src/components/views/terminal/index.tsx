@@ -16,7 +16,7 @@ type Line = {
 
 
 const HISTORY: Record<string, string> = {
-  "--about": "Ali Mahmudin — Backend & Android Developer",
+  "--about": "Ali — Backend & Android Developer",
   "--skills": "[kotlin, java, django, python, rest_framework, mysql, postgresql, clickhouse, retrofit, room]",
   "--experience": "[2022-present android developer @ stamps indonesia, 2021-present backend developer @ stamps indonesia]",
   "--stats": "[years coding: 5+, projects built: 20+, cups of coffee: infinity]",

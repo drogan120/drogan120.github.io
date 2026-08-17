@@ -63,14 +63,65 @@ function Gunungan() {
 }
 
 /**
- * Nusantara backdrop: a warm oil-lamp glow, a wayang gunungan silhouette and
- * two slowly drifting kawung motifs over a deep batik-brown stage. Purely
- * decorative (aria-hidden).
+ * Wayang punokawan silhouette (Semar): the short, round clown-sage with a
+ * pointed bun, framed by the light of the moon.
+ */
+function Punokawan() {
+  return (
+    <svg viewBox="0 0 80 100" className="h-full w-full" fill="currentColor" aria-hidden>
+      <path d="M40 0 C46 4 48 10 46 16 C50 22 50 30 44 34 C48 36 50 41 47 45 C51 52 48 60 42 63 C45 68 43 75 38 78 C40 82 38 88 32 90 C26 88 24 82 26 78 C21 75 19 68 22 63 C16 60 13 52 17 45 C14 41 16 36 20 34 C14 30 14 22 18 16 C16 10 18 4 24 0 C28 3 36 3 40 0 Z" />
+    </svg>
+  );
+}
+
+/**
+ * Mega mendung cloud: the classic Cirebon batik cloud shape (a scalloped
+ * rounded rectangle), used around the full moon.
+ */
+function MegaMendung() {
+  return (
+    <svg viewBox="0 0 100 60" className="h-full w-full" fill="currentColor" aria-hidden>
+      <path d="M8 52 C4 30 12 14 30 10 C38 2 62 2 70 10 C88 14 96 30 92 52 C96 54 96 58 92 60 L8 60 C4 58 4 54 8 52 Z" />
+      <path d="M30 10 C36 8 44 8 50 12 C56 8 64 8 70 10 C62 4 38 4 30 10 Z" />
+    </svg>
+  );
+}
+
+/**
+ * Full moon framed by mega mendung clouds and a wayang punokawan silhouette,
+ * replacing the oil-lamp glow. Purely decorative (aria-hidden).
+ */
+function MoonScene() {
+  return (
+    <div aria-hidden className="nusantara-moon-scene">
+      <span className="nusantara-moon">
+        <span className="nusantara-moon-crater" />
+      </span>
+      <span className="nusantara-mendung nusantara-mendung-1">
+        <MegaMendung />
+      </span>
+      <span className="nusantara-mendung nusantara-mendung-2">
+        <MegaMendung />
+      </span>
+      <span className="nusantara-mendung nusantara-mendung-3">
+        <MegaMendung />
+      </span>
+      <span className="nusantara-punokawan">
+        <Punokawan />
+      </span>
+    </div>
+  );
+}
+
+/**
+ * Nusantara backdrop: a full moon framed by mega mendung clouds with a wayang
+ * punokawan silhouette, a wayang gunungan and two slowly drifting kawung
+ * motifs over a deep batik-brown stage. Purely decorative (aria-hidden).
  */
 export function NusantaraBackdrop() {
   return (
     <div aria-hidden className="nusantara-stage">
-      <span className="nusantara-lamp" />
+      <MoonScene />
       <span className="nusantara-gunungan">
         <Gunungan />
       </span>

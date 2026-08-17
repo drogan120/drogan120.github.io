@@ -35,22 +35,22 @@ const pressStart = Press_Start_2P({
 });
 
 const SITE_URL = "https://drogan120.github.io";
-const TITLE = "Ali Mahmudin — Backend & Android Developer";
+const TITLE = "Ali — Backend & Android Developer";
 const DESCRIPTION =
-  "Portofolio Ali Mahmudin. Backend dan Android Developer yang membangun API yang kokoh dan aplikasi mobile yang cepat, modern, dan menyenangkan untuk dipakai.";
+  "Portofolio Ali. Backend dan Android Developer yang membangun API yang kokoh dan aplikasi mobile yang cepat, modern, dan menyenangkan untuk dipakai.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s — Ali Mahmudin",
+    template: "%s — Ali",
   },
   description: DESCRIPTION,
-  applicationName: "Ali Mahmudin Portfolio",
-  authors: [{ name: "Ali Mahmudin", url: SITE_URL }],
-  creator: "Ali Mahmudin",
+  applicationName: "Ali Portfolio",
+  authors: [{ name: "Ali", url: SITE_URL }],
+  creator: "Ali",
   keywords: [
-    "Ali Mahmudin",
+    "Ali",
     "backend developer",
     "android developer",
     "kotlin",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: SITE_URL,
-    siteName: "Ali Mahmudin Portfolio",
+    siteName: "Ali Portfolio",
     locale: "id_ID",
     alternateLocale: ["en_US", "ja_JP"],
     type: "website",
@@ -105,7 +105,7 @@ const JSON_LD = {
     {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
-      name: "Ali Mahmudin",
+      name: "Ali",
       alternateName: "drogan120",
       url: SITE_URL,
       image: `${SITE_URL}/og.png`,
@@ -126,7 +126,7 @@ const JSON_LD = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "Drogan Portfolio",
+      name: "Ali Portfolio",
       description: DESCRIPTION,
       inLanguage: ["id", "en", "ja"],
       publisher: { "@id": `${SITE_URL}/#person` },
