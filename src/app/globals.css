@@ -2335,10 +2335,11 @@ a:hover > .wiggle-on-hover {
   );
 }
 
-/* Full moon framed by mega mendung clouds, top right. */
+/* Full moon framed by mega mendung clouds, top right, cleared below the
+   sticky navbar (h-16 = 4rem). */
 .nusantara-moon-scene {
   position: absolute;
-  top: -4rem;
+  top: 3rem;
   right: -2rem;
   width: 26rem;
   height: 26rem;
@@ -2357,6 +2358,19 @@ a:hover > .wiggle-on-hover {
     color-mix(in srgb, var(--accent) 14%, transparent) 55%,
     transparent 72%
   );
+  animation: nusantara-moon-glow 7s ease-in-out infinite;
+}
+
+@keyframes nusantara-moon-glow {
+  0%,
+  100% {
+    filter: brightness(0.85);
+    transform: scale(0.97);
+  }
+  50% {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+  }
 }
 
 .nusantara-moon-crater {
@@ -2435,21 +2449,6 @@ a:hover > .wiggle-on-hover {
   }
   100% {
     transform: translateX(130vw);
-  }
-}
-
-/* Kawung ornament watermark in section headings, slowly rotating like a
-   batik stamp. */
-.nusantara-ornament {
-  animation: nusantara-ornament-spin 40s linear infinite;
-}
-
-@keyframes nusantara-ornament-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
@@ -2542,7 +2541,7 @@ a:hover > .wiggle-on-hover {
 
 @media (prefers-reduced-motion: reduce) {
   .nusantara-drift-cloud,
-  .nusantara-ornament {
+  .nusantara-moon {
     animation: none;
   }
 }

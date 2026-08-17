@@ -3,11 +3,10 @@
 import { useI18n } from "@/i18n";
 import DownloadResume from "@/components/shared/DownloadResume";
 import TypeWriter from "@/components/shared/TypeWriter";
-import { KawungMotif } from "./Chrome";
 
 /**
- * Nusantara hero: a kawung ornament, a gold "Ali" name on a batik stage
- * with a sawut underline, and formal batik-paper buttons.
+ * Nusantara hero: a gold name on a batik stage with a sawut underline, and
+ * formal batik-paper buttons.
  */
 export default function NusantaraHero() {
   const { t } = useI18n();
@@ -17,13 +16,6 @@ export default function NusantaraHero() {
       id="top"
       className="relative mx-auto w-full max-w-6xl px-5 pt-16 pb-20 sm:px-8 sm:pt-24 md:pb-28"
     >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -top-6 right-4 w-24 text-accent/20 select-none sm:right-10 sm:w-36"
-      >
-        <KawungMotif className="h-full w-full" />
-      </span>
-
       <div className="relative min-h-0 pr-8 sm:pr-16">
         <p className="nusantara-panel inline-flex max-w-full items-center gap-2 rounded-xl border-border px-4 py-2 font-mono text-xs font-semibold text-foreground">
           <span className="text-accent">●</span>

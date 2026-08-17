@@ -141,25 +141,9 @@ export function Section({
   );
 }
 
-/** A translucent kawung watermark behind a section header. */
-export function Ornament({
-  className = "",
-}: {
-  className?: string;
-}) {
-  return (
-    <span
-      aria-hidden
-      className={`nusantara-ornament pointer-events-none absolute top-2 right-2 w-28 text-accent/20 select-none sm:right-4 sm:w-36 ${className}`}
-    >
-      <KawungMotif className="h-full w-full" />
-    </span>
-  );
-}
-
 /**
- * Nusantara section heading: a kawung ornament watermark, an eyebrow pill and
- * a gold-bordered title with a batik sawut underline.
+ * Nusantara section heading: an eyebrow pill and a gold-bordered title with a
+ * batik sawut underline.
  */
 export function SectionHeading({
   eyebrow,
@@ -174,8 +158,6 @@ export function SectionHeading({
 }) {
   return (
     <header className={`relative ${className}`}>
-      <Ornament />
-
       <div className="relative pr-20 sm:pr-32">
         <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs tracking-[0.2em] text-accent uppercase">
           <span aria-hidden className="text-accent-2">
