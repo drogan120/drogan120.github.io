@@ -17,6 +17,7 @@ import RetroTemplate from "./templates/retro";
 import PixelTemplate from "./templates/pixel";
 import ToonTemplate from "./templates/toon";
 import Ff7Template from "./templates/ff7";
+import BrokenTemplate from "./templates/broken";
 
 export default function DefaultView() {
   const { template } = useTemplate();
@@ -52,6 +53,8 @@ export default function DefaultView() {
       return <ToonTemplate />;
     case "ff7":
       return <Ff7Template />;
+    case "broken":
+      return <BrokenTemplate />;
     case "aurora":
       return <AuroraTemplate />;
     // Aurora is the default template, so it also catches apiDocs/terminal —

@@ -712,3 +712,39 @@
   --selection-bg: #0e7a52;
   --selection-fg: #ffffff;
 }
+
+/* Broken — deliberately "corrupted": a desaturated grey base with the glitch
+   neon magenta + cyan bleeding through, as if the colour signal is damaged. */
+.scheme-broken.dark {
+  --background: #151412;
+  --foreground: #e8e6e0;
+  --accent: #ff5d8f;
+  --accent-2: #4de0c4;
+  --muted: #9a958c;
+  --card: #1e1c19;
+  --border: #35322c;
+  --get: #4de0c4;
+  --post: #ff5d8f;
+  --json-key: #8ab4f8;
+  --json-string: #ffd166;
+  --json-number: #4de0c4;
+  --selection-bg: #ff5d8f;
+  --selection-fg: #151412;
+}
+
+.scheme-broken.light {
+  --background: #f2f0ea;
+  --foreground: #26231f;
+  --accent: #c2254f;
+  --accent-2: #0d756d;
+  --muted: #5f5a52;
+  --card: #ffffff;
+  --border: #d8d2c8;
+  --get: #0d756d;
+  --post: #a32c4d;
+  --json-key: #24579b;
+  --json-string: #8a4a0f;
+  --json-number: #6d28d9;
+  --selection-bg: #c2254f;
+  --selection-fg: #ffffff;
+}

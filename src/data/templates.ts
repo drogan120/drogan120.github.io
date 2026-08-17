@@ -41,6 +41,7 @@ export const TEMPLATES = [
   { value: "pixel", label: "Pixel", kind: "skin", scheme: "pixel" },
   { value: "toon", label: "Toon", kind: "skin", scheme: "toon" },
   { value: "ff7", label: "FF7", kind: "skin", scheme: "ff7" },
+  { value: "broken", label: "Broken", kind: "skin", scheme: "broken" },
   { value: "apiDocs", label: "API Docs", kind: "view" },
   { value: "terminal", label: "Terminal", kind: "view" },
 ] as const;

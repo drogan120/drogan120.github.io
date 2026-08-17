@@ -10,6 +10,12 @@ const NIHON_PHRASES = [
   { text: "準備中", reading: "じゅんびちゅう" },
   { text: "生成中", reading: "せいせいちゅう" },
 ] as const;
+const BROKEN_PHRASES = [
+  "loading…",
+  "still loading…",
+  "almost there…",
+  "it's broken, I swear",
+] as const;
 
 export default function Preloader() {
   const { template } = useTemplate();
@@ -38,6 +44,8 @@ export default function Preloader() {
         <AnimePreloader />
       ) : mounted && template === "nihon" ? (
         <NihonPreloader />
+      ) : mounted && template === "broken" ? (
+        <BrokenPreloader />
       ) : (
         <>
           <div className="preloader-stage">
@@ -130,6 +138,41 @@ function NihonPreloader() {
         <span className="preloader-dot" />
         <span className="preloader-dot" />
         <span className="preloader-dot" />
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Broken loader: a lopsided card with a tape strip, a huge split-RGB "loading"
+ * mark and a cycling set of deadpan captions, as if the loader itself is
+ * barely holding together.
+ */
+function BrokenPreloader() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setIndex((i) => (i + 1) % BROKEN_PHRASES.length),
+      260
+    );
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="preloader-broken">
+      <div className="broken-tape -rotate-2 bg-card px-8 py-7">
+        <p className="broken-glitch text-center text-4xl font-black text-accent sm:text-5xl">
+          LOADING
+        </p>
+        <p className="mt-2 rotate-1 text-center font-mono text-sm text-muted">
+          {BROKEN_PHRASES[index]}
+        </p>
+        <div className="mt-4 flex justify-center gap-2">
+          <span className="preloader-dot" />
+          <span className="preloader-dot" />
+          <span className="preloader-dot" />
+        </div>
       </div>
     </div>
   );
