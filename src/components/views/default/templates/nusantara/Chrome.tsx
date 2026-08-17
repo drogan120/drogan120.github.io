@@ -150,7 +150,7 @@ export function Ornament({
   return (
     <span
       aria-hidden
-      className={`pointer-events-none absolute top-2 right-2 w-28 text-accent/20 select-none sm:right-4 sm:w-36 ${className}`}
+      className={`nusantara-ornament pointer-events-none absolute top-2 right-2 w-28 text-accent/20 select-none sm:right-4 sm:w-36 ${className}`}
     >
       <KawungMotif className="h-full w-full" />
     </span>

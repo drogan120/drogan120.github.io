@@ -2438,6 +2438,21 @@ a:hover > .wiggle-on-hover {
   }
 }
 
+/* Kawung ornament watermark in section headings, slowly rotating like a
+   batik stamp. */
+.nusantara-ornament {
+  animation: nusantara-ornament-spin 40s linear infinite;
+}
+
+@keyframes nusantara-ornament-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Cecek border band: a repeating diamond motif along the bottom edge of the
    backdrop and above the footer. */
 .nusantara-tirta {
@@ -2526,7 +2541,8 @@ a:hover > .wiggle-on-hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nusantara-drift-cloud {
+  .nusantara-drift-cloud,
+  .nusantara-ornament {
     animation: none;
   }
 }
