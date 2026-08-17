@@ -14,10 +14,19 @@ const NIHON_PHRASES = [
 export default function Preloader() {
   const { template } = useTemplate();
   const [done, setDone] = useState(false);
+  // The template comes from localStorage, so it is unknown during SSR and the
+  // first client paint. Rendering the buddy variant until the next frame
+  // (when the stored template is known) avoids a React 418 hydration mismatch
+  // with the static HTML.
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const frame = requestAnimationFrame(() => setMounted(true));
     const timer = setTimeout(() => setDone(true), 700);
-    return () => clearTimeout(timer);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -25,9 +34,9 @@ export default function Preloader() {
       className={done ? "preloader preloader-hide" : "preloader"}
       aria-hidden="true"
     >
-      {template === "anime" ? (
+      {mounted && template === "anime" ? (
         <AnimePreloader />
-      ) : template === "nihon" ? (
+      ) : mounted && template === "nihon" ? (
         <NihonPreloader />
       ) : (
         <>
@@ -109,7 +118,6 @@ function NihonPreloader() {
   return (
     <div className="preloader-nihon">
       <span className="nihon-sun" />
-      <span className="nihon-kanji-bg">和</span>
 
       <div className="preloader-nihon-panel">
         <span className="nihon-furigana">

@@ -4,15 +4,14 @@ import type { ReactNode } from "react";
 
 /**
  * Nihon backdrop: washi grain, a rising vermilion sun, a faint torii
- * silhouette, a large faint kanji, drifting sakura petals and a seigaiha
- * (wave) band at the bottom. Purely decorative (aria-hidden).
+ * silhouette, drifting sakura petals and a seigaiha (wave) band at the
+ * bottom. Purely decorative (aria-hidden).
  */
 export function NihonBackdrop() {
   return (
     <div aria-hidden className="nihon-stage">
       <span className="nihon-washi" />
       <span className="nihon-sun" />
-      <span className="nihon-kanji-bg">和</span>
       <span className="nihon-torii">
         <span className="nihon-torii-kasagi" />
         <span className="nihon-torii-nuki" />

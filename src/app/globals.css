@@ -506,17 +506,6 @@ a:hover > .wiggle-on-hover {
   opacity: 0.9;
 }
 
-/* In the preloader the giant 和 would dominate the panel, so shrink it and
-   slide it off-centre behind the sun. */
-.preloader-nihon .nihon-kanji-bg {
-  font-size: clamp(10rem, 22vw, 18rem);
-  top: 55%;
-  right: -4%;
-  left: auto;
-  translate: 0 -50%;
-  color: color-mix(in srgb, var(--accent) 6%, transparent);
-}
-
 .preloader-nihon-panel {
   position: relative;
   display: flex;
@@ -545,15 +534,10 @@ a:hover > .wiggle-on-hover {
   letter-spacing: 0.15em;
 }
 
-/* Keep the sun and kanji out of the panel's way on wide screens. */
 @media (min-width: 640px) {
   .preloader-nihon .nihon-sun {
     width: 26rem;
     height: 26rem;
-  }
-
-  .preloader-nihon .nihon-kanji-bg {
-    right: 6%;
   }
 }
 
@@ -1703,26 +1687,14 @@ a:hover > .wiggle-on-hover {
   );
 }
 
-/* Large faint kanji centred behind the content, for depth. */
-.nihon-kanji-bg {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  translate: -50% -50%;
-  font-size: clamp(16rem, 40vw, 34rem);
-  font-weight: 900;
-  line-height: 1;
-  color: color-mix(in srgb, var(--accent) 5%, transparent);
-  user-select: none;
-}
-
-/* Seigaiha (wave scale) band along the bottom edge. */
+/* Seigaiha (wave scale) band along the bottom edge. The arcs sit flush with
+   the bottom of the viewport. */
 .nihon-seigaiha {
   position: absolute;
   left: -10%;
   right: -10%;
-  bottom: -4rem;
-  height: 12rem;
+  bottom: 0;
+  height: 7rem;
   opacity: 0.5;
   background-image: radial-gradient(
     circle at 50% 100%,
@@ -1911,15 +1883,15 @@ a:hover > .wiggle-on-hover {
   border-radius: 0.3rem;
 }
 
-/* Vertical kanji watermark, like anime but with the washi wash. */
+/* Vertical kanji watermark, like anime but with the washi wash. No max-height
+   or overflow clamp — a height cap plus wide letter-spacing clips the column
+   on desktop, exactly like the anime one which has neither. */
 .nihon-kanji {
   writing-mode: vertical-rl;
   font-size: clamp(2.5rem, 4vw, 4.5rem);
   line-height: 1;
   letter-spacing: 0.9em;
   color: color-mix(in srgb, var(--accent) 14%, transparent);
-  max-height: 18rem;
-  overflow: hidden;
 }
 
 /* Washi panel: a card with a thin ink frame and a vermilion accent tick at
