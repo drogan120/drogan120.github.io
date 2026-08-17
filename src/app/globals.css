@@ -2353,7 +2353,7 @@ a:hover > .wiggle-on-hover {
   height: 14rem;
   border-radius: 9999px;
   background-image: radial-gradient(
-      circle 7.2rem at var(--nusantara-moon-shadow-x) 50%,
+      circle 7.2rem,
       var(--background) 0 100%
     ),
     radial-gradient(
@@ -2433,46 +2433,52 @@ a:hover > .wiggle-on-hover {
 
 /* The moon's own gradient animates through the phases: a shadow disc (sky
    color) sweeps across the moon's surface, so it waxes to a crescent and
-   wanes into a blood-moon eclipse — clipped to the moon circle by the
-   border-radius, no separate object sliding in from outside. */
-@property --nusantara-moon-shadow-x {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: -14rem;
-}
-
+   wanes into a total eclipse — clipped to the moon circle by the
+   border-radius, no separate object sliding in from outside. The shadow is
+   the first background layer; the craters and the moon disc stay fixed at
+   the box centre (0 0), so only the shadow's position animates. */
 @keyframes nusantara-moon-phase {
   0%,
   16% {
-    --nusantara-moon-shadow-x: -8rem;
+    background-position: -14rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   32% {
-    --nusantara-moon-shadow-x: 0rem;
+    background-position: -10rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   46% {
-    --nusantara-moon-shadow-x: 4rem;
+    background-position: -7rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   56% {
-    --nusantara-moon-shadow-x: 6rem;
+    background-position: -5rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   62% {
-    --nusantara-moon-shadow-x: 6.5rem;
+    background-position: -3.5rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   66% {
-    --nusantara-moon-shadow-x: 7rem;
+    background-position: -1.5rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   68%,
   78% {
-    --nusantara-moon-shadow-x: 7rem;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0;
   }
   84% {
-    --nusantara-moon-shadow-x: 8rem;
+    background-position: 2rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   92% {
-    --nusantara-moon-shadow-x: 12rem;
+    background-position: 7rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
   100% {
-    --nusantara-moon-shadow-x: 22rem;
+    background-position: 14rem 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0;
   }
 }
 
