@@ -2358,18 +2358,52 @@ a:hover > .wiggle-on-hover {
     color-mix(in srgb, var(--accent) 14%, transparent) 55%,
     transparent 72%
   );
-  animation: nusantara-moon-glow 7s ease-in-out infinite;
+  animation: nusantara-moon-glow 12s ease-in-out infinite;
+}
+
+/* A shadow disc sweeping across the moon turns it into a crescent and then a
+   full eclipse, cycling like the real phases: full → waning → eclipse →
+   waxing → full. */
+.nusantara-moon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--background);
+  animation: nusantara-moon-eclipse 12s ease-in-out infinite;
+}
+
+@keyframes nusantara-moon-eclipse {
+  0%,
+  15% {
+    transform: translateX(-170%);
+  }
+  40% {
+    transform: translateX(-45%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  60% {
+    transform: translateX(45%);
+  }
+  85%,
+  100% {
+    transform: translateX(170%);
+  }
 }
 
 @keyframes nusantara-moon-glow {
   0%,
-  100% {
-    filter: brightness(0.85);
-    transform: scale(0.97);
+  15% {
+    filter: brightness(1.1);
   }
   50% {
-    filter: brightness(1.15);
-    transform: scale(1.03);
+    filter: brightness(0.7);
+  }
+  85%,
+  100% {
+    filter: brightness(1.1);
   }
 }
 
@@ -2409,7 +2443,8 @@ a:hover > .wiggle-on-hover {
 }
 
 /* Clouds drifting slowly across the stage, left to right and back, like
-   actual clouds. */
+   actual clouds. Kept below the moon scene (top right) so they never pile
+   up on it. */
 .nusantara-drift-cloud {
   position: absolute;
   color: color-mix(in srgb, var(--accent) 13%, transparent);
@@ -2417,7 +2452,7 @@ a:hover > .wiggle-on-hover {
 }
 
 .nusantara-drift-cloud-1 {
-  top: 6%;
+  top: 38%;
   left: -12rem;
   width: 16rem;
   height: 9.6rem;
@@ -2426,7 +2461,7 @@ a:hover > .wiggle-on-hover {
 }
 
 .nusantara-drift-cloud-2 {
-  top: 30%;
+  top: 56%;
   left: -10rem;
   width: 22rem;
   height: 13.2rem;
@@ -2435,7 +2470,7 @@ a:hover > .wiggle-on-hover {
 }
 
 .nusantara-drift-cloud-3 {
-  top: 52%;
+  top: 74%;
   left: -14rem;
   width: 14rem;
   height: 8.4rem;
@@ -2449,6 +2484,21 @@ a:hover > .wiggle-on-hover {
   }
   100% {
     transform: translateX(130vw);
+  }
+}
+
+/* Kawung ornament watermark in section headings, slowly rotating like a
+   batik stamp. */
+.nusantara-ornament {
+  animation: nusantara-ornament-spin 40s linear infinite;
+}
+
+@keyframes nusantara-ornament-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -2471,10 +2521,11 @@ a:hover > .wiggle-on-hover {
   height: 0.75rem;
 }
 
-/* Sawut underline: a short diagonal-dash accent under titles. */
+/* Sawut underline: a short diagonal-dash accent under titles. Kept narrow so
+   it never reaches the rotating kawung ornament on the right. */
 .nusantara-sawut {
   height: 0.35rem;
-  max-width: 20rem;
+  max-width: 12rem;
   border-radius: 999px;
   background-image: repeating-linear-gradient(
     135deg,
@@ -2541,6 +2592,7 @@ a:hover > .wiggle-on-hover {
 
 @media (prefers-reduced-motion: reduce) {
   .nusantara-drift-cloud,
+  .nusantara-ornament,
   .nusantara-moon {
     animation: none;
   }
