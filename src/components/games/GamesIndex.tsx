@@ -50,6 +50,24 @@ const GAMES = [
       "A 60-second flashcard sprint — how many Japanese words can you type in hiragana before the clock runs out?",
     chips: ["Timed", "Reaction", "Vocabulary"],
   },
+  {
+    href: "/games/kanji-reading",
+    tag: "漢字リーディング",
+    title: "Kanji Reading",
+    icon: "📖",
+    description:
+      "See the kanji word and type its hiragana reading via romaji. Drill kanji readings you can actually use, from JLPT N5 to N1.",
+    chips: ["Kanji", "Readings", "Vocabulary"],
+  },
+  {
+    href: "/games/kanji-meaning",
+    tag: "漢字マッチ",
+    title: "Kanji Meaning",
+    icon: "🗾",
+    description:
+      "See the kanji word and pick the correct English meaning from four choices. Build real kanji vocabulary level by level.",
+    chips: ["Kanji", "Multiple choice", "Vocabulary"],
+  },
 ] as const;
 
 export default function GamesIndex() {
