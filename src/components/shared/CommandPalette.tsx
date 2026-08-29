@@ -120,6 +120,14 @@ function Palette({ onClose }: { onClose: () => void }) {
         keywords: "blog posts artikel tulisan",
         run: run(() => router.push("/blog")),
       },
+      {
+        id: "nav-games",
+        group: g.navigate,
+        label: "Games",
+        icon: "🎮",
+        keywords: "games game japanese japan kana wordle practice bermain",
+        run: run(() => router.push("/games")),
+      },
       ...SECTIONS.map((s) => ({
         id: `nav-${s.key}`,
         group: g.navigate,
