@@ -19,12 +19,31 @@ function pickRecallLength(): number {
 
 type Stage = "playing" | "revealed";
 
+type Stats = { score: number; streak: number; best: number };
+
+function loadStats(): Stats {
+  const empty: Stats = { score: 0, streak: 0, best: 0 };
+  if (typeof window === "undefined") return empty;
+  try {
+    const saved = localStorage.getItem("kanaRecall.stats");
+    if (!saved) return empty;
+    const s = JSON.parse(saved);
+    return {
+      score: typeof s.score === "number" ? s.score : 0,
+      streak: typeof s.streak === "number" ? s.streak : 0,
+      best: typeof s.best === "number" ? s.best : 0,
+    };
+  } catch {
+    return empty;
+  }
+}
+
 export default function KanaRecallGame() {
   const { t } = useI18n();
   const [level, setLevel] = useState<number>(5);
-  const [score, setScore] = useState(0);
-  const [streak, setStreak] = useState(0);
-  const [best, setBest] = useState(0);
+  const [score, setScore] = useState<number>(() => loadStats().score);
+  const [streak, setStreak] = useState<number>(() => loadStats().streak);
+  const [best, setBest] = useState<number>(() => loadStats().best);
   const [word, setWord] = useState<KanaWord | null>(null);
   const [input, setInput] = useState("");
   const [stage, setStage] = useState<Stage>("playing");
@@ -94,6 +113,18 @@ export default function KanaRecallGame() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [stage, next]);
+
+  useEffect(() => {
+    if (!mounted) return;
+    try {
+      localStorage.setItem(
+        "kanaRecall.stats",
+        JSON.stringify({ score, streak, best })
+      );
+    } catch {
+      // ignore quota / private-mode errors
+    }
+  }, [score, streak, best, mounted]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
