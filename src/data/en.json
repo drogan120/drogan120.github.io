@@ -211,6 +211,19 @@
           "icon": "🛠️",
           "repo": "https://github.com/drogan120",
           "demo": null
+        },
+        {
+          "title": "Japanese Practice Games",
+          "description": "A suite of practice games for learning Japanese — from kana and spelling to JLPT-level kanji. Type romaji, get hiragana, learn as you play.",
+          "tags": [
+            "Next.js",
+            "TypeScript",
+            "Japanese",
+            "i18n"
+          ],
+          "icon": "🈁",
+          "repo": "https://github.com/drogan120",
+          "demo": "https://drogan120.github.io/games"
         }
       ]
     },

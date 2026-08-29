@@ -112,9 +112,11 @@ const en = {
       typeFor: "Type the Japanese for",
       start: "Start",
       timeLeft: "s left",
+      seconds: "seconds",
       correct: "correct",
       best: "best",
       nextWord: "Type and press Enter",
+      answerWas: "Answer was:",
       timeUp: "⏱ Time's up!",
       score: "words",
       playAgain: "Play again",
@@ -158,6 +160,133 @@ const en = {
       empty: "No kanji available for that level.",
       aria: "Choose the correct meaning of the kanji word",
     },
+    kanjiSelect: {
+      title: "漢字セレクト Kanji Select",
+      tagline:
+        "See the hiragana reading and pick the kanji word it belongs to. Train the reading→kanji direction — the reverse of Kanji Meaning.",
+      jlptLevel: "JLPT level",
+      typeFor: "Pick the kanji for",
+      pickOption: "Select the correct kanji",
+      correct: "correct",
+      streak: "streak",
+      best: "best",
+      nextWord: "Next word",
+      won: "🎉 Correct!",
+      lost: "Answer:",
+      loading: "Loading…",
+      empty: "No kanji available for that level.",
+      aria: "Choose the correct kanji word for the reading",
+    },
+    review: {
+      title: "復習 Review",
+      tagline:
+        "A spaced-repetition deck of the words you've missed in the other games. Review them until you get them right, every time.",
+      correct: "correct",
+      streak: "streak",
+      best: "best",
+      nextWord: "Next word",
+      typeFor: "What is this word?",
+      typeHint: "type romaji…",
+      enter: "Enter",
+      won: "🎉 Correct!",
+      lost: "Answer:",
+      completed: "🎉 Deck cleared!",
+      completedText: "You answered every reviewed word correctly. Nice work.",
+      empty: "No words to review yet. Miss some in the other games and they'll show up here.",
+      emptyCta: "Play a game",
+      loading: "Loading…",
+      aria: "Type the Japanese word in romaji",
+      word: "word",
+      of: "of",
+    },
+  },
+  gamesIndex: {
+    heading: "Games",
+    tagline:
+      "Playful ways to practice Japanese — from hiragana to JLPT-level vocabulary. Type romaji, get hiragana, learn as you play.",
+    play: "Play →",
+    comingSoonLabel: "Coming soon",
+    comingSoonText: "Katakana drills, kanji reading speed, and more are on the way.",
+    cards: [
+      {
+        tag: "かなワードル",
+        title: "Kana Wordle",
+        description:
+          "Guess the hidden Japanese word, kana by kana, in six tries. Type romaji and watch it become hiragana. Pick your JLPT level and word length.",
+        chips: ["Vocabulary", "Hiragana", "JLPT N5–N1"],
+      },
+      {
+        tag: "かなリコール",
+        title: "Kana Recall",
+        description:
+          "See the English meaning, type the Japanese word in hiragana. A fast flashcard-style drill to build reading speed and vocabulary.",
+        chips: ["Reaction", "Vocabulary", "Spelling"],
+      },
+      {
+        tag: "かなマッチ",
+        title: "Meaning Match",
+        description:
+          "See the Japanese word in kana and pick the correct English meaning from four choices. A snappy multiple-choice vocabulary quiz.",
+        chips: ["Multiple choice", "Vocabulary"],
+      },
+      {
+        tag: "かなビルダー",
+        title: "Word Builder",
+        description:
+          "Read the meaning, then tap the scattered kana tiles in the right order to build the word. Great for spelling practice.",
+        chips: ["Spelling", "Kana tiles"],
+      },
+      {
+        tag: "スピードリコール",
+        title: "Speed Recall",
+        description:
+          "A 60-second flashcard sprint — how many Japanese words can you type in hiragana before the clock runs out?",
+        chips: ["Timed", "Reaction", "Vocabulary"],
+      },
+      {
+        tag: "漢字リーディング",
+        title: "Kanji Reading",
+        description:
+          "See the kanji word and type its hiragana reading via romaji. Drill kanji readings you can actually use, from JLPT N5 to N1.",
+        chips: ["Kanji", "Readings", "Vocabulary"],
+      },
+      {
+        tag: "漢字マッチ",
+        title: "Kanji Meaning",
+        description:
+          "See the kanji word and pick the correct English meaning from four choices. Build real kanji vocabulary level by level.",
+        chips: ["Kanji", "Multiple choice", "Vocabulary"],
+      },
+      {
+        tag: "漢字セレクト",
+        title: "Kanji Select",
+        description:
+          "See a hiragana reading and pick the kanji word it belongs to. Master the reading→kanji direction, level by level.",
+        chips: ["Kanji", "Multiple choice", "Readings"],
+      },
+      {
+        tag: "復習",
+        title: "Review",
+        description:
+          "A spaced-repetition deck of the words you've missed. Review them until you get them right, every time.",
+        chips: ["Spaced repetition", "Vocabulary"],
+      },
+    ],
+  },
+  leaderboard: {
+    title: "Leaderboard",
+    empty: "No scores yet. Be the first!",
+    namePlaceholder: "Your name",
+    save: "Save",
+    header: "Top 5",
+    loading: "Loading…",
+    unavailable: "Leaderboard unavailable right now.",
+    autoSaveHint: "Score well and it's submitted automatically.",
+    runEnded: "Your run ended with {score} — enter a name to save it.",
+    enterNameToSave: "Enter a name to save it.",
+    submitted: "Submitted {score}. Nice!",
+    metricScore: "Score",
+    metricStreak: "Best streak",
   },
   default: {
     nav: {

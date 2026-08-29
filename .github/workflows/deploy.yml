@@ -33,6 +33,8 @@ jobs:
 
       - name: Build
         run: pnpm deploy
+        env:
+          NEXT_PUBLIC_LEADERBOARD_URL: ${{ secrets.NEXT_PUBLIC_LEADERBOARD_URL }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

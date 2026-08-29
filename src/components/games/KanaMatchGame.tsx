@@ -10,11 +10,24 @@ import {
   drawWordForLevel,
   type KanaWord,
 } from "@/data/kanaWords";
+import { recordMiss } from "@/lib/reviewStore";
+import { GameSlug, type GameLevel } from "@/lib/games";
+import {
+  parseLevelBests,
+  withLevelBest,
+  type LevelBests,
+} from "@/lib/gameStats";
+import LeaderboardPanel from "./LeaderboardPanel";
 
-type Stats = { score: number; streak: number; best: number };
+type Stats = {
+  score: number;
+  streak: number;
+  best: number;
+  bestByLevel: LevelBests;
+};
 
 function loadStats(): Stats {
-  const empty: Stats = { score: 0, streak: 0, best: 0 };
+  const empty: Stats = { score: 0, streak: 0, best: 0, bestByLevel: {} };
   if (typeof window === "undefined") return empty;
   try {
     const saved = localStorage.getItem("kanaMatch.stats");
@@ -24,6 +37,7 @@ function loadStats(): Stats {
       score: typeof s.score === "number" ? s.score : 0,
       streak: typeof s.streak === "number" ? s.streak : 0,
       best: typeof s.best === "number" ? s.best : 0,
+      bestByLevel: parseLevelBests(s.bestByLevel),
     };
   } catch {
     return empty;
@@ -49,11 +63,13 @@ function buildOptions(target: KanaWord): string[] {
 }
 
 export default function KanaMatchGame() {
-  const { t } = useI18n();
-  const [level, setLevel] = useState<number>(5);
+  const { t } = useI18n();  const [level, setLevel] = useState<number>(5);
   const [score, setScore] = useState<number>(() => loadStats().score);
   const [streak, setStreak] = useState<number>(() => loadStats().streak);
   const [best, setBest] = useState<number>(() => loadStats().best);
+  const [bestByLevel, setBestByLevel] = useState<LevelBests>(
+    () => loadStats().bestByLevel
+  );
   const [word, setWord] = useState<KanaWord | null>(null);
   const [options, setOptions] = useState<string[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
@@ -84,14 +100,22 @@ export default function KanaMatchGame() {
       if (!word || picked) return;
       setPicked(opt);
       if (opt === word.meaning) {
+        const runLevel = word.level as GameLevel;
         setScore((s) => s + 1);
         setStreak((s) => {
           const ns = s + 1;
           setBest((b) => Math.max(b, ns));
+          setBestByLevel((bests) => withLevelBest(bests, runLevel, ns));
           return ns;
         });
       } else {
         setStreak(0);
+        recordMiss({
+          kind: "kana",
+          kana: word.kana,
+          meaning: word.meaning,
+          level: word.level,
+        });
       }
     },
     [word, picked]
@@ -106,12 +130,12 @@ export default function KanaMatchGame() {
     try {
       localStorage.setItem(
         "kanaMatch.stats",
-        JSON.stringify({ score, streak, best })
+        JSON.stringify({ score, streak, best, bestByLevel })
       );
     } catch {
       /* ignore */
     }
-  }, [score, streak, best, mounted]);
+  }, [score, streak, best, bestByLevel, mounted]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -249,6 +273,13 @@ export default function KanaMatchGame() {
           </p>
         )}
       </div>
+      <LeaderboardPanel
+        key={level}
+        game={GameSlug.Match}
+        level={level as GameLevel}
+        mode="streak"
+        streak={streak}
+      />
     </main>
   );
 }

@@ -4,71 +4,17 @@ import Link from "next/link";
 import { useI18n } from "@/i18n";
 import SettingsBar from "@/components/shared/SettingsBar";
 
-const GAMES = [
-  {
-    href: "/games/wordle",
-    tag: "かなワードル",
-    title: "Kana Wordle",
-    icon: "🧩",
-    description:
-      "Guess the hidden Japanese word, kana by kana, in six tries. Type romaji and watch it become hiragana. Pick your JLPT level and word length.",
-    chips: ["Vocabulary", "Hiragana", "JLPT N5–N1"],
-  },
-  {
-    href: "/games/recall",
-    tag: "かなリコール",
-    title: "Kana Recall",
-    icon: "⚡",
-    description:
-      "See the English meaning, type the Japanese word in hiragana. A fast flashcard-style drill to build reading speed and vocabulary.",
-    chips: ["Reaction", "Vocabulary", "Spelling"],
-  },
-  {
-    href: "/games/match",
-    tag: "かなマッチ",
-    title: "Meaning Match",
-    icon: "🎯",
-    description:
-      "See the Japanese word in kana and pick the correct English meaning from four choices. A snappy multiple-choice vocabulary quiz.",
-    chips: ["Multiple choice", "Vocabulary"],
-  },
-  {
-    href: "/games/builder",
-    tag: "かなビルダー",
-    title: "Word Builder",
-    icon: "🧱",
-    description:
-      "Read the meaning, then tap the scattered kana tiles in the right order to build the word. Great for spelling practice.",
-    chips: ["Spelling", "Kana tiles"],
-  },
-  {
-    href: "/games/speed",
-    tag: "スピードリコール",
-    title: "Speed Recall",
-    icon: "⏱️",
-    description:
-      "A 60-second flashcard sprint — how many Japanese words can you type in hiragana before the clock runs out?",
-    chips: ["Timed", "Reaction", "Vocabulary"],
-  },
-  {
-    href: "/games/kanji-reading",
-    tag: "漢字リーディング",
-    title: "Kanji Reading",
-    icon: "📖",
-    description:
-      "See the kanji word and type its hiragana reading via romaji. Drill kanji readings you can actually use, from JLPT N5 to N1.",
-    chips: ["Kanji", "Readings", "Vocabulary"],
-  },
-  {
-    href: "/games/kanji-meaning",
-    tag: "漢字マッチ",
-    title: "Kanji Meaning",
-    icon: "🗾",
-    description:
-      "See the kanji word and pick the correct English meaning from four choices. Build real kanji vocabulary level by level.",
-    chips: ["Kanji", "Multiple choice", "Vocabulary"],
-  },
-] as const;
+const GAME_LINKS: Record<string, string> = {
+  "かなワードル": "/games/wordle",
+  "かなリコール": "/games/recall",
+  "かなマッチ": "/games/match",
+  "かなビルダー": "/games/builder",
+  "スピードリコール": "/games/speed",
+  "漢字リーディング": "/games/kanji-reading",
+  "漢字マッチ": "/games/kanji-meaning",
+  "漢字セレクト": "/games/kanji-select",
+  "復習": "/games/review",
+};
 
 export default function GamesIndex() {
   const { t } = useI18n();
@@ -84,38 +30,30 @@ export default function GamesIndex() {
             ← {t.default.nav.about}
           </Link>
           <h1 className="mt-4 text-3xl font-bold md:text-4xl">
-            <span className="text-accent">ゲーム</span> Games
+            <span className="text-accent">ゲーム</span> {t.gamesIndex.heading}
           </h1>
-          <p className="mt-3 max-w-xl text-muted">
-            Playful ways to practice Japanese — from hiragana to JLPT-level
-            vocabulary. Type romaji, get hiragana, learn as you play.
-          </p>
+          <p className="mt-3 max-w-xl text-muted">{t.gamesIndex.tagline}</p>
         </div>
         <SettingsBar />
       </div>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        {GAMES.map((game, i) => (
+        {t.gamesIndex.cards.map((card, i) => (
           <Link
-            key={game.href}
-            href={game.href}
+            key={card.tag}
+            href={GAME_LINKS[card.tag] ?? "/games"}
             className="gallery-item group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
             style={{ "--i": i } as React.CSSProperties}
           >
             <span className="font-mono text-xs tracking-widest text-accent">
-              {game.tag}
+              {card.tag}
             </span>
-            <div className="mt-2 flex items-center gap-3">
-              <span aria-hidden className="text-3xl">
-                {game.icon}
-              </span>
-              <h2 className="text-xl font-bold">{game.title}</h2>
-            </div>
+            <h2 className="mt-2 text-xl font-bold">{card.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              {game.description}
+              {card.description}
             </p>
             <div className="mt-4 flex flex-wrap gap-1.5">
-              {game.chips.map((chip) => (
+              {card.chips.map((chip) => (
                 <span
                   key={chip}
                   className="rounded-full border border-border px-2.5 py-0.5 font-mono text-[10px] text-muted"
@@ -125,7 +63,7 @@ export default function GamesIndex() {
               ))}
             </div>
             <span className="mt-4 inline-block font-mono text-sm text-accent">
-              Play →
+              {t.gamesIndex.play}
             </span>
           </Link>
         ))}
@@ -133,11 +71,9 @@ export default function GamesIndex() {
 
       <div className="mt-10 rounded-2xl border border-dashed border-border p-5">
         <p className="font-mono text-xs uppercase tracking-widest text-muted">
-          Coming soon
+          {t.gamesIndex.comingSoonLabel}
         </p>
-        <p className="mt-1 text-sm text-muted">
-          Katakana drills, kanji reading speed, and more are on the way.
-        </p>
+        <p className="mt-1 text-sm text-muted">{t.gamesIndex.comingSoonText}</p>
       </div>
     </main>
   );

@@ -211,6 +211,19 @@
           "icon": "🛠️",
           "repo": "https://github.com/drogan120",
           "demo": null
+        },
+        {
+          "title": "Game Latihan Bahasa Jepang",
+          "description": "Sekumpulan game latihan untuk belajar bahasa Jepang — dari kana dan ejaan hingga kanji tingkat JLPT. Ketik romaji, dapatkan hiragana, belajar sambil bermain.",
+          "tags": [
+            "Next.js",
+            "TypeScript",
+            "Jepang",
+            "i18n"
+          ],
+          "icon": "🈁",
+          "repo": "https://github.com/drogan120",
+          "demo": "https://drogan120.github.io/games"
         }
       ]
     },

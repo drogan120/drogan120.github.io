@@ -10,6 +10,14 @@ import {
   type KanaWord,
 } from "@/data/kanaWords";
 import { romajiToKana, splitKana } from "@/lib/romaji";
+import { recordMiss } from "@/lib/reviewStore";
+import { GameSlug, type GameLevel } from "@/lib/games";
+import {
+  parseLevelBests,
+  withLevelBest,
+  type LevelBests,
+} from "@/lib/gameStats";
+import LeaderboardPanel from "./LeaderboardPanel";
 
 const RECALL_LENGTHS: readonly number[] = [4, 5];
 
@@ -19,10 +27,15 @@ function pickRecallLength(): number {
 
 type Stage = "playing" | "revealed";
 
-type Stats = { score: number; streak: number; best: number };
+type Stats = {
+  score: number;
+  streak: number;
+  best: number;
+  bestByLevel: LevelBests;
+};
 
 function loadStats(): Stats {
-  const empty: Stats = { score: 0, streak: 0, best: 0 };
+  const empty: Stats = { score: 0, streak: 0, best: 0, bestByLevel: {} };
   if (typeof window === "undefined") return empty;
   try {
     const saved = localStorage.getItem("kanaRecall.stats");
@@ -32,6 +45,7 @@ function loadStats(): Stats {
       score: typeof s.score === "number" ? s.score : 0,
       streak: typeof s.streak === "number" ? s.streak : 0,
       best: typeof s.best === "number" ? s.best : 0,
+      bestByLevel: parseLevelBests(s.bestByLevel),
     };
   } catch {
     return empty;
@@ -44,6 +58,9 @@ export default function KanaRecallGame() {
   const [score, setScore] = useState<number>(() => loadStats().score);
   const [streak, setStreak] = useState<number>(() => loadStats().streak);
   const [best, setBest] = useState<number>(() => loadStats().best);
+  const [bestByLevel, setBestByLevel] = useState<LevelBests>(
+    () => loadStats().bestByLevel
+  );
   const [word, setWord] = useState<KanaWord | null>(null);
   const [input, setInput] = useState("");
   const [stage, setStage] = useState<Stage>("playing");
@@ -74,14 +91,22 @@ export default function KanaRecallGame() {
     setCorrect(isCorrect);
     setStage("revealed");
     if (isCorrect) {
+      const runLevel = word.level as GameLevel;
       setScore((s) => s + 1);
       setStreak((s) => {
         const ns = s + 1;
         setBest((b) => Math.max(b, ns));
+        setBestByLevel((bests) => withLevelBest(bests, runLevel, ns));
         return ns;
       });
     } else {
       setStreak(0);
+      recordMiss({
+        kind: "kana",
+        kana: word.kana,
+        meaning: word.meaning,
+        level: word.level,
+      });
     }
   }, [word, stage, currentKana]);
 
@@ -119,12 +144,12 @@ export default function KanaRecallGame() {
     try {
       localStorage.setItem(
         "kanaRecall.stats",
-        JSON.stringify({ score, streak, best })
+        JSON.stringify({ score, streak, best, bestByLevel })
       );
     } catch {
       // ignore quota / private-mode errors
     }
-  }, [score, streak, best, mounted]);
+  }, [score, streak, best, bestByLevel, mounted]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -287,6 +312,13 @@ export default function KanaRecallGame() {
           </p>
         )}
       </div>
+      <LeaderboardPanel
+        key={level}
+        game={GameSlug.Recall}
+        level={level as GameLevel}
+        mode="streak"
+        streak={streak}
+      />
     </main>
   );
 }

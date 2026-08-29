@@ -113,9 +113,11 @@ const id: Dictionary = {
       typeFor: "Ketik bahasa Jepang untuk",
       start: "Mulai",
       timeLeft: "dt tersisa",
+      seconds: "detik",
       correct: "benar",
       best: "terbaik",
       nextWord: "Ketik dan tekan Enter",
+      answerWas: "Jawabannya:",
       timeUp: "⏱ Waktu habis!",
       score: "kata",
       playAgain: "Main lagi",
@@ -159,6 +161,133 @@ const id: Dictionary = {
       empty: "Tidak ada kanji untuk tingkat itu.",
       aria: "Pilih arti yang benar dari kata kanji",
     },
+    kanjiSelect: {
+      title: "漢字セレクト Pilih Kanji",
+      tagline:
+        "Lihat cara baca hiragananya, lalu pilih kata kanji yang tepat. Latih arah membaca ke kanji — kebalikan dari Arti Kanji.",
+      jlptLevel: "Tingkat JLPT",
+      typeFor: "Pilih kanji untuk",
+      pickOption: "Pilih kanji yang benar",
+      correct: "benar",
+      streak: "rangkai",
+      best: "terbaik",
+      nextWord: "Kata berikutnya",
+      won: "🎉 Benar!",
+      lost: "Jawaban:",
+      loading: "Memuat…",
+      empty: "Tidak ada kanji untuk tingkat itu.",
+      aria: "Pilih kata kanji yang benar untuk cara baca ini",
+    },
+    review: {
+      title: "復習 Tinjau",
+      tagline:
+        "Satu set kartu berulang berjarak berisi kata-kata yang pernah kamu salah di game lain. Tinjau sampai kamu selalu benar.",
+      correct: "benar",
+      streak: "rangkai",
+      best: "terbaik",
+      nextWord: "Kata berikutnya",
+      typeFor: "Apa kata ini?",
+      typeHint: "ketik romaji…",
+      enter: "Enter",
+      won: "🎉 Benar!",
+      lost: "Jawaban:",
+      completed: "🎉 Set selesai!",
+      completedText: "Kamu menjawab semua kata yang ditinjau dengan benar. Kerja bagus.",
+      empty: "Belum ada kata untuk ditinjau. Salahkan beberapa di game lain dan itu akan muncul di sini.",
+      emptyCta: "Mainkan game",
+      loading: "Memuat…",
+      aria: "Ketik kata Jepang dalam romaji",
+      word: "kata",
+      of: "dari",
+    },
+  },
+  gamesIndex: {
+    heading: "Games",
+    tagline:
+      "Cara yang menyenangkan untuk berlatih bahasa Jepang — dari hiragana hingga kosakata tingkat JLPT. Ketik romaji, dapatkan hiragana, belajar sambil bermain.",
+    play: "Main →",
+    comingSoonLabel: "Segera hadir",
+    comingSoonText: "Latihan katakana, kecepatan baca kanji, dan lainnya sedang dalam proses.",
+    cards: [
+      {
+        tag: "かなワードル",
+        title: "Kana Wordle",
+        description:
+          "Tebak kata Jepang tersembunyi, kana demi kana, dalam enam percobaan. Ketik romaji dan lihat jadi hiragana. Pilih tingkat JLPT dan panjang kata.",
+        chips: ["Kosakata", "Hiragana", "JLPT N5–N1"],
+      },
+      {
+        tag: "かなリコール",
+        title: "Kana Recall",
+        description:
+          "Lihat arti bahasa Inggrisnya, ketik kata Jepang dalam hiragana. Latihan kilat bergaya kartu untuk membangun kecepatan baca dan kosakata.",
+        chips: ["Reaksi", "Kosakata", "Ejaan"],
+      },
+      {
+        tag: "かなマッチ",
+        title: "Meaning Match",
+        description:
+          "Lihat kata Jepang dalam kana dan pilih arti bahasa Inggris yang benar dari empat pilihan. Kuis kosakata pilihan ganda yang cepat.",
+        chips: ["Pilihan ganda", "Kosakata"],
+      },
+      {
+        tag: "かなビルダー",
+        title: "Word Builder",
+        description:
+          "Baca artinya, lalu ketuk ubin kana yang tersebar dalam urutan yang benar untuk membentuk kata. Bagus untuk latihan ejaan.",
+        chips: ["Ejaan", "Ubin kana"],
+      },
+      {
+        tag: "スピードリコール",
+        title: "Speed Recall",
+        description:
+          "Sprint kartu kilat 60 detik — berapa banyak kata Jepang yang bisa kamu ketik dalam hiragana sebelum waktu habis?",
+        chips: ["Berdurasi", "Reaksi", "Kosakata"],
+      },
+      {
+        tag: "漢字リーディング",
+        title: "Kanji Reading",
+        description:
+          "Lihat kata kanji dan ketik cara baca hiragananya lewat romaji. Latih cara baca kanji yang benar-benar bisa kamu pakai, dari JLPT N5 ke N1.",
+        chips: ["Kanji", "Cara baca", "Kosakata"],
+      },
+      {
+        tag: "漢字マッチ",
+        title: "Kanji Meaning",
+        description:
+          "Lihat kata kanji dan pilih arti bahasa Inggris yang benar dari empat pilihan. Bangun kosakata kanji nyata level demi level.",
+        chips: ["Kanji", "Pilihan ganda", "Kosakata"],
+      },
+      {
+        tag: "漢字セレクト",
+        title: "Kanji Select",
+        description:
+          "Lihat cara baca hiragana dan pilih kata kanji yang tepat. Kuasai arah membaca ke kanji, level demi level.",
+        chips: ["Kanji", "Pilihan ganda", "Cara baca"],
+      },
+      {
+        tag: "復習",
+        title: "Review",
+        description:
+          "Satu set kartu berulang berjarak berisi kata-kata yang pernah kamu salah. Tinjau sampai kamu selalu benar.",
+        chips: ["Pengulangan berjarak", "Kosakata"],
+      },
+    ],
+  },
+  leaderboard: {
+    title: "Papan Peringkat",
+    empty: "Belum ada skor. Jadilah yang pertama!",
+    namePlaceholder: "Namamu",
+    save: "Simpan",
+    header: "Top 5",
+    loading: "Memuat…",
+    unavailable: "Papan peringkat sedang tidak tersedia.",
+    autoSaveHint: "Cetak skor bagus dan otomatis tersimpan.",
+    runEnded: "Jalurmu berakhir dengan {score} — masukkan nama untuk menyimpannya.",
+    enterNameToSave: "Masukkan nama untuk menyimpannya.",
+    submitted: "Tersimpan {score}. Mantap!",
+    metricScore: "Skor",
+    metricStreak: "Rekor beruntun",
   },
   default: {
     nav: {

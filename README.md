@@ -37,6 +37,19 @@ Ada 2 cara:
 
 2. **Manual** — Jalankan `pnpm deploy`, lalu upload isi folder `out/` ke branch `gh-pages`.
 
+## Leaderboard /games
+
+Setiap game punya papan peringkat top-5 (per level JLPT) yang disimpan di
+**Cloudflare Worker + KV** (folder `worker/`). Petunjuk deploy selengkapnya ada
+di `worker/README.md`.
+
+1. Deploy worker (`cd worker && pnpm install && npx wrangler kv namespace create LEADERBOARD`,
+   tempel id ke `wrangler.toml`, lalu `pnpm run deploy`) → dapatkan URL worker.
+2. Isi `NEXT_PUBLIC_LEADERBOARD_URL` di `.env.local` untuk lokal, dan set secret
+   dengan nama yang sama di *Settings → Secrets and variables → Actions* agar
+   dipakai build GitHub Actions.
+3. Kosongkan variabelnya untuk menonaktifkan leaderboard tanpa merusak build.
+
 ## Struktur
 
 ```

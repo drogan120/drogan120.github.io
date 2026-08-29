@@ -11,6 +11,13 @@ import {
   type KanaWord,
 } from "@/data/kanaWords";
 import { romajiToKana, splitKana } from "@/lib/romaji";
+import { GameSlug, type GameLevel } from "@/lib/games";
+import {
+  parseLevelBests,
+  withLevelBest,
+  type LevelBests,
+} from "@/lib/gameStats";
+import LeaderboardPanel from "./LeaderboardPanel";
 
 const MAX_GUESSES = 6;
 
@@ -38,10 +45,16 @@ function evaluate(guess: string[], answer: string[]): Status[] {
   return result;
 }
 
-type Stats = { score: number; streak: number; best: number; played: number };
+type Stats = {
+  score: number;
+  streak: number;
+  best: number;
+  played: number;
+  bestByLevel: LevelBests;
+};
 
 function loadStats(): Stats {
-  const empty: Stats = { score: 0, streak: 0, best: 0, played: 0 };
+  const empty: Stats = { score: 0, streak: 0, best: 0, played: 0, bestByLevel: {} };
   if (typeof window === "undefined") return empty;
   try {
     const saved = localStorage.getItem("kanaWordle.stats");
@@ -52,6 +65,7 @@ function loadStats(): Stats {
       streak: typeof s.streak === "number" ? s.streak : 0,
       best: typeof s.best === "number" ? s.best : 0,
       played: typeof s.played === "number" ? s.played : 0,
+      bestByLevel: parseLevelBests(s.bestByLevel),
     };
   } catch {
     return empty;
@@ -98,6 +112,9 @@ export default function KanaWordleGame() {
   const [score, setScore] = useState<number>(() => loadStats().score);
   const [streak, setStreak] = useState<number>(() => loadStats().streak);
   const [best, setBest] = useState<number>(() => loadStats().best);
+  const [bestByLevel, setBestByLevel] = useState<LevelBests>(
+    () => loadStats().bestByLevel
+  );
   const [played, setPlayed] = useState<number>(() => loadStats().played);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -131,12 +148,12 @@ export default function KanaWordleGame() {
     try {
       localStorage.setItem(
         "kanaWordle.stats",
-        JSON.stringify({ score, streak, best, played })
+        JSON.stringify({ score, streak, best, played, bestByLevel })
       );
     } catch {
       /* ignore */
     }
-  }, [mounted, score, streak, best, played]);
+  }, [mounted, score, streak, best, played, bestByLevel]);
 
   const handleConfig = useCallback(
     (newLevel: number, newLength: number) => {
@@ -174,10 +191,12 @@ export default function KanaWordleGame() {
 
     const isWin = result.every((s) => s === "correct");
     if (isWin) {
+      const runLevel = word.level as GameLevel;
       const earned = MAX_GUESSES - newGuesses.length + 1; // earlier guesses score more
       setScore((s) => s + earned);
       setStreak((s) => s + 1);
       setBest((b) => Math.max(b, streak + 1));
+      setBestByLevel((bests) => withLevelBest(bests, runLevel, streak + 1));
       setPlayed((p) => p + 1);
       setWon(true);
       setEnded(true);
@@ -491,6 +510,13 @@ export default function KanaWordleGame() {
       )}
         </>
       )}
+      <LeaderboardPanel
+        key={level}
+        game={GameSlug.Wordle}
+        level={level as GameLevel}
+        mode="streak"
+        streak={streak}
+      />
     </main>
   );
 }

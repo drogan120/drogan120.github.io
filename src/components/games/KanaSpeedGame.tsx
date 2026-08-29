@@ -10,9 +10,15 @@ import {
   type KanaWord,
 } from "@/data/kanaWords";
 import { romajiToKana } from "@/lib/romaji";
+import { recordMiss } from "@/lib/reviewStore";
+import { GameSlug, type GameLevel } from "@/lib/games";
+import LeaderboardPanel from "./LeaderboardPanel";
 
 const RECALL_LENGTHS: readonly number[] = [4, 5];
-const SECONDS = 60;
+const DURATION_PRESETS: readonly number[] = [15, 30, 60, 90, 120];
+const DEFAULT_SECONDS = 60;
+const CORRECT_FLASH_MS = 500;
+const WRONG_FLASH_MS = 1800;
 
 function pickLength(): number {
   return RECALL_LENGTHS[Math.floor(Math.random() * RECALL_LENGTHS.length)];
@@ -35,50 +41,67 @@ function loadStats(): Stats {
 
 type Phase = "idle" | "running" | "done";
 
+type Feedback = { word: KanaWord; correct: boolean } | null;
+
 export default function KanaSpeedGame() {
   const { t } = useI18n();
-  const [level, setLevel] = useState<number>(5);
+  const [level, setLevel] = useState<GameLevel>(5);
+  const [seconds, setSeconds] = useState<number>(DEFAULT_SECONDS);
   const [phase, setPhase] = useState<Phase>("idle");
-  const [timeLeft, setTimeLeft] = useState<number>(SECONDS);
+  const [timeLeft, setTimeLeft] = useState<number>(DEFAULT_SECONDS);
   const [score, setScore] = useState(0);
   const [best, setBest] = useState<number>(() => loadStats().best);
   const [word, setWord] = useState<KanaWord | null>(null);
   const [input, setInput] = useState("");
+  const [feedback, setFeedback] = useState<Feedback>(null);
   const [mounted, setMounted] = useState(false);
   const scoreRef = useRef(0);
   const endTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const currentKana = romajiToKana(input);
 
-  const startRound = useCallback((levelArg: number) => {
-    const nw = drawWord(levelArg, pickLength());
+  const startRound = useCallback((roundLevel: number) => {
+    const nw = drawWord(roundLevel, pickLength());
     setWord(nw);
     setInput("");
+    setFeedback(null);
+  }, []);
+
+  const clearTimers = useCallback(() => {
+    if (endTimerRef.current) clearTimeout(endTimerRef.current);
+    if (advanceTimerRef.current) clearTimeout(advanceTimerRef.current);
   }, []);
 
   const changeLevel = useCallback(
-    (l: number) => {
+    (l: GameLevel) => {
       setLevel(l);
       if (phase === "running") startRound(l);
     },
     [phase, startRound]
   );
 
+  const changeDuration = useCallback((s: number) => {
+    setSeconds(s);
+    if (phase !== "running") setTimeLeft(s);
+  }, [phase]);
+
   const begin = useCallback(
     (levelArg: number) => {
-      if (endTimerRef.current) clearTimeout(endTimerRef.current);
+      clearTimers();
       scoreRef.current = 0;
       setScore(0);
-      setTimeLeft(SECONDS);
+      setTimeLeft(seconds);
       setPhase("running");
       startRound(levelArg);
       endTimerRef.current = setTimeout(() => {
         setTimeLeft(0);
         setPhase("done");
+        setFeedback(null);
         setBest((b) => Math.max(b, scoreRef.current));
-      }, SECONDS * 1000);
+      }, seconds * 1000);
     },
-    [startRound]
+    [clearTimers, seconds, startRound]
   );
 
   const restart = useCallback(() => {
@@ -86,13 +109,24 @@ export default function KanaSpeedGame() {
   }, [begin, level]);
 
   const submit = useCallback(() => {
-    if (phase !== "running" || !word) return;
-    if (currentKana === word.kana) {
+    if (phase !== "running" || !word || feedback) return;
+    const isCorrect = currentKana === word.kana;
+    if (isCorrect) {
       scoreRef.current += 1;
       setScore(scoreRef.current);
+    } else {
+      recordMiss({
+        kind: "kana",
+        kana: word.kana,
+        meaning: word.meaning,
+        level: word.level,
+      });
     }
-    startRound(level);
-  }, [phase, word, currentKana, startRound, level]);
+    setFeedback({ word, correct: isCorrect });
+    advanceTimerRef.current = setTimeout(() => {
+      startRound(level);
+    }, isCorrect ? CORRECT_FLASH_MS : WRONG_FLASH_MS);
+  }, [phase, word, feedback, currentKana, startRound, level]);
 
   useEffect(() => {
     if (!mounted) return;
@@ -112,10 +146,8 @@ export default function KanaSpeedGame() {
   }, [phase]);
 
   useEffect(() => {
-    return () => {
-      if (endTimerRef.current) clearTimeout(endTimerRef.current);
-    };
-  }, []);
+    return () => clearTimers();
+  }, [clearTimers]);
 
   useEffect(() => {
     if (phase !== "running") return;
@@ -172,6 +204,27 @@ export default function KanaSpeedGame() {
             ))}
           </div>
         </div>
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-3">
+          <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
+            {t.games.speedRecall.seconds}
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {DURATION_PRESETS.map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => changeDuration(s)}
+                className={`pop-on-click rounded-lg px-3 py-1.5 font-mono text-xs transition-colors ${
+                  seconds === s
+                    ? "bg-accent font-semibold text-background"
+                    : "bg-background border border-border text-muted hover:border-accent hover:text-accent"
+                }`}
+              >
+                {s}s
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Timer + stats */}
@@ -194,7 +247,7 @@ export default function KanaSpeedGame() {
               phase === "running" && timeLeft <= 10 ? "text-red-400" : ""
             }`}
           >
-            {phase === "running" ? timeLeft : SECONDS}
+            {phase === "running" ? timeLeft : seconds}
           </p>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
             {t.games.speedRecall.timeLeft}
@@ -217,7 +270,7 @@ export default function KanaSpeedGame() {
           </div>
         )}
 
-        {phase === "running" && word && (
+        {phase === "running" && word && !feedback && (
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
               {t.games.speedRecall.typeFor}
@@ -246,27 +299,54 @@ export default function KanaSpeedGame() {
           </div>
         )}
 
-        {phase === "done" && (
+        {phase === "running" && feedback && (
           <div className="gallery-expand text-center">
-            <p className="text-2xl font-bold">{t.games.speedRecall.timeUp}</p>
-            <p className="mt-4 font-mono text-5xl font-bold text-accent">
-              {score}
-            </p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted">
-              {t.games.speedRecall.score} · {t.games.kanaRecall.correct}
-            </p>
-            {score >= best && score > 0 && (
-              <p className="mt-2 text-sm text-emerald-500">
-                🏆 {t.games.speedRecall.best} {best}
-              </p>
-            )}
-            <button
-              type="button"
-              onClick={restart}
-              className="mt-6 rounded-lg bg-accent px-8 py-3 font-mono text-sm font-semibold text-background transition-opacity"
+            <p
+              className={`text-2xl font-bold ${
+                feedback.correct ? "text-emerald-500" : "text-red-400"
+              }`}
             >
-              ↻ {t.games.speedRecall.playAgain}
-            </button>
+              {feedback.correct
+                ? t.games.kanaRecall.won
+                : `${t.games.speedRecall.answerWas} ${feedback.word.kana}`}
+            </p>
+            <p className="mt-2 text-sm text-muted">
+              {feedback.word.kana} — {feedback.word.meaning}
+            </p>
+          </div>
+        )}
+
+        {phase === "done" && (
+          <div className="gallery-expand">
+            <div className="text-center">
+              <p className="text-2xl font-bold">{t.games.speedRecall.timeUp}</p>
+              <p className="mt-4 font-mono text-5xl font-bold text-accent">
+                {score}
+              </p>
+              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted">
+                {t.games.speedRecall.score} · {t.games.kanaRecall.correct}
+              </p>
+              {score >= best && score > 0 && (
+                <p className="mt-2 text-sm text-emerald-500">
+                  🏆 {t.games.speedRecall.best} {best}
+                </p>
+              )}
+              <button
+                type="button"
+                onClick={restart}
+                className="mt-6 rounded-lg bg-accent px-8 py-3 font-mono text-sm font-semibold text-background transition-opacity"
+              >
+                ↻ {t.games.speedRecall.playAgain}
+              </button>
+            </div>
+            <LeaderboardPanel
+              key={level}
+              game={GameSlug.Speed}
+              level={level}
+              mode="final"
+              score={score}
+              finished={phase === "done"}
+            />
           </div>
         )}
       </div>

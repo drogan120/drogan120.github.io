@@ -30,7 +30,7 @@ function loadStats(): Stats {
   const empty: Stats = { score: 0, streak: 0, best: 0, bestByLevel: {} };
   if (typeof window === "undefined") return empty;
   try {
-    const saved = localStorage.getItem("kanjiMeaning.stats");
+    const saved = localStorage.getItem("kanjiSelect.stats");
     if (!saved) return empty;
     const s = JSON.parse(saved);
     return {
@@ -55,16 +55,16 @@ function shuffle<T>(arr: T[]): T[] {
 
 function buildOptions(target: KanjiWord): string[] {
   const pool = kanjiWordsForLevel(target.level).filter(
-    (w) => w.kanji !== target.kanji
+    (w) => w.kanji !== target.kanji && w.reading !== target.reading
   );
   const distractors = shuffle(pool)
     .slice(0, 3)
-    .map((w) => w.meaning);
-  while (distractors.length < 3) distractors.push("???");
-  return shuffle([target.meaning, ...distractors]);
+    .map((w) => w.kanji);
+  while (distractors.length < 3) distractors.push("？");
+  return shuffle([target.kanji, ...distractors]);
 }
 
-export default function KanjiMeaningGame() {
+export default function KanjiSelectGame() {
   const { t } = useI18n();
   const [level, setLevel] = useState<number>(5);
   const [score, setScore] = useState<number>(() => loadStats().score);
@@ -102,7 +102,7 @@ export default function KanjiMeaningGame() {
     (opt: string) => {
       if (!word || picked) return;
       setPicked(opt);
-      if (opt === word.meaning) {
+      if (opt === word.kanji) {
         const runLevel = word.level as GameLevel;
         setScore((s) => s + 1);
         setStreak((s) => {
@@ -133,7 +133,7 @@ export default function KanjiMeaningGame() {
     if (!mounted) return;
     try {
       localStorage.setItem(
-        "kanjiMeaning.stats",
+        "kanjiSelect.stats",
         JSON.stringify({ score, streak, best, bestByLevel })
       );
     } catch {
@@ -161,15 +161,15 @@ export default function KanjiMeaningGame() {
     return () => window.removeEventListener("keydown", onKey);
   }, [picked, next]);
 
-  const headerTitle = t.games.kanjiMeaning.title;
-  const headerTagline = t.games.kanjiMeaning.tagline;
+  const headerTitle = t.games.kanjiSelect.title;
+  const headerTagline = t.games.kanjiSelect.tagline;
 
   if (!mounted) {
     return (
       <main className="mx-auto max-w-3xl px-6 py-12 md:py-16">
         <Header title={headerTitle} tagline={headerTagline} />
         <div className="mt-8 rounded-2xl border border-border bg-card p-10 text-center font-mono text-muted">
-          {t.games.kanjiMeaning.loading}
+          {t.games.kanjiSelect.loading}
         </div>
       </main>
     );
@@ -183,7 +183,7 @@ export default function KanjiMeaningGame() {
       <div className="mt-8 rounded-2xl border border-border bg-card p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
-            {t.games.kanjiMeaning.jlptLevel}
+            {t.games.kanjiSelect.jlptLevel}
           </p>
           <div className="flex flex-wrap gap-1.5">
             {JLPT_LEVELS.map((l) => (
@@ -206,9 +206,9 @@ export default function KanjiMeaningGame() {
 
       {/* Stats */}
       <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-        <StatBox value={score} label={t.games.kanjiMeaning.correct} accent />
-        <StatBox value={streak} label={t.games.kanjiMeaning.streak} />
-        <StatBox value={best} label={t.games.kanjiMeaning.best} />
+        <StatBox value={score} label={t.games.kanjiSelect.correct} accent />
+        <StatBox value={streak} label={t.games.kanjiSelect.streak} />
+        <StatBox value={best} label={t.games.kanjiSelect.best} />
       </div>
 
       {/* Card */}
@@ -216,19 +216,16 @@ export default function KanjiMeaningGame() {
         {word && options.length > 0 ? (
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
-              {t.games.kanjiMeaning.typeFor}
+              {t.games.kanjiSelect.typeFor}
             </p>
             <p className="mt-3 text-4xl font-bold tracking-widest md:text-5xl">
-              {word.kanji}
+              {word.reading}
             </p>
-            <p className="mt-1 font-mono text-xs text-muted">
-              {JLPT_LEVELS.find((l) => l.value === word.level)?.label} ·{" "}
-              {t.games.kanjiMeaning.meaning}
-            </p>
+            <p className="mt-2 text-sm text-muted">{word.meaning}</p>
 
-            <div className="mx-auto mt-6 grid max-w-lg gap-2.5 sm:grid-cols-2">
+            <div className="mx-auto mt-6 grid max-w-lg grid-cols-2 gap-2.5">
               {options.map((opt) => {
-                const isAnswer = opt === word.meaning;
+                const isAnswer = opt === word.kanji;
                 const isPicked = opt === picked;
                 let cls =
                   "bg-background border border-border text-foreground hover:border-accent hover:text-accent";
@@ -243,8 +240,8 @@ export default function KanjiMeaningGame() {
                     type="button"
                     onClick={() => pick(opt)}
                     disabled={!!picked}
-                    aria-label={`${opt}. ${t.games.kanjiMeaning.aria}`}
-                    className={`pop-on-click rounded-xl px-4 py-4 text-left text-sm leading-relaxed transition-colors disabled:cursor-default ${cls}`}
+                    aria-label={`${opt}. ${t.games.kanjiSelect.aria}`}
+                    className={`pop-on-click rounded-xl px-4 py-4 text-2xl font-bold tracking-widest transition-colors disabled:cursor-default ${cls}`}
                   >
                     {opt}
                   </button>
@@ -256,34 +253,32 @@ export default function KanjiMeaningGame() {
               <div className="gallery-expand mt-6">
                 <p
                   className={`text-xl font-bold ${
-                    picked === word.meaning
-                      ? "text-emerald-500"
-                      : "text-red-400"
+                    picked === word.kanji ? "text-emerald-500" : "text-red-400"
                   }`}
                 >
-                  {picked === word.meaning
-                    ? t.games.kanjiMeaning.won
-                    : `${t.games.kanjiMeaning.lost} ${word.meaning}`}
+                  {picked === word.kanji
+                    ? t.games.kanjiSelect.won
+                    : `${t.games.kanjiSelect.lost} ${word.kanji} (${word.reading} — ${word.meaning})`}
                 </p>
                 <button
                   type="button"
                   onClick={next}
                   className="mt-4 rounded-lg bg-accent px-6 py-2.5 font-mono text-sm font-semibold text-background transition-opacity"
                 >
-                  {t.games.kanjiMeaning.nextWord}
+                  {t.games.kanjiSelect.nextWord}
                 </button>
               </div>
             )}
           </div>
         ) : (
           <p className="text-center font-mono text-muted">
-            {t.games.kanjiMeaning.empty}
+            {t.games.kanjiSelect.empty}
           </p>
         )}
       </div>
       <LeaderboardPanel
         key={level}
-        game={GameSlug.KanjiMeaning}
+        game={GameSlug.KanjiSelect}
         level={level as GameLevel}
         mode="streak"
         streak={streak}
@@ -305,7 +300,7 @@ function Header({ title, tagline }: { title: string; tagline: string }) {
           ← {t.default.nav.about} · games
         </Link>
         <h1 className="mt-4 text-3xl font-bold md:text-4xl">
-          漢字マッチ <span className="text-accent">{pretty}</span>
+          漢字セレクト <span className="text-accent">{pretty}</span>
         </h1>
         <p className="mt-3 max-w-xl text-muted">{tagline}</p>
       </div>

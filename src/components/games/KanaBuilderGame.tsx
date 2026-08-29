@@ -11,11 +11,23 @@ import {
   type KanaWord,
 } from "@/data/kanaWords";
 import { splitKana } from "@/lib/romaji";
+import { GameSlug, type GameLevel } from "@/lib/games";
+import {
+  parseLevelBests,
+  withLevelBest,
+  type LevelBests,
+} from "@/lib/gameStats";
+import LeaderboardPanel from "./LeaderboardPanel";
 
-type Stats = { score: number; streak: number; best: number };
+type Stats = {
+  score: number;
+  streak: number;
+  best: number;
+  bestByLevel: LevelBests;
+};
 
 function loadStats(): Stats {
-  const empty: Stats = { score: 0, streak: 0, best: 0 };
+  const empty: Stats = { score: 0, streak: 0, best: 0, bestByLevel: {} };
   if (typeof window === "undefined") return empty;
   try {
     const saved = localStorage.getItem("wordBuilder.stats");
@@ -25,6 +37,7 @@ function loadStats(): Stats {
       score: typeof s.score === "number" ? s.score : 0,
       streak: typeof s.streak === "number" ? s.streak : 0,
       best: typeof s.best === "number" ? s.best : 0,
+      bestByLevel: parseLevelBests(s.bestByLevel),
     };
   } catch {
     return empty;
@@ -47,6 +60,9 @@ export default function KanaBuilderGame() {
   const [score, setScore] = useState<number>(() => loadStats().score);
   const [streak, setStreak] = useState<number>(() => loadStats().streak);
   const [best, setBest] = useState<number>(() => loadStats().best);
+  const [bestByLevel, setBestByLevel] = useState<LevelBests>(
+    () => loadStats().bestByLevel
+  );
   const [word, setWord] = useState<KanaWord | null>(null);
   const [tiles, setTiles] = useState<string[]>([]);
   const [built, setBuilt] = useState<string[]>([]);
@@ -101,11 +117,13 @@ export default function KanaBuilderGame() {
     if (result || !word) return;
     const assembled = built.join("");
     if (assembled === word.kana) {
+      const runLevel = word.level as GameLevel;
       setResult("won");
       setScore((s) => s + 1);
       setStreak((s) => {
         const ns = s + 1;
         setBest((b) => Math.max(b, ns));
+        setBestByLevel((bests) => withLevelBest(bests, runLevel, ns));
         return ns;
       });
     } else {
@@ -123,12 +141,12 @@ export default function KanaBuilderGame() {
     try {
       localStorage.setItem(
         "wordBuilder.stats",
-        JSON.stringify({ score, streak, best })
+        JSON.stringify({ score, streak, best, bestByLevel })
       );
     } catch {
       /* ignore */
     }
-  }, [score, streak, best, mounted]);
+  }, [score, streak, best, bestByLevel, mounted]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -314,6 +332,13 @@ export default function KanaBuilderGame() {
           </p>
         )}
       </div>
+      <LeaderboardPanel
+        key={level}
+        game={GameSlug.Builder}
+        level={level as GameLevel}
+        mode="streak"
+        streak={streak}
+      />
     </main>
   );
 }

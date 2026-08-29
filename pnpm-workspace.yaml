@@ -2,3 +2,5 @@ allowBuilds:
   unrs-resolver: false
 onlyBuiltDependencies:
   - unrs-resolver
+  - esbuild
+  - workerd

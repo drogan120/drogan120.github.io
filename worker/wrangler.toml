@@ -1,0 +1,10 @@
+name = "drogan-leaderboard"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Bind the KV namespace holding the leaderboard. Create it first with:
+#   npx wrangler kv namespace create LEADERBOARD
+# Then paste the generated id below.
+[[kv_namespaces]]
+binding = "LEADERBOARD"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"

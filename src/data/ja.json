@@ -211,6 +211,19 @@
           "icon": "🛠️",
           "repo": "https://github.com/drogan120",
           "demo": null
+        },
+        {
+          "title": "日本語練習ゲーム",
+          "description": "日本語を学ぶための練習ゲーム群 — かなやスペルから JLPT レベルの漢字まで。ローマ字を入力してひらがなにして、遊びながら学ぼう。",
+          "tags": [
+            "Next.js",
+            "TypeScript",
+            "日本語",
+            "i18n"
+          ],
+          "icon": "🈁",
+          "repo": "https://github.com/drogan120",
+          "demo": "https://drogan120.github.io/games"
         }
       ]
     },
