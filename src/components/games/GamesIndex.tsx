@@ -23,6 +23,33 @@ const GAMES = [
       "See the English meaning, type the Japanese word in hiragana. A fast flashcard-style drill to build reading speed and vocabulary.",
     chips: ["Reaction", "Vocabulary", "Spelling"],
   },
+  {
+    href: "/games/match",
+    tag: "かなマッチ",
+    title: "Meaning Match",
+    icon: "🎯",
+    description:
+      "See the Japanese word in kana and pick the correct English meaning from four choices. A snappy multiple-choice vocabulary quiz.",
+    chips: ["Multiple choice", "Vocabulary"],
+  },
+  {
+    href: "/games/builder",
+    tag: "かなビルダー",
+    title: "Word Builder",
+    icon: "🧱",
+    description:
+      "Read the meaning, then tap the scattered kana tiles in the right order to build the word. Great for spelling practice.",
+    chips: ["Spelling", "Kana tiles"],
+  },
+  {
+    href: "/games/speed",
+    tag: "スピードリコール",
+    title: "Speed Recall",
+    icon: "⏱️",
+    description:
+      "A 60-second flashcard sprint — how many Japanese words can you type in hiragana before the clock runs out?",
+    chips: ["Timed", "Reaction", "Vocabulary"],
+  },
 ] as const;
 
 export default function GamesIndex() {

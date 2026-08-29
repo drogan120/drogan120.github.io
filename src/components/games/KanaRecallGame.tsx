@@ -6,7 +6,7 @@ import { useI18n } from "@/i18n";
 import SettingsBar from "@/components/shared/SettingsBar";
 import {
   JLPT_LEVELS,
-  randomWordFor,
+  drawWord,
   type KanaWord,
 } from "@/data/kanaWords";
 import { romajiToKana, splitKana } from "@/lib/romaji";
@@ -55,7 +55,7 @@ export default function KanaRecallGame() {
   const complete = currentKana.length === (word?.kana.length ?? 0);
 
   const startRound = useCallback((levelArg = level) => {
-    const nw = randomWordFor(levelArg, pickRecallLength());
+    const nw = drawWord(levelArg, pickRecallLength());
     setWord(nw);
     setInput("");
     setStage("playing");

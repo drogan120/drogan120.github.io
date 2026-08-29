@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useI18n } from "@/i18n";
 import SettingsBar from "@/components/shared/SettingsBar";
 import {
   JLPT_LEVELS,
   WORD_LENGTHS,
-  randomWordFor,
+  drawWord,
   type KanaWord,
 } from "@/data/kanaWords";
 import { romajiToKana, splitKana } from "@/lib/romaji";
@@ -88,21 +88,46 @@ export default function KanaWordleGame() {
   const { t } = useI18n();
   const [level, setLevel] = useState<number>(5);
   const [length, setLength] = useState<number>(5);
-  const [word, setWord] = useState<KanaWord | null>(() =>
-    randomWordFor(5, 5)
-  );
+  const [word, setWord] = useState<KanaWord | null>(null);
   const [guesses, setGuesses] = useState<Guess[]>([]);
   const [input, setInput] = useState("");
   const [keyState, setKeyState] = useState<Record<string, Status>>({});
   const [ended, setEnded] = useState(false);
   const [won, setWon] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [score, setScore] = useState<number>(() => loadStats().score);
   const [streak, setStreak] = useState<number>(() => loadStats().streak);
   const [best, setBest] = useState<number>(() => loadStats().best);
   const [played, setPlayed] = useState<number>(() => loadStats().played);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const answer = useMemo(() => (word ? splitKana(word.kana) : []), [word]);
+  const getKanaOut = (romaji: string) => romajiToKana(romaji);
+  const currentKana = getKanaOut(input);
+
+  const startRound = useCallback((l: number, len: number) => {
+    setGuesses([]);
+    setKeyState({});
+    setInput("");
+    setEnded(false);
+    setWon(false);
+    setWord(drawWord(l, len));
+  }, []);
+
+  // Start the first round after mount (hydration-safe: random values are
+  // generated only on the client).
   useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+      startRound(5, 5);
+    });
+    return () => cancelAnimationFrame(frame);
+    // startRound is stable; run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     try {
       localStorage.setItem(
         "kanaWordle.stats",
@@ -111,25 +136,17 @@ export default function KanaWordleGame() {
     } catch {
       /* ignore */
     }
-  }, [score, streak, best, played]);
+  }, [mounted, score, streak, best, played]);
 
-  const answer = word ? splitKana(word.kana) : [];
-
-  const getKanaOut = (romaji: string) => romajiToKana(romaji);
-
-  const currentKana = getKanaOut(input);
-
-  const handleConfig = (newLevel: number, newLength: number) => {
-    setLevel(newLevel);
-    setLength(newLength);
-    setGuesses([]);
-    setKeyState({});
-    setInput("");
-    setEnded(false);
-    setWon(false);
-    setWord(randomWordFor(newLevel, newLength));
-    inputRef.current?.focus();
-  };
+  const handleConfig = useCallback(
+    (newLevel: number, newLength: number) => {
+      setLevel(newLevel);
+      setLength(newLength);
+      startRound(newLevel, newLength);
+      inputRef.current?.focus();
+    },
+    [startRound]
+  );
 
   const onInputChange = (value: string) => {
     const kana = getKanaOut(value.replace(/\s/g, ""));
@@ -137,7 +154,7 @@ export default function KanaWordleGame() {
     setInput(value.replace(/\s/g, ""));
   };
 
-  const submit = () => {
+  const submit = useCallback(() => {
     if (ended || !word) return;
     const kana = getKanaOut(input);
     if (kana.length !== length) return;
@@ -169,17 +186,25 @@ export default function KanaWordleGame() {
       setPlayed((p) => p + 1);
       setEnded(true);
     }
-  };
+  }, [ended, word, input, length, answer, keyState, guesses, streak]);
 
-  const nextRound = () => {
-    setGuesses([]);
-    setKeyState({});
-    setInput("");
-    setEnded(false);
-    setWon(false);
-    setWord(randomWordFor(level, length));
+  const nextRound = useCallback(() => {
+    startRound(level, length);
     inputRef.current?.focus();
-  };
+  }, [startRound, level, length]);
+
+  // Enter to advance on the result screen
+  useEffect(() => {
+    if (!ended) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        nextRound();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [ended, nextRound]);
 
   const rows: { cells: string[]; statuses: Status[] | null }[] = [];
   for (let i = 0; i < MAX_GUESSES; i++) {
@@ -221,8 +246,6 @@ export default function KanaWordleGame() {
     inputRef.current?.focus();
   };
 
-  const keypadVisible = currentKana.length < length;
-
   return (
     <main className="mx-auto max-w-3xl px-6 py-12 md:py-16">
       <div className="flex items-start justify-between gap-4">
@@ -236,20 +259,25 @@ export default function KanaWordleGame() {
           <h1 className="mt-4 text-3xl font-bold md:text-4xl">
             かなワードル <span className="text-accent">Kana Wordle</span>
           </h1>
-          <p className="mt-3 max-w-xl text-muted">
-            Guess the hidden Japanese word, kana by kana. Type romaji and watch
-            it become hiragana — just like a Japanese keyboard.
+           <p className="mt-3 max-w-xl text-muted">
+            {t.games.kanaWordle.tagline}
           </p>
         </div>
         <SettingsBar />
       </div>
 
+      {!mounted ? (
+        <div className="mt-8 rounded-2xl border border-border bg-card p-10 text-center font-mono text-muted">
+          {t.games.kanaWordle.loading}
+        </div>
+      ) : (
+        <>
       {/* Config */}
       <div className="mt-8 rounded-2xl border border-border bg-card p-5">
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
             <p className="mb-2 font-mono text-[11px] uppercase tracking-widest text-muted">
-              JLPT level
+              {t.games.kanaWordle.jlptLevel}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {JLPT_LEVELS.map((l) => (
@@ -270,7 +298,7 @@ export default function KanaWordleGame() {
           </div>
           <div>
             <p className="mb-2 font-mono text-[11px] uppercase tracking-widest text-muted">
-              Word length
+              {t.games.kanaWordle.wordLength}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {WORD_LENGTHS.map((len) => (
@@ -284,7 +312,7 @@ export default function KanaWordleGame() {
                       : "bg-background border border-border text-muted hover:border-accent hover:text-accent"
                   }`}
                 >
-                  {len} kana
+                  {len} {t.games.kanaWordle.kana}
                 </button>
               ))}
             </div>
@@ -297,25 +325,25 @@ export default function KanaWordleGame() {
         <div className="rounded-xl border border-border bg-card p-3">
           <p className="font-mono text-2xl font-bold">{score}</p>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-            score
+            {t.games.kanaWordle.score}
           </p>
         </div>
         <div className="rounded-xl border border-border bg-card p-3">
           <p className="font-mono text-2xl font-bold">{streak}</p>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-            streak
+            {t.games.kanaWordle.streak}
           </p>
         </div>
         <div className="rounded-xl border border-border bg-card p-3">
           <p className="font-mono text-2xl font-bold">{best}</p>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-            best
+            {t.games.kanaWordle.best}
           </p>
         </div>
         <div className="rounded-xl border border-border bg-card p-3">
           <p className="font-mono text-2xl font-bold">{played}</p>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-            games
+            {t.games.kanaWordle.games}
           </p>
         </div>
       </div>
@@ -324,14 +352,14 @@ export default function KanaWordleGame() {
       <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
         <div className="mb-5 flex items-center justify-between gap-3">
           <p className="font-mono text-xs uppercase tracking-widest text-muted">
-            {MAX_GUESSES - guesses.length} tries left
+            {MAX_GUESSES - guesses.length} {t.games.kanaWordle.triesLeft}
           </p>
           <button
             type="button"
             onClick={nextRound}
             className="rounded-lg border border-border px-4 py-2 font-mono text-xs transition-colors hover:border-accent hover:text-accent"
           >
-            ↻ New word
+            ↻ {t.games.kanaWordle.newWord}
           </button>
         </div>
 
@@ -374,9 +402,9 @@ export default function KanaWordleGame() {
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck={false}
-            placeholder="type romaji… e.g. sakan a"
+            placeholder={t.games.kanaWordle.typeHint}
             inputMode="text"
-            aria-label="Type romaji to guess the word"
+            aria-label={t.games.kanaWordle.ariaType}
             className={`w-full max-w-xs rounded-lg border bg-background px-4 py-3 text-center font-mono text-xl tracking-widest outline-none placeholder:text-muted/60 sm:w-56 ${
               currentKana.length === length
                 ? "border-accent text-foreground"
@@ -389,15 +417,18 @@ export default function KanaWordleGame() {
             disabled={currentKana.length !== length || ended}
             className="h-12 rounded-lg bg-accent px-7 font-mono text-sm font-semibold text-background transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
           >
-            Enter
+            {t.games.kanaWordle.enter}
           </button>
         </div>
 
-        {/* On-screen keypad (mirrors a mobile kana keyboard) */}
-        {keypadVisible && !ended && (
-          <div className="mt-6 space-y-1.5">
+        {/* On-screen keypad (compact, always visible so players know what to type) */}
+        {!ended && (
+          <div className="mt-5 space-y-1">
             {KEYPAD.map((row) => (
-              <div key={row.name} className="flex flex-wrap justify-center gap-1">
+              <div
+                key={row.name}
+                className="flex flex-wrap items-center justify-center gap-1"
+              >
                 {row.keys.map((k) => {
                   const s = keyState[k];
                   const stateClass =
@@ -413,12 +444,15 @@ export default function KanaWordleGame() {
                       key={k}
                       type="button"
                       onClick={() => tapKey(k)}
-                      className="pop-on-click flex min-w-10 flex-col items-center rounded-lg border px-1 py-1 transition-colors"
+                      aria-label={`${k} (${kanaToRomajiShort(k)})`}
+                      className="pop-on-click flex items-baseline gap-1 rounded-md border px-2 py-1 transition-colors"
                     >
-                      <span className={`rounded-lg px-1.5 py-1 font-mono text-lg leading-none transition-colors ${stateClass}`}>
+                      <span
+                        className={`rounded px-0.5 font-mono text-base leading-none transition-colors ${stateClass}`}
+                      >
                         {k}
                       </span>
-                      <span className="mt-0.5 font-mono text-[9px] leading-none text-muted">
+                      <span className="font-mono text-[8px] leading-none text-muted">
                         {kanaToRomajiShort(k)}
                       </span>
                     </button>
@@ -434,7 +468,7 @@ export default function KanaWordleGame() {
       {ended && word && (
         <div className="gallery-expand mt-8 rounded-2xl border border-border bg-card p-6 text-center md:p-8">
           <p className={`text-2xl font-bold ${won ? "text-emerald-500" : ""}`}>
-            {won ? "🎉 Correct!" : "The word was:"}
+            {won ? t.games.kanaWordle.win : t.games.kanaWordle.lost}
           </p>
           <p className="mt-3 font-mono text-4xl tracking-widest">{word.kana}</p>
           <p className="mt-2 text-lg text-accent">
@@ -444,16 +478,18 @@ export default function KanaWordleGame() {
             <span className="rounded px-2 py-0.5">
               {JLPT_LEVELS.find((l) => l.value === word.level)?.label}
             </span>
-            <span>{word.kana.length} kana</span>
+            <span>{word.kana.length} {t.games.kanaWordle.kana}</span>
           </div>
           <button
             type="button"
             onClick={nextRound}
             className="mt-5 rounded-lg bg-accent px-6 py-2.5 font-mono text-sm font-semibold text-background transition-opacity"
           >
-            Play again
+            {t.games.kanaWordle.playAgain}
           </button>
         </div>
+      )}
+        </>
       )}
     </main>
   );

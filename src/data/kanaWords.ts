@@ -6412,3 +6412,54 @@ export function randomWordFor(level: number, length: number): KanaWord | null {
   if (pool.length === 0) return null;
   return pool[Math.floor(Math.random() * pool.length)];
 }
+
+/** Cache of all words for a given JLPT level, across every kana length. */
+const LEVEL_CACHE: Record<number, KanaWord[]> = {};
+
+/** All words of a level, regardless of length. */
+export function wordsForLevel(level: number): KanaWord[] {
+  if (LEVEL_CACHE[level]) return LEVEL_CACHE[level];
+  const list = Object.values(WORDS_BY_LEVEL_LENGTH).filter(
+    (w) => w.level === level
+  );
+  LEVEL_CACHE[level] = list;
+  return list;
+}
+
+/**
+ * History of drawn words per pool key, so consecutive picks in the same
+ * session don't repeat a word until the whole pool has been shown.
+ */
+const DRAW_HISTORY: Record<string, string[]> = {};
+
+function drawFromPool(poolKey: string, pool: KanaWord[]): KanaWord | null {
+  if (pool.length === 0) return null;
+  const used = new Set(DRAW_HISTORY[poolKey] || []);
+  const available = pool
+    .map((w, i) => ({ w, i }))
+    .filter(({ w }) => !used.has(w.kana));
+  let chosen: KanaWord;
+  if (available.length === 0) {
+    DRAW_HISTORY[poolKey] = [];
+    chosen = pool[Math.floor(Math.random() * pool.length)];
+  } else {
+    chosen = available[Math.floor(Math.random() * available.length)].w;
+  }
+  const history = [...(DRAW_HISTORY[poolKey] || [])];
+  history.push(chosen.kana);
+  DRAW_HISTORY[poolKey] = history.slice(-pool.length);
+  return chosen;
+}
+
+/**
+ * Draw a word for a (level, length) combo without repeating one already shown
+ * in this session, until the pool is exhausted (then it resets).
+ */
+export function drawWord(level: number, length: number): KanaWord | null {
+  return drawFromPool(`${level}:${length}`, wordsFor(level, length));
+}
+
+/** Draw a word for a level (any length) without same-session repeats. */
+export function drawWordForLevel(level: number): KanaWord | null {
+  return drawFromPool(`level:${level}`, wordsForLevel(level));
+}
