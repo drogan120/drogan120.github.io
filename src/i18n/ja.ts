@@ -206,6 +206,8 @@ const ja: Dictionary = {
     tagline:
       "日本語を楽しく練習 — ひらがなから JLPT レベルの語彙まで。ローマ字を入力してひらがなに変えて、遊びながら学ぼう。",
     play: "遊ぶ →",
+    leaderboards: "ランキング",
+    leaderboardsTagline: "各ゲーム・各 JLPT レベルのトップ 5",
     comingSoonLabel: "近日公開",
     comingSoonText: "カタカナ練習、漢字読みスピードなど、準備中です。",
     cards: [

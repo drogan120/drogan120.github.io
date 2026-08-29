@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useI18n } from "@/i18n";
 import SettingsBar from "@/components/shared/SettingsBar";
+import LeaderboardsSection from "@/components/games/LeaderboardsSection";
 
 const GAME_LINKS: Record<string, string> = {
   "かなワードル": "/games/wordle",
@@ -37,7 +38,9 @@ export default function GamesIndex() {
         <SettingsBar />
       </div>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2">
+      <LeaderboardsSection />
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {t.gamesIndex.cards.map((card, i) => (
           <Link
             key={card.tag}

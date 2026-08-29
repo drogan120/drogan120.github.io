@@ -205,6 +205,8 @@ const en = {
     tagline:
       "Playful ways to practice Japanese — from hiragana to JLPT-level vocabulary. Type romaji, get hiragana, learn as you play.",
     play: "Play →",
+    leaderboards: "Leaderboards",
+    leaderboardsTagline: "Top 5 per game & JLPT level",
     comingSoonLabel: "Coming soon",
     comingSoonText: "Katakana drills, kanji reading speed, and more are on the way.",
     cards: [

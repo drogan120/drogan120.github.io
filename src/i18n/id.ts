@@ -206,6 +206,8 @@ const id: Dictionary = {
     tagline:
       "Cara yang menyenangkan untuk berlatih bahasa Jepang — dari hiragana hingga kosakata tingkat JLPT. Ketik romaji, dapatkan hiragana, belajar sambil bermain.",
     play: "Main →",
+    leaderboards: "Papan Peringkat",
+    leaderboardsTagline: "Top 5 per game & level JLPT",
     comingSoonLabel: "Segera hadir",
     comingSoonText: "Latihan katakana, kecepatan baca kanji, dan lainnya sedang dalam proses.",
     cards: [
