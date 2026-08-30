@@ -178,6 +178,95 @@ const ja: Dictionary = {
       empty: "そのレベルには漢字がありません。",
       aria: "読み方に合う正しい漢字の言葉を選ぼう",
     },
+    kanaBrain: {
+      title: "かなブレイン Kana Brain",
+      tagline:
+        "意味を見て、バラバラのローマ字を並べ替えて、言葉をタイプしよう。JLPT 語彙のスペリングパズル。",
+      jlptLevel: "JLPT レベル",
+      typeFor: "ローマ字を並べ替えよう",
+      correct: "正解",
+      streak: "連続",
+      best: "ベスト",
+      nextWord: "次の言葉",
+      won: "🎉 正解!",
+      lost: "答え:",
+      loading: "読み込み中…",
+      empty: "そのレベルには言葉がありません。",
+      typeHint: "ローマ字で入力…",
+      ariaType: "ローマ字で言葉を入力",
+      kana: "文字",
+    },
+    kanjiRush: {
+      title: "漢字ラッシュ Kanji Rush",
+      tagline:
+        "時間制限つきの漢字レース。漢字の言葉を読んで、4 択から意味を選ぼう。",
+      loading: "読み込み中…",
+      jlptLevel: "JLPT レベル",
+      seconds: "秒",
+      correct: "正解",
+      best: "ベスト",
+      timeLeft: "残り",
+      typeFor: "意味を選ぼう",
+      start: "スタート",
+      won: "🎉 正解!",
+      lost: "答え:",
+      timeUp: "⏱ 時間切れ!",
+      score: "スコア",
+      playAgain: "もう一度",
+      answerWas: "正解は",
+      aria: "正しい意味を選ぼう",
+    },
+    kanaMemory: {
+      title: "かなメモリー Kana Memory",
+      tagline:
+        "カードをめくって、日本語の言葉とその意味をマッチさせよう。1 ボード 6 ペア — ミスが少ないほどポイントアップ。",
+      loading: "読み込み中…",
+      jlptLevel: "JLPT レベル",
+      points: "ポイント",
+      pairs: "ペア",
+      misses: "ミス",
+      best: "ベスト",
+      allMatched: "🎉 全ペア完成!",
+      playAgain: "もう一度",
+      empty: "このレベルは言葉が足りません。",
+    },
+    kanjiReadingRush: {
+      title: "漢字読みラッシュ Kanji Reading Rush",
+      tagline:
+        "時間制限つきの漢字読みレース。漢字の言葉を読んで、ひらがなの読みをローマ字で入力しよう。",
+      loading: "読み込み中…",
+      jlptLevel: "JLPT レベル",
+      seconds: "秒",
+      correct: "正解",
+      best: "ベスト",
+      timeLeft: "残り",
+      typeFor: "読み方を入力",
+      start: "スタート",
+      won: "🎉 正解!",
+      lost: "不正解",
+      timeUp: "⏱ 時間切れ!",
+      score: "スコア",
+      playAgain: "もう一度",
+      answerWas: "正解は",
+      typeReading: "読み方を入力…",
+      aria: "漢字の読み方をローマ字で入力",
+    },
+    reverseKanji: {
+      title: "逆漢字 Reverse Kanji",
+      tagline:
+        "意味を見て、その意味に合う漢字の言葉を選ぼう。Kanji Select の逆方向の練習。",
+      jlptLevel: "JLPT レベル",
+      typeFor: "漢字を選ぼう",
+      correct: "正解",
+      streak: "連続",
+      best: "ベスト",
+      nextWord: "次の言葉",
+      won: "🎉 正解!",
+      lost: "答え:",
+      loading: "読み込み中…",
+      empty: "そのレベルには漢字がありません。",
+      aria: "意味に合う正しい漢字を選ぼう",
+    },
     review: {
       title: "復習 復習",
       tagline:
@@ -209,7 +298,7 @@ const ja: Dictionary = {
     leaderboards: "ランキング",
     leaderboardsTagline: "各ゲーム・各 JLPT レベルのトップ 5",
     comingSoonLabel: "近日公開",
-    comingSoonText: "カタカナ練習、漢字読みスピードなど、準備中です。",
+    comingSoonText: "カタカナ練習など、準備中です。",
     cards: [
       {
         tag: "かなワードル",
@@ -266,6 +355,41 @@ const ja: Dictionary = {
         description:
           "ひらがなの読み方を見て、その言葉に合う漢字の言葉を選ぼう。読み方から漢字への方向をレベルごとにマスター。",
         chips: ["漢字", "多肢選択", "読み方"],
+      },
+      {
+        tag: "かなブレイン",
+        title: "かなブレイン",
+        description:
+          "意味を見て、バラバラのローマ字を並べ替えて言葉を作ろう。音を並べるスペリングパズル。",
+        chips: ["スペリング", "パズル", "語彙"],
+      },
+      {
+        tag: "漢字ラッシュ",
+        title: "漢字ラッシュ",
+        description:
+          "時間制限つきのレース — 漢字を読んで、4 択から意味を選ぼう。",
+        chips: ["制限時間", "漢字", "多肢選択"],
+      },
+      {
+        tag: "かなメモリー",
+        title: "かなメモリー",
+        description:
+          "カードをめくって、日本語の言葉とその意味をマッチさせよう。ミスが少ないほどポイントアップ。",
+        chips: ["記憶", "ひらがな", "語彙"],
+      },
+      {
+        tag: "漢字読みラッシュ",
+        title: "漢字読みラッシュ",
+        description:
+          "時間制限つきの漢字レース — 漢字の読み方をローマ字で入力しよう。",
+        chips: ["制限時間", "漢字", "読み方"],
+      },
+      {
+        tag: "逆漢字",
+        title: "逆漢字",
+        description:
+          "意味を見て、その意味に合う漢字の言葉を選ぼう。Kanji Select の逆方向。",
+        chips: ["漢字", "多肢選択", "語彙"],
       },
       {
         tag: "復習",

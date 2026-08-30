@@ -177,6 +177,95 @@ const en = {
       empty: "No kanji available for that level.",
       aria: "Choose the correct kanji word for the reading",
     },
+    kanaBrain: {
+      title: "かなブレイン Kana Brain",
+      tagline:
+        "See the meaning, unscramble the jumbled romaji letters, and type the word. A spelling puzzle for JLPT vocabulary.",
+      jlptLevel: "JLPT level",
+      typeFor: "Unscramble the romaji",
+      correct: "correct",
+      streak: "streak",
+      best: "best",
+      nextWord: "Next word",
+      won: "🎉 Correct!",
+      lost: "Answer:",
+      loading: "Loading…",
+      empty: "No words available for that level.",
+      typeHint: "type romaji…",
+      ariaType: "Type the word in romaji",
+      kana: "letters",
+    },
+    kanjiRush: {
+      title: "漢字ラッシュ Kanji Rush",
+      tagline:
+        "A timed sprint: read the kanji word and pick its English meaning from four choices before the clock runs out.",
+      loading: "Loading…",
+      jlptLevel: "JLPT level",
+      seconds: "seconds",
+      correct: "correct",
+      best: "best",
+      timeLeft: "left",
+      typeFor: "Pick the meaning of",
+      start: "Start race",
+      won: "🎉 Correct!",
+      lost: "Answer:",
+      timeUp: "⏱ Time’s up!",
+      score: "score",
+      playAgain: "Play again",
+      answerWas: "Answer was",
+      aria: "Choose the correct meaning",
+    },
+    kanaMemory: {
+      title: "かなメモリー Kana Memory",
+      tagline:
+        "Flip cards and match each Japanese word to its English meaning. Six pairs per board — fewer mistakes, more points.",
+      loading: "Loading…",
+      jlptLevel: "JLPT level",
+      points: "points",
+      pairs: "pairs",
+      misses: "misses",
+      best: "best",
+      allMatched: "🎉 All pairs matched!",
+      playAgain: "Play again",
+      empty: "Not enough words for this level.",
+    },
+    kanjiReadingRush: {
+      title: "漢字読みラッシュ Kanji Reading Rush",
+      tagline:
+        "A timed sprint: read the kanji word and type its hiragana reading in romaji before the clock runs out.",
+      loading: "Loading…",
+      jlptLevel: "JLPT level",
+      seconds: "seconds",
+      correct: "correct",
+      best: "best",
+      timeLeft: "left",
+      typeFor: "Type the reading of",
+      start: "Start race",
+      won: "🎉 Correct!",
+      lost: "wrong",
+      timeUp: "⏱ Time’s up!",
+      score: "score",
+      playAgain: "Play again",
+      answerWas: "was",
+      typeReading: "type reading…",
+      aria: "Type the reading of the kanji in romaji",
+    },
+    reverseKanji: {
+      title: "逆漢字 Reverse Kanji",
+      tagline:
+        "See the English meaning and pick the kanji word it belongs to. Train the meaning→kanji direction — the reverse of Kanji Select.",
+      jlptLevel: "JLPT level",
+      typeFor: "Pick the kanji for",
+      correct: "correct",
+      streak: "streak",
+      best: "best",
+      nextWord: "Next word",
+      won: "🎉 Correct!",
+      lost: "Answer:",
+      loading: "Loading…",
+      empty: "No kanji available for that level.",
+      aria: "Choose the correct kanji word for the meaning",
+    },
     review: {
       title: "復習 Review",
       tagline:
@@ -208,7 +297,7 @@ const en = {
     leaderboards: "Leaderboards",
     leaderboardsTagline: "Top 5 per game & JLPT level",
     comingSoonLabel: "Coming soon",
-    comingSoonText: "Katakana drills, kanji reading speed, and more are on the way.",
+    comingSoonText: "Katakana drills and more are on the way.",
     cards: [
       {
         tag: "かなワードル",
@@ -265,6 +354,41 @@ const en = {
         description:
           "See a hiragana reading and pick the kanji word it belongs to. Master the reading→kanji direction, level by level.",
         chips: ["Kanji", "Multiple choice", "Readings"],
+      },
+      {
+        tag: "かなブレイン",
+        title: "Kana Brain",
+        description:
+          "See the meaning and unscramble the jumbled romaji letters. A spelling puzzle that turns syllables into a word.",
+        chips: ["Spelling", "Puzzle", "Vocabulary"],
+      },
+      {
+        tag: "漢字ラッシュ",
+        title: "Kanji Rush",
+        description:
+          "A timed sprint — read the kanji and pick its meaning from four choices before the clock runs out.",
+        chips: ["Timed", "Kanji", "Multiple choice"],
+      },
+      {
+        tag: "かなメモリー",
+        title: "Kana Memory",
+        description:
+          "Flip cards and match each Japanese word to its meaning. Fewer mistakes, more points.",
+        chips: ["Memory", "Hiragana", "Vocabulary"],
+      },
+      {
+        tag: "漢字読みラッシュ",
+        title: "Kanji Reading Rush",
+        description:
+          "A timed kanji sprint — type the reading of each kanji word in romaji before the clock runs out.",
+        chips: ["Timed", "Kanji", "Readings"],
+      },
+      {
+        tag: "逆漢字",
+        title: "Reverse Kanji",
+        description:
+          "See the English meaning and pick the kanji word it belongs to. The reverse direction of Kanji Select.",
+        chips: ["Kanji", "Multiple choice", "Vocabulary"],
       },
       {
         tag: "復習",

@@ -178,6 +178,95 @@ const id: Dictionary = {
       empty: "Tidak ada kanji untuk tingkat itu.",
       aria: "Pilih kata kanji yang benar untuk cara baca ini",
     },
+    kanaBrain: {
+      title: "かなブレイン Kana Brain",
+      tagline:
+        "Lihat artinya, uraikan huruf romaji yang diacak, lalu ketik kata Jepangnya. Teka-teki ejaan kosakata JLPT.",
+      jlptLevel: "Level JLPT",
+      typeFor: "Susun ulang romaji",
+      correct: "benar",
+      streak: "rangkai",
+      best: "terbaik",
+      nextWord: "Kata berikutnya",
+      won: "🎉 Benar!",
+      lost: "Jawaban:",
+      loading: "Memuat…",
+      empty: "Tidak ada kata untuk tingkat itu.",
+      typeHint: "ketik romaji…",
+      ariaType: "Ketik kata dalam romaji",
+      kana: "huruf",
+    },
+    kanjiRush: {
+      title: "漢字ラッシュ Kanji Rush",
+      tagline:
+        "Pacu cepat berwaktu: baca kata kanji dan pilih arti bahasa Inggrisnya dari empat pilihan sebelum waktu habis.",
+      loading: "Memuat…",
+      jlptLevel: "Level JLPT",
+      seconds: "detik",
+      correct: "benar",
+      best: "terbaik",
+      timeLeft: "sisa",
+      typeFor: "Pilih arti dari",
+      start: "Mulai balapan",
+      won: "🎉 Benar!",
+      lost: "Jawaban:",
+      timeUp: "⏱ Waktu habis!",
+      score: "skor",
+      playAgain: "Main lagi",
+      answerWas: "Jawaban",
+      aria: "Pilih arti yang benar",
+    },
+    kanaMemory: {
+      title: "かなメモリー Kana Memory",
+      tagline:
+        "Balik kartu dan cocokkan setiap kata Jepang dengan artinya. Enam pasangan per papan — makin sedikit salah, makin banyak poin.",
+      loading: "Memuat…",
+      jlptLevel: "Level JLPT",
+      points: "poin",
+      pairs: "pasangan",
+      misses: "salah",
+      best: "terbaik",
+      allMatched: "🎉 Semua pasangan cocok!",
+      playAgain: "Main lagi",
+      empty: "Kata untuk tingkat ini tidak cukup.",
+    },
+    kanjiReadingRush: {
+      title: "漢字読みラッシュ Kanji Reading Rush",
+      tagline:
+        "Pacu cepat berwaktu: baca kata kanji dan ketik cara bacanya dalam romaji sebelum waktu habis.",
+      loading: "Memuat…",
+      jlptLevel: "Level JLPT",
+      seconds: "detik",
+      correct: "benar",
+      best: "terbaik",
+      timeLeft: "sisa",
+      typeFor: "Ketik cara baca dari",
+      start: "Mulai balapan",
+      won: "🎉 Benar!",
+      lost: "salah",
+      timeUp: "⏱ Waktu habis!",
+      score: "skor",
+      playAgain: "Main lagi",
+      answerWas: "adalah",
+      typeReading: "ketik cara baca…",
+      aria: "Ketik cara baca kanji dalam romaji",
+    },
+    reverseKanji: {
+      title: "逆漢字 Reverse Kanji",
+      tagline:
+        "Lihat arti bahasa Inggris dan pilih kata kanji yang cocok. Latih arah arti→kanji — kebalikan dari Kanji Select.",
+      jlptLevel: "Level JLPT",
+      typeFor: "Pilih kanji untuk",
+      correct: "benar",
+      streak: "rangkai",
+      best: "terbaik",
+      nextWord: "Kata berikutnya",
+      won: "🎉 Benar!",
+      lost: "Jawaban:",
+      loading: "Memuat…",
+      empty: "Tidak ada kanji untuk tingkat itu.",
+      aria: "Pilih kata kanji yang benar untuk arti ini",
+    },
     review: {
       title: "復習 Tinjau",
       tagline:
@@ -209,7 +298,7 @@ const id: Dictionary = {
     leaderboards: "Papan Peringkat",
     leaderboardsTagline: "Top 5 per game & level JLPT",
     comingSoonLabel: "Segera hadir",
-    comingSoonText: "Latihan katakana, kecepatan baca kanji, dan lainnya sedang dalam proses.",
+    comingSoonText: "Latihan katakana dan lainnya sedang dalam proses.",
     cards: [
       {
         tag: "かなワードル",
@@ -266,6 +355,41 @@ const id: Dictionary = {
         description:
           "Lihat cara baca hiragana dan pilih kata kanji yang tepat. Kuasai arah membaca ke kanji, level demi level.",
         chips: ["Kanji", "Pilihan ganda", "Cara baca"],
+      },
+      {
+        tag: "かなブレイン",
+        title: "Kana Brain",
+        description:
+          "Lihat artinya dan uraikan huruf romaji yang diacak. Teka-teki ejaan yang mengubah suku kata menjadi sebuah kata.",
+        chips: ["Ejaan", "Teka-teki", "Kosakata"],
+      },
+      {
+        tag: "漢字ラッシュ",
+        title: "Kanji Rush",
+        description:
+          "Pacu cepat berwaktu — baca kanji dan pilih artinya dari empat pilihan sebelum waktu habis.",
+        chips: ["Berwaktu", "Kanji", "Pilihan ganda"],
+      },
+      {
+        tag: "かなメモリー",
+        title: "Kana Memory",
+        description:
+          "Balik kartu dan cocokkan setiap kata Jepang dengan artinya. Makin sedikit salah, makin banyak poin.",
+        chips: ["Memori", "Hiragana", "Kosakata"],
+      },
+      {
+        tag: "漢字読みラッシュ",
+        title: "Kanji Reading Rush",
+        description:
+          "Pacu cepat kanji berwaktu — ketik cara baca tiap kata kanji dalam romaji sebelum waktu habis.",
+        chips: ["Berwaktu", "Kanji", "Cara baca"],
+      },
+      {
+        tag: "逆漢字",
+        title: "Reverse Kanji",
+        description:
+          "Lihat arti bahasa Inggris dan pilih kata kanji yang cocok. Kebalikan dari Kanji Select.",
+        chips: ["Kanji", "Pilihan ganda", "Kosakata"],
       },
       {
         tag: "復習",

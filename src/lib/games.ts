@@ -8,6 +8,11 @@ export const GameSlug = {
   KanjiReading: "kanji-reading",
   KanjiMeaning: "kanji-meaning",
   KanjiSelect: "kanji-select",
+  KanaBrain: "kana-brain",
+  KanjiRush: "kanji-rush",
+  KanaMemory: "kana-memory",
+  KanjiReadingRush: "kanji-reading-rush",
+  ReverseKanji: "reverse-kanji",
 } as const;
 
 export type GameSlug = (typeof GameSlug)[keyof typeof GameSlug];

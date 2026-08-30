@@ -99,6 +99,11 @@ const GAME_TITLE: Record<GameSlug, (games: Dictionary["games"]) => string> = {
   [GameSlug.KanjiReading]: (games) => games.kanjiReading.title,
   [GameSlug.KanjiMeaning]: (games) => games.kanjiMeaning.title,
   [GameSlug.KanjiSelect]: (games) => games.kanjiSelect.title,
+  [GameSlug.KanaBrain]: (games) => games.kanaBrain.title,
+  [GameSlug.KanjiRush]: (games) => games.kanjiRush.title,
+  [GameSlug.KanaMemory]: (games) => games.kanaMemory.title,
+  [GameSlug.KanjiReadingRush]: (games) => games.kanjiReadingRush.title,
+  [GameSlug.ReverseKanji]: (games) => games.reverseKanji.title,
 };
 
 export default function LeaderboardsSection() {

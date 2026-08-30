@@ -14,6 +14,11 @@ const GAME_LINKS: Record<string, string> = {
   "漢字リーディング": "/games/kanji-reading",
   "漢字マッチ": "/games/kanji-meaning",
   "漢字セレクト": "/games/kanji-select",
+  "かなブレイン": "/games/kana-brain",
+  "漢字ラッシュ": "/games/kanji-rush",
+  "かなメモリー": "/games/kana-memory",
+  "漢字読みラッシュ": "/games/kanji-reading-rush",
+  "逆漢字": "/games/reverse-kanji",
   "復習": "/games/review",
 };
 
