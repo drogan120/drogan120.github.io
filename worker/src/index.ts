@@ -11,6 +11,29 @@ export interface Env {
 const MAX_ENTRIES = 5;
 const MAX_NAME_LENGTH = 20;
 const MAX_GAME_LENGTH = 32;
+const MAX_GENERIC_SCORE = 1_000_000;
+
+/** Realistic ceiling per game to filter obvious spam scores. */
+const PER_GAME_MAX_SCORE: Record<string, number> = {
+  speed: 600,
+  wordle: 1000,
+  recall: 1000,
+  match: 1000,
+  builder: 1000,
+  "kanji-reading": 1000,
+  "kanji-meaning": 1000,
+  "kanji-select": 1000,
+  "kana-brain": 1000,
+  "kanji-rush": 600,
+  "kana-memory": 1000,
+  "kanji-reading-rush": 600,
+  "reverse-kanji": 1000,
+};
+
+const RATE_LIMIT_IP_MAX = 15;
+const RATE_LIMIT_IP_WINDOW_SECONDS = 300;
+const RATE_LIMIT_NAME_MAX = 1;
+const RATE_LIMIT_NAME_WINDOW_SECONDS = 60;
 
 const ALLOWED_GAME_SLUGS = new Set([
   "speed",
@@ -21,6 +44,11 @@ const ALLOWED_GAME_SLUGS = new Set([
   "kanji-reading",
   "kanji-meaning",
   "kanji-select",
+  "kana-brain",
+  "kanji-rush",
+  "kana-memory",
+  "kanji-reading-rush",
+  "reverse-kanji",
 ]);
 const VALID_LEVELS = new Set(["1", "2", "3", "4", "5"]);
 
@@ -59,11 +87,36 @@ function sanitizeName(input: unknown): string | null {
   return trimmed.length > 0 ? trimmed : null;
 }
 
-function sanitizeScore(input: unknown): number | null {
+function sanitizeScore(input: unknown, slug: string): number | null {
   const value = Number(input);
-  return Number.isFinite(value) && value >= 0 && value <= 1_000_000
-    ? Math.floor(value)
-    : null;
+  if (!Number.isFinite(value)) return null;
+  const floored = Math.floor(value);
+  const max = PER_GAME_MAX_SCORE[slug] ?? MAX_GENERIC_SCORE;
+  return floored >= 0 && floored <= max ? floored : null;
+}
+
+export function clientIp(request: Request): string {
+  return request.headers.get("cf-connecting-ip") ?? "unknown";
+}
+
+/**
+ * Increments a KV counter with a sliding TTL. Returns true once the counter
+ * reaches `max`, which blocks the caller from proceeding.
+ */
+async function consumeRateLimit(
+  env: Env,
+  key: string,
+  max: number,
+  windowSeconds: number
+): Promise<boolean> {
+  const stateKey = `ratelimit:${key}`;
+  const raw = await env.LEADERBOARD.get(stateKey, "text");
+  const count = raw ? Number(raw) : 0;
+  if (count >= max) return true;
+  await env.LEADERBOARD.put(stateKey, String(count + 1), {
+    expirationTtl: windowSeconds,
+  });
+  return false;
 }
 
 async function loadScores(env: Env, game: string): Promise<LeaderboardEntry[]> {
@@ -98,9 +151,26 @@ async function handlePost(env: Env, request: Request): Promise<Response> {
   const record = body as Record<string, unknown>;
   const game = sanitizeGame(record?.game);
   const name = sanitizeName(record?.name);
-  const score = sanitizeScore(record?.score);
+  const slug = game ? game.split(":")[0] : "";
+  const score = sanitizeScore(record?.score, slug);
   if (!game || !name || score === null) {
     return json({ error: "Missing or invalid game/name/score" }, 400);
+  }
+
+  const byIp = await consumeRateLimit(
+    env,
+    `ip:${clientIp(request)}`,
+    RATE_LIMIT_IP_MAX,
+    RATE_LIMIT_IP_WINDOW_SECONDS
+  );
+  const byName = await consumeRateLimit(
+    env,
+    `name:${game}:${name.toLowerCase()}`,
+    RATE_LIMIT_NAME_MAX,
+    RATE_LIMIT_NAME_WINDOW_SECONDS
+  );
+  if (byIp || byName) {
+    return json({ error: "Rate limited, try again shortly" }, 429);
   }
 
   const scores = await loadScores(env, game);
